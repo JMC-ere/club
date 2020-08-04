@@ -1,0 +1,16 @@
+package kr.spring.club.service;
+
+import java.util.List;
+import java.util.Map;
+
+import kr.spring.club.domain.ClubVO;
+
+public interface ClubService {
+	public List<ClubVO> selectList(Map<String,Object> map);
+	public int selectRowCount(Map<String,Object> map);
+	public void insert(ClubVO club);
+	public ClubVO selectBoard(Integer club_num);
+	public void adminUpdate(ClubVO club);
+	public void update(ClubVO club);
+	public void delete(Integer club);
+}

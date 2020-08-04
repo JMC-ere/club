@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.clubqa.dao.ClubQaMapper">  
+	<select id="selectRowCount" parameterType="map"
+	                      resultType="integer">
+		SELECT
+		   COUNT(*)
+		FROM qa_board b JOIN member m
+		ON b.mem_num=m.mem_num
+		<where>
+			<if test="keyword != '' and keyfield == 'qa_title'">
+				b.qa_title LIKE '%' || #{keyword} || '%'
+			</if>
+			<if test="keyword != '' and keyfield == 'mem_id'">
+				m.mem_id LIKE '%' || #{keyword} || '%'
+			</if>
+			<if test="keyword != '' and keyfield == 'qa_content'">
+				b.qa_content LIKE '%' || #{keyword} || '%'
+			</if>
+		</where>                      
+	</select>
+	<select id="selectList" parameterType="map"
+	                    resultType="clubQAVO">
+		SELECT
+		   *
+		FROM (SELECT
+		         a.*,
+		         rownum rnum
+		      FROM (SELECT
+		               *
+		            FROM qa_board b 
+		            LEFT OUTER JOIN (SELECT qa_num,COUNT(*) re_cnt
+ 	                                                FROM qa_reply
+ 	                                                GROUP BY qa_num)r
+ 	                ON b.qa_num = r.qa_num 
+		            JOIN member m 
+		            ON b.mem_num = m.mem_num
+		            <where>
+						<if test="keyword != '' and keyfield == 'qa_title'">
+							b.qa_title LIKE '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword != '' and keyfield == 'mem_id'">
+							m.mem_id LIKE '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword != '' and keyfield == 'qa_content'">
+							b.qa_content LIKE '%' || #{keyword} || '%'
+						</if>
+					</where> 
+		            ORDER BY b.qa_num DESC)a) 
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>            
+	</select>
+	<select id="selectReply" resultType="clubQAVO">
+		
+                    SELECT * FROM 
+                    	qa_reply b JOIN qa_board m ON 
+                    	b.reply_qa_num = m.qa_num 
+                    WHERE b.reply_qa_num=#{qa_num}
+	</select>
+	
+	<update id="update" parameterType="clubQAVO">
+		UPDATE qa_board SET
+		<if test="qa_filename != ''">
+			qa_uploadfile=#{qa_uploadfile},
+			qa_filename=#{qa_filename},
+		</if>
+			qa_title=#{qa_title},
+			qa_content=#{qa_content},
+			qa_datetime=SYSDATE
+		WHERE qa_num=#{qa_num}
+	</update>
+	
+	<!-- 댓글 -->
+	<select id="selectListReply" parameterType="map"
+ 	                     resultType="clubQAReplyVO">
+ 		SELECT
+ 		   qa_reply_num,
+ 		   qa_reply_content,
+ 		   TO_CHAR(qa_reply_datetime,'YYYY-MM-DD HH24:MI:SS') qa_reply_datetime,
+ 		   qa_num,
+ 		   mem_num,
+ 		   mem_id
+ 		FROM (SELECT 
+ 		        a.*,
+ 		        rownum rnum
+ 		      FROM (SELECT
+ 		              *
+ 		            FROM qa_reply
+ 		            WHERE qa_num = #{qa_num}
+ 		            ORDER BY qa_reply_num DESC)a)
+ 		<![CDATA[
+ 		WHERE rnum >= #{start} AND rnum <= #{end}
+ 		]]>                                 
+ 	</select>
+	
+</mapper>
+
+
+
+
+
+
+
