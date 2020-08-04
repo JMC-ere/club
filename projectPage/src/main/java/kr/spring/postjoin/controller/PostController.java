@@ -20,6 +20,7 @@ import kr.spring.postjoin.domain.PostVO;
 import kr.spring.postjoin.service.PostService;
 import kr.spring.util.PagingUtil;
 
+//Post
 @Controller
 public class PostController {
 
