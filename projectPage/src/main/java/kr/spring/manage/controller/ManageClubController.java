@@ -19,7 +19,7 @@ import kr.spring.manage.domain.ManageClubVO;
 import kr.spring.manage.service.ManageClubService;
 import kr.spring.util.PagingUtil;
 
-//아무거나
+//아무거나dfdfdf
 @Controller
 public class ManageClubController {
 	private Logger log = Logger.getLogger(this.getClass());
