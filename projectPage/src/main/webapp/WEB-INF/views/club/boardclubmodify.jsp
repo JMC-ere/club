@@ -16,8 +16,8 @@
 	<h4>클럽 개설 제안 수정</h4>
 	
 	<!-- !!!!!!!!!!관리자!!!!!!!!!!!!!! -->
+	<c:if test="${user_auth ==4}">
 	<form:form class="col s12" action="boardclubmodify.do" enctype="multipart/form-data" commandName="clubVO">
-
 		<form:hidden path="club_num"/>
 		<ul>
 			<li>
@@ -90,12 +90,12 @@
 			<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="돌아가기" onclick="location.href='boardclub.do'">
 		</div>
 	</form:form>
+</c:if>
+	
+	<!-- !!!!!!!!!우수회원!!!!!!!!!!!!! -->
 
-	
-	<%-- <!-- !!!!!!!!!우수회원!!!!!!!!!!!!! -->
-	
+<c:if test="${user_auth == 3}">
 	<form:form class="col s12" action="boardclubmodify2.do" enctype="multipart/form-data" commandName="clubVO">
-
 		<form:hidden path="club_num"/>
 		<ul>
 			<li>
@@ -160,5 +160,6 @@
 			<input type="submit" class="btn purple lighten-5 purple-text text-darken-4" value="수정하기">
 			<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="돌아가기" onclick="location.href='boardclub.do'">
 		</div>
-	</form:form> --%>
+	</form:form>
+</c:if>
 </div>
