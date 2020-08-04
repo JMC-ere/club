@@ -23,7 +23,7 @@ import kr.spring.clubqa.domain.ClubQAVO;
 import kr.spring.clubqa.service.ClubQAService;
 import kr.spring.util.PagingUtil;
 
-
+//asdf1234
 @Controller
 public class QAController {
 	private Logger log = Logger.getLogger(this.getClass());
