@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.spring.member.domain.MemberVO;
 import kr.spring.member.service.MemberService;
 
+//회원 정보
 @Controller
 public class MemberController {
 	
