@@ -19,8 +19,6 @@ public class ClubQAVO {
 	private String qa_filename;
 	private MultipartFile upload;
 	private byte[] qa_uploadfile;
-	
-	
 	// QA_BOARD TABLE
 	
 	public void setUpload(MultipartFile upload)throws IOException {

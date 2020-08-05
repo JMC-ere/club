@@ -25,6 +25,7 @@ display: block; margin: 0px auto; width:80%;
 div.searchbtn{
 margin:0 0 50px 0;
 }
+
 </style>
 </head>
 <body>
@@ -46,14 +47,14 @@ margin:0 0 50px 0;
 	
 	<form id="search_form" action="manage_member.do" method="get" onsubmit="return none()">
 	<div class="searhform" style="width:55%;margin:0 auto;">
-	<div class="search_select">
+	<div class="search_select" >
 		<label>회원 검색</label> 
 		<select class="browser-default" name="keyfield" id="keyfield">
 		<optgroup label="선택">
 			<option value="">전체보기</option>
 			<option value="id">회원 ID</option>
 			<option value="nick">회원 닉네임</option>
-			<option value="name">회원 이름</option>
+			<option value="name">회원 이름</option> 
 			 </optgroup>
 			 <optgroup label="회원 등급">
 			<option value="auth0">탈퇴회원</option>
@@ -123,13 +124,12 @@ margin:0 0 50px 0;
 			</tr>				
 		</c:forEach>
 		</tbody></table>		
-	</c:if>
+	</c:if><br>
+	<div style="text-align:center;">${pagingHtml}</div>
 	
-	<div style="text-align:right;">
-	<p>
-	<button class="btn waves-effect waves-light" type="submit"
-			id="submit_btn">수정하기</button>
-			</p></div>
+		<div style="text-align:right;">
+	<button class="btn waves-effect waves-light" type="submit" id="submit_btn">수정하기</button>
+		</div>
 			
 			</form>
 	</div>
