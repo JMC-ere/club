@@ -90,7 +90,7 @@ create table post (
 	club_num number not null,
 	post_title varchar2(30) not null,
 	post_board varchar2(2000) not null,
-	post_img clob,
+	post_img blob,
 	post_date date not null,
 	post_modify date not null,
 	constraint post_fk1 foreign key(mem_num) references member(mem_num),
