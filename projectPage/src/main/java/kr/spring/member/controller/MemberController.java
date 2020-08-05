@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.spring.member.domain.MemberVO;
 import kr.spring.member.service.MemberService;
 
-//회원 정보
+//회원 정보입니다.
 @Controller
 public class MemberController {
 	
