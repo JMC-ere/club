@@ -4,24 +4,26 @@
 
 <style>
 .page-main-style {
-	width: 85%;
+	width: 60%;
 	margin: 0 auto;
 }
 
 .align-center {
 	text-align: center;
+	border:20px;
+	padding:10px;
 }
 
 .center { 
 	text-aling:center;
 	margin:0 auto;
-	border:20px;
-	padding:10px;
 }
+
+
 </style>
 
 <div class=center>
-	<h2>후기 게시판입니다.</h2>
+	<h2>참가후기 게시판입니다.</h2>
 </div>
 
 
@@ -39,18 +41,16 @@
 
 <div class=page-main-style>
 
+
+
 		<div>
 			<c:if test="${!empty user_id}">
-				<input type="button" value="글쓰기"
-					onclick="location.href='postwrite.do'">
+			 <button class="btn waves-effect waves-light" type="submit" onclick="location.href='postwrite.do'">글쓰기</button>
 			</c:if>
 		</div>
 
 
-		<c:if test="${count == 0 }">
-			<div class="result-disply">등록된 게시물이 없습니다.</div>
-			<input type="button" value="돌아가기" onclick="location.href='post.do'">
-		</c:if>
+
 
 	
 		<c:if test="${count > 0 }">
@@ -84,7 +84,7 @@
 							<td width=30%>
 							${post.post_hit}
 							</td>
-							<td width>
+							<td>
 							</td>
 						</tr>
 					</c:forEach>
@@ -92,27 +92,9 @@
 			</table>
 		</c:if>
 
-
+<div class=align-center>${pagingHtml}</div>
 		
-	<form action="post.do" method="get">
-		<ul class="search">
-			<li>
-				<select name="keyfield">
-					<option value="post_title">제목</option>
-					<option value="post_board">내용</option>
-					<option value="">id</option>
-				</select>
-			</li>		
-			<li>
-				<input type="search" size="16" name="keyword" id="keyword"> 
-			</li>
-			<li>
-				<input type="submit" value="찾기" style="float:right;">
-			</li>
-		</ul>
-
-		<div class=align-center>${pagingHtml}</div>
-
+	
 	</form>
 </div>
 

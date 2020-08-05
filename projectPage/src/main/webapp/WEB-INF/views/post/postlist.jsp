@@ -4,25 +4,51 @@
 
 <style>
 .page-main-style {
-	width: 80%;
+	width: 60%;
 	margin: 0 auto;
 }
 
 .align-center {
 	text-align: center;
-}
-.search {
-	overflow: auto;
-	list-style-type: none;
+	border:20px;
+	padding:10px;
 }
 
-.search li {
-	float: right;
-	margin: 0 auto;
+.center { 
+	text-aling:center;
+	margin:0 auto;
+}
+
+
+form#search_form{
+	border:none;
+	text-align: center;
+	margin-top:3rem;
+}
+form#search_form ul.search{
+	list-style:none;
+}
+form#search_form ul.search li{
+	margin:0 0 9px 0;
+	padding:0;
+	display:inline;
+}
+form#search_form ul.search li select{
+    width:5rem;
+	display:inline-block;
+}
+form#search_form ul.search li input[type="search"]{
+    width:20rem;
+	display:inline-block;
 }
 </style>
 
-<div>
+
+<div class=center>
+	<h2>영화후기 게시판입니다.</h2>
+</div>
+
+<div class=page-main-style>
 	<ul class="nav nav-pills nav-fill">
 		<li class="nav-item"><a class="nav-link" href="post.do">참여
 				게시판</a></li>
@@ -32,9 +58,28 @@
 		</li>
 	</ul>
 </div>
-
 <div class=page-main-style>
-	<form action="postlist.do" method="get">
+	<form id="search_form" action="postlist.do" method="get">
+		<ul id="search_form" class="search">
+			<li>
+				<select name="keyfield">
+					<option value="post_title">제목</option>
+					<option value="post_board">내용</option>
+					<option value="">id</option>
+				</select>
+			</li>		
+			<li>
+				<input type="search" size="20%" name="keyword" id="keyword"> 
+				 <button class="btn waves-effect waves-light" type="submit" id="keyword">찾기</button>
+			</li>
+				<c:if test="${count == 0 }">
+			<div class="result-disply">등록된 게시물이 없습니다.</div>
+			<button class="btn waves-effect waves-light" type="submit" onclick="location.href='post.do'">돌아가기</button>
+				</c:if>
+		</ul>
+
+
+
 
 		<div>
 			<c:if test="${!empty user_id}|${!empty club_name}">
@@ -42,11 +87,6 @@
 					onclick="location.href='postwrite.do'">
 			</c:if>
 		</div>
-		<c:if test="${count == 0 }">
-			<div class="result-disply">등록된 게시물이 없습니다.</div>
-			<input type="button" value="돌아가기"
-				onclick="location.href='postlist.do'">
-		</c:if>
 		<c:if test="${count > 0 }">
 			<table class="highlight">
 				<thead>
@@ -74,20 +114,7 @@
 
 
 
-			<ul class="search">
-				<li><select name="keyfield">
-						<option value="post_title">제목</option>
-						<option value="post_board">내용</option>
-						<option value="member_id">작성자</option>
-				</select></li>
-				<li>
-					<div class=align-center>
-						<button type="submit" class="btn btn-success">검색</button>
-					</div>
-				</li>
-				<li><input type="search" size="16" name="keyword" id="keyword"></li>
-
-			</ul>
+			
 			<div class=align-center>${pagingHtml}</div>
 		</c:if>
 	</form>

@@ -5,27 +5,31 @@
 <style>
 
 .page-main-style {
-	width: 80%;
+	width: 60%;
 	margin: 0 auto;
 }
 
 .align-center {
 	text-align: center;
+	border:20px;
+	padding:10px;
+}
+.center { 
+	text-aling:center;
+	margin:0 auto;
 }
 
-.search {
-	overflow: auto;
-	list-style-type: none;
-}
-
-.search li {
-	float: right;
-	margin: 0 auto;
-}
 
 </style>
 
-<div>
+
+<div class=center>
+	<h2>갤러리 게시판입니다.</h2>
+</div>
+
+
+
+<div class=page-main-style>
 <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
     <a class="nav-link" href="post.do">참여 게시판</a>
