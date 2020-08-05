@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.clubmanage.domain.ClubManageVO;
 import kr.spring.clubmanage.service.ClubManageService;
-//kkkkkk
 @Controller
 public class ClubManageController {
 	private Logger log=Logger.getLogger(this.getClass());
@@ -155,4 +155,13 @@ public class ClubManageController {
 		
 		return manageMembersForm(club_num, model);
 	} 
+	@RequestMapping("/clubmanage/imageView.do")
+	public ModelAndView viewImage(@RequestParam("club_num") int club_num) {
+		ClubManageVO club=clubManageService.selectClub(club_num);
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("imageView");
+		mav.addObject("imageFile",club.getClub_img());
+		mav.addObject("filename",club.getFilename());
+		return mav;
+	}
 }

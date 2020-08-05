@@ -12,11 +12,9 @@
 		height:250px;
 	}
 </style>
-<meta charset="UTF-8">
-<title>문자 엔티티</title>
 <div class="row" id="openform">
-	<h4>클럽 개설 제안</h4>
 	<form:form class="col s12" action="openclub.do" enctype="multipart/form-data" commandName="clubVO" id="openclub">
+		<h4>클럽 개설 제안</h4>
 		<ul>
 			<li>
 				<label for="club_title">제목</label>

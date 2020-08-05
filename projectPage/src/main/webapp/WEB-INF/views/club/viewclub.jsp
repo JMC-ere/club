@@ -7,13 +7,14 @@
 	<br>
 	<h4>현재 진행중인 클럽</h4>
 	<div class="row">
+		<c:forEach var="club" items="${list}">
 		<div class="col-sm-6 col-lg-4">
 			<p></p>
 			<c:if test="${count == 0 }">
 				<div>등록된 게시물이 없습니다.</div>
 			</c:if>
 			<c:if test="${count > 0 }">
-			<c:forEach var="club" items="${list}">
+			
 			<div class="card">
 				<div class="card-header">${club.club_genre}</div>
 				<img
@@ -25,8 +26,9 @@
 					<a href="viewclubdetail.do?club_num=${club.club_num}" class="btn #8bc34a light-green">More</a>
 				</div>
 			</div>
-			</c:forEach>
+			
 			</c:if>
 		</div>
+		</c:forEach>
 	</div>
 </div>

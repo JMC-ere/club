@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Update;
 import kr.spring.clubmanage.domain.ClubManageVO;
 
 public interface ClubManageMapper {
-	@Select("select * from joinclub j join club c on j.mem_num=c.mem_num where j.mem_num=#{mem_num} and c.club_end>=sysdate")
+	@Select("select * from joinclub j join club c on j.club_num=c.club_num where j.mem_num=#{mem_num} and c.club_end>=sysdate")
 	public List<ClubManageVO> selectValidList(int mem_num);
 	@Select("select * from joinclub j join club c on j.mem_num=c.mem_num where j.mem_num=#{mem_num} and c.club_end<sysdate")
 	public List<ClubManageVO> selectPastList(int mem_num);

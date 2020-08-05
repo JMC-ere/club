@@ -5,9 +5,8 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-    <definition name="movieSearchForm" extends="clubmanage">
+    <definition name="movieSearchForm" extends="main">
        <put-attribute name="body" value="/WEB-INF/views/movieSearch/movieSearchForm.jsp"/>
-       <put-attribute name="sidebar" value="/WEB-INF/views/movieSearch/sidebar.jsp"/>
     </definition>
     <definition name="movieSearchResult" extends="movieSearchForm">
        <put-attribute name="body" value="/WEB-INF/views/movieSearch/movieSearchResult.jsp"/>

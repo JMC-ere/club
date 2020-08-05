@@ -34,11 +34,12 @@
 				<td colspan="4" height="200">${clubqa.qa_content}</td>
 			</tr>
 			<tr>
-				<td></td>
+				<td>
+				<c:if test="${!empty clubqa.qa_filename}">
+				<li>첨부파일 : <a href="file.do?num=${clubqa.qa_num}">${clubqa.qa_filename}</a></li>
+				</c:if>
+				</td>
 			</tr>
-			<c:if test="${!empty board.filename}">
-		<li>첨부파일 : <a href="file.do?num=${board.num}">${board.filename}</a></li>
-		</c:if>
 		</table>
 		
 		<p>
@@ -47,11 +48,6 @@
 	</div>
 	<!-- 질문 상세페이지  -->
 </form:form>
-<%
-	//테스트용으로 세션에 처리 
-	session.setAttribute("user_num", 1);
-    session.setAttribute("user_id", "sky");
-%>
 <!-- 댓글 관련 UI 시작 -->
 <!-- 댓글 작성 -->
 <div id="reply_div" class="reply_div">
@@ -93,7 +89,7 @@
 	                로그인 아이디와 작성자 아이디가 일치해야 함. --%>
 		<c:if test="${!empty user_id && user_id == clubqa.mem_id}">
 			<input type="button" value="수정" class="btn"
-				onclick="location.href='update.do?num=${clubqa.qa_num}'">
+				onclick="location.href='QAlist_update.do?num=${clubqa.qa_num}'">
 			<input type="button" value="삭제" class="btn"
 				onclick="location.href='delete.do?num=${clubqa.qa_num}'">
 		</c:if>

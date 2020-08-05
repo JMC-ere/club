@@ -1,6 +1,7 @@
 package kr.spring.clubqa.controller;
 
 import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +24,6 @@ import kr.spring.clubqa.domain.ClubQAVO;
 import kr.spring.clubqa.service.ClubQAService;
 import kr.spring.util.PagingUtil;
 
-//asdf1234
 @Controller
 public class QAController {
 	private Logger log = Logger.getLogger(this.getClass());
@@ -37,7 +37,7 @@ public class QAController {
 	public ClubQAVO initCommand() {
 		return new ClubQAVO();
 	}
-	
+	//1
 	//건의 / 신고 게시판
 	@RequestMapping("/ClubQA/QAlist/QAlist.do")
 	public ModelAndView qa_process(
@@ -99,13 +99,10 @@ public class QAController {
 			return "qalist_write";
 		}
 		
-		//clubqaVO.setMem_num((Integer)session.getAttribute("user_num"));
-//		clubqaVO.setMem_id((String)session.getAttribute("user_id"));
+		clubqaVO.setMem_num((Integer)session.getAttribute("user_num"));
+		clubqaVO.setMem_id((String)session.getAttribute("user_id"));
 		
-		//나중에 삭제
-		clubqaVO.setMem_num(1);
-		clubqaVO.setMem_id("sky");
-		//
+		
 		
 		clubqaService.insert(clubqaVO);
 		
@@ -160,18 +157,68 @@ public class QAController {
 		
 	}
 	
-	//질문 게시판 폼 호출
-	@RequestMapping(value="/ClubQA/QA1_1/QA1_1_list.do", method=RequestMethod.GET)
-	public String QAreport_main() {
-		return "qa1_1_main";
-	}
+		// 건의 / 신고 글 수정 폼 호출
+		@RequestMapping(value="/ClubQA/QAlist/QAlist_update.do",
+				          method=RequestMethod.GET)
+		public String form(@RequestParam("num") int num,
+				                  Model model) {
+			
+			ClubQAVO clubqaVO =
+					clubqaService.selectQABoard(num);
+			
+			model.addAttribute("clubQAVO", clubqaVO);
+			
+			return "qalist_update";
+		}
+		
+		//건의 / 신고 글 수정 처리
+		@RequestMapping(value="/ClubQA/QAlist/QAlist_update.do",
+				       method=RequestMethod.POST)
+		public String submitUpdate(@Valid ClubQAVO clubqaVO,
+				                   BindingResult result,
+				                HttpServletRequest request) {
+			
+			//로그 표시
+			if(log.isDebugEnabled()) {
+				log.debug("<<clubqaVO>> : " + clubqaVO);
+			}
+			
+			//유효성 체크 결과 에러가 있으면 폼 호출
+			if(result.hasErrors()) {
+				return "qalist_update";
+			}
+			
+			clubqaService.update(clubqaVO);
+			
+			return "redirect:/ClubQA/QAlist/QAlist.do";
+		}
 	
-	//질문 글 쓰기 폼 호출
-	@RequestMapping(value="/ClubQA/QA1_1/QA1_1_write.do", method=RequestMethod.GET)
-	public String QAreport_write() {
-		return "qa1_1_write";
-	}
-	
+		//건의 / 신고 글 삭제
+		@RequestMapping("/ClubQA/QAlist/QAlist_delete.do")
+		public String submit(@RequestParam("num") int num) {
+			
+			//로그 표시
+			if(log.isDebugEnabled()) {
+				log.debug("<<num>> : " + num);
+			}
+			
+			//글 삭제
+			clubqaService.delete(num);
+			
+			return "redirect:/ClubQA/QAlist/QAlist.do";
+		}
+		
+		//질문 게시판 폼 호출
+		@RequestMapping(value="/ClubQA/QA1_1/QA1_1_list.do", method=RequestMethod.GET)
+		public String QAreport_main() {
+			return "qa1_1_main";
+		}
+		
+		//질문 글 쓰기 폼 호출
+		@RequestMapping(value="/ClubQA/QA1_1/QA1_1_write.do", method=RequestMethod.GET)
+		public String QAreport_write() {
+			return "qa1_1_write";
+		}
 	
 	
 	

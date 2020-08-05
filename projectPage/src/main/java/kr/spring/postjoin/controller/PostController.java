@@ -5,10 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -189,9 +191,67 @@ public class PostController {
 		}
 
 		//조회수 증가
-		postService.updateHit(num);
+		postService.updatePostHit(num);
 		PostVO post = postService.selectPost(num);
 
 		return new ModelAndView("postView","post",post);
 	}
+	
+	//이미지 처리
+		@RequestMapping("/post/ImageView.do")
+		public ModelAndView viewImage(@RequestParam("num")int num) {
+			
+			PostVO post = postService.selectPost(num);
+			
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("imageView");
+			mav.addObject("imageFile",post.getPost_img());
+			mav.addObject("filename",post.getPost_imgname());
+			
+			return mav;
+		}
+		
+		//글 수정
+		@RequestMapping(value="/post/postupdate.do", method=RequestMethod.GET)
+		public String form(@RequestParam("num")int num, Model model) {
+
+			PostVO postVO = postService.selectPost(num);
+
+			model.addAttribute("postVO",postVO);
+
+			return "postModify";
+		}
+		//글 수정 처리
+		@RequestMapping(value="post/postupdate.do", method=RequestMethod.POST)
+		public String submitUpdate(@Valid PostVO postVO,
+				BindingResult result,
+				HttpServletRequest request) {
+
+			//로그 표시
+			if(log.isDebugEnabled()) {
+				log.debug("<<PostVO>> : " + postVO);
+			}
+
+			//유효성 체크결과 에러가 있으면 폼
+			if(result.hasErrors()) {
+				return "postupdate";
+			}
+			postService.updatePost(postVO);
+
+			return "redirect:/post.do";
+
+		}
+
+		//글 삭제 처리
+		@RequestMapping(value="/post/postdelite.do")
+		public String submit(@RequestParam("num")int num) {
+
+			if(log.isDebugEnabled()) {
+				log.debug("<<PostVO>>" + num);
+			}
+
+			postService.deletePost(num);
+
+			return "redirect:/post/post.do";
+		}
 }
