@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.spring.notice.domain.NoticeVO;
 import kr.spring.notice.service.NoticeService;
 import kr.spring.util.PagingUtil;
-//공지11
+//공지
 @Controller
 public class NoticeController {
 	private Logger log = Logger.getLogger(this.getClass());
@@ -95,9 +95,11 @@ public class NoticeController {
 		}
 		
 		//mem_num 반환
-		//noticeVO.setMem_num((Integer)session.getAttribute("user_num"));
-		noticeVO.setMem_num(1);
+		noticeVO.setMem_num((Integer)session.getAttribute("user_num"));
 
+		//mem_auth 반환
+		noticeVO.setMem_auth((Integer)session.getAttribute("user_auth"));
+		
 		//글 등록
 		noticeService.insert(noticeVO);
 		
