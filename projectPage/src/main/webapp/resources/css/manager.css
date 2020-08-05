@@ -40,13 +40,10 @@ div.manage_club_detail{
 }
 
 div.manage_club_img{
- float:left; margin:30px 0 0 0;
+ float:left; margin:80px 0 30px 0;
 }
 
 div.club_detail_list{
  float:left;
 }
 
-div.approve_status_choice{
-width:100%; 
-}

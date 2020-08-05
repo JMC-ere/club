@@ -14,13 +14,16 @@
 <title>회원 관리</title>
 <style>
 div.search_select{
-display: block; margin: 0px auto; width:30%;
+float:left;display: block; width:25% 
 }
 div.search_input{
-display: block; margin: 0px auto; width:50%;
+float:right;display: block; margin:25px 0 0 0;  width:70%;
 }
 div.member_list{
 display: block; margin: 0px auto; width:80%;
+}
+div.searchbtn{
+margin:0 0 50px 0;
 }
 </style>
 </head>
@@ -42,6 +45,7 @@ display: block; margin: 0px auto; width:80%;
 
 	
 	<form id="search_form" action="manage_member.do" method="get" onsubmit="return none()">
+	<div class="searhform" style="width:55%;margin:0 auto;">
 	<div class="search_select">
 		<label>회원 검색</label> 
 		<select class="browser-default" name="keyfield" id="keyfield">
@@ -62,9 +66,10 @@ display: block; margin: 0px auto; width:80%;
 		<div class="row col s10 search_input">
 		<div class="col s6">
 		<input size="16" name="keyword" id="keyword"></div>
-		<div class="col s4">
+		<div class="searchbtn">
 		<button class="btn waves-effect waves-light" type="submit"
 			name="action1">찾기</button></div></div>
+			</div>
 	</form>
 	
 	<br>
