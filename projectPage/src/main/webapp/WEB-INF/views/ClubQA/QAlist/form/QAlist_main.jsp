@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-<!-- 1111 -->
+<!-- 222 -->
 <form action="QAlist.do" method="get">
 	<div class="QA_main">
 		<!-- QA 페이지 입장 메인 select -->
