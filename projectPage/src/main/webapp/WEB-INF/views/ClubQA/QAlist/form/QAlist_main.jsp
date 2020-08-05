@@ -41,7 +41,10 @@
 					<c:forEach var="clubqa" items="${list}">
 					<tr style="font-size: 0.9rem;">
 						<td class="li_class" id="clubqa_num" style="text-align: center;">${clubqa.qa_num}</td>
-						<td><a class="clubqa_title" href="QAlist_detail.do?num=${clubqa.qa_num}">${clubqa.qa_title}
+						<td>
+							<a <c:if test="${ clubqa.qa_secret_key != null }">class="clubqa_title"</c:if> href="QAlist_detail.do?num=${clubqa.qa_num}">
+						
+							${clubqa.qa_title}
 							<c:if test="${ clubqa.qa_secret_key != null }">
 							<img src="../../resources/images/secret_lock.png">
 							</c:if>
@@ -60,6 +63,7 @@
 						</td>
 						<td class="li_class" style="text-align: center;">${clubqa.qa_hit}</td>
 					</tr>
+					<!-- qa_secret_key hidden -->
 					<input type="hidden" id="qa_secret_key" value="${clubqa.qa_secret_key}">
 					</c:forEach>
 					<!-- 테스트 td -->
@@ -79,11 +83,25 @@
 </form>
 
 <script>
+
 $(function(){
-	var qa_secret_key = $('#qa_secret_key').val();
-	$('.clubqa_title').click(function(){
-		alert(qa_secret_key);
-	});
+		$('.clubqa_title').click(function(){
+			var qa_secret_key = $('#qa_secret_key').val();
+			var test = prompt("비밀글입니다. 비밀번호를 입력하세요", "");
+			if(!test) {
+				return false;
+			}	
+			if(test.toLowerCase() == qa_secret_key) {
+				alert('비밀번호가 맞았습니다!');
+			} else {
+				alert('비밀번호가 맞지 않습니다');
+				return false;
+			}
+				
+			
+			
+	});		
+	
 });
 </script>
 
