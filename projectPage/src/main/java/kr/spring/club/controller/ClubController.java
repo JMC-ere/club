@@ -42,10 +42,32 @@ public class ClubController {
 	@Resource
 	private ClubService clubService;
 	
+	//전체클럽 페이지 (클럽메인)
 	@RequestMapping("/main/viewclub.do")
-	public ModelAndView list() {
+	public ModelAndView process(@RequestParam(value="pageNum",defaultValue="1") int currentPage) {
+		
+		int count = clubService.listRowCount();
+		
+		//페이징처리
+		PagingUtil page = new PagingUtil(currentPage,count,rowCount,pageCount,"boardclub.do");
+		
+		List<ClubVO> list = null;
+		
+		if(count>0) {
+			
+			Map<String,Object> map = new HashMap<String,Object>();
+			map.put("start", page.getStartCount());
+			map.put("end", page.getEndCount());
+			
+			list = clubService.mainList(map);
+		}
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("viewclub");
+		mav.addObject("count",count);
+		mav.addObject("list",list);
+		mav.addObject("pagingHtml",page.getPagingHtml());
+		
 		return mav;
 	}
 	
@@ -101,8 +123,7 @@ public class ClubController {
 		}
 		
 		//mem_num
-		//clubVO.setMem_num((Integer)session.getAttribute("user_num"));
-		clubVO.setMem_num(2);
+		clubVO.setMem_num((Integer)session.getAttribute("user_num"));
 		
 		//글 등록
 		clubService.insert(clubVO);
@@ -144,7 +165,7 @@ public class ClubController {
 	
 	//글 수정 처리 (관리자)
 	@RequestMapping(value="/main/boardclubmodify.do",method=RequestMethod.POST)
-	public String submitUpdate(@Valid ClubVO clubVO,BindingResult result,HttpServletRequest request) {
+	public String submitUpdate(@Valid ClubVO clubVO,BindingResult result,HttpServletRequest request,HttpSession session) {
 
 		if(result.hasErrors()) {
 			
@@ -156,17 +177,16 @@ public class ClubController {
 			return "boardclubmodify";
 		}
 		
-		clubVO.setMem_num(2);
+		clubVO.setMem_num((Integer)session.getAttribute("user_num"));
 
 		clubService.adminUpdate(clubVO);
 
-
-			return "redirect:/main/boardclub.do";
+		return "redirect:/main/boardclub.do";
 	}
 	
 	//글 수정 처리 (우수회원)
 	@RequestMapping(value="/main/boardclubmodify2.do",method=RequestMethod.POST)
-	public String submitUpdate2(@Valid ClubVO clubVO,BindingResult result,HttpServletRequest request) {
+	public String submitUpdate2(@Valid ClubVO clubVO,BindingResult result,HttpServletRequest request,HttpSession session) {
 
 		if(result.hasErrors()) {
 		
@@ -176,10 +196,12 @@ public class ClubController {
 			
 			return "boardclubmodify";
 		}
+	
+		clubVO.setMem_num((Integer)session.getAttribute("user_num"));
 
-			clubService.update(clubVO);
+		clubService.update(clubVO);
 
-			return "redirect:/main/boardclub.do";
+		return "redirect:/main/boardclub.do";
 	}
 	
 	//글 삭제
@@ -190,4 +212,5 @@ public class ClubController {
 		
 		return "redirect:/main/boardclub.do";
 	}
+	
 }

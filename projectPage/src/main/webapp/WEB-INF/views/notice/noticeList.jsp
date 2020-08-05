@@ -205,7 +205,10 @@ input[type="submit"], input[type="button"]{
 			</ul>
 		</form>
 		<div class="write_button">
-			<input type="button" value="글쓰기" onclick="location.href='write.do'">
+			<%--관리자와 클럽장만 글쓰기 버튼이 활성화 됨 --%>
+			<c:if test="${user_auth == 3 || user_auth == 4}">
+				<input type="button" value="글쓰기" onclick="location.href='write.do'">
+			</c:if>
 		</div>	
 		<c:if test="${count == 0}">
 			<table class="notice_list">

@@ -95,9 +95,11 @@ public class NoticeController {
 		}
 		
 		//mem_num 반환
-		//noticeVO.setMem_num((Integer)session.getAttribute("user_num"));
-		noticeVO.setMem_num(1);
+		noticeVO.setMem_num((Integer)session.getAttribute("user_num"));
 
+		//mem_auth 반환
+		noticeVO.setMem_auth((Integer)session.getAttribute("user_auth"));
+		
 		//글 등록
 		noticeService.insert(noticeVO);
 		
@@ -186,7 +188,7 @@ public class NoticeController {
 		return "redirect:/notice/list.do";
 	}
 	
-	//글 삭제
+	//글 삭제  
 	@RequestMapping("/notice/delete.do")
 	public String submit(@RequestParam("nt_num")int nt_num) {
 		

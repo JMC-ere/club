@@ -4,10 +4,16 @@
 <style type="text/css">
 	#boardclub{
 		width:50%;
+		margin: 20px auto;
+	}  
+	
+	#boardclub-center{
+		text-align: center;
 	}
 </style>
 <!-- 테스트  -->
-<div class="row" id="boardclub">
+<div class="row col s12" id="boardclub-center">
+<div id="boardclub" class="center">
 	<h4>클럽 개설 제안</h4>
 	<!-- 검색 기능 -->
   <div class="input-field col s12">
@@ -67,4 +73,5 @@
 			<div class="center">${pagingHtml}</div>
 		</div>
 	</c:if>
+</div>
 </div>
