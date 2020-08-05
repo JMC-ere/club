@@ -41,11 +41,6 @@
 	</div>
 	<!-- 질문 상세페이지  -->
 </form:form>
-<%
-	//테스트용으로 세션에 처리 
-	session.setAttribute("user_num", 1);
-    session.setAttribute("user_id", "sky");
-%>
 <!-- 댓글 관련 UI 시작 -->
 <!-- 댓글 작성 -->
 <div id="reply_div" class="reply_div">
@@ -87,9 +82,9 @@
 	                로그인 아이디와 작성자 아이디가 일치해야 함. --%>
 		<c:if test="${!empty user_id && user_id == clubqa.mem_id}">
 			<input type="button" value="수정" class="btn"
-				onclick="location.href='update.do?num=${clubqa.qa_num}'">
+				onclick="location.href='QA1_1_update.do?num=${clubqa.qa_num}'">
 			<input type="button" value="삭제" class="btn"
-				onclick="location.href='delete.do?num=${clubqa.qa_num}'">
+				onclick="location.href='QA1_1_delete.do?num=${clubqa.qa_num}'">
 		</c:if>
 		<input type="button" class="btn" value="목록" onclick="location.href='QAlist.do'">
 	</div>

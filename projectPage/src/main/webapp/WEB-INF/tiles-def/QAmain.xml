@@ -18,12 +18,10 @@
     
     <definition name="qalist_detail" extends="main">
    		<put-attribute name="title" value="QA 질문 상세페이지"/>
-   		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
-   		<put-attribute name="body" value="/WEB-INF/views/ClubQA/QAlist/form/QAlist_detail.jsp"/>
-   		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
+   		<put-attribute name="body" value="/WEB-INF/views/ClubQA/QAlist/form/QAlist_detail.jsp"/> 
     </definition>
     
-     <definition name="qalist_update" extends="main">
+    <definition name="qalist_update" extends="main">
    		<put-attribute name="title" value="QA 질문 글수정"/>
    		<put-attribute name="body" value="/WEB-INF/views/ClubQA/QAlist/form/QAlist_update.jsp"/>
     </definition>
@@ -40,9 +38,14 @@
    		<put-attribute name="body" value="/WEB-INF/views/ClubQA/QA1_1/form/QA1_1_write.jsp"/>
     </definition>
     
-    <definition name="qalist_detail" extends="main">
+    <definition name="qa1_1_detail" extends="main">
    		<put-attribute name="title" value="QA 질문 상세페이지"/>
    		<put-attribute name="body" value="/WEB-INF/views/ClubQA/QA1_1/form/QA1_1_detail.jsp"/>
+    </definition>
+    
+    <definition name="qa1_1_update" extends="main">
+   		<put-attribute name="title" value="QA 질문 상세페이지"/>
+   		<put-attribute name="body" value="/WEB-INF/views/ClubQA/QA1_1/form/QA1_1_update.jsp"/>
     </definition>
 </tiles-definitions>
 
