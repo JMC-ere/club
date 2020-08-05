@@ -18,48 +18,43 @@ public class PostServiceImpl implements PostService{
 
 	@Override
 	public void insertPost(PostVO post) {
-		// TODO Auto-generated method stub
 		postMapper.insertPost(post);
 	}
 
 	@Override
 	public List<PostVO> selectPostList(Map<String, Object> map) {
-		// TODO Auto-generated method stub
 		return postMapper.selectPostList(map);
 	}
 
 	@Override
 	public void updatePost(PostVO post) {
-		// TODO Auto-generated method stub
+		postMapper.updatePost(post);
 		
 	}
 
 
 	@Override
 	public int selectRowCount(Map<String, Object> map) {
-		// TODO Auto-generated method stub
 		return postMapper.selectRowCount(map);
 	}
 
 
 	@Override
 	public PostVO selectPost(Integer num) {
-		// TODO Auto-generated method stub
 		return postMapper.selectPost(num);
 	}
 
 
 	@Override
-	public void updateHit(Integer num) {
-		// TODO Auto-generated method stub
+	public void updatePostHit(Integer num) {
+		postMapper.updatePostHit(num);
 		
 	}
 
 
 	@Override
-	public void deletePost(String name) {
-		// TODO Auto-generated method stub
-		
+	public void deletePost(Integer num) {
+		postMapper.deletePost(num);
 	}
 
 }

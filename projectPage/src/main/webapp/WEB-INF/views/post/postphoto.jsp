@@ -69,7 +69,7 @@
 			<tr align="center">
 				<td width="120">
 				
-					<a href="postdetail.do?num=${post.post_num}">
+					<a>
 						<img src="../images/pride.jpg">
 						<br>
 					${post.post_title}

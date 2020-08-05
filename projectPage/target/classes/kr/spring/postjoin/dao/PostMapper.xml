@@ -42,6 +42,15 @@
  		]]>			
  	</select>
  	
+ 	 	<update id="update" parameterType="postVO">
+ 		UPDATE post SET
+		
+		post_title=#{post_title},
+		post_board={post_board},
+		post_date=SYSDATE
+	WHERE post_num=#{post_num}
+ 	</update>
+ 	
  	
 </mapper>
 
