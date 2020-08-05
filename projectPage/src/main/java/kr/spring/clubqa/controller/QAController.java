@@ -172,6 +172,21 @@ public class QAController {
 		return "qa1_1_write";
 	}
 	
+	//글 삭제
+		@RequestMapping("/ClubQA/QAlist/QAlist_delete.do")
+		public String submit(@RequestParam("num") int num) {
+			
+			//로그 표시
+			if(log.isDebugEnabled()) {
+				log.debug("<<num>> : " + num);
+			}
+			
+			//글 삭제
+			clubqaService.delete(num);
+			
+			return "redirect:/ClubQA/QAlist/QAlist.do";
+		}
+	
 	
 	
 	

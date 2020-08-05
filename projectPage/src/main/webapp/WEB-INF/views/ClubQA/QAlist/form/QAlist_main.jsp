@@ -44,7 +44,7 @@
 					<tr style="font-size: 0.9rem;">
 						<td class="li_class" id="clubqa_num" style="text-align: center;">${clubqa.qa_num}</td>
 						<td>
-							<a <c:if test="${ clubqa.qa_secret_key != null }">class="clubqa_title"</c:if> href="QAlist_detail.do?num=${clubqa.qa_num}">
+							<a <c:if test="${ clubqa.qa_secret_key != null }">class="clubqa_title"</c:if> href="QAlist_detail.do?num=${clubqa.qa_num}" data-p="${clubqa.qa_secret_key}">
 						
 							${clubqa.qa_title}
 							<c:if test="${ clubqa.qa_secret_key != null }">
@@ -65,8 +65,6 @@
 						</td>
 						<td class="li_class" style="text-align: center;">${clubqa.qa_hit}</td>
 					</tr>
-					<!-- qa_secret_key hidden -->
-					<input type="hidden" id="qa_secret_key" value="${clubqa.qa_secret_key}">
 					</c:forEach>
 					<!-- 테스트 td -->
 				</table>
@@ -88,7 +86,7 @@
 
 $(function(){
 		$('.clubqa_title').click(function(){
-			var qa_secret_key = $('#qa_secret_key').val();
+			var qa_secret_key = $(this).attr('data-p');
 			var test = prompt("비밀글입니다. 비밀번호를 입력하세요", "");
 			if(!test) {
 				return false;
