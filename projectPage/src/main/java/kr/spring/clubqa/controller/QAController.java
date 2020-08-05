@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.spring.clubqa.domain.ClubQA1_1VO;
 import kr.spring.clubqa.domain.ClubQAVO;
 import kr.spring.clubqa.service.ClubQAService;
 import kr.spring.util.PagingUtil;
@@ -209,9 +210,43 @@ public class QAController {
 	}
 
 	//질문 게시판 폼 호출
-	@RequestMapping(value="/ClubQA/QA1_1/QA1_1_list.do", method=RequestMethod.GET)
-	public String QAreport_main() {
-		return "qa1_1_main";
+	@RequestMapping("/ClubQA/QA1_1/QA1_1_list.do")
+	public ModelAndView qa1_1process(
+			@RequestParam(value="pageNum", defaultValue="1") int currentPage,
+			@RequestParam(value="keyfield", defaultValue="") String keyfield,
+			@RequestParam(value="keyword", defaultValue="") String keyword) {
+
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("keyfield", keyfield);
+		map.put("keyword", keyword);
+
+		int count = clubqaService.select1_1RowCount(map);
+
+		if(log.isDebugEnabled()) {
+			log.debug("<<count>> : " + count);
+		}
+
+		PagingUtil page = new PagingUtil(keyfield, keyword, currentPage, count, rowCount, pageCount, "QA1_1_list.do");
+		map.put("start", page.getStartCount());
+		map.put("end" , page.getEndCount());
+
+		List<ClubQAVO> list = null;
+		if(count > 0) {
+			list = clubqaService.select1_1List(map);
+		}
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("qa1_1_main");
+		mav.addObject("count", count);
+		mav.addObject("list", list);
+		mav.addObject("pagingHtml", page.getPagingHtml());
+
+
+		if(log.isDebugEnabled()) {
+			log.debug("<<list>> : " + list);
+		}
+
+		return mav;
 	}
 
 	//질문 글 쓰기 폼 호출
@@ -219,6 +254,31 @@ public class QAController {
 	public String QAreport_write() {
 		return "qa1_1_write";
 	}
+	
+	//질문  글 쓰기 처리
+		@RequestMapping(value="/ClubQA/QA1_1/QA1_1_write.do", method=RequestMethod.POST)
+		public String submit1_1(@Valid ClubQA1_1VO clubqa1_1VO, BindingResult result,
+				HttpServletRequest request,
+				HttpSession session) {
+
+			if(log.isDebugEnabled()) {
+				log.debug("<<clubqaVO>> : " + clubqa1_1VO);
+			}
+
+			if(result.hasErrors()) {
+				return "qalist_write";
+			}
+
+			clubqa1_1VO.setMem_num((Integer)session.getAttribute("user_num"));
+			clubqa1_1VO.setMem_id((String)session.getAttribute("user_id"));
+
+
+
+			clubqaService.insert1_1(clubqa1_1VO);
+			
+			return "redirect:/ClubQA/QAlist/QA1_1_list.do";
+
+		}
 
 
 
