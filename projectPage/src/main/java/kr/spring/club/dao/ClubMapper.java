@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import kr.spring.club.domain.ClubVO;
@@ -24,4 +26,7 @@ public interface ClubMapper {
 	public int listRowCount();
 	@Select("SELECT * FROM (SELECT a.*, rownum rnum FROM (SELECT * FROM club c JOIN member m ON c.mem_num=m.mem_num ORDER BY c.club_num DESC) a) WHERE club_state = 2 AND rnum >=#{start} AND rnum <=#{end}")
 	public List<ClubVO> mainList(Map<String,Object> map);
+	
+	@Insert("INSERT INTO joinclub (join_num,club_num,mem_num) VALUES (joinclub_seq.nextval,#{club_num},#{mem_num})")
+	public void joinClubInsert(@Param("club_num") Integer club_num, @Param("mem_num") Integer mem_num);
 }

@@ -26,4 +26,5 @@ public interface MemberMapper {
 	public void delete(Integer mem_num);
 	@Delete("DELETE FROM member_detail WHERE mem_num=#{mem_num}")
 	public void deleteDetail(Integer mem_num);
+	
 }

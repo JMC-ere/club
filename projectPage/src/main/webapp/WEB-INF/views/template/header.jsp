@@ -146,6 +146,7 @@
 				}else{
 					alert('로그인 체크 오류!');
 					checkLogin = 0;
+					location.href='${pageContext.request.contextPath}/main/main.do';
 				}
 			},
 			error:function(){
