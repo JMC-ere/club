@@ -8,15 +8,39 @@
 	
 	  <!-- Dropdown Structure -->
 	  <ul id='dropdown1' class='dropdown-content'>
-	    <li><a href="#!">Login</a></li>
-	    <li><a href="#!">LogOut</a></li>
-	    <li><a href="#!">MyPage</a></li>
+	  	<c:if test="${empty user_id}">
+	    <li><a href="${pageContext.request.contextPath}/main/main.do">Login</a></li>
+	    </c:if>
+	    <c:if test="${!empty user_id}">
+	    <li><a href="${pageContext.request.contextPath}/main/logout.do">LogOut</a></li>
+	   	</c:if>
+	    <c:if test="${user_auth == 2 || user_auth == 3 || user_auth == 4}">
+	    <li><a href="${pageContext.request.contextPath}/mypage/myPage.do">MY PAGE</a></li>
+	    </c:if>
+	    <c:if test="${user_auth == 5}">
+	    <li><a onclick="M.toast({html: '간편로그인 회원은 MYPAGE열람이 불가합니다.'})">MY PAGE</a></li>
+	    </c:if>
+	     <c:if test="${user_auth==4}">
+		<li><a href="${pageContext.request.contextPath}/main/manage_club.do">관리자페이지</a></li>
+		</c:if>
 	  </ul>
 
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">LOGIN</a></li>
-        <li><a href="badges.html">LOGOUT</a></li>
-        <li><a href="collapsible.html">MY PAGE</a></li>
+        <c:if test="${empty user_id}">
+	    <li><a href="${pageContext.request.contextPath}/main/main.do">Login</a></li>
+	    </c:if>
+	    <c:if test="${!empty user_id}">
+	    <li><a href="${pageContext.request.contextPath}/main/logout.do">LogOut</a></li>
+	   	</c:if>
+	    <c:if test="${user_auth == 2 || user_auth == 3 || user_auth == 4}">
+	    <li><a href="${pageContext.request.contextPath}/mypage/myPage.do">MY PAGE</a></li>
+	    </c:if>
+	    <c:if test="${user_auth == 5}">
+	    <li><a onclick="M.toast({html: '간편로그인 회원은 MYPAGE열람이 불가합니다.'})">MY PAGE</a></li>
+	    </c:if>
+	     <c:if test="${user_auth==4}">
+		<li><a href="${pageContext.request.contextPath}/main/manage_club.do">관리자페이지</a></li>
+		</c:if>
       </ul>
     </div>
     <div class="nav-content light-green darken-2 center">
