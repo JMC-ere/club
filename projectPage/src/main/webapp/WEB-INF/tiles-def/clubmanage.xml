@@ -3,12 +3,9 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-    <definition name="clubmanage" template="/WEB-INF/views/clubmanage/layout.jsp">
+    <definition name="clubmanage" extends="main">
        <put-attribute name="title" value="클럽 관리"/> 
-       <put-attribute name="header" value="/WEB-INF/views/clubmanage/header.jsp"/>
-       <put-attribute name="sidebar" value="/WEB-INF/views/clubmanage/sidebar.jsp"/>
-       <put-attribute name="body" value="/WEB-INF/views/clubmanage/body.jsp"/>
-       <put-attribute name="footer" value="/WEB-INF/views/clubmanage/footer.jsp"/>
+       <put-attribute name="body" value="/WEB-INF/views/clubmanage/myClubs.jsp"/>
     </definition>
     <definition name="leadersClub" extends="clubmanage">
        <put-attribute name="body" value="/WEB-INF/views/clubmanage/leadersClub.jsp"/>
@@ -17,3 +14,5 @@
        <put-attribute name="body" value="/WEB-INF/views/clubmanage/manageMembersForm.jsp"/>
     </definition>
 </tiles-definitions>
+<!-- dfdf -->
+
