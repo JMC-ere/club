@@ -77,6 +77,7 @@ margin: 0px auto; width:50%;
 				<br>
 				${manageClub.club_detail}
 				<!-- 승인상태 선택 -->
+				
 <form action="status_change.do" method="post">
 <div class="approve_status_choice" style="width:35%;clear:both;">
 <input type="hidden" name="num" value="${manageClub.club_num}" >
