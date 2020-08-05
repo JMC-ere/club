@@ -32,18 +32,21 @@ margin: 0px auto;
        </ul>
    </div>
 <br>
-<p class="introduce_title">++CLUB의 회원 멤버십 소개 </p>
+<p class="introduce_title">++CLUB의 회원 멤버십 소개 </p> 
+
 <hr width="90%" color="green"><br>
- <div class="image_div">
+ <div class="image_div" >
  
 
 <img src="/club/resources/images/member1.png" style="width:30%;float:left;">
-<img src="/club/resources/images/member2.png" style="width:30%;float:left;margin:0 0 0 40px;">
-<img src="/club/resources/images/member3.png" style="width:30%;">
-
-</div>
+<img src="/club/resources/images/member2.png" style="width:30%;float:left;margin:0 0 0 10px;">
+<img src="/club/resources/images/member3.png" style="width:30%;margin:0 0 0 200px;">
 <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger teal lighten-3" href="#modal3">도움말</a>
+<div style="margin:0 auto;">
+  <a class="waves-effect waves-light btn modal-trigger teal lighten-3" href="#modal3">[도움말] 포인트 획득 방법</a>
+</div>
+</div>
+
 
   <!-- Modal Structure -->
   <div id="modal3" class="modal">
@@ -55,6 +58,9 @@ margin: 0px auto;
       <p> <i class="material-icons">add</i> 게시글에 댓글달기 <a href="#">[댓글달러 가기]</a></p>
       <p> <i class="material-icons">add</i> 등등</p>
       <p> <i class="material-icons">add</i> 등등</p>
+     <p> <i class="material-icons">add</i> 등등</p>
+     <p> <i class="material-icons">add</i> 등등</p>
+      
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">확인</a>
