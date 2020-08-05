@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
   
 <style>
 /*기본 레이아웃*/
@@ -175,77 +176,89 @@ input[type="submit"], input[type="button"]{
 	float:left;
 	}	
 }
+.card-text{
+	font-size: 1em;
+}
 </style>
 <div class="page-main-style">
 	<div class="menu">
-		<p>공지사항</p>
+		<p>클럽 관리</p>
 		<ul>
-		   <li class="tab"><a href="list.do">전체 공지사항</a></li>
-		   <li class="tab"><a href="list.do?keyfield=nt_title&keyword=%ED%81%B4%EB%9F%BD">클럽별 공지사항</a></li>
-		   <li class="tab"><a href="list.do?keyfield=nt_title&keyword=%ED%8C%8C%EC%9D%B4%ED%84%B0%ED%81%B4%EB%9F%BD">파이터클럽 공지사항</a></li>
+			<li class="tab"><a href="myClub.do">나의 참여 클럽</a></li>
+			<li class="tab"><a href="leaderClub.do">내가 개설한 클럽</a></li>
 	  	</ul>
 	</div>
 	<div class="page-content">
-		<h3>공지사항</h3>
-		<form id="search_form" action="list.do" method="get">
-			<ul class="search">
-				<li>
-					<select name="keyfield">
-						<option value="nt_title">제목</option>
-						<option value="nt_content">내용</option>
-						<option value="mem_id">작성자</option>
-					</select>
-				</li>
-				<li>
-					<input type="search" size="16" name="keyword" id="keyword" placeholder="Search">
-				</li>
-				<li>
-					<input type="submit" value="찾기" >
-				</li>
-			</ul>
-		</form>
-		<div class="write_button">
-			<%--관리자와 클럽장만 글쓰기 버튼이 활성화 됨 --%>
-			<c:if test="${user_auth == 3 || user_auth == 4}">
-				<input type="button" value="글쓰기" onclick="location.href='write.do'">
+		<div class="container">
+			<h6>현재 진행중인 클럽</h6>
+				<c:if test="${empty myValidClub }">
+				<div>현재 참여 중인 클럽이 없습니다.</div>
+				</c:if>
+			<div class="row">
+			<c:if test="${!empty myValidClub }">
+				<c:forEach var="validClub" items="${myValidClub}">
+				<!-- 카드 하나 코드  -->
+				<div class="col-sm-6 col-lg-6">
+					<p></p>
+					<div class="card">
+						<div class="card-header">${validClub.club_title}</div>
+						<c:if test="${
+							 fn:endsWith(validClub.filename, '.jpg') ||			 
+							 fn:endsWith(validClub.filename, '.JPG') ||			 
+							 fn:endsWith(validClub.filename, '.gif') ||			 
+							 fn:endsWith(validClub.filename, '.GIF') ||			 
+							 fn:endsWith(validClub.filename, '.png') ||			 
+							 fn:endsWith(validClub.filename, '.PNG')
+			 				}">
+						<img src="imageView.do?club_num=${validClub.club_num }" alt="" width="293px" height="172px" id="cardImg" />
+						</c:if>
+						<div class="card-body">
+							<h5 class="card-title">${validClub.club_title}</h5>
+							<p class="card-text">
+							시작:${validClub.club_start} | 종료:${validClub.club_end}<br>
+							주기:${validClub.club_interval } | 시간:${validClub.club_time }
+							</p>
+							<a href="#" class="btn #8bc34a light-green">More</a>
+						</div>
+					</div>
+				</div>
+				</c:forEach>
 			</c:if>
-		</div>	
-		<c:if test="${count == 0}">
-			<table class="notice_list">
-				<tr style="border-bottom:1px solid #000">
-					<th>번호</th>
-					<th width="250">제목</th>
-					<th>작성자</th>
-					<th>등록일</th>
-					<th>조회수</th>
-				</tr>
-				<tr>
-					<td colspan="5" class="result-display">등록된 게시물이 없습니다.</td>
-				</tr>
-			</table>
-		</c:if>
-		<c:if test="${count > 0}">
-		<table class="notice_list">
-			<tr style="border-bottom:1px solid #000">
-				<th>번호</th>
-				<th width="250">제목</th>
-				<th>작성자</th>
-				<th>등록일</th>
-				<th>조회수</th>
-			</tr>
-			<c:forEach var="notice" items="${list}">
-				<tr>
-					<td>${notice.nt_num}</td>
-					<td><div class="limit"><a href="detail.do?nt_num=${notice.nt_num}">${notice.nt_title}</a></div></td>
-					<td>${notice.mem_id}</td>
-					<td>${notice.nt_datetime}</td>
-					<td>${notice.nt_hit}</td>
-				</tr>
-			</c:forEach>
-		</table>
-			<div class="align-center">${pagingHtml}</div>	
-			<br>
-		</c:if>
+			</div>
+		</div>
 	</div>	
 	<br class="end">
 </div>
+
+<%-- <h6>현재 진행 중인 클럽</h6>
+<c:if test="${empty myValidClub }">
+<div>현재 참여 중인 클럽이 없습니다.</div>
+</c:if>
+<c:if test="${!empty myValidClub }">
+<c:forEach var="validClub" items="${myValidClub}">
+	<ul>
+		<li>${validClub.club_num}</li>
+		<li>${validClub.club_title}</li>
+		<li>${validClub.club_start}</li>
+		<li>${validClub.club_end}</li>
+		<li>${validClub.club_interval }</li>
+		<li>${validClub.club_time }</li>
+	</ul>
+</c:forEach>
+</c:if>
+<h6>종료된 클럽</h6>
+<c:if test="${empty myPastClub }">
+<div>활동이 종료된 클럽이 없습니다.</div>
+</c:if>
+<c:if test="${!empty myPastClub }">
+<c:forEach var="pastClub" items="${myPastClub}">
+	<ul>
+		<li>${pastClub.club_num}</li>
+		<li>${pastClub.club_title}</li>
+		<li>${pastClub.club_start}</li>
+		<li>${pastClub.club_end}</li>
+		<li>${pastClub.club_interval }</li>
+		<li>${pastClub.club_time }</li>
+	</ul>
+</c:forEach>
+</c:if> --%>

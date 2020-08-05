@@ -23,7 +23,16 @@ public class NoticeVO {
 	private int nt_hit;
 	private int mem_num;
 	private String mem_id;
-	
+	private int mem_auth;
+	   
+	public int getMem_auth() {
+		return mem_auth;
+	}
+
+	public void setMem_auth(int mem_auth) {
+		this.mem_auth = mem_auth;
+	}
+
 	public void setUpload(MultipartFile upload) throws IOException {
 		this.upload = upload;
 		//byte[]로 변환
@@ -119,8 +128,7 @@ public class NoticeVO {
 		return "NoticeVO [nt_num=" + nt_num + ", nt_title=" + nt_title + ", nt_content=" + nt_content + ", upload="
 				+ upload + ", nt_imgname=" + nt_imgname + ", upload2=" + upload2 + ", nt_filename=" + nt_filename
 				+ ", nt_datetime=" + nt_datetime + ", nt_hit=" + nt_hit + ", mem_num=" + mem_num + ", mem_id=" + mem_id
-				+ "]";
+				+ ", mem_auth=" + mem_auth + "]";
 	}
-	
 
 }

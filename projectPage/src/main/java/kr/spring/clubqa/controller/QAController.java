@@ -23,7 +23,7 @@ import kr.spring.clubqa.domain.ClubQAVO;
 import kr.spring.clubqa.service.ClubQAService;
 import kr.spring.util.PagingUtil;
 
-//asdf1234
+//12/3/12321321//////////////////////////////
 @Controller
 public class QAController {
 	private Logger log = Logger.getLogger(this.getClass());
@@ -171,6 +171,21 @@ public class QAController {
 	public String QAreport_write() {
 		return "qa1_1_write";
 	}
+	
+	//글 삭제
+		@RequestMapping("/ClubQA/QAlist/QAlist_delete.do")
+		public String submit(@RequestParam("num") int num) {
+			
+			//로그 표시
+			if(log.isDebugEnabled()) {
+				log.debug("<<num>> : " + num);
+			}
+			
+			//글 삭제
+			clubqaService.delete(num);
+			
+			return "redirect:/ClubQA/QAlist/QAlist.do";
+		}
 	
 	
 	
