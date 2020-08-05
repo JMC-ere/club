@@ -34,7 +34,7 @@ div.manage_club_detail{
 }
 
 div.manage_club_list{
- float:left;
+ display: block; margin: 0px auto;  width:75%;
 }
 
 div.manage_club_img{
