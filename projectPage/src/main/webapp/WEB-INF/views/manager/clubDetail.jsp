@@ -40,41 +40,39 @@ margin: 0px auto; width:50%;
 				  fn:endsWith(manageClub.filename,'.GIF')}">
 <div class="manage_club_img">
 	<img src="imageView1.do?num=${manageClub.club_num}">
+	
 </div>	
 </c:if>
    
    
-   <div class="manage_club_list">
-   <label>제목</label><br>
-	${manageClub.club_title}
-	<hr width="50%" align="left">
+   <div class="club_detail_list" style="margin:0 0 0 30px;">
+   <label>제목</label><br> 
+   ${manageClub.club_title}
+   <hr width="400px">
 	<label>작성자 ID</label><br>
 	${manageClub.mem_id}
-	<hr width="50%" align="left">	
+	<hr width="100%">
 	<label>클럽이름</label><br>
 	${manageClub.club_name}
-	<hr width="50%" align="left">
+	<hr width="100%">
 	<label>클럽 시작 날짜</label><br>
 	${manageClub.club_start}
-	<hr width="50%" align="left">
+	<hr width="100%">
 	<label>클럽 모임 간격</label><br>
 	${manageClub.club_interval}
-	<hr width="50%" align="left">
+	<hr width="100%">
 	<label>클럽 종료일</label><br>
 	${manageClub.club_end}
-	<hr width="50%" align="left">
+	<hr width="100%">
 	<label>상세내용</label><br>
 	${manageClub.club_detail}
-	<hr width="50%" align="left">
-</div>
+	<hr width="100%">
 
 </div>
 
-
+	<!-- 승인상태 선택 -->
 <form action="status_change.do" method="post">
 <input type="hidden" name="num" value="${manageClub.club_num}" >
-
- 
  <div class="approve_status_choice">
  <label> 승인 상태 선택</label>
   <c:if test="${manageClub.club_state == 1}">
@@ -101,12 +99,13 @@ margin: 0px auto; width:50%;
   </select>
   </c:if>
   <button class="btn waves-effect waves-light" type="submit" name="action">완료</button>
+  <a class="waves-effect waves-light btn" href="boardclubmodify.do?club_num=${manageClub.club_num}">글 수정하기</a>
   </div>
-  
 </form>
+<!-- 승인상태 선택 끝-->
 
+  </div>
 
-  
 <script>
 
   document.addEventListener('DOMContentLoaded', function() {
