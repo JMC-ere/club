@@ -32,6 +32,7 @@ margin: 0px auto; width:50%;
 <div class="col s12 m8 offset-m2 l6 offset-l3" style="width:95%;margin:0 0 40px 40px;">
 <div class="row valign-wrapper">
 			<div class="col s2">
+			
 			<c:if test="${
 							 fn:endsWith(manageClub.filename, '.jpg') ||			 
 							 fn:endsWith(manageClub.filename, '.JPG') ||			 
@@ -41,6 +42,10 @@ margin: 0px auto; width:50%;
 							 fn:endsWith(manageClub.filename, '.PNG')
 			 				}">
 				<img src="imageView1.do?num=${manageClub.club_num}" class="responsive-img">	
+			</c:if>
+			<c:if test="${manageClub.filename==null}">
+			<img src="/club/resources/images/no_image.png" width="50px"> 
+			<p style="text-align:center;color:#CCCCCC">등록된 이미지가 없습니다.</p>
 			</c:if>
 			
 			</div>
