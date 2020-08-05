@@ -205,7 +205,9 @@ input[type="submit"], input[type="button"]{
 			</ul>
 		</form>
 		<div class="write_button">
-			<input type="button" value="글쓰기" onclick="location.href='write.do'">
+			<c:if test="${!empty user_num}">
+				<input type="button" value="글쓰기" onclick="location.href='write.do'">
+			</c:if>
 		</div>	
 		<c:if test="${count == 0}">
 			<table class="notice_list">

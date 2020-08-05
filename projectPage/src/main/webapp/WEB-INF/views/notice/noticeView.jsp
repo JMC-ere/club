@@ -204,12 +204,10 @@ pre{
 		<hr size="1" width="100%">
 		<div class="align-center">
 			<%--글 수정 및 삭제를 하려면 로그인을 한 후, 로그인 아이디와 작성자 아이디가 일치해야 함 --%>
-	<%-- 		<c:if test="${!empty user_id && user_id == notice.id}">
+	 		<c:if test="${!empty user_num && user_num == notice.mem_num}">
 				<input type="button" value="수정" onclick="location.href='update.do?nt_num=${notice.nt_num}'">
 				<input type="button" value="삭제" onclick="location.href='delete.do?nt_num=${notice.nt_num}'">
-			</c:if> --%>
-			<input type="button" value="수정" onclick="location.href='update.do?nt_num=${notice.nt_num}'">
-			<input type="button" value="삭제" onclick="location.href='delete.do?nt_num=${notice.nt_num}'">
+			</c:if>
 			<input type="button" value="목록" onclick="location.href='list.do'">
 		</div>
 	</div>	
