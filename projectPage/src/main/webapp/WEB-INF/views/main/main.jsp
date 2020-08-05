@@ -68,8 +68,7 @@ p {
 			<div class="card">
 				<div class="card-header">${club.club_genre}</div>
 				<img
-					src="imageView.do?club_num=${club.club_num }"
-					alt="" width="293px" height="172px" id="cardImg" />
+					src="imageView.do?club_num=${club.club_num }" width="400px" height="172px" id="cardImg" class="responsive-img center"/>
 				<div class="card-body">
 					<h5 class="card-title">${club.club_name}</h5>
 					<p class="card-text">${club.club_interval}</p>
