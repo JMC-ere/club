@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
+<!-- 222123 -->
 <form action="QA1_1_list.do" method="get">
 	<div class="QA_main">
 		<!-- QA 페이지 입장 메인 select -->
@@ -15,7 +17,7 @@
 						href="${pageContext.request.contextPath}/ClubQA/QAlist/QAlist.do">건의 / 신고 
 							게시판</a></li>
 					<li><a
-						href="#">질문 게시판</a></li>
+						href="${pageContext.request.contextPath}/ClubQA/QA1_1/QA1_1_list.do">질문 게시판</a></li>
 				</ul>
 			</div>
 		</div>
@@ -24,7 +26,7 @@
 		<div>
 		<div class="QAbody">
 			<div class="QAbody_header">
-			<div class="QAlist_main_header"><h5>질문 게시판</h5></div>
+			<div class="QAlist_main_header"><h5>건의 / 신고 게시판</h5></div>
 				<c:if test="${count == 0}">
 				<div class="qa_display">등록된 게시물이 없습니다</div>
 				</c:if>
@@ -40,8 +42,15 @@
 					</tr>
 					<c:forEach var="clubqa" items="${list}">
 					<tr style="font-size: 0.9rem;">
-						<td class="li_class" style="text-align: center;">${clubqa.qa_num}</td>
-						<td><a href="QAlist_detail.do?num=${clubqa.qa_num}">${clubqa.qa_title}</a></td>
+						<td class="li_class" id="clubqa_num" style="text-align: center;">${clubqa.qa_num}</td>
+						<td>
+							<a <c:if test="${ clubqa.qa_secret_key != null }">class="clubqa_title"</c:if> href="QAlist_detail.do?num=${clubqa.qa_num}" data-p="${clubqa.qa_secret_key}">
+						
+							${clubqa.qa_title}
+							<c:if test="${ clubqa.qa_secret_key != null }">
+							<img src="../../resources/images/secret_lock.png">
+							</c:if>
+						</a></td>
 						<td class="li_class">${clubqa.mem_id}</td>
 						<td class="li_class" style="text-align: center;">${clubqa.qa_datetime}</td>
 						<td class="li_class" style="text-align: center;">
@@ -70,11 +79,31 @@
 		</div>
 		</div>
 	</div>
-	<div class="talk_logo">
-		
-	</div>
 
 </form>
+
+<script>
+
+$(function(){
+		$('.clubqa_title').click(function(){
+			var qa_secret_key = $(this).attr('data-p');
+			var test = prompt("비밀글입니다. 비밀번호를 입력하세요", "");
+			if(!test) {
+				return false;
+			}	
+			if(test.toLowerCase() == qa_secret_key) {
+				alert('비밀번호가 맞았습니다!');
+			} else {
+				alert('비밀번호가 맞지 않습니다');
+				return false;
+			}
+				
+			
+			
+	});		
+	
+});
+</script>
 
 
 <!-- 카카오톡 톡상담 API -->

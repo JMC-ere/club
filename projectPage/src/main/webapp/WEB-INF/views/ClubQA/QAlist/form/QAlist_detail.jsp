@@ -91,7 +91,7 @@
 			<input type="button" value="수정" class="btn"
 				onclick="location.href='QAlist_update.do?num=${clubqa.qa_num}'">
 			<input type="button" value="삭제" class="btn"
-				onclick="location.href='delete.do?num=${clubqa.qa_num}'">
+				onclick="location.href='QAlist_delete.do?num=${clubqa.qa_num}'">
 		</c:if>
 		<input type="button" class="btn" value="목록" onclick="location.href='QAlist.do'">
 	</div>
