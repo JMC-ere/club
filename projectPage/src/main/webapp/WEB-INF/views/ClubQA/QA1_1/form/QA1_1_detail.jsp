@@ -13,25 +13,25 @@
 	commandName="clubQAVO">
 	<div class="QAlist_detail">
 		<div class="QAlist_detail_header">
-			<h4>${clubqa.qa_title}</h4>
+			<h4>${clubqa.qa1_1title}</h4>
 		</div>
 		<table class="QAlist_detail_table" frame="void">
 			<tr>
 				<th>작성자</th>
 				<td width="250">${clubqa.mem_id}</td>
 				<th style="border-left: thin solid gray;">등록일</th>
-				<td>${clubqa.qa_datetime}</td>
+				<td>${clubqa.qa1_1datetime}</td>
 			</tr>
 			<tr>
 				<th>조회수</th>
-				<td>${clubqa.qa_hit}</td>
+				<td>${clubqa.qa1_1hit}</td>
 				<th style="border-left: thin solid gray;">답변 여부</th>
 				<td>
 				${clubqa.re_cnt}
 				</td>
 			</tr>
 			<tr class="QA_content">
-				<td colspan="4" height="200">${clubqa.qa_content}</td>
+				<td colspan="4" height="200">${clubqa.qa1_1content}</td>
 			</tr>
 		</table>
 		
@@ -47,7 +47,7 @@
 	<span id="reply_title">댓글 달기</span>
 	<div class="reply_header"></div>
 	<form id="re_form" class="re_form">
-		<input type="hidden" name="qa_num" value="${clubqa.qa_num}"
+		<input type="hidden" name="qa_num" value="${clubqa.qa1_1num}"
 			id="qa_num"> <input type="hidden" name="mem_num"
 			value="${user_num}" id="mem_num"> <input type="hidden"
 			name="mem_id" value="${user_id}" id="mem_id">
@@ -82,9 +82,9 @@
 	                로그인 아이디와 작성자 아이디가 일치해야 함. --%>
 		<c:if test="${!empty user_id && user_id == clubqa.mem_id}">
 			<input type="button" value="수정" class="btn"
-				onclick="location.href='QA1_1_update.do?num=${clubqa.qa_num}'">
+				onclick="location.href='QA1_1_update.do?num=${clubqa.qa1_1num}'">
 			<input type="button" value="삭제" class="btn"
-				onclick="location.href='QA1_1_delete.do?num=${clubqa.qa_num}'">
+				onclick="location.href='QA1_1_delete.do?num=${clubqa.qa1_1num}'">
 		</c:if>
 		<input type="button" class="btn" value="목록" onclick="location.href='QAlist.do'">
 	</div>

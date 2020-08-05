@@ -8,7 +8,7 @@
 	
 		<div class="write_main">
 			<form:form action="QA1_1_update.do" enctype="multipart/form-data" commandName="clubQAVO">
-				<form:hidden path="qa_num"/>
+				<form:hidden path="qa1_1num"/>
 				<div class="writeform_header">
 					글 수정
 				</div>

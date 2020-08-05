@@ -25,7 +25,7 @@ public interface ClubQAService {
 	//부모글 삭제시 댓글이 존재하면 부모글 삭제전 댓글 삭제
 	public void deleteReplyByBoardNum(Integer qa_num);
 	
-	public List<ClubQAVO> select1_1List(Map<String, Object> map);
+	public List<ClubQA1_1VO> select1_1List(Map<String, Object> map);
 	public int select1_1RowCount(Map<String, Object> map);
 	public void insert1_1(ClubQA1_1VO clubqa1_1);
 	public ClubQA1_1VO select1_1QABoard(Integer num);

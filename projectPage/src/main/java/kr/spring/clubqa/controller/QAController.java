@@ -38,6 +38,7 @@ public class QAController {
 	public ClubQAVO initCommand() {
 		return new ClubQAVO();
 	}
+	
 	//1
 	//건의 / 신고 게시판
 	@RequestMapping("/ClubQA/QAlist/QAlist.do")
@@ -209,77 +210,7 @@ public class QAController {
 		return "redirect:/ClubQA/QAlist/QAlist.do";
 	}
 
-	//질문 게시판 폼 호출
-	@RequestMapping("/ClubQA/QA1_1/QA1_1_list.do")
-	public ModelAndView qa1_1process(
-			@RequestParam(value="pageNum", defaultValue="1") int currentPage,
-			@RequestParam(value="keyfield", defaultValue="") String keyfield,
-			@RequestParam(value="keyword", defaultValue="") String keyword) {
-
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("keyfield", keyfield);
-		map.put("keyword", keyword);
-
-		int count = clubqaService.select1_1RowCount(map);
-
-		if(log.isDebugEnabled()) {
-			log.debug("<<count>> : " + count);
-		}
-
-		PagingUtil page = new PagingUtil(keyfield, keyword, currentPage, count, rowCount, pageCount, "QA1_1_list.do");
-		map.put("start", page.getStartCount());
-		map.put("end" , page.getEndCount());
-
-		List<ClubQAVO> list = null;
-		if(count > 0) {
-			list = clubqaService.select1_1List(map);
-		}
-
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("qa1_1_main");
-		mav.addObject("count", count);
-		mav.addObject("list", list);
-		mav.addObject("pagingHtml", page.getPagingHtml());
-
-
-		if(log.isDebugEnabled()) {
-			log.debug("<<list>> : " + list);
-		}
-
-		return mav;
-	}
-
-	//질문 글 쓰기 폼 호출
-	@RequestMapping(value="/ClubQA/QA1_1/QA1_1_write.do", method=RequestMethod.GET)
-	public String QAreport_write() {
-		return "qa1_1_write";
-	}
 	
-	//질문  글 쓰기 처리
-		@RequestMapping(value="/ClubQA/QA1_1/QA1_1_write.do", method=RequestMethod.POST)
-		public String submit1_1(@Valid ClubQA1_1VO clubqa1_1VO, BindingResult result,
-				HttpServletRequest request,
-				HttpSession session) {
-
-			if(log.isDebugEnabled()) {
-				log.debug("<<clubqaVO>> : " + clubqa1_1VO);
-			}
-
-			if(result.hasErrors()) {
-				return "qalist_write";
-			}
-
-			clubqa1_1VO.setMem_num((Integer)session.getAttribute("user_num"));
-			clubqa1_1VO.setMem_id((String)session.getAttribute("user_id"));
-
-
-
-			clubqaService.insert1_1(clubqa1_1VO);
-			
-			return "redirect:/ClubQA/QAlist/QA1_1_list.do";
-
-		}
-
 
 
 

@@ -5,23 +5,23 @@
 
 	
 		<div class="write_main">
-			<form:form action="QA1_1_write.do" enctype="multipart/form-data" commandName="clubQAVO">
+			<form:form action="QA1_1_write.do" enctype="multipart/form-data" commandName="clubQA1_1VO">
 				<div class="writeform_header">
-					문의 글 작성
+					질문 글 작성
 				</div>
 				<table id="qaWrite" class="qaWrite">
 					<tbody>
 						<tr>
 							<th scope="row"><label for="qa_title">제목</label></th>
-							<td class="qa_title"><form:input path="qa_title" class="qa_title"/></td>
+							<td class="qa_title"><form:input path="qa1_1title" class="qa_title"/></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="qa_content">내용</label></th>
-							<td class="qa_content"><form:textarea class="qa_content" path="qa_content" rows="10" cols="100%" placeholder=" 내용을 입력해주세요" style="resize: vertical; overflow: auto;"/></td>
+							<td class="qa_content"><form:textarea class="qa_content" path="qa1_1content" rows="10" cols="100%" placeholder=" 내용을 입력해주세요" style="resize: vertical; overflow: auto;"/></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="qa_secret"><input type="checkbox" name="qa_secret" id="qa_secret"><span>비밀글</span></label></th>
-							<td class="secret_tf"><form:input path="qa_secret_key" maxlength="4" placeholder="비밀번호 4자리를 입력해주세요"/></td>
+							<td class="secret_tf"><form:input path="qa1_1secret_key" maxlength="4" placeholder="비밀번호 4자리를 입력해주세요"/></td>
 						</tr>
 						<!-- 
 						<tr>
@@ -33,7 +33,7 @@
 				</table>
 				<div class="btnSet">
 					<button type="submit" class="btnSubmit btn">작성</button>
-					<button type="button" class="btnBack btn" onclick="location.href='${pageContext.request.contextPath}/ClubQA/QAlist/QAlist.do'">목록</button>
+					<button type="button" class="btnBack btn" onclick="location.href='${pageContext.request.contextPath}/ClubQA/QA1_1/QA1_1_list.do'">목록</button>
 				</div>
 			</form:form>
 		</div>

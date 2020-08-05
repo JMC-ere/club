@@ -96,15 +96,9 @@ public class ClubQAServiceImpl implements ClubQAService{
 	
 	
 	
-	
 	@Override
-	public List<ClubQAVO> select1_1List(Map<String, Object> map) {
+	public List<ClubQA1_1VO> select1_1List(Map<String, Object> map) {
 		return clubqaMapper.select1_1List(map);
-	}
-
-	@Override
-	public int select1_1RowCount(Map<String, Object> map) {
-		return clubqaMapper.select1_1RowCount(map);
 	}
 
 	@Override
@@ -134,5 +128,10 @@ public class ClubQAServiceImpl implements ClubQAService{
 	public void delete1_1(Integer num) {
 		clubqaMapper.delete1_1(num);
 		
+	}
+
+	@Override
+	public int select1_1RowCount(Map<String, Object> map) {
+		return clubqaMapper.select1_1RowCount(map);
 	}
 }

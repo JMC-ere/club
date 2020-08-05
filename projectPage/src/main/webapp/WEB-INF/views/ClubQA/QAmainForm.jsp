@@ -16,7 +16,7 @@
 						href="${pageContext.request.contextPath}/ClubQA/QAlist/QAlist.do">건의 / 신고 
 							게시판</a></li>
 					<li><a
-						href="">질문 게시판</a></li>
+						href="${pageContext.request.contextPath}/ClubQA/QA1_1/QA1_1_list.do">질문 게시판</a></li>
 				</ul>
 			</div>
 

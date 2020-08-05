@@ -26,7 +26,7 @@
 		<div>
 		<div class="QAbody">
 			<div class="QAbody_header">
-			<div class="QAlist_main_header"><h5>건의 / 신고 게시판</h5></div>
+			<div class="QAlist_main_header"><h5>질문 게시판</h5></div>
 				<c:if test="${count == 0}">
 				<div class="qa_display">등록된 게시물이 없습니다</div>
 				</c:if>
@@ -42,17 +42,17 @@
 					</tr>
 					<c:forEach var="clubqa" items="${list}">
 					<tr style="font-size: 0.9rem;">
-						<td class="li_class" id="clubqa_num" style="text-align: center;">${clubqa.qa_num}</td>
+						<td class="li_class" id="clubqa_num" style="text-align: center;">${clubqa.qa1_1num}</td>
 						<td>
-							<a <c:if test="${ clubqa.qa_secret_key != null }">class="clubqa_title"</c:if> href="QAlist_detail.do?num=${clubqa.qa_num}" data-p="${clubqa.qa_secret_key}">
+							<a <c:if test="${ clubqa.qa1_1secret_key != null }">class="clubqa_title"</c:if> href="QA1_1_detail.do?num=${clubqa.qa1_1num}" data-p="${clubqa.qa1_1secret_key}">
 						
-							${clubqa.qa_title}
-							<c:if test="${ clubqa.qa_secret_key != null }">
+							${clubqa.qa1_1title}
+							<c:if test="${ clubqa.qa1_1secret_key != null }">
 							<img src="../../resources/images/secret_lock.png">
 							</c:if>
 						</a></td>
 						<td class="li_class">${clubqa.mem_id}</td>
-						<td class="li_class" style="text-align: center;">${clubqa.qa_datetime}</td>
+						<td class="li_class" style="text-align: center;">${clubqa.qa1_1datetime}</td>
 						<td class="li_class" style="text-align: center;">
 						<c:choose> 
 							<c:when test="${ clubqa.re_cnt > 0 }">
@@ -63,7 +63,7 @@
 							</c:when>
 						</c:choose>
 						</td>
-						<td class="li_class" style="text-align: center;">${clubqa.qa_hit}</td>
+						<td class="li_class" style="text-align: center;">${clubqa.qa1_1hit}</td>
 					</tr>
 					</c:forEach>
 					<!-- 테스트 td -->
@@ -71,7 +71,7 @@
 				</c:if>
 				<div class="align-center">${pagingHtml}</div>	
 				<div class="btnSet" style='float: right;'>
-				<input type="button" class="btn" onclick="location.href='${pageContext.request.contextPath}/ClubQA/QAlist/QAlist_write.do'" value="글쓰기" >
+				<input type="button" class="btn" onclick="location.href='${pageContext.request.contextPath}/ClubQA/QA1_1/QA1_1_write.do'" value="글쓰기" >
 				</div>
 				<h1><br></h1>
 			</div>

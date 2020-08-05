@@ -123,10 +123,10 @@
 		      FROM (SELECT
 		               *
 		            FROM qa1_1board b 
-		            LEFT OUTER JOIN (SELECT qa_num,COUNT(*) re_cnt
+		            LEFT OUTER JOIN (SELECT qa1_1num,COUNT(*) re_cnt
  	                                                FROM qa_reply
- 	                                                GROUP BY qa_num)r
- 	                ON b.qa1_1num = r.qa_num 
+ 	                                                GROUP BY qa1_1num)r
+ 	                ON b.qa1_1num = r.qa1_1num 
 		            JOIN member m 
 		            ON b.mem_num = m.mem_num
 		            <where>
@@ -145,7 +145,7 @@
 		WHERE rnum >= #{start} AND rnum <= #{end}
 		]]>            
 	</select>
-	
+
 </mapper>
 
 
