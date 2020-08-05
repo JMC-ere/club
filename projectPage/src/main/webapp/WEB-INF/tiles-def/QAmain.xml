@@ -23,6 +23,13 @@
    		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
     </definition>
     
+     <definition name="qalist_update" extends="main">
+   		<put-attribute name="title" value="QA 질문 글수정"/>
+   		<put-attribute name="body" value="/WEB-INF/views/ClubQA/QAlist/form/QAlist_update.jsp"/>
+    </definition>
+    
+    
+    
     <definition name="qa1_1_main" extends="main">
    		<put-attribute name="title" value="QA 신고 게시판"/>
    		<put-attribute name="body" value="/WEB-INF/views/ClubQA/QA1_1/form/QA1_1_main.jsp"/>

@@ -13,13 +13,8 @@ public class PostVO {
 	private Date post_date;
 	private int post_hit;
 	private String post_imgname;
+	private String post_category;
 	
-	@Override
-	public String toString() {
-		return "PostVO [post_num=" + post_num + ", mem_num=" + mem_num + ", club_num=" + club_num + ", post_title="
-				+ post_title + ", post_board=" + post_board + ", post_img=" + post_img + ", post_date=" + post_date
-				+ ", post_hit=" + post_hit + ", post_imgname=" + post_imgname + "]";
-	}
 	
 	
 	public int getPost_num() {
@@ -76,6 +71,22 @@ public class PostVO {
 	public void setPost_imgname(String post_imgname) {
 		this.post_imgname = post_imgname;
 	}
+	public String getPost_category() {
+		return post_category;
+	}
+	public void setPost_category(String post_category) {
+		this.post_category = post_category;
+	}
+	
+	@Override
+	public String toString() {
+		return "PostVO [post_num=" + post_num + ", mem_num=" + mem_num + ", club_num=" + club_num + ", post_title="
+				+ post_title + ", post_board=" + post_board + ", post_img=" + post_img + ", post_date=" + post_date
+				+ ", post_hit=" + post_hit + ", post_imgname=" + post_imgname + ", post_category=" + post_category
+				+ "]";
+	}
+	
+	
 	
 }
 	

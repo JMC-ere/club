@@ -4,7 +4,7 @@
 
 <style>
 .page-main-style {
-	width: 80%;
+	width: 85%;
 	margin: 0 auto;
 }
 
@@ -12,19 +12,21 @@
 	text-align: center;
 }
 
-.search {
-	overflow: auto;
-	list-style-type: none;
-}
-
-.search li {
-	float: right;
-	margin: 0 auto;
+.center { 
+	text-aling:center;
+	margin:0 auto;
+	border:20px;
+	padding:10px;
 }
 </style>
 
+<div class=center>
+	<h2>후기 게시판입니다.</h2>
+</div>
 
-<div>
+
+
+<div class="page-main-style">
 	<ul class="nav nav-pills nav-fill">
 		<li class="nav-item"><a class="nav-link active" href="post.do">참여
 				게시판</a></li>
@@ -36,10 +38,9 @@
 </div>
 
 <div class=page-main-style>
-	<form action="postlist.do" method="get">
 
 		<div>
-			<c:if test="${!empty user_id}|${!empty club_name}">
+			<c:if test="${!empty user_id}">
 				<input type="button" value="글쓰기"
 					onclick="location.href='postwrite.do'">
 			</c:if>
@@ -54,26 +55,37 @@
 	
 		<c:if test="${count > 0 }">
 			<table class="highlight">
-				<thead>
-					<tr>
+	<!-- 				<thead>
+				<tr>
 						<th>번호</th>
 						<th>제목</th>
 						<th>작성자</th>
 						<th>등록일</th>
 						<th>조회수</th>
 					</tr>
-				</thead>
+ 				</thead>-->
 				<tbody>
-
-					
-					
-  						<c:forEach var="post" items="${list}">
+					<c:forEach var="post" items="${list}">
 						<tr>
-							<td>${post.post_num}</td>
-							<td><a href="postdetail.do?num=${post.post_num}">${post.post_title}</a></td>
-							<td>${post.mem_num}</td>
-							<td>${post.post_date}</td>
-							<td>${post.post_hit}</td>
+							<td rowspan="4" width=20%>
+							${post.post_img}
+							</td>
+						</tr>
+						<tr>
+							<td  colspan="3"><a href="postdetail.do?num=${post.post_num}">${post.post_title}</a></td>
+							</tr>
+						<tr>
+							<td colspan="3">${post.mem_num}</td>
+						</tr>
+						<tr>
+							<td width=30%>
+							${post.post_date}
+							</td>
+							<td width=30%>
+							${post.post_hit}
+							</td>
+							<td width>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -81,24 +93,29 @@
 		</c:if>
 
 
+		
+	<form action="post.do" method="get">
 		<ul class="search">
-			<li><select name="keyfield">
+			<li>
+				<select name="keyfield">
 					<option value="post_title">제목</option>
 					<option value="post_board">내용</option>
-					<option value="member_id">작성자</option>
-			</select></li>
+					<option value="">id</option>
+				</select>
+			</li>		
 			<li>
-				<div class=align-center>
-					<button type="submit" class="btn btn-success">검색</button>
-				</div>
+				<input type="search" size="16" name="keyword" id="keyword"> 
 			</li>
-			<li><input type="search" size="16" name="keyword" id="keyword"></li>
-
+			<li>
+				<input type="submit" value="찾기" style="float:right;">
+			</li>
 		</ul>
+
 		<div class=align-center>${pagingHtml}</div>
 
 	</form>
 </div>
+
 
 
 <link rel="stylesheet"

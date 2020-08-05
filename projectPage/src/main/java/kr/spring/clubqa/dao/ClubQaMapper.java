@@ -21,6 +21,7 @@ public interface ClubQaMapper {
 	@Update("UPDATE qa_board SET qa_hit=qa_hit+1 WHERE qa_num=#{qa_num}")
 	public void updateQAhit(Integer num);
 	public void update(ClubQAVO clubqa);
+	@Delete("DELETE FROM qa_board WHERE qa_num=#{qa_num}")
 	public void delete(Integer num);
 	
 
