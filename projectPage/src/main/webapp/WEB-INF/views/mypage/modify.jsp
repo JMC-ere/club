@@ -9,7 +9,7 @@
 	}
 </style>
 <div class="row" id="re">
-<form:form path="update.do" commandName="memberVO" enctype="multipart/form-data" class="col s12">
+<form:form path="update.do" commandName="memberVO" enctype="multipart/form-data" class="col s12" id="update_form">
 	<form:hidden path="mem_num"/>
 	<h4 class="center">정보 수정</h4>
 	<ul>
@@ -47,3 +47,19 @@
 	</div>	
 </form:form>
 </div>
+<script type="text/javascript">
+	$('#update_form').submit(function(){
+		if($('#detail_nick').val()==''){
+			alert('닉네임을 입력하세요.');
+			return;
+		}
+		if($('#detail_cell').val()==''){
+			alert('전화번호를 입력하세요.');
+			return;
+		}
+		if($('#detail_passwd').val()==''){
+			alert('비밀번호를 입력하세요.');
+			return;
+		}
+	});
+</script>

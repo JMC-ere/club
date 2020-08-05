@@ -124,8 +124,12 @@ public class MemberController {
 	//회원 정보 수정
 	@RequestMapping(value="/mypage/update.do", method=RequestMethod.POST)
 	public String update(MemberVO memberVO, HttpServletRequest request) {
+		try {
+			memberService.update(memberVO);
+		}catch(Exception e) {
+			return "modify";
+		}
 		
-		memberService.update(memberVO);
 		
 		return "redirect:/mypage/myPage.do";
 		
