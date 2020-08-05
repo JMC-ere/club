@@ -42,7 +42,7 @@
 <div class="row center" id="mypagelocal" style="width:100%">
 	<div class="card-panel #b2dfdb teal lighten-4" style="width:100%" id="mypagelocal-center">
 		<h2 class="center">[모임 장소 찾기]</h2>
-		모임진행장소를 찾기 어렵다면 지도에 카테고리를 선택하시고 마음에 드는 장소를 찾아보세요!
+		모임진행장소를 찾기 어렵다면 지도에 카테고리를 선택하시고 마음에 드는 장소를 찾아보세요!!
 	</div>
 </div>
 <div class="map_wrap">
