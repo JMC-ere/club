@@ -13,12 +13,11 @@
 	}
 </style>
 <div class="row" id="openform">
-	<h4>클럽 개설 제안 수정</h4>
-	
 	<!-- !!!!!!!!!!관리자!!!!!!!!!!!!!! -->
 	<c:if test="${user_auth ==4}">
 	<form:form class="col s12" action="boardclubmodify.do" enctype="multipart/form-data" commandName="clubVO">
 		<form:hidden path="club_num"/>
+		<h4>클럽 개설 제안 수정</h4>
 		<ul>
 			<li>
 				<label>클럽 승인 여부</label><p>
@@ -97,6 +96,7 @@
 <c:if test="${user_auth == 3}">
 	<form:form class="col s12" action="boardclubmodify2.do" enctype="multipart/form-data" commandName="clubVO">
 		<form:hidden path="club_num"/>
+		<h4>클럽 개설 제안 수정</h4>
 		<ul>
 			<li>
 				<label for="club_title">제목</label>
