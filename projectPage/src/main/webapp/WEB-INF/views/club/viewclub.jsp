@@ -17,7 +17,7 @@
 			<div class="card">
 				<div class="card-header">${club.club_genre}</div>
 				<img
-					src="https://cdn.pixabay.com/photo/2017/04/13/14/15/mcdonalds-2227657_960_720.jpg"
+					src="imageView.do?club_num=${club.club_num }"
 					alt="" width="293px" height="172px" id="cardImg" />
 				<div class="card-body">
 					<h5 class="card-title">${club.club_name}</h5>

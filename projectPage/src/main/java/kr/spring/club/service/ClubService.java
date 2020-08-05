@@ -13,4 +13,7 @@ public interface ClubService {
 	public void adminUpdate(ClubVO club);
 	public void update(ClubVO club);
 	public void delete(Integer club);
+	
+	public int listRowCount();
+	public List<ClubVO> mainList(Map<String,Object> map);
 }

@@ -19,4 +19,9 @@ public interface ClubMapper {
 	public void update(ClubVO club);
 	@Delete("DELETE FROM club WHERE club_num=#{club_num}")
 	public void delete(Integer club);
+	
+	@Select("SELECT COUNT (*) FROM club c JOIN member m ON c.mem_num=m.mem_num AND club_state = 2")
+	public int listRowCount();
+	@Select("SELECT * FROM (SELECT a.*, rownum rnum FROM (SELECT * FROM club c JOIN member m ON c.mem_num=m.mem_num ORDER BY c.club_num DESC) a) WHERE club_state = 2 AND rnum >=#{start} AND rnum <=#{end}")
+	public List<ClubVO> mainList(Map<String,Object> map);
 }

@@ -7,6 +7,8 @@
 		margin: 20px auto;
 	}  
 	
+	
+	
 	#boardclub-center{
 		text-align: center;
 	}
