@@ -54,7 +54,7 @@ margin:0 0 50px 0;
 			<option value="">전체보기</option>
 			<option value="id">회원 ID</option>
 			<option value="nick">회원 닉네임</option>
-			<option value="name">회원 이름</option>
+			<option value="name">회원 이름</option> 
 			 </optgroup>
 			 <optgroup label="회원 등급">
 			<option value="auth0">탈퇴회원</option>
