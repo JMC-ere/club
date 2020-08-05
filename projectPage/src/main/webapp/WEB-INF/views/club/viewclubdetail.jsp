@@ -63,15 +63,38 @@
 	</p>
 	<div class="center">
 		<c:if test="${user_auth == 4}">
-			<input type="button"
-				class="btn purple lighten-5 purple-text text-darken-4" value="삭제"
-				onclick="location.href='boardclubdelete.do?club_num=${club.club_num}'">
+			<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="삭제"
+				onclick="location.href='viewclubdelete.do?club_num=${club.club_num}'">
 		</c:if>
-		<input type="button"
-			class="btn purple lighten-5 purple-text text-darken-4" value="신청하기"
-			onclick=""> <input type="button"
-			class="btn purple lighten-5 purple-text text-darken-4" value="돌아가기"
-			onclick="location.href='viewclub.do'">
+		<button data-target="modal1" class="btn modal-trigger purple lighten-5 purple-text text-darken-4">신청하기</button>
+		<div id="modal1" class="modal">
+			<div class="modal-content">
+				<h4>클럽 참여 신청</h4>
+				<p><p>
+				<img src="https://cdn.pixabay.com/photo/2017/11/24/10/43/admission-2974645_960_720.jpg"
+					class="responsive-img" width="500">
+				<p><b>[${club.club_name}]</b>클럽에 참여를 하시려면 하단의 신청하기 버튼을 눌러주세요!!<br>
+				신청하기 버튼을 누르시면 클럽장이 회원님의 연락처를 열람할 수 있습니다.<br>
+				이에 동의하시면 버튼을 눌러주세요.</p>
+			</div>
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">신청하기</a>
+			<a href="#" class="modal-close waves-effect waves-green btn-flat">닫기</a>
+		</div>
+		<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="돌아가기"
+				onclick="location.href='viewclub.do'">
 
 	</div>
 </div>
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+</script>
