@@ -46,13 +46,13 @@ public class ClubQAServiceImpl implements ClubQAService{
 
 	@Override
 	public void update(ClubQAVO clubqa) {
-		// TODO Auto-generated method stub
+		clubqaMapper.update(clubqa);
 		
 	}
 
 	@Override
 	public void delete(Integer num) {
-		// TODO Auto-generated method stub
+		clubqaMapper.delete(num);
 		
 	}
 
