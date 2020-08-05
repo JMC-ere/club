@@ -91,8 +91,11 @@ create table post (
 	post_title varchar2(30) not null,
 	post_board varchar2(2000) not null,
 	post_img blob,
+	post_imgname varchar2(200),
 	post_date date not null,
 	post_modify date not null,
+	post_category varchar2(50) not null,
+	post_hit number(20) not null,
 	constraint post_fk1 foreign key(mem_num) references member(mem_num),
 	constraint post_fk2 foreign key(club_num) references club(club_num) 
 );
