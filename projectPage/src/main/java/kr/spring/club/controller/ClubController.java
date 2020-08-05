@@ -24,7 +24,7 @@ import kr.spring.club.domain.ClubVO;
 import kr.spring.club.service.ClubService;
 import kr.spring.util.PagingUtil;
 
-//클럽현황
+//클럽현황111
 @Controller
 public class ClubController {
 	

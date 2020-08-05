@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.spring.clubmanage.domain.ClubManageVO;
 import kr.spring.clubmanage.service.ClubManageService;
-
+//kkkkkk
 @Controller
 public class ClubManageController {
 	private Logger log=Logger.getLogger(this.getClass());

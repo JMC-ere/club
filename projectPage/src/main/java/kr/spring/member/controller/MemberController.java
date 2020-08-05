@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.spring.member.domain.MemberVO;
 import kr.spring.member.service.MemberService;
 
-//회원 정보 컨트롤러
+//회원 정보입니다.
 @Controller
 public class MemberController {
 	
@@ -67,7 +67,7 @@ public class MemberController {
 		return "redirect:/main/main.do";
 	}
 	
-	//회원 정보
+	//회원 정보입네다 동무
 	@RequestMapping("/mypage/myPage.do")
 	public String detailProcess(HttpSession session, Model model) {
 		
