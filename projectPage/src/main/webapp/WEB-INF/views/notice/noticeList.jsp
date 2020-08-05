@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
   
 <style>
-/*기본 레이아웃*/
+/*   기본 레이아웃   */
 *{
     margin:0;
     padding:0;
@@ -205,7 +205,8 @@ input[type="submit"], input[type="button"]{
 			</ul>
 		</form>
 		<div class="write_button">
-			<c:if test="${!empty user_num}">
+			<%--관리자와 클럽장만 글쓰기 버튼이 활성화 됨 --%>
+			<c:if test="${user_auth == 3 || user_auth == 4}">
 				<input type="button" value="글쓰기" onclick="location.href='write.do'">
 			</c:if>
 		</div>	
