@@ -24,7 +24,7 @@ public class NoticeVO {
 	private int mem_num;
 	private String mem_id;
 	private int mem_auth;
-	
+	   
 	public int getMem_auth() {
 		return mem_auth;
 	}
