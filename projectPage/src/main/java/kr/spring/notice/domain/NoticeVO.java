@@ -60,7 +60,7 @@ public class NoticeVO {
 		return nt_title;
 	}
 	public void setNt_title(String nt_title) {
-		this.nt_title = nt_title;
+		this.nt_title = nt_title.trim();
 	}
 	public String getNt_content() {
 		return nt_content;
