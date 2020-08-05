@@ -8,7 +8,6 @@
 	}
 	#boardclub-center{
 		text-align: center;
-		
 	}
 </style>
 <!-- 테스트  -->
