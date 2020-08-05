@@ -1,22 +1,27 @@
 package kr.spring.postjoin.domain;
 
+import java.io.IOException;
 import java.sql.Date;
+import java.util.Arrays;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 public class PostVO {
 	
 	private int post_num;
 	private int mem_num;
 	private int club_num;
+	@NotEmpty
 	private String post_title;
+	@NotEmpty
 	private String post_board;
-	private String post_img;
+	private MultipartFile upload;
+	private byte[] post_img;
+	private String post_imgname;
 	private Date post_date;
 	private int post_hit;
-	private String post_imgname;
 	private String post_category;
-	
-	
-	
 	public int getPost_num() {
 		return post_num;
 	}
@@ -47,11 +52,29 @@ public class PostVO {
 	public void setPost_board(String post_board) {
 		this.post_board = post_board;
 	}
-	public String getPost_img() {
+	public MultipartFile getUpload() {
+		return upload;
+	}
+	public void setUpload(MultipartFile upload)throws IOException {
+		this.upload = upload;
+		
+		//byte[]로 변환
+		setPost_img(upload.getBytes());
+		//파일명 추출
+		setPost_imgname(upload.getOriginalFilename());
+		
+	}
+	public byte[] getPost_img() {
 		return post_img;
 	}
-	public void setPost_img(String post_img) {
+	public void setPost_img(byte[] post_img) {
 		this.post_img = post_img;
+	}
+	public String getPost_imgname() {
+		return post_imgname;
+	}
+	public void setPost_imgname(String post_imgname) {
+		this.post_imgname = post_imgname;
 	}
 	public Date getPost_date() {
 		return post_date;
@@ -65,33 +88,21 @@ public class PostVO {
 	public void setPost_hit(int post_hit) {
 		this.post_hit = post_hit;
 	}
-	public String getPost_imgname() {
-		return post_imgname;
-	}
-	public void setPost_imgname(String post_imgname) {
-		this.post_imgname = post_imgname;
-	}
 	public String getPost_category() {
 		return post_category;
 	}
 	public void setPost_category(String post_category) {
 		this.post_category = post_category;
 	}
-	
 	@Override
 	public String toString() {
 		return "PostVO [post_num=" + post_num + ", mem_num=" + mem_num + ", club_num=" + club_num + ", post_title="
-				+ post_title + ", post_board=" + post_board + ", post_img=" + post_img + ", post_date=" + post_date
-				+ ", post_hit=" + post_hit + ", post_imgname=" + post_imgname + ", post_category=" + post_category
-				+ "]";
+				+ post_title + ", post_board=" + post_board + ", upload=" + upload + ", post_img="
+				+ Arrays.toString(post_img) + ", post_imgname=" + post_imgname + ", post_date=" + post_date
+				+ ", post_hit=" + post_hit + ", post_category=" + post_category + "]";
 	}
-	
+
 	
 	
 }
-	
-	
-	
-	
-	
 	

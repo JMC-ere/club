@@ -198,10 +198,10 @@ public class PostController {
 	}
 	
 	//이미지 처리
-		@RequestMapping("/post/ImageView.do")
-		public ModelAndView viewImage(@RequestParam("num")int num) {
+		@RequestMapping("/post/imageView.do")
+		public ModelAndView viewImage(@RequestParam("post_num")int post_num) {
 			
-			PostVO post = postService.selectPost(num);
+			PostVO post = postService.selectPost(post_num);
 			
 			ModelAndView mav = new ModelAndView();
 			mav.setViewName("imageView");

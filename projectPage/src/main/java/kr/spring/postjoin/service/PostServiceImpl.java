@@ -40,21 +40,21 @@ public class PostServiceImpl implements PostService{
 
 
 	@Override
-	public PostVO selectPost(Integer num) {
-		return postMapper.selectPost(num);
+	public PostVO selectPost(Integer post_num) {
+		return postMapper.selectPost(post_num);
 	}
 
 
 	@Override
-	public void updatePostHit(Integer num) {
-		postMapper.updatePostHit(num);
+	public void updatePostHit(Integer post_num) {
+		postMapper.updatePostHit(post_num);
 		
 	}
 
 
 	@Override
-	public void deletePost(Integer num) {
-		postMapper.deletePost(num);
+	public void deletePost(Integer post_num) {
+		postMapper.deletePost(post_num);
 	}
 
 }

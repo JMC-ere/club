@@ -9,10 +9,10 @@ public interface PostService {
 	public List<PostVO> selectPostList(Map<String,Object> map);
 	public int selectRowCount(Map<String,Object> map);
 	public void insertPost(PostVO post);
-	public PostVO selectPost(Integer num);
-	public void updatePostHit(Integer num);
+	public PostVO selectPost(Integer post_num);
+	public void updatePostHit(Integer post_num);
 	public void updatePost(PostVO post);
-	public void deletePost(Integer num);
+	public void deletePost(Integer post_num);
 	
 
 }

@@ -8,31 +8,28 @@
  		SELECT COUNT(*) FROM post p JOIN member m 
  		ON p.mem_num = m.mem_num
  		<where>
- 			<if test="keyword != '' and keyfield == 'title'">
+ 			<if test="keyword != '' and keyfield == 'post_title'">
  				p.post_title LIKE '%' || #{keyword} || '%'
  			</if>
- 			<if test="keyword != '' and keyfield == 'id'">
+ 			<if test="keyword != '' and keyfield == 'mem_id'">
  				m.mem_id LIKE '%' || #{keyword} || '%'
  			</if>
- 			<if test="keyword != '' and keyfield == 'content'">
+ 			<if test="keyword != '' and keyfield == 'post_board'">
  				p.post_board LIKE '%' || #{keyword} || '%'
  			</if>
  		</where>
  	</select> 
  
- 	<select id="selectPostList" parameterType="map" resultType="PostVO">
- 		SELECT * FROM (
- 			SELECT a.*, rownum rnum FROM(
- 				SELECT * FROM post p JOIN member m 
- 					ON p.mem_num = m.mem_num 
+ 	<select id="selectPostList" parameterType="map" resultType="postVO">
+ 		SELECT * FROM (SELECT a.*,rownum rnum FROM(SELECT * FROM post p JOIN member m ON p.mem_num = m.mem_num 
  				<where>
-		 			<if test="keyword != '' and keyfield == 'title'">
+		 			<if test="keyword != '' and keyfield == 'post_title'">
 		 				p.post_title LIKE '%' || #{keyword} || '%'
 		 			</if>
-		 			<if test="keyword != '' and keyfield == 'id'">
+		 			<if test="keyword != '' and keyfield == 'mem_id'">
 		 				m.mem_id LIKE '%' || #{keyword} || '%'
 		 			</if>
-		 			<if test="keyword != '' and keyfield == 'content'">
+		 			<if test="keyword != '' and keyfield == 'post_board'">
 		 				p.post_board LIKE '%' || #{keyword} || '%'
 		 			</if>
  				</where>
@@ -44,14 +41,15 @@
  	
  	 	<update id="update" parameterType="postVO">
  		UPDATE post SET
-		
+		<if test="post_imgname !=''">
+			post_img=#{post_img},
+			post_imgname=#{post_imgname},
+		</if>
 		post_title=#{post_title},
 		post_board={post_board},
 		post_date=SYSDATE
 	WHERE post_num=#{post_num}
  	</update>
- 	
- 	
 </mapper>
 
 
