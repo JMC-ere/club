@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>  
 <style>
-/*  기본 레이아웃   */
+/*기본 레이아웃 */
 *{
     margin:0;
     padding:0;
