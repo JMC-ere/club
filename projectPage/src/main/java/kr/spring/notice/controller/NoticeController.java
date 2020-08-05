@@ -188,7 +188,7 @@ public class NoticeController {
 		return "redirect:/notice/list.do";
 	}
 	
-	//글 삭제
+	//글 삭제  
 	@RequestMapping("/notice/delete.do")
 	public String submit(@RequestParam("nt_num")int nt_num) {
 		
