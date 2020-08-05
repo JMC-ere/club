@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>  
 <style>
-/*기본 레이아웃*/
+/*  기본 레이아웃   */
 *{
     margin:0;
     padding:0;
@@ -203,8 +203,8 @@ pre{
 		<pre><c:out value="${notice.nt_content}"/></pre>
 		<hr size="1" width="100%">
 		<div class="align-center">
-			<%--글 수정 및 삭제를 하려면 로그인을 한 후, 로그인 아이디와 작성자 아이디가 일치해야 함 --%>
-	 		<c:if test="${!empty user_num && user_num == notice.mem_num}">
+			<%--관리자와 작성자만 수정 삭제 버튼이 활성화 됨 --%>
+	 		<c:if test="${user_num == notice.mem_num || user_auth == 4}">
 				<input type="button" value="수정" onclick="location.href='update.do?nt_num=${notice.nt_num}'">
 				<input type="button" value="삭제" onclick="location.href='delete.do?nt_num=${notice.nt_num}'">
 			</c:if>
