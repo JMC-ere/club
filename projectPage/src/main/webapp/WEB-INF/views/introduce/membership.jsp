@@ -53,10 +53,9 @@ margin: 0px auto;
     <div class="modal-content">
       <h4><b>[도움말]포인트 획득 방법</b></h4><br>
       <hr>
-      <p> <i class="material-icons">add</i> 모임 참여하기 <a href="#">[참여하러 가기]</a></p>
-      <p> <i class="material-icons">add</i> 모임 참여 후 후기 남기기 <a href="#">[후기 남기러 가기]</a></p>
-      <p> <i class="material-icons">add</i> 게시글에 댓글달기 <a href="#">[댓글달러 가기]</a></p>
-      <p> <i class="material-icons">add</i> 등등</p>
+      <p> <i class="material-icons">add</i> 모임 참여하기 <a href="${pageContext.request.contextPath}/main/viewclub.do">[참여하러 가기]</a></p>
+      <p> <i class="material-icons">add</i> 모임 참여 후 후기 남기기 <a href="${pageContext.request.contextPath}/post/post.do">[후기 남기러 가기]</a></p>
+      <p> <i class="material-icons">add</i> 등등 </p>
       <p> <i class="material-icons">add</i> 등등</p>
      <p> <i class="material-icons">add</i> 등등</p>
      <p> <i class="material-icons">add</i> 등등</p>
