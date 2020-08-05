@@ -78,7 +78,7 @@ margin: 0px auto; width:50%;
 					</div></div>
 					<br>
 					<p>
-						<b>상세내용</b><br>
+						<b>클럽 신청 상세내용</b><br><br>
 						${manageClub.club_detail}
 					</p>
 				<br>
