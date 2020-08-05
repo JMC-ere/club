@@ -32,7 +32,11 @@ create table qa_board(
 	qa_secret_key number(4),
 	qa_datetime DATE not null,
 	qa_hit number not null,
+	qa_filename varchar2(100),
+	qa_uploadfile blob,
 	mem_num number not null,
+	mem_id varchar2(20),
+	constraint qa_fk3 foreign key (mem_id) references member(mem_id),
 	constraint qa_fk foreign key (mem_num) references member(mem_num)
 );
 create sequence qa_board_seq;
@@ -41,14 +45,33 @@ create sequence qa_board_seq;
 create table qa_reply (
 	qa_reply_num number not null primary key,
 	mem_num number not null,
+	mem_id varchar2(20) not null,
 	qa_num number not null,
-	qa_reply_title varchar2(150) not null,
 	qa_reply_content clob not null,
 	qa_reply_datetime DATE not null,
-	qa_reply_hit number not null,
 	constraint qa_fk1 foreign key(mem_num) references member(mem_num),
+	constraint qa_fk4 foreign key(mem_id) references member(mem_id),
 	constraint qa_fk2 foreign key(qa_num) references qa_board(qa_num)
 );
+
+/* QA1_1Board */
+create table qa1_1board(
+	qa1_1num number not null primary key,
+	qa1_1title varchar2(150) not null,
+	qa1_1content clob not null,
+	qa1_1secret_key number(4),
+	qa1_1datetime DATE not null,
+	qa1_1hit number not null,
+	qa_filename varchar2(100),
+	qa_uploadfile blob,
+	mem_id varchar2(20) not null,
+	mem_num number not null,
+	constraint qa_fk foreign key (mem_num) references member(mem_num),
+	constraint qa_fk5 foreign key (mem_id) references member(mem_id)
+);
+
+create sequence qa_board_seq;
+/* QA1_1Board */
 create sequence qa_reply_seq;
 
 /* CLUB TABLE */
