@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.lang.String" %>
  <style>
 p {
 	margin: 20px 0px;
@@ -57,6 +58,7 @@ p {
 	<br>
 	<h4>현재 진행중인 클럽</h4>
 	<div class="row">
+		
 		<c:forEach var="club" items="${list}">
 		<div class="col-sm-6 col-lg-4">
 			<p></p>
@@ -66,7 +68,8 @@ p {
 			<c:if test="${count > 0 }">
 			
 			<div class="card">
-				<div class="card-header">${club.club_genre}</div>
+			
+				<div class="card-header" id="hope">${club.club_genre}</div>
 				<img
 					src="imageView.do?club_num=${club.club_num }" width="400px" height="172px" id="cardImg" class="responsive-img center"/>
 				<div class="card-body">
@@ -101,4 +104,5 @@ document.addEventListener('DOMContentLoaded', function() {
     channelPublicId: '_cxbxixoxb' // 카카오톡 채널 홈 URL에 명시된 id로 설정합니다. (채널 고유 아이디 적용)
   });
 //]]>
+	
 </script>

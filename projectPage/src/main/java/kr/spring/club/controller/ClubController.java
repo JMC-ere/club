@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.club.domain.ClubVO;
@@ -156,8 +157,14 @@ public class ClubController {
 		
 		ClubVO club = clubService.selectBoard(club_num);
 		
-		return new ModelAndView("boardclubdetail","club",club);
+		ModelAndView mav = new ModelAndView();
+		
+		mav.setViewName("boardclubdetail");
+		mav.addObject("club",club);
+		
+		return mav;
 	}
+	
 	
 	//이미지 처리
 	@RequestMapping("/main/imageView.do")
