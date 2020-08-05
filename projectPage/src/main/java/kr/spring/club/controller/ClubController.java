@@ -71,6 +71,25 @@ public class ClubController {
 		return mav;
 	}
 	
+	//클럽전체 -> 상세페이지
+	@RequestMapping("/main/viewclubdetail.do")
+	public ModelAndView process1(@RequestParam("club_num") int club_num,HttpServletRequest request) {
+		
+		ClubVO club = clubService.selectBoard(club_num);
+		
+		return new ModelAndView("viewclubdetail","club",club);
+	}
+	
+	//클럽 상세페이지 삭제
+	@RequestMapping("/main/viewclubdelete.do")
+	public String submit1(@RequestParam("club_num") int club_num) {
+			
+		clubService.delete(club_num);
+			
+		return "redirect:/main/viewclub.do";
+	}
+	
+	//클럽 제안 게시판
 	@RequestMapping("/main/boardclub.do")
 	public ModelAndView process(@RequestParam(value="pageNum",defaultValue="1") int currentPage,
 								@RequestParam(value="keyfield",defaultValue="") String keyfield,
@@ -133,7 +152,7 @@ public class ClubController {
 	
 	//글 상세
 	@RequestMapping("/main/boardclubdetail.do")
-	public ModelAndView process(@RequestParam("club_num") int club_num,HttpServletRequest request,ModelMap model) {
+	public ModelAndView process(@RequestParam("club_num") int club_num,HttpServletRequest request) {
 		
 		ClubVO club = clubService.selectBoard(club_num);
 		
