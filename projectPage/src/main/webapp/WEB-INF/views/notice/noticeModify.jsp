@@ -169,10 +169,10 @@ input[type="submit"], input[type="button"]{
 			<ul>
 				<li>
 					<label for="nt_title">제목</label>
-					<form:input path="nt_title"/>
+					<form:input path="nt_title" maxlength="26"/>
 					<form:errors path="nt_title" cssClass="error-color"/>
 				</li>
-				<li>
+				<li>    
 					<label for="nt_content">내용</label>
 					<form:textarea path="nt_content" style="height:250px;"/>
 					<form:errors path="nt_content" cssClass="error-color"/>

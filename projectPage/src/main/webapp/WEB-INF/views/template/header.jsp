@@ -65,15 +65,13 @@
 				</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input type="text" id="mem_id1" name="mem_id1" class="validate"/> 
-							<label for="mem_id1">ID</label>
+							<input placeholder="아이디를 입력하세요!" type="text" id="mem_id1" name="mem_id1" class="validate"/> 
 							<span id="msg_id"></span>
 						</div>
 					</div>					
 					<div class="row">
 						<div class="input-field col s12">
-							<input type="password" id="detail_passwd1" name="detail_passwd1" class="validate"/> 
-							<label for="detail_passwd1">Password</label>
+							<input placeholder="비밀번호를 입력하세요!" type="password" id="detail_passwd1" name="detail_passwd1" class="validate"/> 
 							<span id="msg_passwd"></span>
 						</div>
 					</div>

@@ -25,7 +25,7 @@
         <li class="tab"><a href="#test2">장르별 클럽</a></li>
         <li class="tab"><a href="#">요일별 클럽</a></li>
         <li class="tab"><a href="#test4">파이트클럽 크루</a></li>
-        <c:if test="${3 >=3}"><li class="tab"><a href="boardclub.do">클럽 개설 제안</a></li></c:if>
+        <c:if test="${user_auth >=3}"><li class="tab"><a href="boardclub.do">클럽 개설 제안</a></li></c:if>
       </ul>
     </div>
   </nav>

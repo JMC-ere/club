@@ -8,12 +8,11 @@
     margin:0;
     padding:0;
 }
-
+  
 .page-main-style{
 	margin:0 auto;
 }
-
-
+ 
 .align-center{
 	margin-top:2rem;
 	text-align:center;
@@ -62,6 +61,9 @@ input[type="submit"], input[type="button"]{
 	background-color:#dcedc8;
 }
 
+pre{
+	font-family:"맑은 고딕";
+}
 /* 작은 사이즈 */
 @media (max-width:599px){
 	/*폰트 크기*/
@@ -198,7 +200,7 @@ input[type="submit"], input[type="button"]{
 			<img src="imageView.do?nt_num=${notice.nt_num}" style="max-width:500px">
 		</div>
 		</c:if>
-		<p>${notice.nt_content}</p>
+		<pre><c:out value="${notice.nt_content}"/></pre>
 		<hr size="1" width="100%">
 		<div class="align-center">
 			<%--글 수정 및 삭제를 하려면 로그인을 한 후, 로그인 아이디와 작성자 아이디가 일치해야 함 --%>
