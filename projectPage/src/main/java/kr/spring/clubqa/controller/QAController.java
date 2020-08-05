@@ -99,13 +99,10 @@ public class QAController {
 			return "qalist_write";
 		}
 		
-		//clubqaVO.setMem_num((Integer)session.getAttribute("user_num"));
-//		clubqaVO.setMem_id((String)session.getAttribute("user_id"));
+		clubqaVO.setMem_num((Integer)session.getAttribute("user_num"));
+		clubqaVO.setMem_id((String)session.getAttribute("user_id"));
 		
-		//나중에 삭제
-		clubqaVO.setMem_num(1);
-		clubqaVO.setMem_id("sky");
-		//
+		
 		
 		clubqaService.insert(clubqaVO);
 		
@@ -160,19 +157,7 @@ public class QAController {
 		
 	}
 	
-	//질문 게시판 폼 호출
-	@RequestMapping(value="/ClubQA/QA1_1/QA1_1_list.do", method=RequestMethod.GET)
-	public String QAreport_main() {
-		return "qa1_1_main";
-	}
-	
-	//질문 글 쓰기 폼 호출
-	@RequestMapping(value="/ClubQA/QA1_1/QA1_1_write.do", method=RequestMethod.GET)
-	public String QAreport_write() {
-		return "qa1_1_write";
-	}
-	
-	// 건의 / 신고 글 수정 폼 호출
+		// 건의 / 신고 글 수정 폼 호출
 		@RequestMapping(value="/ClubQA/QAlist/QAlist_update.do",
 				          method=RequestMethod.GET)
 		public String form(@RequestParam("num") int num,
@@ -222,7 +207,18 @@ public class QAController {
 			
 			return "redirect:/ClubQA/QAlist/QAlist.do";
 		}
-	
+		
+		//질문 게시판 폼 호출
+		@RequestMapping(value="/ClubQA/QA1_1/QA1_1_list.do", method=RequestMethod.GET)
+		public String QAreport_main() {
+			return "qa1_1_main";
+		}
+		
+		//질문 글 쓰기 폼 호출
+		@RequestMapping(value="/ClubQA/QA1_1/QA1_1_write.do", method=RequestMethod.GET)
+		public String QAreport_write() {
+			return "qa1_1_write";
+		}
 	
 	
 	

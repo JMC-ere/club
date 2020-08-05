@@ -48,11 +48,6 @@
 	</div>
 	<!-- 질문 상세페이지  -->
 </form:form>
-<%
-	//테스트용으로 세션에 처리 
-	session.setAttribute("user_num", 1);
-    session.setAttribute("user_id", "sky");
-%>
 <!-- 댓글 관련 UI 시작 -->
 <!-- 댓글 작성 -->
 <div id="reply_div" class="reply_div">
