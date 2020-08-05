@@ -50,7 +50,7 @@
         <c:if test="${user_auth == 5}">
 	    <li><a onclick="M.toast({html: '간편로그인 회원은 MYPAGE열람이 불가합니다.'})">MY PAGE</a></li>
 	    </c:if>
-	    <c:if test="${4==4}">
+	    <c:if test="${user_auth==4}">
 		<li><a href="${pageContext.request.contextPath}/main/manage_club.do">관리자페이지</a></li>
 		</c:if>
       </ul>
