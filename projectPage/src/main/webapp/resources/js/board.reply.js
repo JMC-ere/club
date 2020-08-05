@@ -25,6 +25,11 @@ $(document).ready(function(){
 				//로딩 이미지 감추기
 				$('#loading').hide();
 				count = data.count;
+				
+				if(count>0){
+					$('#re_label').text('답변완료');
+				}
+				
 				rowCount = data.rowCount;
 				var list = data.list;
 				
