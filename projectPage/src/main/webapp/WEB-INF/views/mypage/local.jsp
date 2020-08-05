@@ -29,7 +29,23 @@
 .placeinfo .title {font-weight: bold; font-size:14px;border-radius: 6px 6px 0 0;margin: -1px -1px 0 -1px;padding:10px; color: #fff;background: #d95050;background: #d95050 url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center;}
 .placeinfo .tel {color:#0f7833;}
 .placeinfo .jibun {color:#999;font-size:11px;margin-top:0;}
+
+	#mypagelocal{
+		width:50%;
+		margin: 20px auto;
+	}  
+	
+	#mypagelocal-center{
+		text-align: center;
+	}
+	
 </style>
+<div class="row center" id="mypagelocal">
+	<div class="card-panel #b2dfdb teal lighten-4" id="mypagelocal-center">
+		<h2 class="center">[모임 장소 찾기]</h2>
+		모임진행장소를 찾기 어렵다면 지도에 카테고리를 선택하시고 마음에 드는 장소를 찾아보세요!
+	</div>
+</div>
 <div class="map_wrap">
     <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
     <ul id="category">
@@ -51,8 +67,10 @@
         </li>
     </ul>
 </div>
-<div class="row">
-	<h2 class="center">[모임 장소 찾기]</h2>
+<div>
+<br>
+<br>
+
 </div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c349bfe9afadd02b924aaa4d4de24e0f&libraries=services"></script>
 <script>

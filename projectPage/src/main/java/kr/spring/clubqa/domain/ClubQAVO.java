@@ -10,7 +10,7 @@ public class ClubQAVO {
 	private int qa_num;
 	private String qa_title;
 	private String qa_content;
-	private int qa_secret_key;
+	private String qa_secret_key;
 	private Date qa_datetime;
 	private int qa_hit;
 	private int mem_num;
@@ -70,10 +70,10 @@ public class ClubQAVO {
 	public void setQa_content(String qa_content) {
 		this.qa_content = qa_content;
 	}
-	public int getQa_secret_key() {
+	public String getQa_secret_key() {
 		return qa_secret_key;
 	}
-	public void setQa_secret_key(int qa_secret_key) {
+	public void setQa_secret_key(String qa_secret_key) {
 		this.qa_secret_key = qa_secret_key;
 	}
 	public Date getQa_datetime() {

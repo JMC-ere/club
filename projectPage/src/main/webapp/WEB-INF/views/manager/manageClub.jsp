@@ -57,7 +57,7 @@
 		</table>
 	</c:if>	
 	</div>
-	<br><br><br><hr width=70%><br><br><br>
+	<br><br><br><hr width=80% color=CCCCCC><br><br><br>
 	
 	<div class="manage_club_list">
 	<h5><b>승인된 신청</b></h5>
@@ -90,7 +90,7 @@
 		</table>
 	</c:if>
 	</div>
-	<br><br><br><hr width=70%><br><br><br>
+	<br><br><br><hr width=80% color=CCCCCC><br><br><br>
 	
 	<div class="manage_club_list">	
 	<h5><b>반려된 신청</b></h5>

@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.spring.clubqa.domain.ClubQAReplyVO;
+import kr.spring.clubqa.domain.ClubQAVO;
 import kr.spring.clubqa.service.ClubQAService;
+import kr.spring.member.domain.MemberVO;
 import kr.spring.util.PagingUtil;
 
 @Controller
@@ -162,6 +164,25 @@ public class QAAjaxController {
 
 		return map;
 	}
+//	
+//	//비밀번호 찾기(아이디 존재여부 확인)
+//		@RequestMapping("/ClubQA/QAlist/QAlist.do")
+//		@ResponseBody
+//		public Map<String, String> findIdProcess(@RequestParam Integer num){
+//			
+//			Map<String, String> map = new HashMap<String, String>();
+//			
+//			ClubQAVO clubqaVO = clubQAService.selectQABoard(num);
+//			
+//			if(clubqaVO!=null) {
+//				map.put("result", "idDuplicated");
+//			}else {
+//				map.put("result", "idNotFound");
+//			}
+//			return map;
+//		}
+//		
+		
 
 }
 

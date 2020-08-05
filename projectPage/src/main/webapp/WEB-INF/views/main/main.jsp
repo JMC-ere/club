@@ -328,12 +328,7 @@ p {
         </div>
       </div>
     </div>
-    <div>
-    캘더칸
-    </div>
-    <div>
-   지도칸
-    </div>
+    
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.slider');
