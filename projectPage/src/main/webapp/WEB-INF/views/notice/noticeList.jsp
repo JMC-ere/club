@@ -1,25 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
- 
+  
 <style>
 /*기본 레이아웃*/
 *{
     margin:0;
     padding:0;
 }
-
+  
 .page-main-style{
 	margin:0 auto;
 	font-family:"맑은 고딕";
 }
 
-
 .align-center{
 	margin-top:2rem;
 	text-align:center;
 }
-
+    
 /*검색창 폼*/ 
 form#search_form{
 	border:none;
@@ -41,6 +40,14 @@ form#search_form ul.search li select{
 form#search_form ul.search li input[type="search"]{
     width:20rem;
 	display:inline-block;
+}
+
+/*제목 일정 수 초과시 ...표시*/
+.limit {
+	width:250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /*사이드 메뉴 hover*/
@@ -226,7 +233,7 @@ input[type="submit"], input[type="button"]{
 			<c:forEach var="notice" items="${list}">
 				<tr>
 					<td>${notice.nt_num}</td>
-					<td><a href="detail.do?nt_num=${notice.nt_num}">${notice.nt_title}</a></td>
+					<td><div class="limit"><a href="detail.do?nt_num=${notice.nt_num}">${notice.nt_title}</a></div></td>
 					<td>${notice.mem_id}</td>
 					<td>${notice.nt_datetime}</td>
 					<td>${notice.nt_hit}</td>
@@ -234,6 +241,7 @@ input[type="submit"], input[type="button"]{
 			</c:forEach>
 		</table>
 			<div class="align-center">${pagingHtml}</div>	
+			<br>
 		</c:if>
 	</div>	
 	<br class="end">

@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.spring.notice.domain.NoticeVO;
 import kr.spring.notice.service.NoticeService;
 import kr.spring.util.PagingUtil;
-//dfdfdf
+//공지
 @Controller
 public class NoticeController {
 	private Logger log = Logger.getLogger(this.getClass());

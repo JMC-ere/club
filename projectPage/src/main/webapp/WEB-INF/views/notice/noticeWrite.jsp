@@ -8,11 +8,10 @@
     margin:0;
     padding:0;
 }
-
+  
 .page-main-style{
 	margin:0 auto;
 }
-
 
 .align-center{
 	margin-top:2rem;
@@ -49,14 +48,6 @@ input[type="submit"], input[type="button"]{
 	border-radius:5px;
 }
 
-/*검색결과가 없을경우*/
-.result-display{
-	width:400px;
-	margin:50px auto;
-	padding:150px 0 150px 0;
-	text-align:center;
-}
-	
 .error-color{
 	color:#ff0000;
 }
@@ -169,10 +160,9 @@ input[type="submit"], input[type="button"]{
 			<ul class="write">		
 				<li>
 					<label for="nt_title">제목</label>
-					<form:input path="nt_title" placeholder="제목을 입력해주세요."/>
+					<form:input path="nt_title" placeholder="제목을 입력해주세요." maxlength="26"/>
 					<form:errors path="nt_title" cssClass="error-color"/>
 				</li>
-				
 				<li>
 					<div class="fr-tooltip custom-theme" style="left: -3000px; top: 232px; position: fixed;">색상</div>
 				</li>

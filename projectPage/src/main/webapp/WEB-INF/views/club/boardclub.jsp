@@ -6,6 +6,7 @@
 		width:50%;
 	}
 </style>
+<!-- 테스트  -->
 <div class="row" id="boardclub">
 	<h4>클럽 개설 제안</h4>
 	<!-- 검색 기능 -->

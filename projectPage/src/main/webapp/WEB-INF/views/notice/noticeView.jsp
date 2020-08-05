@@ -8,12 +8,11 @@
     margin:0;
     padding:0;
 }
-
+  
 .page-main-style{
 	margin:0 auto;
 }
-
-
+ 
 .align-center{
 	margin-top:2rem;
 	text-align:center;
