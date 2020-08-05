@@ -73,7 +73,44 @@ margin: 0px auto; width:50%;
 							   
 						</tbody>
 					</table>
+				<b>상세내용</b>
 				<br>
+				${manageClub.club_detail}
+				<!-- 승인상태 선택 -->
+<form action="status_change.do" method="post">
+<div class="approve_status_choice" style="width:35%;clear:both;">
+<input type="hidden" name="num" value="${manageClub.club_num}" >
+
+ <label> 승인 상태 선택</label>
+  <c:if test="${manageClub.club_state == 1}">
+  <select class="browser-default" name="select_status">
+   <option value="1" selected>미승인(현재상태)</option>
+    <option value="2">승인</option>
+    <option value="3">반려</option>
+  </select>
+  </c:if>
+  
+   <c:if test="${manageClub.club_state == 2}">
+  <select class="browser-default" name="select_status">
+  <option value="2" selected >승인(현재상태)</option>
+  <option value="1" >미승인</option>
+   <option value="3">반려</option>
+  </select>
+  </c:if>
+  
+    <c:if test="${manageClub.club_state == 3}">
+  <select class="browser-default" name="select_status">
+   <option value="3" selected >반려(현재상태)</option>
+   <option value="1" >미승인</option>
+   <option value="2">승인</option>
+  </select>
+  </c:if>
+  <button class="btn waves-effect waves-light" type="submit" name="action">완료</button>
+  <a class="waves-effect waves-light btn" href="boardclubmodify.do?club_num=${manageClub.club_num}">글 수정하기</a>
+  </div>
+</form>
+<!-- 승인상태 선택 끝-->
+				
 				<a href="#" data-target="slide-out" class="sidenav-trigger btn right">상세 메뉴</a> 
 			</div>
 		</div>
