@@ -53,4 +53,16 @@ public class ClubServiceImpl implements ClubService{
 	public void delete(Integer club) {
 		clubMapper.delete(club);	
 	}
+
+	@Override
+	public List<ClubVO> mainList(Map<String, Object> map) {
+		
+		return clubMapper.mainList(map);
+	}
+
+	@Override
+	public int listRowCount() {
+		
+		return clubMapper.listRowCount();
+	}
 }

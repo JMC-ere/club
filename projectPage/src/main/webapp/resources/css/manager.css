@@ -27,16 +27,26 @@ a:hover{background-color:white;color:black;
 }
 img{ display: block; margin: 0px auto; }
 
+
 .manager_title{font-size:28px; text-align:center;}
+
+
+div.manage_club_list{
+ display: block; margin: 0px auto;  width:75%;
+}
 
 div.manage_club_detail{
  display: block; margin: 0px auto; width:90%;
 }
 
-div.manage_club_list{
+div.manage_club_img{
+ float:left; margin:30px 0 0 0;
+}
+
+div.club_detail_list{
  float:left;
 }
 
-div.manage_club_img{
- float:left;
+div.approve_status_choice{
+width:100%; 
 }
