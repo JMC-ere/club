@@ -89,7 +89,7 @@
       <ul class="tabs tabs-transparent"> 
         <li class="tab"><a href="${pageContext.request.contextPath}/main/main.do">홈</a></li>
         <li class="tab"><a href="${pageContext.request.contextPath}/main/introduce.do">소개</a></li>
-        <li class="tab"><a href="viewclub.do">클럽 현황</a></li>
+        <li class="tab"><a href="${pageContext.request.contextPath}/main/viewclub.do">클럽 현황</a></li>
         <c:if test="${!empty user_id}"> 
         <li class="tab"><a href="${pageContext.request.contextPath}/mypage/local.do">장소찾기</a></li>
         </c:if>
