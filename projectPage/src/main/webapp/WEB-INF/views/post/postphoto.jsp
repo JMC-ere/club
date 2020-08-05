@@ -3,9 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style>
+.page-menu{
+	width: 40%;
+	margin: 0 auto;
+}
 
 .page-main-style {
-	width: 60%;
+	width: 80%;
 	margin: 0 auto;
 }
 
@@ -29,7 +33,7 @@
 
 
 
-<div class=page-main-style>
+<div class=page-menu>
 <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
     <a class="nav-link" href="post.do">참여 게시판</a>
