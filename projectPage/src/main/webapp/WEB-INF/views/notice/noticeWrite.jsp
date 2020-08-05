@@ -187,17 +187,7 @@ input[type="submit"], input[type="button"]{
 	</div>
 	<br class="end">
 </div>
-<script type="text/javascript">
-	var str_space = /\s/;
-	
-   	$('#abc').submit(function(){
-	if(str_space.exec(title.value)){
-		alert('제목을 다시 입력해주세요.');
-		return false;
 
-	} 
- }); 
-</script>
 
 
 
