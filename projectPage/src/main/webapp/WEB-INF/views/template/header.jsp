@@ -123,7 +123,7 @@
 		$('#msg_passwd').text('');
 		
 		$.ajax({
-			url:'mainLogin.do',
+			url:'${pageContext.request.contextPath}/main/mainLogin.do',
 			type:'post',
 			data:{mem_id1 : $('#mem_id1').val(), 
 				detail_passwd1 : $('#detail_passwd1').val()},
@@ -133,7 +133,7 @@
 			success:function(data){
 				if(data.result == 'Check'){
 					checkLogin = 1;
-					location.href='main.do';
+					location.href='${pageContext.request.contextPath}/main/main.do';
 					alert('로그인 성공!');
 				}else if(data.result == 'NotCheck'){
 					alert('아이디 또는 비밀번호가 일치하지 않습니다.');
@@ -151,13 +151,13 @@
 			error:function(){
 				checkLogin = 0;
 				alert('네트워크 오류발생!!');
-				history.go(-1);
+				location.href='${pageContext.request.contextPath}/main/main.do';
 			}
 		});
 		if(checkLogin == 0){
 			history.go(0);
 		}else if(checkLogin == 1){
-			location.href='main.do';
+			location.href='${pageContext.request.contextPath}/main/main.do';
 			alert('로그인 성공!');
 		}
 	});
