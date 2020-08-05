@@ -70,7 +70,7 @@ margin: 0px auto; width:50%;
 								<td><b>클럽 종료일</b></td>
 								<td>${manageClub.club_end}</td>
 							</tr>
-							  
+							   
 						</tbody>
 					</table>
 				<br>
