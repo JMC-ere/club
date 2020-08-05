@@ -29,7 +29,7 @@ margin: 0px auto; width:50%;
   <p class="manager_title"> 클럽 개설 신청 관리 페이지</p>
    <hr width="90%" color="green"><br><br>
 
-<div class="card-panel grey lighten-5 z-depth-1" style="width:95%;margin:0 0 40px 40px;">
+<div class="col s12 m8 offset-m2 l6 offset-l3" style="width:95%;margin:0 0 40px 40px;">
 <div class="row valign-wrapper">
 			<div class="col s2">
 			<c:if test="${
@@ -45,9 +45,6 @@ margin: 0px auto; width:50%;
 			
 			</div>
 			<div class="col s10">
-			<h5>클럽 상세</h5>
-			<p>
-				
 				<table class="highlight" style="width:80%;">
 						<tbody>
 							<tr>
@@ -73,10 +70,17 @@ margin: 0px auto; width:50%;
 							   
 						</tbody>
 					</table>
-				<b>상세내용</b>
+					</div></div>
+					<br>
+					<p>
+						<b>상세내용</b><br>
+						${manageClub.club_detail}
+					</p>
 				<br>
-				${manageClub.club_detail}
-				<!-- 승인상태 선택 -->
+				
+				
+				
+				<!-- 승인상태 선택 시작 -->
 				
 <form action="status_change.do" method="post">
 <div class="approve_status_choice" style="width:35%;clear:both;">
@@ -112,10 +116,9 @@ margin: 0px auto; width:50%;
 </form>
 <!-- 승인상태 선택 끝-->
 				
-				<a href="#" data-target="slide-out" class="sidenav-trigger btn right">상세 메뉴</a> 
+			
 			</div>
-		</div>
-	</div>
+	
 
 
 <!--card panel 끝-->
