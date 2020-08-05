@@ -109,6 +109,7 @@ margin: 0px auto; width:50%;
 <script>
 
 
+
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, options);
