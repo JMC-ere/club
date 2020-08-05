@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
  <style>
 p {
 	margin: 20px 0px;
@@ -53,282 +54,34 @@ p {
 </div>
 <div id="kakao-talk-channel-chat-button"></div>
 <div class="container">
-<h4>현재 진행중인 클럽</h4>
-      <div class="row">
-      <!-- 카드 하나 코드  -->
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiQ39rOAzd-5x8puQ3Ki10NAC8cqcoBml4ug&usqp=CAU" alt=""/>
-            <div class="card-body">
-              <h5 class="card-title">강아지 클럽</h5>
-              <p class="card-text">강아지</p>
-              <a href="#" class="btn #8bc34a light-green">More</a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- 카드 하나 코드  -->
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiQ39rOAzd-5x8puQ3Ki10NAC8cqcoBml4ug&usqp=CAU" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">고양이 클럽</h5>
-              <p class="card-text">고양이를 좋아하는 사람들의 모임</p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiQ39rOAzd-5x8puQ3Ki10NAC8cqcoBml4ug&usqp=CAU" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">고양이 클럽</h5>
-              <p class="card-text">CAT Club</p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiQ39rOAzd-5x8puQ3Ki10NAC8cqcoBml4ug&usqp=CAU" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">고양이 클럽</h5>
-              <p class="card-text">CAT Club</p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiQ39rOAzd-5x8puQ3Ki10NAC8cqcoBml4ug&usqp=CAU" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">고양이 클럽</h5>
-              <p class="card-text">CAT Club</p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiQ39rOAzd-5x8puQ3Ki10NAC8cqcoBml4ug&usqp=CAU" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">고양이 클럽</h5>
-              <p class="card-text">CAT Club</p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-<h4>현재 진행중인 클럽</h4>
-      <div class="row">
-      <!-- 카드 하나 코드  -->
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://cdn.pixabay.com/photo/2017/04/13/14/15/mcdonalds-2227657_960_720.jpg" alt="" width="293px" height="172px" id="cardImg"/>
-            <div class="card-body">
-              <h5 class="card-title">강아지 클럽</h5>
-              <p class="card-text">강아지</p>
-              <a href="#" class="btn #8bc34a light-green">More</a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- 카드 하나 코드  -->
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiQ39rOAzd-5x8puQ3Ki10NAC8cqcoBml4ug&usqp=CAU" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">고양이 클럽</h5>
-              <p class="card-text">고양이를 좋아하는 사람들의 모임</p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiQ39rOAzd-5x8puQ3Ki10NAC8cqcoBml4ug&usqp=CAU" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">고양이 클럽</h5>
-              <p class="card-text">CAT Club</p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiQ39rOAzd-5x8puQ3Ki10NAC8cqcoBml4ug&usqp=CAU" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">고양이 클럽</h5>
-              <p class="card-text">CAT Club</p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiQ39rOAzd-5x8puQ3Ki10NAC8cqcoBml4ug&usqp=CAU" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">고양이 클럽</h5>
-              <p class="card-text">CAT Club</p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiQ39rOAzd-5x8puQ3Ki10NAC8cqcoBml4ug&usqp=CAU" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">고양이 클럽</h5>
-              <p class="card-text">CAT Club</p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-<h4>현재 진행중인 클럽</h4>
-      <div class="row">
-      <!-- 카드 하나 코드  -->
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://cdn.pixabay.com/photo/2017/04/13/14/15/mcdonalds-2227657_960_720.jpg" alt="" width="293px" height="172px" id="cardImg"/>
-            <div class="card-body">
-              <h5 class="card-title">강아지 클럽</h5>
-              <p class="card-text">강아지</p>
-              <a href="#" class="btn #8bc34a light-green">More</a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- 카드 하나 코드  -->
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiQ39rOAzd-5x8puQ3Ki10NAC8cqcoBml4ug&usqp=CAU" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">고양이 클럽</h5>
-              <p class="card-text">고양이를 좋아하는 사람들의 모임</p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiQ39rOAzd-5x8puQ3Ki10NAC8cqcoBml4ug&usqp=CAU" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">고양이 클럽</h5>
-              <p class="card-text">CAT Club</p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiQ39rOAzd-5x8puQ3Ki10NAC8cqcoBml4ug&usqp=CAU" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">고양이 클럽</h5>
-              <p class="card-text">CAT Club</p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiQ39rOAzd-5x8puQ3Ki10NAC8cqcoBml4ug&usqp=CAU" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">고양이 클럽</h5>
-              <p class="card-text">CAT Club</p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-        <p></p>
-          <div class="card">
-            <div class="card-header">
-              My Card
-            </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiQ39rOAzd-5x8puQ3Ki10NAC8cqcoBml4ug&usqp=CAU" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">고양이 클럽</h5>
-              <p class="card-text">CAT Club</p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
+	<br>
+	<h4>현재 진행중인 클럽</h4>
+	<div class="row">
+		<c:forEach var="club" items="${list}">
+		<div class="col-sm-6 col-lg-4">
+			<p></p>
+			<c:if test="${count == 0 }">
+				<div>등록된 게시물이 없습니다.</div>
+			</c:if>
+			<c:if test="${count > 0 }">
+			
+			<div class="card">
+				<div class="card-header">${club.club_genre}</div>
+				<img
+					src="imageView.do?club_num=${club.club_num }"
+					alt="" width="293px" height="172px" id="cardImg" />
+				<div class="card-body">
+					<h5 class="card-title">${club.club_name}</h5>
+					<p class="card-text">${club.club_interval}</p>
+					<a href="viewclubdetail.do?club_num=${club.club_num}" class="btn #8bc34a light-green">More</a>
+				</div>
+			</div>
+			
+			</c:if>
+		</div>
+		</c:forEach>
+	</div>
+</div>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.slider');
