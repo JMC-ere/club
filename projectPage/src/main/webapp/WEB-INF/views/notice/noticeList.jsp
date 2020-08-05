@@ -44,7 +44,6 @@ form#search_form ul.search li input[type="search"]{
 
 /*제목 일정 수 초과시 ...표시*/
 .limit {
-	width:250px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -85,7 +84,7 @@ input[type="submit"], input[type="button"]{
 }
 
 /* 작은 사이즈 */
-@media (max-width:599px){
+@media (max-width:649px){
 	/*폰트 크기*/
     :root{
         font-size:14px;
@@ -107,10 +106,14 @@ input[type="submit"], input[type="button"]{
 	.menu ul li{
 		padding:15px 20px 15px 20px;
 	}
+	
+	.limit {
+	width:200px;
+	}
 }
 
 /* 중간 사이즈 */
-@media (min-width:600px) and (max-width:1199px){
+@media (min-width:650px) and (max-width:1199px){
     :root{
         font-size:16px;
     }
@@ -135,6 +138,10 @@ input[type="submit"], input[type="button"]{
 	}
 	.menu ul li{
 		padding:15px 20px 15px 20px;
+	}
+	
+	.limit {
+	width:300px;
 	}
 }
 
@@ -174,6 +181,10 @@ input[type="submit"], input[type="button"]{
 	width:75%;
 	float:left;
 	}	
+	
+	.limit {
+	width:400px;
+	}
 }
 </style>
 <div class="page-main-style">

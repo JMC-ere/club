@@ -63,9 +63,10 @@ input[type="submit"], input[type="button"]{
 
 pre{
 	font-family:"맑은 고딕";
+	margin: 40px;
 }
 /* 작은 사이즈 */
-@media (max-width:599px){
+@media (max-width:649px){
 	/*폰트 크기*/
     :root{
         font-size:14px;
@@ -90,7 +91,7 @@ pre{
 }
 
 /* 중간 사이즈 */
-@media (min-width:600px) and (max-width:1199px){
+@media (min-width:650px) and (max-width:1199px){
     :root{
         font-size:16px;
     }
@@ -168,7 +169,7 @@ pre{
 	<div class="page-content">
 		<h3>${notice.nt_title}</h3>
 		<table class="notice-content">
-			<tr>
+			<tr style="border-top:1px solid #000;">
 				<th>번호</th>
 				<td>${notice.nt_num}</td>
 				<th>작성자</th>

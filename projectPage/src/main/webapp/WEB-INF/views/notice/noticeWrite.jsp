@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <style>
-<style>
 /*기본 레이아웃*/
 *{
     margin:0;
@@ -53,7 +52,7 @@ input[type="submit"], input[type="button"]{
 }
 
 /* 작은 사이즈 */
-@media (max-width:599px){
+@media (max-width:649px){
 	/*폰트 크기*/
     :root{
         font-size:14px;
@@ -78,7 +77,7 @@ input[type="submit"], input[type="button"]{
 }
 
 /* 중간 사이즈 */
-@media (min-width:600px) and (max-width:1199px){
+@media (min-width:650px) and (max-width:1199px){
     :root{
         font-size:16px;
     }
@@ -156,11 +155,11 @@ input[type="submit"], input[type="button"]{
 	</div>
 	<div class="page-content">
 		<h3>글쓰기</h3>
-		<form:form action="write.do" enctype="multipart/form-data" commandName="noticeVO" class="write_form">
+		<form:form action="write.do" enctype="multipart/form-data" commandName="noticeVO" class="write_form" id="abc">
 			<ul class="write">		
 				<li>
 					<label for="nt_title">제목</label>
-					<form:input path="nt_title" placeholder="제목을 입력해주세요." maxlength="26"/>
+					<form:input path="nt_title" placeholder="제목을 입력해주세요." maxlength="26" class="title" id="title"/>
 					<form:errors path="nt_title" cssClass="error-color"/>
 				</li>
 				<li>
@@ -188,3 +187,33 @@ input[type="submit"], input[type="button"]{
 	</div>
 	<br class="end">
 </div>
+<script type="text/javascript">
+	var str_space = /\s/;
+	
+   	$('#abc').submit(function(){
+	if(str_space.exec(title.value)){
+		alert('제목을 다시 입력해주세요.');
+		return false;
+
+	} 
+ }); 
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

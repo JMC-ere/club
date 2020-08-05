@@ -61,7 +61,7 @@ input[type="submit"], input[type="button"]{
 }
 
 /* 작은 사이즈 */
-@media (max-width:599px){
+@media (max-width:649px){
 	/*폰트 크기*/
     :root{
         font-size:14px;
@@ -86,7 +86,7 @@ input[type="submit"], input[type="button"]{
 }
 
 /* 중간 사이즈 */
-@media (min-width:600px) and (max-width:1199px){
+@media (min-width:650px) and (max-width:1199px){
     :root{
         font-size:16px;
     }
