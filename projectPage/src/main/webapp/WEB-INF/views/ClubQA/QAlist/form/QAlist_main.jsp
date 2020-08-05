@@ -40,8 +40,12 @@
 					</tr>
 					<c:forEach var="clubqa" items="${list}">
 					<tr style="font-size: 0.9rem;">
-						<td class="li_class" style="text-align: center;">${clubqa.qa_num}</td>
-						<td><a href="QAlist_detail.do?num=${clubqa.qa_num}">${clubqa.qa_title}</a></td>
+						<td class="li_class" id="clubqa_num" style="text-align: center;">${clubqa.qa_num}</td>
+						<td><a class="clubqa_title" href="QAlist_detail.do?num=${clubqa.qa_num}">${clubqa.qa_title}
+							<c:if test="${ clubqa.qa_secret_key != null }">
+							<img src="../../resources/images/secret_lock.png">
+							</c:if>
+						</a></td>
 						<td class="li_class">${clubqa.mem_id}</td>
 						<td class="li_class" style="text-align: center;">${clubqa.qa_datetime}</td>
 						<td class="li_class" style="text-align: center;">
@@ -56,6 +60,7 @@
 						</td>
 						<td class="li_class" style="text-align: center;">${clubqa.qa_hit}</td>
 					</tr>
+					<input type="hidden" id="qa_secret_key" value="${clubqa.qa_secret_key}">
 					</c:forEach>
 					<!-- 테스트 td -->
 				</table>
@@ -72,6 +77,15 @@
 	</div>
 
 </form>
+
+<script>
+$(function(){
+	var qa_secret_key = $('#qa_secret_key').val();
+	$('.clubqa_title').click(function(){
+		alert(qa_secret_key);
+	});
+});
+</script>
 
 
 <!-- 카카오톡 톡상담 API -->
