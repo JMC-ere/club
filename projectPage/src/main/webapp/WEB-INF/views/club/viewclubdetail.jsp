@@ -4,7 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <style type="text/css">
 #clubdetail {
-	padding: 0 40px 0 40px;
+	padding: 0 50px 0 50px;
 }
 </style>
 <div id="clubdetail" class="col s12 m8 offset-m2 l6 offset-l3">

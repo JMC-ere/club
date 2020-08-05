@@ -95,6 +95,56 @@
  		WHERE rnum >= #{start} AND rnum <= #{end}
  		]]>                                 
  	</select>
+ 	<select id="select1_1RowCount" parameterType="map"
+	                      resultType="integer">
+		SELECT
+		   COUNT(*)
+		FROM qa1_1board b JOIN member m
+		ON b.mem_num=m.mem_num
+		<where>
+			<if test="keyword != '' and keyfield == 'qa1_1title'">
+				b.qa1_1title LIKE '%' || #{keyword} || '%'
+			</if>
+			<if test="keyword != '' and keyfield == 'mem_id'">
+				m.mem_id LIKE '%' || #{keyword} || '%'
+			</if>
+			<if test="keyword != '' and keyfield == 'qa1_1content'">
+				b.qa1_1content LIKE '%' || #{keyword} || '%'
+			</if>
+		</where>                      
+	</select>
+	<select id="select1_1List" parameterType="map"
+	                    resultType="clubQA1_1VO">
+		SELECT
+		   *
+		FROM (SELECT
+		         a.*,
+		         rownum rnum
+		      FROM (SELECT
+		               *
+		            FROM qa1_1board b 
+		            LEFT OUTER JOIN (SELECT qa_num,COUNT(*) re_cnt
+ 	                                                FROM qa_reply
+ 	                                                GROUP BY qa_num)r
+ 	                ON b.qa1_1num = r.qa_num 
+		            JOIN member m 
+		            ON b.mem_num = m.mem_num
+		            <where>
+						<if test="keyword != '' and keyfield == 'qa1_1title'">
+							b.qa1_1title LIKE '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword != '' and keyfield == 'mem_id'">
+							m.mem_id LIKE '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword != '' and keyfield == 'qa1_1content'">
+							b.qa1_1content LIKE '%' || #{keyword} || '%'
+						</if>
+					</where> 
+		            ORDER BY b.qa1_1num DESC)a) 
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>            
+	</select>
 	
 </mapper>
 

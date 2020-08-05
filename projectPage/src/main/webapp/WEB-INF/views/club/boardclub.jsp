@@ -65,7 +65,7 @@
 				<td>승인</td>
 				</c:if>
 				<c:if test="${club.club_state == 3}">
-				<td>미승인</td>
+				<td>승인거부</td>
 				</c:if>
 			</tr>
 			</c:forEach>
