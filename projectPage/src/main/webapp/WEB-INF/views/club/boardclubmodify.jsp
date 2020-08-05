@@ -23,7 +23,7 @@
 				<label>클럽 승인 여부</label><p>
 				<label><form:radiobutton class="filled-in" path="club_state" value="1"/><span>검토예정</span></label>
 				<label><form:radiobutton class="filled-in" path="club_state" value="2"/><span>승인</span></label>
-				<label><form:radiobutton class="filled-in" path="club_state" value="3"/><span>미승인</span></label>
+				<label><form:radiobutton class="filled-in" path="club_state" value="3"/><span>승인거부</span></label>
 			</li>
 			<br>
 			<li>
