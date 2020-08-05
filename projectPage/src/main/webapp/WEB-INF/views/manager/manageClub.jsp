@@ -26,10 +26,10 @@
      
    
    <div class="manage_club_list">
-    <h5><b>미승인된 신청</b></h5>
+    <h5><b>승인 대기중인 신청</b></h5>
 
     <c:if test="${count1 == 0}">
-	<div><br>미승인된 신청이 없습니다.</div>
+	<div><br>승인 대기중인 신청이 없습니다.</div>
 	</c:if>
 	<c:if test="${count1 > 0}">
 	<table>
@@ -56,7 +56,8 @@
 		</tbody>
 		</table>
 	</c:if>	
-	</div>
+	</div><br>
+	<div style="text-align:center;">${pagingHtml}</div>
 	<br><br><br><hr width=80% color=CCCCCC><br><br><br>
 	
 	<div class="manage_club_list">
@@ -89,7 +90,8 @@
 		</tbody>
 		</table>
 	</c:if>
-	</div>
+	</div><br>
+	<div style="text-align:center;">${pagingHtml}</div>
 	<br><br><br><hr width=80% color=CCCCCC><br><br><br>
 	
 	<div class="manage_club_list">	
@@ -122,7 +124,8 @@
 		</tbody>
 		</table>
 	</c:if>
-	</div>
+	</div><br>
+	<div style="text-align:center;">${pagingHtml}</div>
 <br><br><br><br>
 </body>
 </html>

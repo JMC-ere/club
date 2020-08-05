@@ -43,7 +43,7 @@ public class ManageMemberController {
 		
 		//페이징 처리
 		PagingUtil page = 
-			new PagingUtil(keyfield,keyword,currentPage,count,rowCount,pageCount,"memberList.do");
+			new PagingUtil(keyfield,keyword,currentPage,count,rowCount,pageCount,"manage_member.do");
 		map.put("start", page.getStartCount());
 		map.put("end", page.getEndCount());
 		
