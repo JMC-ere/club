@@ -250,7 +250,7 @@ public class PostController {
 		}
 
 		//글 삭제 처리
-		@RequestMapping(value="/post/postdelite.do")
+		@RequestMapping(value="/post/postdelete.do")
 		public String submit(@RequestParam("num")int num) {
 
 			if(log.isDebugEnabled()) {
