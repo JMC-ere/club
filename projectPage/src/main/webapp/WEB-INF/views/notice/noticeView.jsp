@@ -61,8 +61,8 @@ input[type="submit"], input[type="button"]{
 	background-color:#dcedc8;
 }
 
-pre{
-	font-family:"맑은 고딕";
+textarea{
+	border:none;
 	margin: 40px;
 }
 /* 작은 사이즈 */
@@ -201,7 +201,7 @@ pre{
 			<img src="imageView.do?nt_num=${notice.nt_num}" style="max-width:500px">
 		</div>
 		</c:if>
-		<pre><c:out value="${notice.nt_content}"/></pre>
+		<div style="white-space: pre-line;">${notice.nt_content}</div>
 		<hr size="1" width="100%">
 		<div class="align-center">
 			<%--관리자와 작성자만 수정 삭제 버튼이 활성화 됨 --%>
