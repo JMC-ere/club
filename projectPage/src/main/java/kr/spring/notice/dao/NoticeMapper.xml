@@ -48,7 +48,7 @@
 	</select>
 	
 	
-	<!-- 이미지/문서 파일 다운로드 -->
+	<!-- 이미지/문서 파일 다운로드 -->  
 	<update id="update" parameterType="noticeVO">
 		UPDATE notice SET
 		<if test="nt_imgname != ''"> <!-- if 조건이 없으면 파일을 두고 내용만 변경시 기존 데이터가 사라짐 -->
