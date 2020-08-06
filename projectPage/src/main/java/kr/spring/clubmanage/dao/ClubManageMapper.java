@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Update;
 
 import kr.spring.clubmanage.domain.ClubManageVO;
 
-public interface ClubManageMapper {//dB에서 date를 해당 날짜의 00시00분00초로 인식함//
+public interface ClubManageMapper {//dB에서 date를 해당 날짜의 00시00분00초로 인식함////
 	@Select("select * from joinclub j join club c on j.club_num=c.club_num where j.mem_num=#{mem_num} and c.club_end+1>=sysdate")
 	public List<ClubManageVO> selectValidList(int mem_num);
 	@Select("select * from joinclub j join club c on j.club_num=c.club_num where j.mem_num=#{mem_num} and c.club_end+1<sysdate")
