@@ -226,7 +226,7 @@ public class PostController {
 
 			model.addAttribute("postVO",postVO);
 
-			return "postModify";
+			return "postupdate";
 		}
 		//글 수정 처리
 		@RequestMapping(value="post/postupdate.do", method=RequestMethod.POST)

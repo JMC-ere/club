@@ -32,8 +32,8 @@
 			<img src="imageView.do?post_num=${post.post_num}" class="responsive-img">
 		</c:if>
 		
-			<input type="button" value="수정" onclick="location.href='update.do?id=${member.id}'">
-			<input type="button" value="삭제" onclick="location.href='delete.do?id=${member.id}'">
+			<input type="button" value="수정" onclick="location.href='postupdate.do?num=${post.post_num}'">
+			<input type="button" value="삭제" onclick="location.href='postdelete.do?num=${post.post_num}'">
 			<input type="button" value="목록" onclick="location.href='post.do'">
 		</div>
 </body>
