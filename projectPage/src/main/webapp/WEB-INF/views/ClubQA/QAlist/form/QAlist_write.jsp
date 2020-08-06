@@ -7,7 +7,7 @@
 		<div class="write_main">
 			<form:form action="QAlist_write.do" enctype="multipart/form-data" commandName="clubQAVO">
 				<div class="writeform_header">
-					문의 글 작성
+					건의 / 신고 글 작성
 				</div>
 				<table id="qaWrite" class="qaWrite">
 					<tbody>
