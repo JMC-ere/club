@@ -25,6 +25,7 @@ public interface ClubQAService {
 	//부모글 삭제시 댓글이 존재하면 부모글 삭제전 댓글 삭제
 	public void deleteReplyByBoardNum(Integer qa_num);
 	
+	//질문 게시판
 	public List<ClubQA1_1VO> select1_1List(Map<String, Object> map);
 	public int select1_1RowCount(Map<String, Object> map);
 	public void insert1_1(ClubQA1_1VO clubqa1_1);
@@ -32,5 +33,14 @@ public interface ClubQAService {
 	public void update1_1QAhit(Integer num);
 	public void update1_1(ClubQA1_1VO clubqa1_1);
 	public void delete1_1(Integer num);
+	
+	//질문 게시판 댓글
+	public List<ClubQAReplyVO> select1_1ListReply(Map<String,Object> map);
+	public int select1_1RowCountReply(Map<String,Object> map);
+	public void insert1_1Reply(ClubQAReplyVO clubQAReplyVO);
+	public void update1_1Reply(ClubQAReplyVO clubQAReplyVO);
+	public void delete1_1Reply(Integer qa_reply_num);
+	//부모글 삭제시 댓글이 존재하면 부모글 삭제전 댓글 삭제
+	public void delete1_1ReplyByBoardNum(Integer qa_num);
 
 }

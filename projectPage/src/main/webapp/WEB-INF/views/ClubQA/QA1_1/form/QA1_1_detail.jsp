@@ -6,7 +6,7 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/js/jquery-3.5.0.min.js"></script>
 <script type="text/javascript"
-	src="${pageContext.request.contextPath}/resources/js/board.reply.js"></script>
+	src="${pageContext.request.contextPath}/resources/js/board.reply1_1.js"></script>
 	
 <!-- 질문 상세페이지  -->
 <form:form action="QA1_1_detial.do" enctype="multipart/form-data"
@@ -26,9 +26,7 @@
 				<th>조회수</th>
 				<td>${clubqa.qa1_1hit}</td>
 				<th style="border-left: thin solid gray;">답변 여부</th>
-				<td>
-				${clubqa.re_cnt}
-				</td>
+				<td><span id="re_label" style="font-size: 0.9rem;">처리중</span></td>
 			</tr>
 			<tr class="QA_content">
 				<td colspan="4" height="200">${clubqa.qa1_1content}</td>
@@ -47,8 +45,8 @@
 	<span id="reply_title">댓글 달기</span>
 	<div class="reply_header"></div>
 	<form id="re_form" class="re_form">
-		<input type="hidden" name="qa_num" value="${clubqa.qa1_1num}"
-			id="qa_num"> <input type="hidden" name="mem_num"
+		<input type="hidden" name="qa1_1num" value="${clubqa.qa1_1num}"
+			id="qa1_1num"> <input type="hidden" name="mem_num"
 			value="${user_num}" id="mem_num"> <input type="hidden"
 			name="mem_id" value="${user_id}" id="mem_id">
 

@@ -52,4 +52,16 @@ public interface ClubQaMapper {
 	@Delete("DELETE FROM qa1_1board WHERE qa1_1num=#{qa1_1num}")
 	public void delete1_1(Integer num);
 	
+	public List<ClubQAReplyVO> select1_1ListReply(Map<String,Object> map);
+	@Select("SELECT COUNT(*) FROM qa_reply WHERE qa1_1num=#{qa1_1num}")
+	public int select1_1RowCountReply(Map<String,Object> map);
+	@Insert("INSERT INTO qa_reply (qa_reply_num,qa_reply_content,qa1_1num,mem_num,mem_id) VALUES (qa_reply_seq.nextval,#{qa_reply_content},#{qa1_1num},#{mem_num},#{mem_id})")
+	public void insert1_1Reply(ClubQAReplyVO clubQAReplyVO);
+	@Update("UPDATE qa_reply SET qa_reply_content=#{qa_reply_content} WHERE qa_reply_num=#{qa_reply_num}")
+	public void update1_1Reply(ClubQAReplyVO clubQAReplyVO);
+	@Delete("DELETE FROM qa_reply WHERE qa_reply_num=#{qa_reply_num}")
+	public void delete1_1Reply(Integer qa_reply_num);
+	//부모글 삭제시 댓글이 존재하면 부모글 삭제전 댓글 삭제
+	@Delete("DELETE FROM qa_reply WHERE qa1_1num=#{qa1_1num}")
+	public void delete1_1ReplyByBoardNum(Integer qa_num);
 }
