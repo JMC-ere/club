@@ -170,7 +170,7 @@ public class PostController {
 
 	//글쓰기 처리
 	@RequestMapping(value="/post/postwrite.do",method=RequestMethod.POST)
-	public String submit(@Valid PostVO postVO, BindingResult result, HttpServletRequest request, HttpSession session) {
+	public String submit(@Valid PostVO postVO, BindingResult result, HttpSession session) {
 
 		if(log.isDebugEnabled()) {
 			log.debug("<<PostVO>> : " + postVO);

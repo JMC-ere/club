@@ -45,7 +45,7 @@ margin:0 0 9px 0;
 	<ul class="nav nav-pills nav-fill">
 		<li class="nav-item"><a class="nav-link active" href="post.do">참여
 				게시판</a></li>
-		<li class="nav-item"><a class="nav-link" href="postlist.do">영화
+		<li class="nav-item"><a class="nav-link" href="postlist.do?keyfield=post_category&keyword=join">영화
 				후기 게시판</a></li>
 		<li class="nav-item"><a class="nav-link" href="postphoto.do">갤러리</a>
 		</li>
