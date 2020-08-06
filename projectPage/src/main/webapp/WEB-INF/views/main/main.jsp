@@ -3,6 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.lang.String" %>
  <style>
+ 	#cardImg{
+		max-width:400px;
+		max-height:220px;
+	}
 p {
 	margin: 20px 0px;
 }
@@ -71,7 +75,7 @@ p {
 			
 				<div class="card-header" id="hope">${club.club_genre}</div>
 				<img
-					src="imageView.do?club_num=${club.club_num }" width="400px" height="172px" id="cardImg" class="responsive-img center"/>
+					src="imageView.do?club_num=${club.club_num }" id="cardImg" class="responsive-img center"/>
 				<div class="card-body">
 					<h5 class="card-title">${club.club_name}</h5>
 					<p class="card-text">${club.club_interval}</p>
