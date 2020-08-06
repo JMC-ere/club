@@ -46,7 +46,7 @@
 	</div>
 </div>
 <div class="map_wrap">
-    <div id="map" style="width:100%;height:10	0%;position:relative;overflow:hidden;"></div>
+    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
     <ul id="category">
         <li id="CE7" data-order="4"> 
             <span class="category_bg cafe"></span>
