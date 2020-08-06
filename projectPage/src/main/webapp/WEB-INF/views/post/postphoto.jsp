@@ -45,7 +45,6 @@
 		</li>
 	</ul>
 </div>
-
 <div class=page-main-style>
 	<form action="postlist.do" method="get">
 
