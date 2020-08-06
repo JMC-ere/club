@@ -14,17 +14,13 @@
 <title>회원 관리</title>
 <style>
 div.search_select{
-float:left;display: block; width:20% 
+width:35%;
 }
-div.search_input{
-float:left;display: block; margin:25px 0 0 0;  width:50%;
-}
+
 div.member_list{
 display: block; margin: 0px auto; width:80%;
 }
-div.searchbtn{
-margin:0 0 40px 0;
-}
+
 
 </style>
 </head>
@@ -46,7 +42,7 @@ margin:0 0 40px 0;
 
 	
 	<form id="search_form" action="manage_member.do" method="get" onsubmit="return none()">
-	<div class="searhform" style="width:100%; margin:0 0 0 50px;">
+	<div class="row searhform" style="width:50%;">
 	<div class="search_select" >
 		<label>회원 검색</label> 
 		<select class="browser-default" name="keyfield" id="keyfield">
@@ -64,12 +60,15 @@ margin:0 0 40px 0;
 			<option value="auth4">관리자</option>	
 			</optgroup>
 		</select> </div>
-		<div class="row col s10 search_input">
-		<div class="col s6" >
-		<input size="16" name="keyword" id="keyword"></div>
-		<div class="searchbtn">
-		<button class="btn waves-effect waves-light" type="submit"
-			name="action1">찾기</button></div></div>
+		<div class="row search_input" style="width:50%;padding-top:25px;margin-top:0;margin-bottom:0;margin-left:15px;margin-right:0;">
+			<div class="col s6" style="width:70%" >
+				<input size="16" name="keyword" id="keyword">
+			</div>
+		
+				<button class="btn waves-effect waves-light" type="submit" name="action1" style="margin-top:10px;">찾기
+				</button>
+			
+		</div>
 			</div>
 	</form>
 	
