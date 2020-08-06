@@ -22,6 +22,6 @@ public interface PostMapper {
 	public void updatePostHit(Integer post_num);
 	public void updatePost(PostVO post);
 	@Delete("DELETE FROM post WHERE post_num=#{post_num}")
-	public void deletePost(Integer posT_num);
+	public void deletePost(Integer post_num);
 	
 }

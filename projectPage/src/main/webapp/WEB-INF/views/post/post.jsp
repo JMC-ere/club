@@ -32,6 +32,10 @@
 	float:right;
 }
 
+.border-success tr{
+	align:center;
+}
+
 </style>
 
 <div class="jumbotron jumbotron-fluid">
@@ -89,7 +93,7 @@
 				<tbody class="border-success">
 					<c:forEach var="post" items="${list}">
 						<tr>
-							<td rowspan="4" width=20%>
+							<td rowspan="4" width=8%>
 							<img src="imageView.do?post_num=${post.post_num}" class="responsive-img" id="postImg">
 							</td>
 						</tr>
