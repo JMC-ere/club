@@ -69,7 +69,7 @@
 		<c:forEach var="post" items="${list}">
 		
 			<tr class="photo">
-				<td rowspan="3"><img src="451616">${post.post_img}</td>
+				<td rowspan="3"><img src="imageView.do?post_num=${post.post_num}" class="responsive-img" id="postImg"></td>
 			</tr>
 	
 		</c:forEach>
