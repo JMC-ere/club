@@ -58,11 +58,12 @@
 
 <!-- 댓글 관련 UI 시작 -->
 <!-- 댓글 작성 -->
+
 <div id="reply_div" class="reply_div">
 	<span id="reply_title">댓글 달기</span>
 	<div class="reply_header"></div>
 	<form id="re_form" class="re_form">
-		<c:if test="${ user_auth > 3 }">
+	
 		<input type="hidden" name="qa_num" value="${clubqa.qa_num}"
 			id="qa_num"> <input type="hidden" name="mem_num"
 			value="${user_num}" id="mem_num"> <input type="hidden"
@@ -71,15 +72,16 @@
 		<textarea rows="5" cols="30" name="qa_reply_content"
 			id="qa_reply_content" class="rep-content"
 			<c:if test="${empty user_num}">disabled="disabled"</c:if>><c:if
-				test="${empty user_num}">로그인해야 작성할 수 있습니다.</c:if></textarea>
-		<c:if test="${!empty user_num}">
+				test="${!empty user_num && user_auth < 4}">관리자만 작성할 수 있습니다.</c:if></textarea>
+		<c:if test="${!empty user_num && user_auth > 3}">
 			<div id="re_second" class="align-right">
 				<input type="submit" class="btn" value="전송">
 			</div>
 		</c:if>
-		</c:if>
+		
 	</form>
 </div>
+
 
 <!-- 댓글 목록 출력 -->
 <div id="output"></div>

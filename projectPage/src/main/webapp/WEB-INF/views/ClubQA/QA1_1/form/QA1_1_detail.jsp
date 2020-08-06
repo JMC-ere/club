@@ -53,7 +53,7 @@
 		<textarea rows="5" cols="30" name="qa_reply_content"
 			id="qa_reply_content" class="rep-content"
 			<c:if test="${empty user_num}">disabled="disabled"</c:if>><c:if
-				test="${empty user_num}">로그인해야 작성할 수 있습니다.</c:if></textarea>
+				test="${!empty user_num && user_auth < 4}">관리자만 작성할 수 있습니다.</c:if></textarea>
 		<c:if test="${!empty user_num}">
 			<div id="re_second" class="align-right">
 				<input type="submit" class="btn" value="전송">

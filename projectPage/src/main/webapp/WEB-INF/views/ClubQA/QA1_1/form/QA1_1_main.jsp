@@ -44,7 +44,7 @@
 					<tr style="font-size: 0.9rem;">
 						<td class="li_class" id="clubqa_num" style="text-align: center;">${clubqa.qa1_1num}</td>
 						<td>
-							<a <c:if test="${ clubqa.qa1_1secret_key != null }">class="clubqa_title"</c:if> href="QA1_1_detail.do?num=${clubqa.qa1_1num}" data-p="${clubqa.qa1_1secret_key}">
+							<a <c:if test="${ clubqa.qa1_1secret_key != null && user_auth < 4}">class="clubqa_title"</c:if> href="QA1_1_detail.do?num=${clubqa.qa1_1num}" data-p="${clubqa.qa1_1secret_key}">
 						
 							${clubqa.qa1_1title}
 							<c:if test="${ clubqa.qa1_1secret_key != null }">
