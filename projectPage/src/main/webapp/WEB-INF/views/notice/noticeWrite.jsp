@@ -56,8 +56,8 @@ input[type="submit"], input[type="button"]{
 	/*폰트 크기*/
     :root{
         font-size:14px;
-    }   
-	
+    }  
+    
 	/*사이드 메뉴*/
 	.menu{
 		height:15rem;
@@ -159,7 +159,7 @@ input[type="submit"], input[type="button"]{
 			<ul class="write">		
 				<li>
 					<label for="nt_title">제목</label>
-					<form:input path="nt_title" placeholder="제목을 입력해주세요." maxlength="26" class="title" id="title"/>
+					<form:input path="nt_title" placeholder="말머리에 [전체공지/XX클럽/파이터클럽] 작성 필수" maxlength="26" class="title" id="title"/>
 					<form:errors path="nt_title" cssClass="error-color"/>
 				</li>
 				<li>
@@ -167,7 +167,7 @@ input[type="submit"], input[type="button"]{
 				</li>
 				<li>
 					<label for="nt_content">내용</label>
-					<form:textarea path="nt_content" style="height:250px;" placeholder="* 작성 시 주의사항"/>
+					<form:textarea path="nt_content" style="height:250px;" placeholder="내용을 입력해주세요."/>
 					<form:errors path="nt_content" cssClass="error-color"/>
 				</li>
 				<li>

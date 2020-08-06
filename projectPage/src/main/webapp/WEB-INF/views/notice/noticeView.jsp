@@ -61,10 +61,6 @@ input[type="submit"], input[type="button"]{
 	background-color:#dcedc8;
 }
 
-textarea{
-	border:none;
-	margin: 40px;
-}
 /* 작은 사이즈 */
 @media (max-width:649px){
 	/*폰트 크기*/
@@ -187,7 +183,7 @@ textarea{
 					<td colspan="3"><a href="file.do?nt_num=${notice.nt_num}">${notice.nt_filename}</a></td>
 				</c:if>
 				<c:if test="${empty notice.nt_filename}">
-					<td colspan="3"> </td>
+					<td colspan="3">첨부된 파일이 없습니다.</td>
 				</c:if>				
 			</tr>
 		</table>
@@ -201,7 +197,7 @@ textarea{
 			<img src="imageView.do?nt_num=${notice.nt_num}" style="max-width:500px">
 		</div>
 		</c:if>
-		<div style="white-space: pre-line;">${notice.nt_content}</div>
+		<div style="white-space: pre-line; margin:40px;">${notice.nt_content}</div>
 		<hr size="1" width="100%">
 		<div class="align-center">
 			<%--관리자와 작성자만 수정 삭제 버튼이 활성화 됨 --%>
