@@ -139,7 +139,7 @@ input[type="submit"], input[type="button"]{
 	.menu ul li{
 		padding:15px 20px 15px 20px;
 	}
-	
+	 
 	.limit {
 	width:300px;
 	}
