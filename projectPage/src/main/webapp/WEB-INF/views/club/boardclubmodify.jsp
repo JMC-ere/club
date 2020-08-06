@@ -54,11 +54,11 @@
 			</li>
 			<li>
 				<label for="club_start">시작 날짜</label>
-				<input type="date" name="club_start" id="club_start">
+				<input type="date" name="club_start" id="club_start" value="${club.club_start}">
 			</li>
 			<li>
 				<label for="club_end">종료 날짜</label>
-				<input type="date" name="club_end" id="club_end">
+				<input type="date" name="club_end" id="club_end" value="${club.club_end}">
 			</li>
 			<li>
 				<label>모임 주기</label><p>
