@@ -63,8 +63,8 @@
 	</p>
 	<div class="center">
 		<c:if test="${user_auth == 4}">
-			<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="삭제"
-				onclick="location.href='viewclubdelete.do?club_num=${club.club_num}'">
+			<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="개설상태변경"
+				onclick="location.href='boardclubmodify.do?club_num=${club.club_num}'">
 		</c:if>
 		<button data-target="modal1" class="btn modal-trigger purple lighten-5 purple-text text-darken-4">신청하기</button>
 		<div id="modal1" class="modal">

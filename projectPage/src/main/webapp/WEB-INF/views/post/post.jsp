@@ -3,8 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style>
-
-
+#postImg{
+		max-width:200px;
+		max-height:100px;
+	}
 .page-menu{
 	width: 85%;
 	margin: 0 auto;
@@ -88,7 +90,7 @@
 					<c:forEach var="post" items="${list}">
 						<tr>
 							<td rowspan="4" width=20%>
-							${post.post_img}
+							<img src="imageView.do?post_num=${post.post_num}" class="responsive-img" id="postImg">
 							</td>
 						</tr>
 						<tr>

@@ -212,8 +212,8 @@ public class PostController {
 			
 			ModelAndView mav = new ModelAndView();
 			mav.setViewName("imageView");
-			mav.addObject("post_img",post.getPost_img());
-			mav.addObject("post_imgname",post.getPost_imgname());
+			mav.addObject("imageFile",post.getPost_img());
+			mav.addObject("filename",post.getPost_imgname());
 			
 			return mav;
 		}

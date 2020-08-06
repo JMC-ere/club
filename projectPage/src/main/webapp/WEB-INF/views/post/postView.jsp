@@ -29,7 +29,7 @@
 					  fn:endsWith(post.post_imgname,'.GIF') ||				  
 					  fn:endsWith(post.post_imgname,'.png') ||				  
 					  fn:endsWith(post.post_imgname,'.PNG')}">
-			<img src="imageView.do?post_num=${post.post_num}" >
+			<img src="imageView.do?post_num=${post.post_num}" class="responsive-img">
 		</c:if>
 		
 			<input type="button" value="수정" onclick="location.href='update.do?id=${member.id}'">
