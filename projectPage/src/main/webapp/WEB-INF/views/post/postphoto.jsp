@@ -9,7 +9,7 @@
 }
 
 .page-main-style {
-	width: 80%;
+	width: 50%;
 	margin: 0 auto;
 }
 
@@ -22,6 +22,7 @@
 	text-aling:center;
 	margin:0 auto;
 }
+
 
 
 </style>
@@ -55,25 +56,32 @@
 			</c:if>
 		</div>
 		<c:if test="${count == 0 }">
+	<div class="align-center">
+				<c:if test="${count == 0 }">
 			<div class="result-disply">등록된 게시물이 없습니다.</div>
-			<input type="button" value="돌아가기"
-				onclick="location.href='postlist.do'">
+			<button class="btn waves-effect waves-light" type="submit" onclick="location.href='post.do'">돌아가기</button>
+				</c:if>
+			</div>
 		</c:if>
 		<c:if test="${count > 0 }">
-			<table class="highlight">
-				<thead>
+		<table class="table table-bordered">	
+			<thead>
 		<c:forEach var="post" items="${list}">
-	
 		
-		<table class="table table-bordered">		
-			<tr align="center">
-				<th rowspan="3"><img src="451616">${post.post_title}</th>
+			<tr class="photo">
+				<td rowspan="3"><img src="451616">${post.post_img}</td>
 			</tr>
-		</table>
-</c:forEach>
+	
+		</c:forEach>
+
 </thead>
 </table>
-</c:if></form></div>
+</c:if></form>
+
+<div class=align-center>${pagingHtml}</div>
+		
+
+</div>
 <br>
 
 

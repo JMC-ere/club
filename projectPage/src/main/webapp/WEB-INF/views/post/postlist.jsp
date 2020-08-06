@@ -10,7 +10,7 @@
 }
 
 .page-main-style {
-	width: 80%;
+	width: 50%;
 	margin: 0 auto;
 }
 
@@ -81,19 +81,21 @@ form#search_form ul.search li input[type="search"]{
 			</li>		
 			<li>
 				<input type="search" size="20%" name="keyword" id="keyword"> 
-				 <button class="btn waves-effect waves-light" type="submit" id="keyword">찾기</button>
+				<button type="submit" class="btn btn-outline-success" id="keyword">찾기</button>
 			</li>
+			
+		<div class="write_button">
+			<c:if test="${!empty user_id}">
+			 <button type="button" class="btn btn-outline-success" onclick="location.href='postwrite.do'">글쓰기</button>
+			</c:if>
+		</div>
 				<c:if test="${count == 0 }">
 			<div class="result-disply">등록된 게시물이 없습니다.</div>
 			<button class="btn waves-effect waves-light" type="submit" onclick="location.href='post.do'">돌아가기</button>
 				</c:if>
 		</ul>
 
-		<div class="write_button">
-			<c:if test="${!empty user_id}">
-			 <button class="btn waves-effect waves-light" type="submit" onclick="location.href='postwrite.do'">글쓰기</button>
-			</c:if>
-		</div>
+
 		
 		<c:if test="${count > 0 }">
 			<table class="table table-bordered">
@@ -114,8 +116,6 @@ form#search_form ul.search li input[type="search"]{
 							<td>${post.mem_num}</td>
 							<td>${post.post_date}</td>
 							<td>${post.post_hit}</td>
-							<hidden>
-							</hidden>
 						</tr>
 					</c:forEach>
 				</tbody>

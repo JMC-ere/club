@@ -52,15 +52,22 @@
 </div>
 
 <div class=page-main-style>
-
-
-
-		<div class="write_button">
+	
+	
+			<div class="write_button">
 			<c:if test="${!empty user_id}">
 			<button type="button" class="btn btn-outline-success" onclick="location.href='postwrite.do'">글쓰기</button>
 
 			</c:if>
-		</div>
+			</div>
+	
+	
+	<div class="align-center">
+				<c:if test="${count == 0 }">
+			<div class="result-disply">등록된 게시물이 없습니다.</div>
+			<button class="btn waves-effect waves-light" type="submit" onclick="location.href='post.do'">돌아가기</button>
+				</c:if>
+			</div>
 
 
 

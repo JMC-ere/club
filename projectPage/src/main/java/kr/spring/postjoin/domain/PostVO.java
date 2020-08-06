@@ -20,6 +20,7 @@ public class PostVO {
 	private String post_imgname;
 	private Date post_date;
 	private int post_hit;
+	@NotEmpty
 	private String post_category;
 	
 	public int getPost_num() {
