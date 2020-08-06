@@ -35,7 +35,7 @@ margin: 0px auto;
 <p class="introduce_title">++CLUB의 회원 멤버십 소개 </p> 
 
 <hr width="90%" color="green"><br>
- <div class="image_div" >
+<div class="image_div" >
  
 
 <img src="/club/resources/images/member1.png" style="width:30%;float:left;">

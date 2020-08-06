@@ -194,9 +194,10 @@ input[type="submit"], input[type="button"]{
 		</c:if>
 		<c:if test="${!empty myValidClub }">
 			<c:forEach var="validClub" items="${myValidClub}">
+			<c:if test="${validClub.club_state==2 }">
 			<!-- 카드 하나 코드  -->
 			<div class="col-sm-12 col-lg-4">
-				<div class="card">
+				<div class="card medium">
 				<c:if test="${!empty validClub.filename }">
 					<c:if test="${
 						 fn:endsWith(validClub.filename, '.jpg') ||			 
@@ -207,14 +208,14 @@ input[type="submit"], input[type="button"]{
 						 fn:endsWith(validClub.filename, '.PNG')
 		 				}">
 		 			<div class="card-image">
-					<img src="imageView.do?club_num=${validClub.club_num }" class="responsive-img">
+					<img src="imageView.do?club_num=${validClub.club_num }" >
 					<span class="card-title">${validClub.club_title}</span>
 					</div>
 					</c:if>
 				</c:if>
 				<c:if test="${empty validClub.filename }">
 					<div class="card-image">
-					<img src="${pageContext.request.contextPath}/resources/images/talk.png" class="responsive-img">
+					<img src="${pageContext.request.contextPath}/resources/images/talk.png" >
 					<span class="card-title">${validClub.club_title}</span>
 					</div>
 				</c:if>
@@ -225,10 +226,11 @@ input[type="submit"], input[type="button"]{
 						</p>
 					</div>
 					<div class="card-action" align="right">
-						<a href="#" class="waves-effect waves-light btn-small">자세히</a>
+						<a href="${pageContext.request.contextPath }/main/viewclubdetail.do?club_num=${validClub.club_num}" class="waves-effect waves-light btn-small">자세히</a>
 					</div>
 				</div>
 			</div>
+			</c:if>
 			</c:forEach>
 		</c:if>
 		</div>
@@ -238,11 +240,11 @@ input[type="submit"], input[type="button"]{
 			<div>참여하신 활동 종료 클럽이 없습니다.</div>
 		</c:if>
 		<c:if test="${!empty myPastClub }">
-			
 			<!-- 카드 하나 코드  -->
 			<c:forEach var="pastClub" items="${myPastClub}">
+			<c:if test="${pastClub.club_state==2 }">
 			<div class="col-sm-12 col-lg-6">
-				<div class="card">
+				<div class="card medium">
 					<c:if test="${!empty pastClub.filename }">
 						<c:if test="${
 							 fn:endsWith(pastClub.filename, '.jpg') ||			 
@@ -260,7 +262,7 @@ input[type="submit"], input[type="button"]{
 					</c:if>
 					<c:if test="${empty pastClub.filename }">
 						<div class="card-image">
-						<img src="${pageContext.request.contextPath}/resources/images/talk.png" class="responsive-img">
+						<img src="${pageContext.request.contextPath}/resources/images/talk.png" height="250" class="responsive-img">
 						<span class="card-title">${pastClub.club_title}</span>
 						</div>
 					</c:if>
@@ -271,11 +273,11 @@ input[type="submit"], input[type="button"]{
 						</p>
 					</div>
 					<div class="card-action" align="right">
-						<a href="#" class="waves-effect waves-light btn-small">자세히</a>
+						<a href="${pageContext.request.contextPath }/main/viewclubdetail.do?club_num=${pastClub.club_num}" class="waves-effect waves-light btn-small">자세히</a>
 					</div>
-					
 				</div>
 			</div>
+			</c:if>
 			</c:forEach>
 		</c:if>
 		</div>

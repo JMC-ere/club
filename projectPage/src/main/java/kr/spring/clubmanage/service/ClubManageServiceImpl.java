@@ -70,5 +70,11 @@ public class ClubManageServiceImpl implements ClubManageService {
 		return clubManageMapper.selectMembers(club_num);
 	}
 
+	@Override
+	public ClubManageVO selectMember(int mem_num) {
+		
+		return clubManageMapper.selectMember(mem_num);
+	}
+
 
 }

@@ -102,9 +102,13 @@ public class ClubManageController {
 				map.put("club_num", club_num);
 				map.put("mem_num", participants[i]);
 				String join_date=clubManageService.selectJoinDate(map);
-				
-				join_date+=now+" / ";
-				
+				if(join_date==null) {//기존 참석일이 null인 경우 참석일에 오늘날짜만 추가
+					join_date=now+" / ";
+				}else if(join_date!=null) {//기존 참석일이 있는 경우 /를 추가하고 오늘 날짜를 추가
+					if(!join_date.contains(now)) {//기존 참석일에 오늘 날짜가 없을 때만 오늘 날짜 추가
+						join_date+=now+" / ";
+					}	
+				}
 				memberVO.setJoin_date(join_date);
 				memberVO.setMem_num(participants[i]);
 				clubManageService.updateParticipants(memberVO);
@@ -164,10 +168,25 @@ public class ClubManageController {
 	@RequestMapping("/clubmanage/imageView.do")
 	public ModelAndView viewImage(@RequestParam("club_num") int club_num) {
 		ClubManageVO club=clubManageService.selectClub(club_num);
+		if(log.isDebugEnabled()) {
+			log.debug("<<club>>"+club);
+		}
 		ModelAndView mav=new ModelAndView();
 		mav.setViewName("imageView");
 		mav.addObject("imageFile",club.getClub_img());
 		mav.addObject("filename",club.getFilename());
+		return mav;
+	}
+	@RequestMapping("/clubmanage/profileImage.do")
+	public ModelAndView viewProfileImage(@RequestParam("mem_num") int mem_num) {
+		ClubManageVO member=clubManageService.selectMember(mem_num);
+		ModelAndView mav=new ModelAndView();
+		if(log.isDebugEnabled()) {
+			log.debug("<<member>>" +member);
+		}
+		mav.setViewName("imageView");
+		mav.addObject("imageFile",member.getImage());
+		mav.addObject("filename",member.getDetail_img());
 		return mav;
 	}
 }

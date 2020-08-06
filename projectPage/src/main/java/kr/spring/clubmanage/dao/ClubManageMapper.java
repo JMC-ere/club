@@ -27,4 +27,6 @@ public interface ClubManageMapper {
 	public String selectJoinDate(Map<String,Object> map);
 	@Select("select mem_num from joinclub where club_num=#{club_num}")
 	public List<Integer> selectMembers(int club_num);
+	@Select("select * from member_detail where mem_num=#{mem_num}")
+	public ClubManageVO selectMember(int mem_num);
 }

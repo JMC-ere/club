@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
 /*기본 레이아웃*/
@@ -207,10 +208,19 @@ input[type="submit"], input[type="button"]{
 			<input type="hidden" name="club_num" value="${member.club_num }">
 			<tr>
 				<c:if test="${empty member.detail_img }">
-					<td>null</td>
+					<td><img class="circle" width="50" src="${pageContext.request.contextPath}/resources/images/profile.png"></td>
 				</c:if>
 				<c:if test="${!empty member.detail_img }">
-					<td>null</td>
+				<c:if test="${
+						 fn:endsWith(member.detail_img, '.jpg') ||			 
+						 fn:endsWith(member.detail_img, '.JPG') ||			 
+						 fn:endsWith(member.detail_img, '.gif') ||			 
+						 fn:endsWith(member.detail_img, '.GIF') ||			 
+						 fn:endsWith(member.detail_img, '.png') ||			 
+						 fn:endsWith(member.detail_img, '.PNG')
+		 				}">
+					<td><img class="circle" width="50" src="profileImage.do?mem_num=${member.mem_num }"></td>
+				</c:if>
 				</c:if>
 					<td>${member.detail_name }</td>
 					<td>${member.detail_nick }</td>

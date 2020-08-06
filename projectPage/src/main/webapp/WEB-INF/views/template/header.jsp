@@ -93,7 +93,7 @@
         <c:if test="${!empty user_id}"> 
         <li class="tab"><a href="${pageContext.request.contextPath}/mypage/local.do">장소찾기</a></li>
         </c:if>
-        <li class="tab"><a href="${pageContext.request.contextPath}//movieSearch/movieSearchForm.do">영화찾기</a></li>
+        <li class="tab"><a href="${pageContext.request.contextPath}/movieSearch/movieSearchForm.do">영화찾기</a></li>
         <li class="tab"><a href="${pageContext.request.contextPath}/post/post.do">후기</a></li>
         <li class="tab"><a href="${pageContext.request.contextPath}/ClubQA/QAmainForm.do">Q & A</a></li>
         <li class="tab"><a href="${pageContext.request.contextPath}/notice/list.do">공지사항</a></li>

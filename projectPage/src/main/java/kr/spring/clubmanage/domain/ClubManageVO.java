@@ -44,7 +44,21 @@ public class ClubManageVO {
 	private String detail_nick;
 	private String detail_cell;
 	private String detail_email;
-	private byte[] detail_img;
+	private String detail_img;
+	public String getDetail_img() {
+		return detail_img;
+	}
+	public void setDetail_img(String detail_img) {
+		this.detail_img = detail_img;
+	}
+	public byte[] getImage() {
+		return image;
+	}
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+	private byte[] image;
+	
 	private String join_date;
 	public String getJoin_date() {
 		return join_date;
@@ -160,23 +174,7 @@ public class ClubManageVO {
 	public void setDetail_email(String detail_email) {
 		this.detail_email = detail_email;
 	}
-	public byte[] getDetail_img() {
-		return detail_img;
-	}
-	public void setDetail_img(byte[] detail_img) {
-		this.detail_img = detail_img;
-	}
-	@Override
-	public String toString() {
-		return "ClubManageVO [club_num=" + club_num + ", mem_num=" + mem_num + ", club_title=" + club_title
-				+ ", club_loc=" + club_loc + ", club_name=" + club_name + ", club_start=" + club_start + ", club_time="
-				+ club_time + ", club_interval=" + club_interval + ", club_end=" + club_end + ", club_detail="
-				+ club_detail + ", upload=" + upload + ", filename="
-				+ filename + ", club_state=" + club_state + ", retrun_message=" + return_message + ", club_date="
-				+ club_date + ", detail_name=" + detail_name + ", detail_nick=" + detail_nick + ", detail_cell="
-				+ detail_cell + ", detail_email=" + detail_email + ", detail_img=" + Arrays.toString(detail_img)
-				+ ", join_date=" + join_date + "]";
-	}
+	
 	
 	
 }
