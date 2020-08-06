@@ -24,7 +24,7 @@
 	</div>
 	<p></p>
 	<div class="collapse_main">
-		<div class="collapse_header_search">
+		<div class="collapse_header_search" style="font-family: 'Youth';">
 		자주하는 질문 TOP5
 		</div>
 		<!-- collapse 시작 -->

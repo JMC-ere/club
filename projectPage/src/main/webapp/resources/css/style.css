@@ -21,6 +21,7 @@
 	}
 }
 
+
 .QAmain_header {
 	background-image: url("../images/litegreenbg.png");
 	background-size: 100% 100%;
@@ -30,9 +31,10 @@
 }
 
 .QAmain_header .header{
-	font-family: 'castella';
+	font-family: 'Youth';
 	font-size: 3.5rem;
-	
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
 }
 
 .QAmain_header_select {
@@ -66,6 +68,8 @@
 
 
 .QAmain_select li a {
+	font-family: 'Youth';
+	font-size:1.3rem;
 	display: block;
 	color: #4b371c;
 	text-align: center;
@@ -99,6 +103,7 @@
 	
 }
 .QAlist_main_header {
+	font-family: 'Youth';
 	text-align:left;
 	text-size: 2rem;
 	border-bottom: thin solid gray;
@@ -145,6 +150,7 @@ table tr li_class{
 
 
 .collapsible {
+	font-family: 'Youth';
   	background-color: #fffde7;
   	cursor: pointer;
   	padding: 18px;
