@@ -101,7 +101,7 @@
 							<td width=30%><a href="postdetail.do?num=${post.post_num}">${post.post_title}</a></td>
 							</tr>
 						<tr>
-							<td width=40%>${post.mem_num}</td>
+							<td width=40%>${post.mem_id}</td>
 						</tr>
 						<tr>
 							<td width=30%>

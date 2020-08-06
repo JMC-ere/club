@@ -27,15 +27,6 @@
 	<h2>후기 작성하기</h2>
 	<form:form action="postwrite.do" enctype="multipart/form-data"
 		commandName="postVO">
-
-			<%-- 			<form id="search_form">
-				<label for="title">게시물 유형</label> <select name='option1no'
-					onchange="this.form.option1no_input.value=this.value">
-					<option value=1>참여</option>
-					<option value=2>영화</option>
-					<option value=3>갤러리</option>
-				</select> <input type=hidden value='' name='option1no_input'>
-			</form> --%>
 	
 		<div class="write_button">
 			<button type="submit" class="btn btn-outline-success">작성 완료</button>
@@ -44,6 +35,17 @@
 	
 	<table id="postWrite" class="table table-bordered">
 		<tbody>
+		
+		
+			<form select>
+				<label for="title">게시물 유형</label> <select name='post_category'
+					onchange="this.form.option1no_input.value=this.value">
+					<option value=1>참여</option>
+					<option value=2>영화</option>
+					<option value=3>갤러리</option>
+				</select> <input type=hidden value='' name='option1no_input'>
+			</form>
+		
 			<tr>
 				<th scope="row">
 					<label for="category">게시물 유형</label>
