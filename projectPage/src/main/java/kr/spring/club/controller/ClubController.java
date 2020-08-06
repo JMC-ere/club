@@ -76,8 +76,10 @@ public class ClubController {
 	@RequestMapping("/main/viewclubdetail.do")
 	public ModelAndView process1(@RequestParam("club_num") int club_num,HttpServletRequest request) {
 		
-		ClubVO club = clubService.selectBoard(club_num);
 		
+		ClubVO club = clubService.selectBoard(club_num);
+	
+		club.setClub_detail(club.getClub_detail().replace("\n", "<br>"));
 		return new ModelAndView("viewclubdetail","club",club);
 	}
 	
@@ -156,6 +158,7 @@ public class ClubController {
 	public ModelAndView process(@RequestParam("club_num") int club_num,HttpServletRequest request) {
 		
 		ClubVO club = clubService.selectBoard(club_num);
+		club.setClub_detail(club.getClub_detail().replace("\n", "<br>"));
 		
 		ModelAndView mav = new ModelAndView();
 		
