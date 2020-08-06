@@ -75,9 +75,9 @@
 			<c:if test="${user_auth == 4}">
 			<input type="submit" class="btn purple lighten-5 purple-text text-darken-4" value="개설하기">
 			</c:if>
-			
+			<c:if test="${user_auth == 3}">
 			<input type="submit" class="btn purple lighten-5 purple-text text-darken-4" value="신청하기">
-			
+			</c:if>
 			<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="돌아가기" onclick="location.href='boardclub.do'">
 		</div>
 	</form:form>
