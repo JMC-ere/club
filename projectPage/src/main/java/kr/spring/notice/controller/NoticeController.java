@@ -202,6 +202,4 @@ public class NoticeController {
 		
 		return "redirect:/notice/list.do";
 	}
-	
-	//클럽별 게시판 목록
 }
