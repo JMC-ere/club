@@ -54,12 +54,12 @@ form#search_form ul.search li input[type="search"]{
 	<h2>영화후기 게시판입니다.</h2>
 </div>
 
-<div class=page-menu>
+<div class="page-menu">
 	<ul class="nav nav-pills nav-fill">
 		<li class="nav-item"><a class="nav-link" href="post.do">참여
 				게시판</a></li>
-		<li class="nav-item"><a class="nav-link active"
-			href="postlist.do">영화 후기 게시판</a></li>
+		<li class="nav-item"><a class="nav-link active" href="postlist.do?keyfield=post_category&keyword=join">영화
+				후기 게시판</a></li>
 		<li class="nav-item"><a class="nav-link" href="postphoto.do">갤러리</a>
 		</li>
 	</ul>
@@ -71,7 +71,7 @@ form#search_form ul.search li input[type="search"]{
 				<select name="keyfield">
 					<option value="post_title">제목</option>
 					<option value="post_board">내용</option>
-					<option value="">id</option>
+					<option value="post_category">유형</option>
 				</select>
 			</li>		
 			<li>

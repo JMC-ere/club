@@ -62,6 +62,7 @@
 		<label>모임 내용</label> <br> ${club.club_detail}
 	</p>
 	<div class="center">
+	<form:form>
 		<c:if test="${user_auth == 4}">
 			<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="삭제"
 				onclick="location.href='viewclubdelete.do?club_num=${club.club_num}'">
@@ -77,12 +78,12 @@
 				신청하기 버튼을 누르시면 클럽장이 회원님의 연락처를 열람할 수 있습니다.<br>
 				이에 동의하시면 버튼을 눌러주세요.</p>
 			</div>
-			<a href="#!" class="modal-close waves-effect waves-green btn-flat">신청하기</a>
+			<a href="${pageContext.request.contextPath}/main/checkClub.do?club_num=${club.club_num}" class="modal-close waves-effect waves-green btn-flat">신청하기</a>
 			<a href="#" class="modal-close waves-effect waves-green btn-flat">닫기</a>
 		</div>
 		<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="돌아가기"
 				onclick="location.href='viewclub.do'">
-
+		</form:form>
 	</div>
 </div>
 <script>

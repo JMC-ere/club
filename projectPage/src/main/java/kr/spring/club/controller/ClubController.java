@@ -239,4 +239,23 @@ public class ClubController {
 		return "redirect:/main/boardclub.do";
 	}
 	
+	@RequestMapping("/main/checkClub.do")
+	public String checkClub(@RequestParam int club_num,HttpSession session) {
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<user_num>> : " + (Integer)session.getAttribute("user_num"));
+			log.debug("<<club_num>> : " + club_num);
+		}
+		try {
+			
+		clubService.joinClubInsert(club_num,(Integer)session.getAttribute("user_num"));
+		
+		}catch(Exception e) {
+			
+			return "redirect:/main/main.do";
+			
+		}
+		return "redirect:/clubmanage/myClub.do";
+	}
+	
 }

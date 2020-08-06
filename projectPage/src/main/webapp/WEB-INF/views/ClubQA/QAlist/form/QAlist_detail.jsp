@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>    
 
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/js/jquery-3.5.0.min.js"></script>
@@ -26,20 +27,30 @@
 				<th>조회수</th>
 				<td>${clubqa.qa_hit}</td>
 				<th style="border-left: thin solid gray;">답변 여부</th>
-				<td>
-				${clubqa.re_cnt}
-				</td>
+				<td><span id="re_label" style="font-size: 0.9rem;">처리중</span></td>
 			</tr>
 			<tr class="QA_content">
 				<td colspan="4" height="200">${clubqa.qa_content}</td>
 			</tr>
+			<c:if test="${!empty clubqa.qa_filename}">
 			<tr>
 				<td>
-				<c:if test="${!empty clubqa.qa_filename}">
-				<li>첨부파일 : <a href="file.do?num=${clubqa.qa_num}">${clubqa.qa_filename}</a></li>
-				</c:if>
+				첨부파일 : <a href="file.do?num=${clubqa.qa_num}">${clubqa.qa_filename}</a></td>
+			</tr>
+			<tr>
+				<td> 
+				<c:if test="${fn:endsWith(clubqa.qa_filename,'.jpg') || 
+	              			fn:endsWith(clubqa.qa_filename,'.JPG') ||
+	              			fn:endsWith(clubqa.qa_filename,'.gif') ||
+	              			fn:endsWith(clubqa.qa_filename,'.GIF') ||
+	              			fn:endsWith(clubqa.qa_filename,'.png') ||
+	              			fn:endsWith(clubqa.qa_filename,'.PNG')}">
+				<img src="imageView.do?num=${clubqa.qa_num}"
+		                      style="max-width:500px">
+		        </c:if>
 				</td>
 			</tr>
+			</c:if>
 		</table>
 		
 		<p>

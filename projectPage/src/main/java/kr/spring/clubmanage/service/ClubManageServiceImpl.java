@@ -1,6 +1,7 @@
 package kr.spring.clubmanage.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -58,9 +59,9 @@ public class ClubManageServiceImpl implements ClubManageService {
 	}
 
 	@Override
-	public String selectJoinDate(int mem_num) {
+	public String selectJoinDate(Map<String,Object> map) {
 		
-		return clubManageMapper.selectJoinDate(mem_num);
+		return clubManageMapper.selectJoinDate(map);
 	}
 
 	@Override
@@ -68,5 +69,6 @@ public class ClubManageServiceImpl implements ClubManageService {
 		
 		return clubManageMapper.selectMembers(club_num);
 	}
+
 
 }

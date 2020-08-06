@@ -2,7 +2,9 @@ package kr.spring.clubmanage.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -33,8 +35,8 @@ public class ClubManageController {
 	@RequestMapping("/clubmanage/myClub.do")
 	public String process(HttpSession session,Model model) {
 		//세션에 저장되어 있는 mem_num반환
-		//int mem_num=(Integer)session.getAttribute("user_num");
-		int mem_num = 1;
+		int mem_num=(Integer)session.getAttribute("user_num");
+		//int mem_num = 1;
 		List<ClubManageVO> myValidClub=clubManageService.selectValidList(mem_num);
 		List<ClubManageVO> myPastClub=clubManageService.selectPastList(mem_num);
 		if(log.isDebugEnabled()) {
@@ -49,8 +51,8 @@ public class ClubManageController {
 	@RequestMapping("/clubmanage/leaderClub.do")
 	public String leaderClub(HttpSession session, Model model) {
 		//세션에 저장되어 있는 mem_num반환
-		//int mem_num=(Integer)session.getAttribute("user_num");
-		int mem_num = 1;
+		int mem_num=(Integer)session.getAttribute("user_num");
+
 		List<ClubManageVO> leadersValidClub=clubManageService.selectLeadersValidList(mem_num);
 		List<ClubManageVO> leadersPastClub=clubManageService.selectLeadersPastList(mem_num);
 
@@ -74,7 +76,7 @@ public class ClubManageController {
 	}
 	@RequestMapping(value="/clubmanage/manageMembers.do",method=RequestMethod.POST)
 	public String manageMembers(@RequestParam(value="attendance",defaultValue="0")
-								int[] participants,//null일때에러나지 않도록 방법 확인
+								int[] participants,
 								@RequestParam("club_num") int club_num,
 								Model model ) {
 		
@@ -96,14 +98,13 @@ public class ClubManageController {
 			for(int i=0;i<participants.length;i++) {//참석으로 체크된 사람들에게 참석일에 오늘 날짜 추가
 				//참석으로 체크된 사람들의 mem_num값을 기준으로 오늘 날짜 추가
 				ClubManageVO memberVO=new ClubManageVO();
-				String join_date=clubManageService.selectJoinDate(participants[i]);
-				if(join_date==null) {//기존 참석일이 null인 경우 참석일에 오늘날짜만 추가
-					join_date=now+" / ";
-				}else if(join_date!=null) {//기존 참석일이 있는 경우 /를 추가하고 오늘 날짜를 추가
-					if(!join_date.contains(now)) {//기존 참석일에 오늘 날짜가 없을 때만 오늘 날짜 추가
-						join_date+=now+" / ";
-					}	
-				}
+				Map<String, Object> map= new HashMap<String, Object> ();
+				map.put("club_num", club_num);
+				map.put("mem_num", participants[i]);
+				String join_date=clubManageService.selectJoinDate(map);
+				
+				join_date+=now+" / ";
+				
 				memberVO.setJoin_date(join_date);
 				memberVO.setMem_num(participants[i]);
 				clubManageService.updateParticipants(memberVO);
@@ -115,9 +116,11 @@ public class ClubManageController {
 				log.debug("<<<members>>> : "+members);
 			}
 			for(int i=0;i<members.size();i++) {//불참자 리스트에서 오늘 날짜가 참석일에 있다면 삭제
-				
+				Map<String, Object> map= new HashMap<String, Object> ();
+				map.put("club_num", club_num);
+				map.put("mem_num", members.get(i));
 				ClubManageVO memberVO=new ClubManageVO();
-				String remove_date=clubManageService.selectJoinDate(members.get(i));
+				String remove_date=clubManageService.selectJoinDate(map);
 				if(remove_date!=null && remove_date.contains(now)) {
 					remove_date=remove_date.replace(now+" / ", "");
 					if(log.isDebugEnabled()) {
@@ -133,7 +136,10 @@ public class ClubManageController {
 			for(int i=0;i<members.size();i++) {//참석일에 오늘 날짜가 표시되어 있다면 삭제
 				
 				ClubManageVO memberVO=new ClubManageVO();
-				String remove_date=clubManageService.selectJoinDate(members.get(i));
+				Map<String, Object> map= new HashMap<String, Object> ();
+				map.put("club_num", club_num);
+				map.put("mem_num", members.get(i));
+				String remove_date=clubManageService.selectJoinDate(map);
 				if(remove_date!=null && remove_date.contains(now)) {
 					remove_date=remove_date.replace(now+" / ", "");
 					if(log.isDebugEnabled()) {

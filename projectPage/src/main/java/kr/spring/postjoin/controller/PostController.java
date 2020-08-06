@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
@@ -37,11 +38,13 @@ public class PostController {
 	public PostVO initCommand() {
 		return new PostVO();
 	}
-
+	
+	//목록1
 	@RequestMapping("/post/post.do")
 	public ModelAndView  processlist1(@RequestParam(value="pageNum",defaultValue="1") int currentpage,
 			@RequestParam(value="keyfield",defaultValue="")String keyfield,
 			@RequestParam(value="keyword",defaultValue="")String keyword) {
+		
 		Map<String,Object> map = new HashMap<String,Object>();
 		map.put("keyfield", keyfield);
 		map.put("keyword",keyword);
@@ -76,7 +79,7 @@ public class PostController {
 
 		return mav;
 	}
-
+	//목록2
 	@RequestMapping("/post/postlist.do")
 	public ModelAndView  processlist2(@RequestParam(value="pageNum",defaultValue="1") int currentpage,
 			@RequestParam(value="keyfield",defaultValue="")String keyfield,
@@ -116,7 +119,7 @@ public class PostController {
 		return mav;
 	}
 
-
+	//목록3
 	@RequestMapping("/post/postphoto.do")
 	public ModelAndView  processlist3(@RequestParam(value="pageNum",defaultValue="1") int currentpage,
 			@RequestParam(value="keyfield",defaultValue="")String keyfield,
@@ -161,21 +164,25 @@ public class PostController {
 	//글쓰기
 	@RequestMapping(value="/post/postwrite.do",method=RequestMethod.GET)
 	public String form() {
+		
 		return "postwrite";
 	}
 
 	//글쓰기 처리
 	@RequestMapping(value="/post/postwrite.do",method=RequestMethod.POST)
-	public String submit(@Valid PostVO postVO, BindingResult result) {
+	public String submit(@Valid PostVO postVO, BindingResult result, HttpSession session) {
 
 		if(log.isDebugEnabled()) {
-			log.debug("<<PostVO>>" + postVO);
+			log.debug("<<PostVO>> : " + postVO);
 		}
-
+		//유효성 체크 결과 에러가 있으면 폼을 호출
 		if(result.hasErrors()) {
 			return "postwrite";
 		}
-
+		//mem_num 반환
+		postVO.setMem_num((Integer)session.getAttribute("user_num"));
+		
+		//글 등록
 		postService.insertPost(postVO);
 
 		return "redirect:/post/postlist.do";
@@ -205,8 +212,8 @@ public class PostController {
 			
 			ModelAndView mav = new ModelAndView();
 			mav.setViewName("imageView");
-			mav.addObject("imageFile",post.getPost_img());
-			mav.addObject("filename",post.getPost_imgname());
+			mav.addObject("post_img",post.getPost_img());
+			mav.addObject("post_imgname",post.getPost_imgname());
 			
 			return mav;
 		}

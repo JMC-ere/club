@@ -176,9 +176,7 @@ input[type="submit"], input[type="button"]{
 	float:left;
 	}	
 }
-.card-text{
-	font-size: 1em;
-}
+
 </style>
 <div class="page-main-style">
 	<div class="menu">
@@ -189,76 +187,98 @@ input[type="submit"], input[type="button"]{
 	  	</ul>
 	</div>
 	<div class="page-content">
-		<div class="container">
-			<h6>현재 진행중인 클럽</h6>
-				<c:if test="${empty myValidClub }">
-				<div>현재 참여 중인 클럽이 없습니다.</div>
+		<h6>현재 진행중인 클럽</h6>
+		<div class="row">
+		<c:if test="${empty myValidClub }">
+			<div>현재 참여 중인 클럽이 없습니다.</div>
+		</c:if>
+		<c:if test="${!empty myValidClub }">
+			<c:forEach var="validClub" items="${myValidClub}">
+			<!-- 카드 하나 코드  -->
+			<div class="col-sm-12 col-lg-4">
+				<div class="card">
+				<c:if test="${!empty validClub.filename }">
+					<c:if test="${
+						 fn:endsWith(validClub.filename, '.jpg') ||			 
+						 fn:endsWith(validClub.filename, '.JPG') ||			 
+						 fn:endsWith(validClub.filename, '.gif') ||			 
+						 fn:endsWith(validClub.filename, '.GIF') ||			 
+						 fn:endsWith(validClub.filename, '.png') ||			 
+						 fn:endsWith(validClub.filename, '.PNG')
+		 				}">
+		 			<div class="card-image">
+					<img src="imageView.do?club_num=${validClub.club_num }" class="responsive-img">
+					<span class="card-title">${validClub.club_title}</span>
+					</div>
+					</c:if>
 				</c:if>
-			<div class="row">
-			<c:if test="${!empty myValidClub }">
-				<c:forEach var="validClub" items="${myValidClub}">
-				<!-- 카드 하나 코드  -->
-				<div class="col-sm-6 col-lg-6">
-					<p></p>
-					<div class="card">
-						<div class="card-header">${validClub.club_title}</div>
-						<c:if test="${
-							 fn:endsWith(validClub.filename, '.jpg') ||			 
-							 fn:endsWith(validClub.filename, '.JPG') ||			 
-							 fn:endsWith(validClub.filename, '.gif') ||			 
-							 fn:endsWith(validClub.filename, '.GIF') ||			 
-							 fn:endsWith(validClub.filename, '.png') ||			 
-							 fn:endsWith(validClub.filename, '.PNG')
-			 				}">
-						<img src="imageView.do?club_num=${validClub.club_num }" alt="" width="293px" height="172px" id="cardImg" />
-						</c:if>
-						<div class="card-body">
-							<h5 class="card-title">${validClub.club_title}</h5>
-							<p class="card-text">
-							시작:${validClub.club_start} | 종료:${validClub.club_end}<br>
-							주기:${validClub.club_interval } | 시간:${validClub.club_time }
-							</p>
-							<a href="#" class="btn #8bc34a light-green">More</a>
-						</div>
+				<c:if test="${empty validClub.filename }">
+					<div class="card-image">
+					<img src="${pageContext.request.contextPath}/resources/images/talk.png" class="responsive-img">
+					<span class="card-title">${validClub.club_title}</span>
+					</div>
+				</c:if>
+					<div class="card-content">
+						<p class="club-detail">
+						시작:${validClub.club_start} | 종료:${validClub.club_end}<br>
+						주기:${validClub.club_interval } | 시간:${validClub.club_time }
+						</p>
+					</div>
+					<div class="card-action" align="right">
+						<a href="#" class="waves-effect waves-light btn-small">자세히</a>
 					</div>
 				</div>
-				</c:forEach>
-			</c:if>
 			</div>
+			</c:forEach>
+		</c:if>
+		</div>
+		<h6>활동 종료 클럽</h6>
+		<div class="row">
+		<c:if test="${empty myPastClub }">
+			<div>참여하신 활동 종료 클럽이 없습니다.</div>
+		</c:if>
+		<c:if test="${!empty myPastClub }">
+			
+			<!-- 카드 하나 코드  -->
+			<c:forEach var="pastClub" items="${myPastClub}">
+			<div class="col-sm-12 col-lg-6">
+				<div class="card">
+					<c:if test="${!empty pastClub.filename }">
+						<c:if test="${
+							 fn:endsWith(pastClub.filename, '.jpg') ||			 
+							 fn:endsWith(pastClub.filename, '.JPG') ||			 
+							 fn:endsWith(pastClub.filename, '.gif') ||			 
+							 fn:endsWith(pastClub.filename, '.GIF') ||			 
+							 fn:endsWith(pastClub.filename, '.png') ||			 
+							 fn:endsWith(pastClub.filename, '.PNG')
+			 				}">
+			 			<div class="card-image">
+						<img src="imageView.do?club_num=${pastClub.club_num }" class="responsive-img">
+						<span class="card-title">${pastClub.club_title}</span>
+						</div>
+						</c:if>
+					</c:if>
+					<c:if test="${empty pastClub.filename }">
+						<div class="card-image">
+						<img src="${pageContext.request.contextPath}/resources/images/talk.png" class="responsive-img">
+						<span class="card-title">${pastClub.club_title}</span>
+						</div>
+					</c:if>
+					<div class="card-content">
+						<p class="club-detail">
+						시작:${pastClub.club_start} | 종료:${pastClub.club_end}<br>
+						주기:${pastClub.club_interval } | 시간:${pastClub.club_time }
+						</p>
+					</div>
+					<div class="card-action" align="right">
+						<a href="#" class="waves-effect waves-light btn-small">자세히</a>
+					</div>
+					
+				</div>
+			</div>
+			</c:forEach>
+		</c:if>
 		</div>
 	</div>	
 	<br class="end">
 </div>
-
-<%-- <h6>현재 진행 중인 클럽</h6>
-<c:if test="${empty myValidClub }">
-<div>현재 참여 중인 클럽이 없습니다.</div>
-</c:if>
-<c:if test="${!empty myValidClub }">
-<c:forEach var="validClub" items="${myValidClub}">
-	<ul>
-		<li>${validClub.club_num}</li>
-		<li>${validClub.club_title}</li>
-		<li>${validClub.club_start}</li>
-		<li>${validClub.club_end}</li>
-		<li>${validClub.club_interval }</li>
-		<li>${validClub.club_time }</li>
-	</ul>
-</c:forEach>
-</c:if>
-<h6>종료된 클럽</h6>
-<c:if test="${empty myPastClub }">
-<div>활동이 종료된 클럽이 없습니다.</div>
-</c:if>
-<c:if test="${!empty myPastClub }">
-<c:forEach var="pastClub" items="${myPastClub}">
-	<ul>
-		<li>${pastClub.club_num}</li>
-		<li>${pastClub.club_title}</li>
-		<li>${pastClub.club_start}</li>
-		<li>${pastClub.club_end}</li>
-		<li>${pastClub.club_interval }</li>
-		<li>${pastClub.club_time }</li>
-	</ul>
-</c:forEach>
-</c:if> --%>

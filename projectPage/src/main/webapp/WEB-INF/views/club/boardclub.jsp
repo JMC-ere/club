@@ -10,6 +10,8 @@
 	#boardclub-center{
 		text-align: center;
 	}
+	
+	
 </style>
 <!-- 테스트  -->
 <div class="row col s12" id="boardclub-center">

@@ -16,4 +16,5 @@ public interface ClubService {
 	
 	public int listRowCount();
 	public List<ClubVO> mainList(Map<String,Object> map);
+	public void joinClubInsert(Integer club_num,Integer mem_num);
 }
