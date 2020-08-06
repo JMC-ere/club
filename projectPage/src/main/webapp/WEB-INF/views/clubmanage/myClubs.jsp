@@ -189,11 +189,14 @@ input[type="submit"], input[type="button"]{
 	<div class="page-content">
 		<h6>현재 진행중인 클럽</h6>
 		<div class="row">
-		<c:if test="${empty myValidClub }">
+		<c:if test="${empty myValidClub  }">
 			<div>현재 참여 중인 클럽이 없습니다.</div>
 		</c:if>
 		<c:if test="${!empty myValidClub }">
 			<c:forEach var="validClub" items="${myValidClub}">
+			<c:if test="${validClub.club_state==1 || valid.club_state==2 }">
+			<div>현재 참여 중인 클럽이 없습니다.</div>
+			</c:if>
 			<c:if test="${validClub.club_state==2 }">
 			<!-- 카드 하나 코드  -->
 			<div class="col-sm-12 col-lg-4">

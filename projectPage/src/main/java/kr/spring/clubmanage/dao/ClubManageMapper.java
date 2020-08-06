@@ -9,13 +9,13 @@ import org.apache.ibatis.annotations.Update;
 import kr.spring.clubmanage.domain.ClubManageVO;
 
 public interface ClubManageMapper {
-	@Select("select * from joinclub j join club c on j.club_num=c.club_num where j.mem_num=#{mem_num} and c.club_end>=sysdate")
+	@Select("select * from joinclub j join club c on j.club_num=c.club_num where j.mem_num=#{mem_num} and c.club_end+1>=sysdate")
 	public List<ClubManageVO> selectValidList(int mem_num);
-	@Select("select * from joinclub j join club c on j.club_num=c.club_num where j.mem_num=#{mem_num} and c.club_end<sysdate")
+	@Select("select * from joinclub j join club c on j.club_num=c.club_num where j.mem_num=#{mem_num} and c.club_end+1<sysdate")
 	public List<ClubManageVO> selectPastList(int mem_num);
-	@Select("select * from club where mem_num=#{mem_num} and club_end>=sysdate")
+	@Select("select * from club where mem_num=#{mem_num} and club_end+1>=sysdate")
 	public List<ClubManageVO> selectLeadersValidList(int mem_num);
-	@Select("select * from club where mem_num=#{mem_num} and club_end<sysdate")
+	@Select("select * from club where mem_num=#{mem_num} and club_end+1<sysdate")
 	public List<ClubManageVO> selectLeadersPastList(int mem_nu);
 	@Select("select * from joinclub j join member_detail m on j.mem_num=m.mem_num where j.club_num=#{club_num}")
 	public List<ClubManageVO> selectManageMembers(int club_num);
