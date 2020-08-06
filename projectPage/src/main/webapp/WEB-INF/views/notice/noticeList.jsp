@@ -192,8 +192,8 @@ input[type="submit"], input[type="button"]{
 		<p>공지사항</p>
 		<ul>
 		   <li class="tab"><a href="list.do">전체 공지사항</a></li>
-		   <li class="tab"><a href="list.do?keyfield=nt_title&keyword=%ED%81%B4%EB%9F%BD">클럽별 공지사항</a></li>
-		   <li class="tab"><a href="list.do?keyfield=nt_title&keyword=%ED%8C%8C%EC%9D%B4%ED%84%B0%ED%81%B4%EB%9F%BD">파이터클럽 공지사항</a></li>
+		   <li class="tab"><a href="http://localhost:8080/club/notice/list.do?keyfield=nt_title&keyword=%ED%81%B4%EB%9F%BD%5D">클럽별 공지사항</a></li>
+		   <li class="tab"><a href="http://localhost:8080/club/notice/list.do?keyfield=nt_title&keyword=%5B%ED%8C%8C%EC%9D%B4%ED%84%B0%ED%81%B4%EB%9F%BD%5D">파이터클럽 공지사항</a></li>
 	  	</ul>
 	</div>
 	<div class="page-content">
