@@ -38,7 +38,7 @@ public class ClubManageVO {
 		this.filename = filename;
 	}
 	private int club_state;
-	private String retrun_message;
+	private String return_message;
 	private Date club_date;
 	private String detail_name;
 	private String detail_nick;
@@ -124,11 +124,11 @@ public class ClubManageVO {
 	public void setClub_state(int club_state) {
 		this.club_state = club_state;
 	}
-	public String getRetrun_message() {
-		return retrun_message;
+	public String getReturn_message() {
+		return return_message;
 	}
-	public void setRetrun_message(String retrun_message) {
-		this.retrun_message = retrun_message;
+	public void setReturn_message(String retrun_message) {
+		this.return_message = retrun_message;
 	}
 	public Date getClub_date() {
 		return club_date;
@@ -172,7 +172,7 @@ public class ClubManageVO {
 				+ ", club_loc=" + club_loc + ", club_name=" + club_name + ", club_start=" + club_start + ", club_time="
 				+ club_time + ", club_interval=" + club_interval + ", club_end=" + club_end + ", club_detail="
 				+ club_detail + ", upload=" + upload + ", filename="
-				+ filename + ", club_state=" + club_state + ", retrun_message=" + retrun_message + ", club_date="
+				+ filename + ", club_state=" + club_state + ", retrun_message=" + return_message + ", club_date="
 				+ club_date + ", detail_name=" + detail_name + ", detail_nick=" + detail_nick + ", detail_cell="
 				+ detail_cell + ", detail_email=" + detail_email + ", detail_img=" + Arrays.toString(detail_img)
 				+ ", join_date=" + join_date + "]";
