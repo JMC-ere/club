@@ -37,24 +37,20 @@
 				<td>
 				첨부파일 : <a href="file.do?num=${clubqa.qa_num}">${clubqa.qa_filename}</a></td>
 			</tr>
-			<tr>
-				<td> 
-				<c:if test="${fn:endsWith(clubqa.qa_filename,'.jpg') || 
+			<c:if test="${fn:endsWith(clubqa.qa_filename,'.jpg') || 
 	              			fn:endsWith(clubqa.qa_filename,'.JPG') ||
 	              			fn:endsWith(clubqa.qa_filename,'.gif') ||
 	              			fn:endsWith(clubqa.qa_filename,'.GIF') ||
 	              			fn:endsWith(clubqa.qa_filename,'.png') ||
 	              			fn:endsWith(clubqa.qa_filename,'.PNG')}">
-				<img src="imageView.do?num=${clubqa.qa_num}"
-		                      style="max-width:500px">
-		        </c:if>
-				</td>
+			<tr>
+				<td><img src="imageView.do?num=${clubqa.qa_num}" style="max-width:500px"></td>
 			</tr>
 			</c:if>
+			</c:if>
 		</table>
-		
 		<p>
-			<br>
+		<br>
 		</p>
 	</div>
 	<!-- 질문 상세페이지  -->

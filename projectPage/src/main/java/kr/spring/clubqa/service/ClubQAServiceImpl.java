@@ -134,4 +134,38 @@ public class ClubQAServiceImpl implements ClubQAService{
 	public int select1_1RowCount(Map<String, Object> map) {
 		return clubqaMapper.select1_1RowCount(map);
 	}
+
+	@Override
+	public List<ClubQAReplyVO> select1_1ListReply(Map<String, Object> map) {
+		return clubqaMapper.select1_1ListReply(map);
+	}
+
+	@Override
+	public int select1_1RowCountReply(Map<String, Object> map) {
+		return clubqaMapper.select1_1RowCountReply(map);
+	}
+
+	@Override
+	public void insert1_1Reply(ClubQAReplyVO clubQAReplyVO) {
+		clubqaMapper.insert1_1Reply(clubQAReplyVO);
+		
+	}
+
+	@Override
+	public void update1_1Reply(ClubQAReplyVO clubQAReplyVO) {
+		clubqaMapper.insert1_1Reply(clubQAReplyVO);
+		
+	}
+
+	@Override
+	public void delete1_1Reply(Integer qa_reply_num) {
+		clubqaMapper.delete1_1Reply(qa_reply_num);
+		
+	}
+
+	@Override
+	public void delete1_1ReplyByBoardNum(Integer qa_num) {
+		clubqaMapper.delete1_1ReplyByBoardNum(qa_num);
+		
+	}
 }

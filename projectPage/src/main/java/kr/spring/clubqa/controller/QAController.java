@@ -38,8 +38,7 @@ public class QAController {
 	public ClubQAVO initCommand() {
 		return new ClubQAVO();
 	}
-	
-	//1
+
 	//건의 / 신고 게시판
 	@RequestMapping("/ClubQA/QAlist/QAlist.do")
 	public ModelAndView qa_process(

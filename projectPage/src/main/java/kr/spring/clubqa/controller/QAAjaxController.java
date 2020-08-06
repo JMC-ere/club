@@ -164,26 +164,6 @@ public class QAAjaxController {
 
 		return map;
 	}
-//	
-//	//비밀번호 찾기(아이디 존재여부 확인)
-//		@RequestMapping("/ClubQA/QAlist/QAlist.do")
-//		@ResponseBody
-//		public Map<String, String> findIdProcess(@RequestParam Integer num){
-//			
-//			Map<String, String> map = new HashMap<String, String>();
-//			
-//			ClubQAVO clubqaVO = clubQAService.selectQABoard(num);
-//			
-//			if(clubqaVO!=null) {
-//				map.put("result", "idDuplicated");
-//			}else {
-//				map.put("result", "idNotFound");
-//			}
-//			return map;
-//		}
-//		
-		
-
 }
 
 

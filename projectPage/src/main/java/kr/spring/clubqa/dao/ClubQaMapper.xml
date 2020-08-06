@@ -145,6 +145,27 @@
 		WHERE rnum >= #{start} AND rnum <= #{end}
 		]]>            
 	</select>
+	<select id="select1_1ListReply" parameterType="map"
+ 	                     resultType="clubQAReplyVO">
+ 		SELECT
+ 		   qa_reply_num,
+ 		   qa_reply_content,
+ 		   TO_CHAR(qa_reply_datetime,'YYYY-MM-DD HH24:MI:SS') qa_reply_datetime,
+ 		   qa1_1num,
+ 		   mem_num,
+ 		   mem_id
+ 		FROM (SELECT 
+ 		        a.*,
+ 		        rownum rnum
+ 		      FROM (SELECT
+ 		              *
+ 		            FROM qa_reply
+ 		            WHERE qa1_1num = #{qa1_1num}
+ 		            ORDER BY qa_reply_num DESC)a)
+ 		<![CDATA[
+ 		WHERE rnum >= #{start} AND rnum <= #{end}
+ 		]]>                                 
+ 	</select>
 
 </mapper>
 
