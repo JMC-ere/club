@@ -31,25 +31,24 @@ p {
 </style>
 <div class="slider">
 	<ul class="slides">
-		<li><img src="https://cdn.pixabay.com/photo/2016/08/01/20/13/girl-1561989_960_720.jpg"> <!-- random image -->
+		<li><img src="https://cdn.pixabay.com/photo/2017/08/29/12/07/adult-2693054_960_720.jpg"> <!-- random image -->
 			<div class="caption center-align">
-				<h3>This is our big Tagline!</h3>
-				<h5 class="light grey-text text-lighten-3">Here's our small
-					slogan.</h5>
+				<h3><span class="white-text text-darken-2">Hellow We Are ++CLUB!</span></h3>
+				<h5 class="white-text text-darken-2">++CLUB 에 오신것을 환영합니다!!</h5>
 			</div></li>
-		<li><img src="https://cdn.pixabay.com/photo/2016/01/19/15/05/baseball-field-1149153_960_720.jpg"> <!-- random image -->
+		<li><img src="https://cdn.pixabay.com/photo/2017/08/30/18/19/bali-2698078_960_720.jpg"> <!-- random image -->
 			<div class="caption left-align">
 				<h3>Left Aligned Caption</h3>
 				<h5 class="light grey-text text-lighten-3">Here's our small
 					slogan.</h5>
 			</div></li>
-		<li><img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/athletes-1867185_960_720.jpg"> <!-- random image -->
+		<li><img src="https://cdn.pixabay.com/photo/2017/04/11/22/55/inspire-2223128_960_720.jpg"> <!-- random image -->
 			<div class="caption right-align">
 				<h3>Right Aligned Caption</h3>
 				<h5 class="light grey-text text-lighten-3">Here's our small
 					slogan.</h5>
 			</div></li>
-		<li><img src="https://cdn.pixabay.com/photo/2016/11/21/15/43/athletes-1846039_960_720.jpg"> <!-- random image -->
+		<li><img src="https://cdn.pixabay.com/photo/2016/11/14/04/43/boy-1822631_960_720.jpg"> <!-- random image -->
 			<div class="caption center-align">
 				<h3>This is our big Tagline!</h3>
 				<h5 class="light grey-text text-lighten-3">Here's our small
