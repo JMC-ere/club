@@ -5,7 +5,7 @@
 <style>
 
 .page-menu{
-	width: 40%;
+	width: 85%;
 	margin: 0 auto;
 }
 
@@ -25,6 +25,9 @@
 	margin:0 auto;
 }
 
+.write_button{
+	float:right;
+}
 
 form#search_form{
 	border:none;
@@ -50,20 +53,23 @@ form#search_form ul.search li input[type="search"]{
 </style>
 
 
-<div class=center>
-	<h2>영화후기 게시판입니다.</h2>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-6">후기게시판 입니다!</h1>
+    <p class="lead">여러분들의 참여 또는 영화를 보고 나서 느낌 후기를 작성해주세요!</p>
+  </div>
 </div>
 
 <div class="page-menu">
 	<ul class="nav nav-pills nav-fill">
-		<li class="nav-item"><a class="nav-link" href="post.do">참여
-				게시판</a></li>
-		<li class="nav-item"><a class="nav-link active" href="postlist.do?keyfield=post_category&keyword=join">영화
-				후기 게시판</a></li>
-		<li class="nav-item"><a class="nav-link" href="postphoto.do">갤러리</a>
+		<li class="nav-item"><a class="nav-link" href="post.do">전체 게시판</a></li>
+		<li class="nav-item"><a class="nav-link" href="post.do?keyfield=post_category&keyword=join">참여 후기 게시판</a></li>
+		<li class="nav-item"><a class="nav-link" href="postlist.do?keyfield=post_category&keyword=movie">영화 후기 게시판</a></li>
+		<li class="nav-item"><a class="nav-link" href="postphoto.do?keyfield=post_category&keyword=photo">갤러리</a>
 		</li>
 	</ul>
 </div>
+
 <div class=page-main-style>
 	<form id="search_form" action="postlist.do" method="get">
 		<ul id="search_form" class="search">
@@ -71,7 +77,6 @@ form#search_form ul.search li input[type="search"]{
 				<select name="keyfield">
 					<option value="post_title">제목</option>
 					<option value="post_board">내용</option>
-					<option value="post_category">유형</option>
 				</select>
 			</li>		
 			<li>
@@ -84,17 +89,14 @@ form#search_form ul.search li input[type="search"]{
 				</c:if>
 		</ul>
 
-
-
-
-		<div>
-			<c:if test="${!empty user_id}|${!empty club_name}">
-				<input type="button" value="글쓰기"
-					onclick="location.href='postwrite.do'">
+		<div class="write_button">
+			<c:if test="${!empty user_id}">
+			 <button class="btn waves-effect waves-light" type="submit" onclick="location.href='postwrite.do'">글쓰기</button>
 			</c:if>
 		</div>
+		
 		<c:if test="${count > 0 }">
-			<table class="highlight">
+			<table class="table table-bordered">
 				<thead>
 					<tr>
 						<th>번호</th>
@@ -112,6 +114,8 @@ form#search_form ul.search li input[type="search"]{
 							<td>${post.mem_num}</td>
 							<td>${post.post_date}</td>
 							<td>${post.post_hit}</td>
+							<hidden>
+							</hidden>
 						</tr>
 					</c:forEach>
 				</tbody>

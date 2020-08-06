@@ -4,7 +4,7 @@
 
 <style>
 .page-menu{
-	width: 40%;
+	width: 85%;
 	margin: 0 auto;
 }
 
@@ -27,26 +27,23 @@
 </style>
 
 
-<div class=center>
-	<h2>갤러리 게시판입니다.</h2>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-6">후기게시판 입니다!</h1>
+    <p class="lead">여러분들의 참여 또는 영화를 보고 나서 느낌 후기를 작성해주세요!</p>
+  </div>
 </div>
 
 
-
-<div class=page-menu>
-<ul class="nav nav-pills nav-fill">
-  <li class="nav-item">
-    <a class="nav-link" href="post.do">참여 게시판</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="postlist.do">영화 후기 게시판</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link active" href="postphoto.do">갤러리</a>
-  </li>
-</ul>
+<div class="page-menu">
+	<ul class="nav nav-pills nav-fill">
+		<li class="nav-item"><a class="nav-link" href="post.do">전체 게시판</a></li>
+		<li class="nav-item"><a class="nav-link" href="post.do?keyfield=post_category&keyword=join">참여 후기 게시판</a></li>
+		<li class="nav-item"><a class="nav-link" href="postlist.do?keyfield=post_category&keyword=movie">영화 후기 게시판</a></li>
+		<li class="nav-item"><a class="nav-link" href="postphoto.do?keyfield=post_category&keyword=photo">갤러리</a>
+		</li>
+	</ul>
 </div>
-
 
 <div class=page-main-style>
 	<form action="postlist.do" method="get">
@@ -68,42 +65,16 @@
 		<c:forEach var="post" items="${list}">
 	
 		
-<tr>
-	<td colspan="6">
-
-		
-		<table width="600">
-			
+		<table class="table table-bordered">		
 			<tr align="center">
-				<td width="120">
-				
-					<a>
-						<img src="../images/pride.jpg">
-						<br>
-					${post.post_title}
-					</a>
-				
-				</td>
-
-
+				<th rowspan="3"><img src="451616">${post.post_title}</th>
 			</tr>
-
-
 		</table>
-		
-	</td>
-</tr>
 </c:forEach>
 </thead>
 </table>
 </c:if></form></div>
 <br>
-
-<table width="600">
-	<div class=align-center>${pagingHtml}</div>
-</table>
-
-
 
 
 
