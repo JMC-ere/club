@@ -93,7 +93,7 @@
 				<tbody class="border-success">
 					<c:forEach var="post" items="${list}">
 						<tr>
-							<td rowspan="4" width=8%>
+							<td rowspan="4" width=10%>
 							<img src="imageView.do?post_num=${post.post_num}" class="responsive-img" id="postImg">
 							</td>
 						</tr>

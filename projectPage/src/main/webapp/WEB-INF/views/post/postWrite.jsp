@@ -39,7 +39,7 @@
 	
 		<div class="write_button">
 			<button type="submit" class="btn btn-outline-success">작성 완료</button>
-			<button type="button" class="btn btn-outline-success" onclick="location.href='postlist.do'">목록</button>
+			<button type="button" class="btn btn-outline-success" onclick="location.href='post.do'">목록</button>
 		</div>
 	
 	<table id="postWrite" class="table table-bordered">

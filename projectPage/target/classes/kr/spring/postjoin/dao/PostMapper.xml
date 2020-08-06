@@ -45,14 +45,15 @@
  		]]>			
  	</select>
  	
- 	 	<update id="update" parameterType="postVO">
+ 	 <update id="updatePost" parameterType="postVO">
  		UPDATE post SET
 		<if test="post_imgname !=''">
 			post_img=#{post_img},
 			post_imgname=#{post_imgname},
 		</if>
 		post_title=#{post_title},
-		post_board={post_board},
+		post_board=#{post_board},
+		post_category=#{post_category},
 		post_date=SYSDATE
 	WHERE post_num=#{post_num}
  	</update>

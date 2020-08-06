@@ -245,7 +245,7 @@ public class PostController {
 			}
 			postService.updatePost(postVO);
 
-			return "redirect:/post.do";
+			return "redirect:/post/post.do";
 
 		}
 
