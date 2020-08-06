@@ -83,6 +83,7 @@
 			<c:if test="${empty user_id}">
 			<a onclick="M.toast({html: '로그인후 이용해주세요.'})" class="modal-close waves-effect waves-green btn-flat">신청하기</a>
 			</c:if>
+			
 			<a href="#" class="modal-close waves-effect waves-green btn-flat">닫기</a>
 		</div>
 		<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="돌아가기"
