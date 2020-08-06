@@ -37,11 +37,11 @@
 			</li>
 			<li>
 				<label>영화 장르</label><p>
-				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre1" value="1" <c:if test="${fn:contains(clubVO.club_genre,'1')}">checked</c:if>/><span>공포/스릴러</span></label>
-				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre2" value="2" <c:if test="${fn:contains(clubVO.club_genre,'2')}">checked</c:if>/><span>로맨틱코미디/드라마</span></label>
-				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre3" value="3" <c:if test="${fn:contains(clubVO.club_genre,'3')}">checked</c:if>/><span>애니메이션</span></label>
-				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre4" value="4" <c:if test="${fn:contains(clubVO.club_genre,'4')}">checked</c:if>/><span>액션</span></label>
-				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre5" value="5" <c:if test="${fn:contains(clubVO.club_genre,'5')}">checked</c:if>/><span>SF</span></label>
+				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre1" value="공포/스릴러" <c:if test="${fn:contains(clubVO.club_genre,'공포/스릴러')}">checked</c:if>/><span>공포/스릴러</span></label>
+				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre2" value="로맨틱코미디/드라마" <c:if test="${fn:contains(clubVO.club_genre,'로맨틱코미디/드라마')}">checked</c:if>/><span>로맨틱코미디/드라마</span></label>
+				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre3" value="애니메이션" <c:if test="${fn:contains(clubVO.club_genre,'애니메이션')}">checked</c:if>/><span>애니메이션</span></label>
+				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre4" value="액션" <c:if test="${fn:contains(clubVO.club_genre,'액션')}">checked</c:if>/><span>액션</span></label>
+				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre5" value="SF" <c:if test="${fn:contains(clubVO.club_genre,'SF')}">checked</c:if>/><span>SF</span></label>
 			</li>
 			<br>
 			<li>
@@ -62,13 +62,13 @@
 			</li>
 			<li>
 				<label>모임 주기</label><p>
-				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval1" value="1" <c:if test="${fn:contains(clubVO.club_interval,'1')}">checked</c:if>/><span>월요일</span></label>
-				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval2" value="2" <c:if test="${fn:contains(clubVO.club_interval,'2')}">checked</c:if>/><span>화요일</span></label>
-				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval3" value="3" <c:if test="${fn:contains(clubVO.club_interval,'3')}">checked</c:if>/><span>수요일</span></label>
-				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval4" value="4" <c:if test="${fn:contains(clubVO.club_interval,'4')}">checked</c:if>/><span>목요일</span></label>
-				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval5" value="5" <c:if test="${fn:contains(clubVO.club_interval,'5')}">checked</c:if>/><span>금요일</span></label>
-				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval6" value="6" <c:if test="${fn:contains(clubVO.club_interval,'6')}">checked</c:if>/><span>토요일</span></label>
-				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval7" value="7" <c:if test="${fn:contains(clubVO.club_interval,'7')}">checked</c:if>/><span>일요일</span></label>
+				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval1" value="월요일" <c:if test="${fn:contains(clubVO.club_interval,'월요일')}">checked</c:if>/><span>월요일</span></label>
+				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval2" value="화요일" <c:if test="${fn:contains(clubVO.club_interval,'화요일')}">checked</c:if>/><span>화요일</span></label>
+				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval3" value="수요일" <c:if test="${fn:contains(clubVO.club_interval,'수요일')}">checked</c:if>/><span>수요일</span></label>
+				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval4" value="목요일" <c:if test="${fn:contains(clubVO.club_interval,'목요일')}">checked</c:if>/><span>목요일</span></label>
+				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval5" value="금요일" <c:if test="${fn:contains(clubVO.club_interval,'금요일')}">checked</c:if>/><span>금요일</span></label>
+				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval6" value="토요일" <c:if test="${fn:contains(clubVO.club_interval,'토요일')}">checked</c:if>/><span>토요일</span></label>
+				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval7" value="일요일" <c:if test="${fn:contains(clubVO.club_interval,'일요일')}">checked</c:if>/><span>일요일</span></label>
 			</li>
 			<br>
 			<li>
@@ -109,11 +109,11 @@
 			</li>
 			<li>
 				<label>영화 장르</label><p>
-				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre1" value="1" <c:if test="${fn:contains(clubVO.club_genre,'1')}">checked</c:if>/><span>공포/스릴러</span></label>
-				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre2" value="2" <c:if test="${fn:contains(clubVO.club_genre,'2')}">checked</c:if>/><span>로맨틱코미디/드라마</span></label>
-				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre3" value="3" <c:if test="${fn:contains(clubVO.club_genre,'3')}">checked</c:if>/><span>애니메이션</span></label>
-				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre4" value="4" <c:if test="${fn:contains(clubVO.club_genre,'4')}">checked</c:if>/><span>액션</span></label>
-				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre5" value="5" <c:if test="${fn:contains(clubVO.club_genre,'5')}">checked</c:if>/><span>SF</span></label>
+				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre1" value="공포/스릴러" <c:if test="${fn:contains(clubVO.club_genre,'공포/스릴러')}">checked</c:if>/><span>공포/스릴러</span></label>
+				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre2" value="로맨틱코미디/드라마" <c:if test="${fn:contains(clubVO.club_genre,'로맨틱코미디/드라마')}">checked</c:if>/><span>로맨틱코미디/드라마</span></label>
+				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre3" value="애니메이션" <c:if test="${fn:contains(clubVO.club_genre,'애니메이션')}">checked</c:if>/><span>애니메이션</span></label>
+				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre4" value="액션" <c:if test="${fn:contains(clubVO.club_genre,'액션')}">checked</c:if>/><span>액션</span></label>
+				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre5" value="SF" <c:if test="${fn:contains(clubVO.club_genre,'SF')}">checked</c:if>/><span>SF</span></label>
 			</li>
 			<br>
 			<li>
@@ -134,13 +134,13 @@
 			</li>
 			<li>
 				<label>모임 주기</label><p>
-				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval1" value="1" <c:if test="${fn:contains(clubVO.club_interval,'1')}">checked</c:if>/><span>월요일</span></label>
-				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval2" value="2" <c:if test="${fn:contains(clubVO.club_interval,'2')}">checked</c:if>/><span>화요일</span></label>
-				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval3" value="3" <c:if test="${fn:contains(clubVO.club_interval,'3')}">checked</c:if>/><span>수요일</span></label>
-				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval4" value="4" <c:if test="${fn:contains(clubVO.club_interval,'4')}">checked</c:if>/><span>목요일</span></label>
-				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval5" value="5" <c:if test="${fn:contains(clubVO.club_interval,'5')}">checked</c:if>/><span>금요일</span></label>
-				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval6" value="6" <c:if test="${fn:contains(clubVO.club_interval,'6')}">checked</c:if>/><span>토요일</span></label>
-				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval7" value="7" <c:if test="${fn:contains(clubVO.club_interval,'7')}">checked</c:if>/><span>일요일</span></label>
+<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval1" value="월요일" <c:if test="${fn:contains(clubVO.club_interval,'월요일')}">checked</c:if>/><span>월요일</span></label>
+				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval2" value="화요일" <c:if test="${fn:contains(clubVO.club_interval,'화요일')}">checked</c:if>/><span>화요일</span></label>
+				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval3" value="수요일" <c:if test="${fn:contains(clubVO.club_interval,'수요일')}">checked</c:if>/><span>수요일</span></label>
+				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval4" value="목요일" <c:if test="${fn:contains(clubVO.club_interval,'목요일')}">checked</c:if>/><span>목요일</span></label>
+				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval5" value="금요일" <c:if test="${fn:contains(clubVO.club_interval,'금요일')}">checked</c:if>/><span>금요일</span></label>
+				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval6" value="토요일" <c:if test="${fn:contains(clubVO.club_interval,'토요일')}">checked</c:if>/><span>토요일</span></label>
+				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval7" value="일요일" <c:if test="${fn:contains(clubVO.club_interval,'일요일')}">checked</c:if>/><span>일요일</span></label>
 			</li>
 			<br>
 			<li>
