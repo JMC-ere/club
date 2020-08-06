@@ -55,12 +55,14 @@
 	</div>
 	<!-- 질문 상세페이지  -->
 </form:form>
+
 <!-- 댓글 관련 UI 시작 -->
 <!-- 댓글 작성 -->
 <div id="reply_div" class="reply_div">
 	<span id="reply_title">댓글 달기</span>
 	<div class="reply_header"></div>
 	<form id="re_form" class="re_form">
+		<c:if test="${ user_auth > 3 }">
 		<input type="hidden" name="qa_num" value="${clubqa.qa_num}"
 			id="qa_num"> <input type="hidden" name="mem_num"
 			value="${user_num}" id="mem_num"> <input type="hidden"
@@ -74,6 +76,7 @@
 			<div id="re_second" class="align-right">
 				<input type="submit" class="btn" value="전송">
 			</div>
+		</c:if>
 		</c:if>
 	</form>
 </div>
@@ -97,6 +100,8 @@
 		<c:if test="${!empty user_id && user_id == clubqa.mem_id}">
 			<input type="button" value="수정" class="btn"
 				onclick="location.href='QAlist_update.do?num=${clubqa.qa_num}'">
+		</c:if>
+		<c:if test="${!empty user_id && user_id == clubqa.mem_id || user_auth > 3}">
 			<input type="button" value="삭제" class="btn"
 				onclick="location.href='QAlist_delete.do?num=${clubqa.qa_num}'">
 		</c:if>
