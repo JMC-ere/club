@@ -1,10 +1,7 @@
 package kr.spring.clubmanage.domain;
 
-import java.io.IOException;
 import java.sql.Date;
-import java.util.Arrays;
 
-import org.springframework.web.multipart.MultipartFile;
 
 public class ClubManageVO {
 	
@@ -18,25 +15,8 @@ public class ClubManageVO {
 	private String club_interval;
 	private Date club_end;
 	private String club_detail;
-	private MultipartFile upload;
-	public MultipartFile getUpload() {
-		return upload;
-	}
-	public void setUpload(MultipartFile upload) throws IOException {
-		this.upload = upload;
-		
-		//멀티파트 파일 형식을 byte[]로 변환해야 DB에 업로드
-		setClub_img(upload.getBytes());
-		setFilename(upload.getOriginalFilename());
-	}
 	private byte[] club_img;
 	private String filename;
-	public String getFilename() {
-		return filename;
-	}
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
 	private int club_state;
 	private String return_message;
 	private Date club_date;
@@ -45,6 +25,19 @@ public class ClubManageVO {
 	private String detail_cell;
 	private String detail_email;
 	private String detail_img;
+	private float attendance_rate;
+	public float getAttendance_rate() {
+		return attendance_rate;
+	}
+	public void setAttendance_rate(float attendance_rate) {
+		this.attendance_rate = attendance_rate;
+	}
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
 	public String getDetail_img() {
 		return detail_img;
 	}

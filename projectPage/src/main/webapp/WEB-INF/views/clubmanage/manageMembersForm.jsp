@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
 /*기본 레이아웃*/
@@ -227,7 +228,7 @@ input[type="submit"], input[type="button"]{
 					<td>${member.detail_cell }</td>
 					<td>${member.detail_email }</td>
 					<td>${member.join_date }</td>
-					<td>참석율</td>
+					<td><fmt:formatNumber value="${member.attendance_rate}" pattern="0"/>%</td>
 					<td>
 						<div class="switch">
 							    <label>

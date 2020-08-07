@@ -21,7 +21,7 @@ public interface ClubManageMapper {//dB에서 date를 해당 날짜의 00시00�
 	public List<ClubManageVO> selectManageMembers(int club_num);
 	@Select("select * from club where club_num=#{club_num}")
 	public ClubManageVO selectClub(int club_num);
-	@Update("update joinclub set join_date=#{join_date} where mem_num=#{mem_num}")
+	@Update("update joinclub set join_date=#{join_date}, attendance_rate=#{attendance_rate} where mem_num=#{mem_num} and club_num=#{club_num}")
 	public void updateParticipants(ClubManageVO memberVO);
 	@Select("select join_date from joinclub where mem_num=#{mem_num} and club_num=#{club_num}")
 	public String selectJoinDate(Map<String,Object> map);
