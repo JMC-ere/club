@@ -54,7 +54,7 @@
 <div class="jumbotron jumbotron-fluid">
 	<div class="container">
 		<h1 class="display-6">후기게시판 입니다!</h1>
-		<p class="lead">여러분들의 참여 또는 영화를 보고 나서 느낌 후기를 작성해주세요!</p>
+		<p class="lead">여러분들의 참여 또는 영화를 보고 나서 느낀점을 작성해주세요!</p>
 	</div>
 </div>
 
