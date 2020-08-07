@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <style>
 .page-menu {
@@ -38,12 +39,20 @@
 					<td scope="row">
 
 						<p>
-							<label> <input name="post_category" type="radio"
-								value="join" /> <span>참여 후기</span></label> <label> <input
-								name="post_category" type="radio" value="movie" /> <span>영화
-									후기</span></label> <label> <input name="post_category" type="radio"
-								value="photo" /> <span>사진 올리기</span></label>
-						</p>
+							<label> 
+							<input name="post_category" type="radio" value="join" />
+						 	<span>참여 후기</span>
+						 	</label> 
+						 	<label> 
+						 	<input name="post_category" type="radio" value="movie" />
+						 	<span>영화 후기</span>
+						 	</label>
+							 <c:if test="${user_auth == 4}">
+						 	<label>
+						 	<input name="post_category" type="radio" value="photo" />
+						 	<span>사진 올리기</span>
+						 	</label>	
+						 	</c:if>
 						<form:errors path="post_category" class="text-danger" />
 					</td>
 				</tr>
