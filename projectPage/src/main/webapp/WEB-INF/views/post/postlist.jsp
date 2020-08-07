@@ -113,7 +113,7 @@ form#search_form ul.search li input[type="search"]{
 						<tr>
 							<td>${post.post_num}</td>
 							<td><a href="postdetail.do?num=${post.post_num}">${post.post_title}</a></td>
-							<td>${post.mem_num}</td>
+							<td>${post.mem_id}</td>
 							<td>${post.post_date}</td>
 							<td>${post.post_hit}</td>
 						</tr>

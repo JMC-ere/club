@@ -70,8 +70,7 @@ p {
 			<div class="card">
 			
 				<div class="card-header" id="hope">${club.club_genre}</div>
-				<img
-					src="imageView.do?club_num=${club.club_num }" id="cardImg" class="responsive-img center"/>
+				<img src="imageView.do?club_num=${club.club_num }" id="cardImg" class="responsive-img center"/>
 				<div class="card-body">
 					<h5 class="card-title" style="text-align:center">${club.club_name}</h5>
 					<p class="card-text" style="text-align:center">모임주기 : ${club.club_interval}</p>
