@@ -24,6 +24,7 @@ public class NoticeVO {
 	private int mem_num;
 	private String mem_id;
 	private int mem_auth;
+	@NotEmpty
 	private String nt_category;
 	
 	
