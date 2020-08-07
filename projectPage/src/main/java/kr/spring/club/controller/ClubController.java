@@ -23,9 +23,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.club.domain.ClubVO;
 import kr.spring.club.service.ClubService;
+import kr.spring.notice.domain.NoticeVO;
 import kr.spring.util.PagingUtil;
 
-//클럽현황rr
+//클럽현황
 @Controller
 public class ClubController {
 	
@@ -66,6 +67,41 @@ public class ClubController {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("viewclub");
 		mav.addObject("count",count);
+		mav.addObject("list",list);
+		mav.addObject("pagingHtml",page.getPagingHtml());
+		
+		return mav;
+	}
+	
+	@RequestMapping("/main/clubgenre.do")
+	public ModelAndView process2(@RequestParam(value="pageNum",defaultValue="1") int currentPage,
+								@RequestParam(value="keyfield",defaultValue="") String keyfield,
+								@RequestParam(value="keyword",defaultValue="") String keyword) {
+		
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("keyfield", keyfield);
+		map.put("keyword", keyword);
+		
+		//게시판의 총 레코드 수 또는 검색 레코드 수 반환
+		int count = clubService.selectRowCount(map);
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<count>> : " + count);
+		}
+		
+		//페이징처리
+		PagingUtil page = new PagingUtil(keyfield,keyword,currentPage,count,rowCount,pageCount,"clubgenre.do");
+		map.put("start", page.getStartCount());
+		map.put("end", page.getEndCount());
+		
+		List<ClubVO> list = null;
+		if(count > 0) {
+			list = clubService.genreList(map);
+		}
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("clubgenre");
+		mav.addObject("count", count);
 		mav.addObject("list",list);
 		mav.addObject("pagingHtml",page.getPagingHtml());
 		

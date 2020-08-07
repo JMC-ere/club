@@ -14,7 +14,7 @@
 	<h4>장르별 클럽</h4>
 	
 	<!-- 장르별 검색 기능 -->
-	<div class="col s12">
+	<!-- <div class="col s12">
 		<form action="clubgenre.do" method="get">
 			<div class="col s5">
 				<select name="keyfield">
@@ -34,8 +34,11 @@
 					class="btn purple lighten-5 purple-text text-darken-4" value="검색">
 			</div>
 		</form>
+	</div> -->
+	<div>
+	<a href="clubgenre.do?keyfield=club_genre&keyword=%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98">!</a>
+	<a href="clubgenre.do?keyfield=club_genre&keyword=%EC%95%A1%EC%85%98">액션</a>
 	</div>
-
 	<!-- 장르별 클럽 출력 -->
 	<div class="container">
 		<div class="row">
