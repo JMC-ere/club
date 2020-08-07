@@ -33,23 +33,23 @@ p {
 	<ul class="slides">
 		<li><img src="https://cdn.pixabay.com/photo/2017/08/29/12/07/adult-2693054_960_720.jpg"> <!-- random image -->
 			<div class="caption center-align">
-				<h3><span class="white-text text-darken-2">Hellow We Are ++CLUB!</span></h3>
+				<h3><span class="white-text text-darken-2">Hellow, We Are ++CLUB!</span></h3>
 				<h5 class="white-text text-darken-2">++CLUB 에 오신것을 환영합니다!!</h5>
 			</div></li>
-		<li><img src="https://cdn.pixabay.com/photo/2017/08/30/18/19/bali-2698078_960_720.jpg"> <!-- random image -->
-			<div class="caption left-align">
+		<li><img src="https://cdn.pixabay.com/photo/2017/08/14/22/06/passport-2642172_960_720.jpg"> <!-- random image -->
+			<div class="caption right-align">
 				<h3>현재 진행중인 다양한 모임에 참석하세요!</h3>
 				<h5 class="light grey-text text-lighten-3"><a href="${pageContext.request.contextPath}/main/viewclub.do">참여하러가기</a></h5>
 			</div></li>
-		<li><img src="https://cdn.pixabay.com/photo/2016/11/19/16/51/adventure-1840292_960_720.jpg"> <!-- random image -->
+		<li><img src="https://cdn.pixabay.com/photo/2017/01/17/10/39/bournemouth-1986419_960_720.jpg"> <!-- random image -->
 			<div class="caption right-align">
 				<h3>포인트를 쌓아 우수회원이 되어 나만의 모임을 만들수 있습니다!</h3>
 				<h5 class="light grey-text text-lighten-3"><a href="${pageContext.request.contextPath}/main/introduce/membership.do">회원 멤버십보러가기</a></h5>
 			</div></li>
 		<li><img src="https://cdn.pixabay.com/photo/2016/03/30/02/57/camping-1289930_960_720.jpg"> <!-- random image -->
 			<div class="caption center-align">
-				<h3>++CLUB에서 다양한 사람들과 모임을 가져보세요!</h3>
-				<h5 class="light grey-text text-lighten-3"></h5>
+				<h4><span class="white-text text-darken-2">지금 바로!</span></h4>
+				<h4 class="light grey-text text-lighten-3">++CLUB에서 다양한 사람들과 모임을 가져보세요 :-)</h4>
 			</div></li>
 	</ul>
 </div>
