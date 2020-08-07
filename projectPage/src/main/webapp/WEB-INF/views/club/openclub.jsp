@@ -39,7 +39,7 @@
 			</li>
 			<li>
 				<label for="club_time">모임 시간</label>
-				<form:input path="club_time"/><form:errors path="club_time" cssClass="error-color"/>
+				<form:input path="club_time" placeholder="13:00 형태로 입력해주세요."/><form:errors path="club_time" cssClass="error-color"/>
 			</li>
 			<li>
 				<label for="club_start">시작 날짜</label>

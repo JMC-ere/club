@@ -74,7 +74,7 @@ p {
 					src="imageView.do?club_num=${club.club_num }" id="cardImg" class="responsive-img center"/>
 				<div class="card-body">
 					<h5 class="card-title">${club.club_name}</h5>
-					<p class="card-text">${club.club_interval}</p>
+					<p class="card-text">모임주기 : ${club.club_interval}</p>
 					<a href="viewclubdetail.do?club_num=${club.club_num}" class="btn #8bc34a light-green">More</a>
 				</div>
 			</div>
