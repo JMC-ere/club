@@ -14,7 +14,7 @@
 
 
 .page-main-style {
-	width: 50%;
+	width: 70%;
 	margin: 0 auto;
 }
 

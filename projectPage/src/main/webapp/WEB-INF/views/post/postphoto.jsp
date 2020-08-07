@@ -9,7 +9,7 @@
 }
 
 .page-main-style {
-	width: 50%;
+	width: 70%;
 	margin: 0 auto;
 }
 
@@ -23,6 +23,13 @@
 	text-aling: center;
 	margin: 0 auto;
 }
+
+.card #cardImg{
+		max-width:400px;
+		max-height:220px;
+}
+
+
 </style>
 
 
@@ -55,31 +62,33 @@
 					onclick="location.href='postwrite.do'">
 			</c:if>
 		</div>
-		<c:if test="${count == 0 }">
+			<div  class="container">
+			<div class="row">
+			<c:forEach var="post" items="${list}">
+					<div class="col-sm-6 col-lg-4">
 			<div>
+			
 				<c:if test="${count == 0 }">
 					<div class="result-disply">등록된 게시물이 없습니다.</div>
 					<button class="btn waves-effect waves-light" type="submit"
 						onclick="location.href='post.do'">돌아가기</button>
 				</c:if>
 			</div>
-		</c:if>
-		<c:if test="${count > 0 }">
-			<table class="table table-bordered">
-				<thead>
-					<c:forEach var="post" items="${list}" varStatus="stat" begin="0" end="8">
-
-						<tr class="photo">
-							<td rowspan="4"><img
-								src="imageView.do?post_num=${post.post_num}"
-								class="img-fluid" id="postImg" alt="Responsive image"></td>
-						</tr>
-
+				<c:if test="${count > 0 }">	
+				
+						<div class="card">
+							<div class="card-header" id="hope">${post.post_category}</div>
+							<img src="imageView.do?post_num=${post.post_num }" id="cardImg" class="responsive-img center"/>
+							 <div class="card-body">
+								<h5 class="card-title">${post.post_title}</h5>
+								</div>
+							</div>
+						
+						</c:if>
+						</div>
 					</c:forEach>
-
-				</thead>
-			</table>
-		</c:if>
+					</div>
+	</div>
 	</form>
 
 	<div class=align-center>${pagingHtml}</div>
