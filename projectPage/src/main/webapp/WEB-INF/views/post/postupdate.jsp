@@ -7,7 +7,7 @@
 	width: 60%;
 	margin: 0 auto;
 }
-  
+
 .write_button {
 	margin: 0 auto;
 	float: right;
