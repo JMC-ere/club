@@ -12,16 +12,32 @@
 	margin: 0 auto;
 }
 
+.align-center{
+	margin-top:2rem;
+	text-align:center;
+}
+
 </style>
 
 	<div class="page-main-style">
 		<h5>${post.post_title}</h5>
-	<ul>
-			<li>아이디 : ${post.mem_num}</li>
-			<li>제목: ${post.post_title}</li>
-			<li>내용 : ${post.post_board}</li>
-			<li>작성일 : ${post.post_date}</li>
-	</ul>
+		<table class="table table-bordered">
+			<tr>
+				<th>번호</th>
+				<td>${post.post_num}</td>
+				<th>작성자</th>
+				<td>${post.mem_id}</td>
+			</tr>
+			<tr>
+				<th>작성일</th>
+				<td>${post.post_date}</td>
+				<th>조회수</th>
+				<td>${post.post_hit}</td>
+			</tr>
+			
+		
+		</table>
+		<div class="align-center">
 		<hr size="1" width="100%">
 		<c:if test="${fn:endsWith(post.post_imgname,'.jpg') ||
 					  fn:endsWith(post.post_imgname,'.JPG') ||				  
@@ -31,10 +47,34 @@
 					  fn:endsWith(post.post_imgname,'.PNG')}">
 			<img src="imageView.do?post_num=${post.post_num}" class="responsive-img">
 		</c:if>
-		
-			<input type="button" value="수정" onclick="location.href='postupdate.do?num=${post.post_num}'">
-			<input type="button" value="삭제" onclick="location.href='postdelete.do?num=${post.post_num}'">
-			<input type="button" value="목록" onclick="location.href='post.do'">
 		</div>
+		<div>${post.post_board}</div>
+		<hr size="1" width="100%">
+		<div class="align-center">
+			<%-- 작성자만 수정 삭제 버튼이 활성화 됨 --%>
+	 		<c:if test="${user_num == post.mem_num}">
+	 			<button type="button" class="btn btn-outline-success" onclick="location.href='postupdate.do?num=${post.post_num}'">글수정</button>
+	 			<button type="button" class="btn btn-outline-success" onclick="location.href='postdelete.do?num=${post.post_num}'">글삭제</button>
+			</c:if>
+			<button type="button" class="btn btn-outline-success" onclick="location.href='post.do'">목록</button>
+		</div>
+</div>
 </body>
 </html>
+
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+	crossorigin="anonymous"></script>

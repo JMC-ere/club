@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <style>
 .page-menu{
-	width: 85%;
+	width: 60%;
 	margin: 0 auto;
 }
 
@@ -68,7 +68,7 @@
 				<td class="post_img"><input type="file" name="upload"></td>
 				<c:if test="${!empty postVO.post_imgname}">
 				<br>
-				<span>(${postVO.post_imgname})파일이 등록되어 있습니다. 다시 업로드 하면 기존 파일은 삭제됩니다.</span>
+				<span class="align-center"><h6><p class="text-danger">(${postVO.post_imgname})파일이 등록되어 있습니다. 다시 업로드 하면 기존 파일은 삭제됩니다.</p></h6></span>
 				</c:if>
 			</tr>
 	</tbody>
