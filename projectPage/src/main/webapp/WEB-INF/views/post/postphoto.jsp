@@ -92,10 +92,10 @@
 				<c:if test="${count > 0 }">	
 				
 						<div class="card">
-							<div class="card-header" id="hope">${post.post_category}</div>
+							<div class="card-header" id="hope" style="text-align:center">${post.post_title}</div>
 							<img src="imageView.do?post_num=${post.post_num }" id="cardImg" class="responsive-img center"/>
 							 <div class="card-body">
-								<h5 class="card-title">${post.post_title}</h5>
+								<h5 class="card-title">${post.post_board}</h5>
 								</div>
 							</div>
 						
