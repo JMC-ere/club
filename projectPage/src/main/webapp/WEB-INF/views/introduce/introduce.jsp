@@ -36,7 +36,7 @@
 
         </div>
         <div class="card-action">
-          <a href="viewclub.do"><b>클럽참여 신청하러 가기</b></a>
+          <a href="#"><b>클럽참여 신청하러 가기</b></a>
         </div>
       </div>
     </div>

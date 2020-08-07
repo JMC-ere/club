@@ -30,16 +30,6 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/post/postphoto.jsp" />
 	</definition>
-	<definition name="postupdate" extends="main">
-		<put-attribute name="title" value="후기 수정" />
-		<put-attribute name="body"
-			value="/WEB-INF/views/post/postupdate.jsp" />
-	</definition>
-	<definition name="postdelete" extends="main">
-		<put-attribute name="title" value="후기 삭제" />
-		<put-attribute name="body"
-			value="/WEB-INF/views/post/postdelete.jsp" />
-	</definition>
 </tiles-definitions>
 
 

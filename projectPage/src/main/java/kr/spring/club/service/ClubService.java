@@ -16,8 +16,5 @@ public interface ClubService {
 	
 	public int listRowCount();
 	public List<ClubVO> mainList(Map<String,Object> map);
-	
 	public void joinClubInsert(Integer club_num,Integer mem_num);
-	
-	public List<ClubVO> genreList(Map<String,Object> map);
 }

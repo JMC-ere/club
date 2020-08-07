@@ -42,7 +42,7 @@
 
         </div>
         <div class="card-action">
-          <a href="${pageContext.request.contextPath}/main/viewclubdetail.do?club_num=162"><b>참여 신청하러 가기</b></a>
+          <a href="#"><b>참여 신청하러 가기</b></a>
         </div>
       </div>
     </div>

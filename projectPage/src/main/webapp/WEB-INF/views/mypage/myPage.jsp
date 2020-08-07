@@ -29,7 +29,7 @@
 							 fn:endsWith(member.detail_img, '.PNG')
 			 				}">
 				<img src="imageView.do?mem_num=${member.mem_num}" class="responsive-img">	
-			</c:if> 
+			</c:if>
 			
 			</div>
 			<div class="col s10">

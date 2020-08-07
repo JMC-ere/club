@@ -11,9 +11,6 @@
  			<if test="keyword != '' and keyfield == 'post_title'">
  				p.post_title LIKE '%' || #{keyword} || '%'
  			</if>
- 			<if test="keyword != '' and keyfield == 'post_category'">
- 				p.post_category LIKE '%' || #{keyword} || '%'
- 			</if>
  			<if test="keyword != '' and keyfield == 'mem_id'">
  				m.mem_id LIKE '%' || #{keyword} || '%'
  			</if>
@@ -29,9 +26,6 @@
 		 			<if test="keyword != '' and keyfield == 'post_title'">
 		 				p.post_title LIKE '%' || #{keyword} || '%'
 		 			</if>
-		 			<if test="keyword != '' and keyfield == 'post_category'">
- 						p.post_category LIKE '%' || #{keyword} || '%'
- 					</if>
 		 			<if test="keyword != '' and keyfield == 'mem_id'">
 		 				m.mem_id LIKE '%' || #{keyword} || '%'
 		 			</if>
@@ -45,15 +39,14 @@
  		]]>			
  	</select>
  	
- 	 <update id="updatePost" parameterType="postVO">
+ 	 	<update id="update" parameterType="postVO">
  		UPDATE post SET
 		<if test="post_imgname !=''">
 			post_img=#{post_img},
 			post_imgname=#{post_imgname},
 		</if>
 		post_title=#{post_title},
-		post_board=#{post_board},
-		post_category=#{post_category},
+		post_board={post_board},
 		post_date=SYSDATE
 	WHERE post_num=#{post_num}
  	</update>

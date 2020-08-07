@@ -3,99 +3,107 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style>
-.page-menu {
-	width: 85%;
+.page-menu{
+	width: 40%;
 	margin: 0 auto;
 }
 
 .page-main-style {
-	width: 70%;
+	width: 80%;
 	margin: 0 auto;
 }
 
 .align-center {
 	text-align: center;
-	border: 20px;
-	padding: 10px;
+	border:20px;
+	padding:10px;
 }
-
-.center {
-	text-aling: center;
-	margin: 0 auto;
-}
-
-.card #cardImg{
-		max-width:400px;
-		max-height:220px;
+.center { 
+	text-aling:center;
+	margin:0 auto;
 }
 
 
 </style>
 
 
-<div class="jumbotron jumbotron-fluid">
-	<div class="container">
-		<h1 class="display-6">후기게시판 입니다!</h1>
-		<p class="lead">여러분들의 참여 또는 영화를 보고 나서 느낌 후기를 작성해주세요!</p>
-	</div>
+<div class=center>
+	<h2>갤러리 게시판입니다.</h2>
 </div>
 
 
-<div class="page-menu">
-	<ul class="nav nav-pills nav-fill">
-		<li class="nav-item"><a class="nav-link" href="post.do">전체
-				게시판</a></li>
-		<li class="nav-item"><a class="nav-link"
-			href="post.do?keyfield=post_category&keyword=join">참여 후기 게시판</a></li>
-		<li class="nav-item"><a class="nav-link"
-			href="postlist.do?keyfield=post_category&keyword=movie">영화 후기 게시판</a></li>
-		<li class="nav-item"><a class="nav-link"
-			href="postphoto.do?keyfield=post_category&keyword=photo">갤러리</a></li>
-	</ul>
+
+<div class=page-menu>
+<ul class="nav nav-pills nav-fill">
+  <li class="nav-item">
+    <a class="nav-link" href="post.do">참여 게시판</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="postlist.do">영화 후기 게시판</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="postphoto.do">갤러리</a>
+  </li>
+</ul>
 </div>
+
+
 <div class=page-main-style>
 	<form action="postlist.do" method="get">
 
 		<div>
-			<c:if test="${!empty user_id}|${!empty club_name}">
+		<c:if test="${!empty user_id}|${!empty club_name}">
 				<input type="button" value="글쓰기"
 					onclick="location.href='postwrite.do'">
 			</c:if>
 		</div>
-			<div  class="container">
-			<div class="row">
-			<c:forEach var="post" items="${list}">
-					<div class="col-sm-6 col-lg-4">
-			<div>
+		<c:if test="${count == 0 }">
+			<div class="result-disply">등록된 게시물이 없습니다.</div>
+			<input type="button" value="돌아가기"
+				onclick="location.href='postlist.do'">
+		</c:if>
+		<c:if test="${count > 0 }">
+			<table class="highlight">
+				<thead>
+		<c:forEach var="post" items="${list}">
+	
+		
+<tr>
+	<td colspan="6">
+
+		
+		<table width="600">
 			
-				<c:if test="${count == 0 }">
-					<div class="result-disply">등록된 게시물이 없습니다.</div>
-					<button class="btn waves-effect waves-light" type="submit"
-						onclick="location.href='post.do'">돌아가기</button>
-				</c:if>
-			</div>
-				<c:if test="${count > 0 }">	
+			<tr align="center">
+				<td width="120">
 				
-						<div class="card">
-							<div class="card-header" id="hope">${post.post_category}</div>
-							<img src="imageView.do?post_num=${post.post_num }" id="cardImg" class="responsive-img center"/>
-							 <div class="card-body">
-								<h5 class="card-title">${post.post_title}</h5>
-								</div>
-							</div>
-						
-						</c:if>
-						</div>
-					</c:forEach>
-					</div>
-	</div>
-	</form>
-
-	<div class=align-center>${pagingHtml}</div>
+					<a>
+						<img src="../images/pride.jpg">
+						<br>
+					${post.post_title}
+					</a>
+				
+				</td>
 
 
-</div>
+			</tr>
+
+
+		</table>
+		
+	</td>
+</tr>
+</c:forEach>
+</thead>
+</table>
+</c:if></form></div>
 <br>
+
+<table width="600">
+	<div class=align-center>${pagingHtml}</div>
+</table>
+
+
 
 
 

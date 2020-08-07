@@ -65,13 +65,10 @@
 				<br>
 				${club.club_detail}
 			</div>
-			<br>
-			<br>	
+				
 	<div class=right>
-			<c:if test="${!empty user_id && user_id == club.mem_id }">
 			<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="수정" onclick="location.href='boardclubmodify.do?club_num=${club.club_num}'">
 			<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="삭제" onclick="location.href='boardclubdelete.do?club_num=${club.club_num}'">
-			</c:if>
 			<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="돌아가기" onclick="location.href='boardclub.do'">
 		
 	</div>

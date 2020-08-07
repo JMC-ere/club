@@ -80,24 +80,13 @@ public class ClubManageController {
 								@RequestParam("club_num") int club_num,
 								Model model ) {
 		
-		//클럽 전체 회원들의 고유 번호
 		List<Integer> members=clubManageService.selectMembers(club_num);
-		
-		//참석자의 참석일에 추가할 오늘 날짜
 		Date date=new Date();
 		SimpleDateFormat sf=new SimpleDateFormat("yy-MM-dd");
 		String now=sf.format(date).toString();
-		
-		//참석율을 구하기 위한 현재까지 모임 진행 횟수
-		ClubManageVO club=clubManageService.selectClub(club_num);
-		long calDate=date.getTime()-club.getClub_start().getTime();
-		long calDateDays=calDate/(24*60*60*1000);
-		String[] club_interval=club.getClub_interval().split(",");
-		int count_club=(int) (calDateDays/7)*club_interval.length+club_interval.length;
-		
+		//now="20-07-30";
 		if(log.isDebugEnabled()) {
 			log.debug("<<members>> : "+members);
-			log.debug("<<<count_club>>>"+count_club);
 		}
 
 		if(participants[0]!=0) {//참석자가 한명 이상 넘어 오는 경우
@@ -113,26 +102,13 @@ public class ClubManageController {
 				map.put("club_num", club_num);
 				map.put("mem_num", participants[i]);
 				String join_date=clubManageService.selectJoinDate(map);
-				if(join_date==null) {//기존 참석일이 null인 경우 참석일에 오늘날짜만 추가
-					join_date=now+" / ";
-				}else if(join_date!=null) {//기존 참석일이 있는 경우 /를 추가하고 오늘 날짜를 추가
-					if(!join_date.contains(now)) {//기존 참석일에 오늘 날짜가 없을 때만 오늘 날짜 추가
-						join_date+=now+" / ";
-					}	
-				}
-				String[] attendance_date=join_date.split(" / ");
-				float attendance_rate=(float)attendance_date.length/count_club;
-				if(log.isDebugEnabled()) {
-					log.debug("<<remove_date>>"+join_date);
-					log.debug("<<attendance_rate>>"+Math.round(attendance_rate*100));
-					log.debug("<<attendance.date.length>>"+attendance_date.length);
-				}
-				memberVO.setClub_num(club_num);
-				memberVO.setAttendance_rate(Math.round(attendance_rate*100));
+				
+				join_date+=now+" / ";
+				
 				memberVO.setJoin_date(join_date);
 				memberVO.setMem_num(participants[i]);
-				
 				clubManageService.updateParticipants(memberVO);
+					//String att_dates[]=join_date.split("/");
 				
 				members.remove((Integer)participants[i]);//전체 멤버 List에서 참석으로 체크한 사람을 제외한 불참자들의 mem_num list
 			}
@@ -147,18 +123,11 @@ public class ClubManageController {
 				String remove_date=clubManageService.selectJoinDate(map);
 				if(remove_date!=null && remove_date.contains(now)) {
 					remove_date=remove_date.replace(now+" / ", "");
-					String[] attendance_date=remove_date.split(" / ");
-					float attendance_rate=(float)attendance_date.length/count_club;
 					if(log.isDebugEnabled()) {
 						log.debug("<<remove_date>>"+remove_date);
-						log.debug("<<attendance_rate>>"+attendance_rate);
-						log.debug("<<attendance.date.length>>"+attendance_date.length);
 					}
-					memberVO.setClub_num(club_num);
-					memberVO.setAttendance_rate(Math.round(attendance_rate*100));
 					memberVO.setJoin_date(remove_date);
 					memberVO.setMem_num(members.get(i));
-					
 					clubManageService.updateParticipants(memberVO);
 				}
 			}
@@ -173,21 +142,12 @@ public class ClubManageController {
 				String remove_date=clubManageService.selectJoinDate(map);
 				if(remove_date!=null && remove_date.contains(now)) {
 					remove_date=remove_date.replace(now+" / ", "");
-					
-					String[] attendance_date=remove_date.split(" / ");
-					float attendance_rate=(float)attendance_date.length/count_club;
 					if(log.isDebugEnabled()) {
 						log.debug("<<remove_date>>"+remove_date);
-						log.debug("<<attendance_rate>>"+attendance_rate);
-						log.debug("<<attendance.date.length>>"+attendance_date.length);
 					}
-					memberVO.setClub_num(club_num);
-					memberVO.setAttendance_rate(Math.round(attendance_rate*100));
 					memberVO.setJoin_date(remove_date);
 					memberVO.setMem_num(members.get(i));
 					clubManageService.updateParticipants(memberVO);
-					
-					
 				}
 			}
 		}
@@ -204,26 +164,10 @@ public class ClubManageController {
 	@RequestMapping("/clubmanage/imageView.do")
 	public ModelAndView viewImage(@RequestParam("club_num") int club_num) {
 		ClubManageVO club=clubManageService.selectClub(club_num);
-		if(log.isDebugEnabled()) {
-			log.debug("<<club>>"+club);
-		}
 		ModelAndView mav=new ModelAndView();
 		mav.setViewName("imageView");
 		mav.addObject("imageFile",club.getClub_img());
 		mav.addObject("filename",club.getFilename());
 		return mav;
 	}
-	@RequestMapping("/clubmanage/profileImage.do")
-	public ModelAndView viewProfileImage(@RequestParam("mem_num") int mem_num) {
-		ClubManageVO member=clubManageService.selectMember(mem_num);
-		ModelAndView mav=new ModelAndView();
-		if(log.isDebugEnabled()) {
-			log.debug("<<member>>" +member);
-		}
-		mav.setViewName("imageView");
-		mav.addObject("imageFile",member.getImage());
-		mav.addObject("filename",member.getDetail_img());
-		return mav;
-	}
-
 }

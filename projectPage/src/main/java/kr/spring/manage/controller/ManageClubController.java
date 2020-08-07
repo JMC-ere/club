@@ -19,7 +19,7 @@ import kr.spring.manage.domain.ManageClubVO;
 import kr.spring.manage.service.ManageClubService;
 import kr.spring.util.PagingUtil;
 
-
+//아무거나dfdfdf
 @Controller
 public class ManageClubController {
 	private Logger log = Logger.getLogger(this.getClass());
@@ -90,7 +90,6 @@ public class ManageClubController {
 	public ModelAndView ClubDetail(@RequestParam("num") int num) {
 	
 	ManageClubVO manageClub = manageClubService.selectClubRequest(num);
-	manageClub.setClub_detail(manageClub.getClub_detail().replace("\n", "<br>"));
 	ModelAndView mav = new ModelAndView();
 	mav.setViewName("ClubDetail");
 	mav.addObject("manageClub",manageClub);

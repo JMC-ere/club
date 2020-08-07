@@ -1,7 +1,10 @@
 package kr.spring.clubmanage.domain;
 
+import java.io.IOException;
 import java.sql.Date;
+import java.util.Arrays;
 
+import org.springframework.web.multipart.MultipartFile;
 
 public class ClubManageVO {
 	
@@ -15,8 +18,25 @@ public class ClubManageVO {
 	private String club_interval;
 	private Date club_end;
 	private String club_detail;
+	private MultipartFile upload;
+	public MultipartFile getUpload() {
+		return upload;
+	}
+	public void setUpload(MultipartFile upload) throws IOException {
+		this.upload = upload;
+		
+		//멀티파트 파일 형식을 byte[]로 변환해야 DB에 업로드
+		setClub_img(upload.getBytes());
+		setFilename(upload.getOriginalFilename());
+	}
 	private byte[] club_img;
 	private String filename;
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
 	private int club_state;
 	private String return_message;
 	private Date club_date;
@@ -24,34 +44,7 @@ public class ClubManageVO {
 	private String detail_nick;
 	private String detail_cell;
 	private String detail_email;
-	private String detail_img;
-	private float attendance_rate;
-	public float getAttendance_rate() {
-		return attendance_rate;
-	}
-	public void setAttendance_rate(float attendance_rate) {
-		this.attendance_rate = attendance_rate;
-	}
-	public String getFilename() {
-		return filename;
-	}
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
-	public String getDetail_img() {
-		return detail_img;
-	}
-	public void setDetail_img(String detail_img) {
-		this.detail_img = detail_img;
-	}
-	public byte[] getImage() {
-		return image;
-	}
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
-	private byte[] image;
-	
+	private byte[] detail_img;
 	private String join_date;
 	public String getJoin_date() {
 		return join_date;
@@ -167,7 +160,23 @@ public class ClubManageVO {
 	public void setDetail_email(String detail_email) {
 		this.detail_email = detail_email;
 	}
-	
+	public byte[] getDetail_img() {
+		return detail_img;
+	}
+	public void setDetail_img(byte[] detail_img) {
+		this.detail_img = detail_img;
+	}
+	@Override
+	public String toString() {
+		return "ClubManageVO [club_num=" + club_num + ", mem_num=" + mem_num + ", club_title=" + club_title
+				+ ", club_loc=" + club_loc + ", club_name=" + club_name + ", club_start=" + club_start + ", club_time="
+				+ club_time + ", club_interval=" + club_interval + ", club_end=" + club_end + ", club_detail="
+				+ club_detail + ", upload=" + upload + ", filename="
+				+ filename + ", club_state=" + club_state + ", retrun_message=" + return_message + ", club_date="
+				+ club_date + ", detail_name=" + detail_name + ", detail_nick=" + detail_nick + ", detail_cell="
+				+ detail_cell + ", detail_email=" + detail_email + ", detail_img=" + Arrays.toString(detail_img)
+				+ ", join_date=" + join_date + "]";
+	}
 	
 	
 }

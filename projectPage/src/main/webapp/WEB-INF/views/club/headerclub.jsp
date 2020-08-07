@@ -46,8 +46,8 @@
     <div class="nav-content light-green darken-2 center">
       <ul class="tabs tabs-transparent"> 
         <li class="tab"><a href="viewclub.do">전체 클럽</a></li>
-        <li class="tab"><a href="clubgenre.do">장르별 클럽</a></li>
-        <li class="tab"><a href="clubinterval.do">요일별 클럽</a></li>
+        <li class="tab"><a href="#test2">장르별 클럽</a></li>
+        <li class="tab"><a href="#">요일별 클럽</a></li>
         <li class="tab"><a href="${pageContext.request.contextPath}/main/introduce/fightclub.do">파이트클럽 크루</a></li>
         <c:if test="${user_auth >=3}"><li class="tab"><a href="boardclub.do">클럽 개설 제안</a></li></c:if>
       </ul>

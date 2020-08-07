@@ -178,7 +178,6 @@ input[type="submit"], input[type="button"]{
 }
 
 </style>
-
 <div class="page-main-style">
 	<div class="menu">
 		<p>클럽 관리</p>
@@ -192,22 +191,15 @@ input[type="submit"], input[type="button"]{
 		<div class="row">
 		<c:if test="${empty leadersValidClub && empty leadersPastClub }">
 		<!-- 클럽장 활동 조건 설명 -->
-		<div id=cond_leader>
-			 <div class="card-panel teal lighten-2">
-			 	클럽장으로 활동하신 내역이 없습니다.
-			 	<a href="/club/main/introduce/membership.do">클럽장 조건 보러 가기</a>
-			 </div>
-		</div>
 		</c:if>
 		<c:if test="${empty leadersValidClub}">
 			<div>현재 클럽장으로 활동 중인 클럽이 없습니다.</div>
 		</c:if>
 		<c:if test="${!empty leadersValidClub }">
 			<c:forEach var="validClub" items="${leadersValidClub}">
-			<c:if test="${validClub.club_state==2 }">
 			<!-- 카드 하나 코드  -->
 			<div class="col-sm-12 col-lg-4">
-				<div class="card medium">
+				<div class="card">
 					<c:if test="${!empty validClub.filename }">
 					<c:if test="${
 						 fn:endsWith(validClub.filename, '.jpg') ||			 
@@ -236,12 +228,11 @@ input[type="submit"], input[type="button"]{
 						</p>
 					</div>
 					<div class="card-action" align="right">
-						<a href="${pageContext.request.contextPath }/main/viewclubdetail.do?club_num=${validClub.club_num}" class="waves-effect waves-light btn-small">자세히</a>
+						<a href="#" class="waves-effect waves-light btn-small">자세히</a>
 						<a href="manageMembers.do?club_num=${validClub.club_num }" class="waves-effect waves-light btn-small">회원관리</a>
 					</div>
 				</div>
 			</div>
-			</c:if>
 			</c:forEach>
 		</c:if>
 		</div>
@@ -253,9 +244,8 @@ input[type="submit"], input[type="button"]{
 		<c:if test="${!empty leadersPastClub }">
 			<!-- 카드 하나 코드  -->
 			<c:forEach var="pastClub" items="${leadersPastClub}">
-			<c:if test="${pastClub.club_state==2 }">
 			<div class="col-sm-12 col-lg-6">
-				<div class="card medium">
+				<div class="card">
 					<c:if test="${!empty pastClub.filename }">
 						<c:if test="${
 							 fn:endsWith(pastClub.filename, '.jpg') ||			 
@@ -284,11 +274,10 @@ input[type="submit"], input[type="button"]{
 						</p>
 					</div>
 					<div class="card-action" align="right">
-						<a href="${pageContext.request.contextPath }/main/viewclubdetail.do?club_num=${pastClub.club_num}" class="waves-effect waves-light btn-small">자세히</a>
+						<a href="#" class="waves-effect waves-light btn-small">자세히</a>
 					</div>
 				</div>
 			</div>
-			</c:if>
 			</c:forEach>
 		</c:if>
 		</div>

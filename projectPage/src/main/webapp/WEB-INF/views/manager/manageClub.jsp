@@ -26,7 +26,7 @@
      
    
    <div class="manage_club_list">
-    <h5><b>승인 대기중인 신청</b></h5><br>
+    <h5><b>승인 대기중인 신청</b></h5>
 
     <c:if test="${count1 == 0}">
 	<div><br>승인 대기중인 신청이 없습니다.</div>
@@ -51,6 +51,7 @@
             <td>${manageClub.club_name}</td>
             <td>${manageClub.club_date}</td>
           </tr>
+		<br>
 		</c:forEach>
 		</tbody>
 		</table>
@@ -60,7 +61,7 @@
 	<br><br><br><hr width=80% color=CCCCCC><br><br><br>
 	
 	<div class="manage_club_list">
-	<h5><b>승인된 신청</b></h5><br>
+	<h5><b>승인된 신청</b></h5>
 	<c:if test="${count2 == 0}">
 	<div><br>승인된 신청이 없습니다.</div>
 	</c:if>
@@ -84,6 +85,7 @@
             <td>${manageClub.club_name}</td>
             <td>${manageClub.club_date}</td>
           </tr>
+		<br>
 		</c:forEach>
 		</tbody>
 		</table>
@@ -93,7 +95,7 @@
 	<br><br><br><hr width=80% color=CCCCCC><br><br><br>
 	
 	<div class="manage_club_list">	
-	<h5><b>반려된 신청</b></h5><br>
+	<h5><b>반려된 신청</b></h5>
 	<c:if test="${count3 == 0}">
 	<div><br>반려된 신청이 없습니다.</div>
 	</c:if>
@@ -117,7 +119,7 @@
             <td>${manageClub.club_name}</td>
             <td>${manageClub.club_date}</td>
           </tr>
-		
+		<br>
 		</c:forEach>
 		</tbody>
 		</table>

@@ -69,9 +69,6 @@
 				<c:if test="${club.club_state == 3}">
 				<td>승인거부</td>
 				</c:if>
-				<c:if test="${club.club_state == 4}">
-				<td>종료됨</td>
-				</c:if>
 			</tr>
 			</c:forEach>
 			</table>

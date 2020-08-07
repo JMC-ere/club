@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
+<head>
 <meta charset="UTF-8">
 <title>후기 게시글</title>
 <style>
@@ -12,73 +11,25 @@
 	margin: 0 auto;
 }
 
-.align-center{
-	margin-top:2rem;
-	text-align:center;
-}
-
 </style>
-
+</head>
+<body>
 	<div class="page-main-style">
 		<h5>${post.post_title}</h5>
-		<table class="table table-bordered">
-			<tr>
-				<th>작성자</th>
-				<td>${post.mem_id}</td>
-				<th>회원등급</th>
-				<td>
-			<c:if test="${user_auth == 2}">일반회원</c:if>
-				<c:if test="${user_auth == 3}">우수회원</c:if>
-				<c:if test="${user_auth == 4}">클럽장</c:if>
-				</td>
-			</tr>
-			<tr>
-				<th>작성일</th>
-				<td>${post.post_date}</td>
-				<th>조회수</th>
-				<td>${post.post_hit}</td>
-			</tr>
+		<p>
+			아이디 : ${post.post_num}<br>
+			제목: ${post.post_title}<br>
+			내용 : ${post.post_board}<br>
+			사진 : ${post.post_img}<br>
+			작성일 : ${post.post_date}<br>
 			
-		
-		</table>
+		</p>
+		<hr size="2" width="100%" noshade>
 		<div class="align-center">
-		<hr size="1" width="100%">
-		<c:if test="${fn:endsWith(post.post_imgname,'.jpg') ||
-					  fn:endsWith(post.post_imgname,'.JPG') ||				  
-					  fn:endsWith(post.post_imgname,'.gif') ||				  
-					  fn:endsWith(post.post_imgname,'.GIF') ||				  
-					  fn:endsWith(post.post_imgname,'.png') ||				  
-					  fn:endsWith(post.post_imgname,'.PNG')}">
-			<img src="imageView.do?post_num=${post.post_num}" class="responsive-img">
-		</c:if>
+			<input type="button" value="수정" onclick="location.href='update.do?id=${member.id}'">
+			<input type="button" value="삭제" onclick="location.href='delete.do?id=${member.id}'">
+			<input type="button" value="목록" onclick="location.href='post.do'">
 		</div>
-		<div>${post.post_board}</div>
-		<hr size="1" width="100%">
-		<div class="align-center">
-			<%-- 작성자만 수정 삭제 버튼이 활성화 됨 --%>
-	 		<c:if test="${user_num == post.mem_num}">
-	 			<button type="button" class="btn btn-outline-success" onclick="location.href='postupdate.do?num=${post.post_num}'">글수정</button>
-	 			<button type="button" class="btn btn-outline-success" onclick="location.href='postdelete.do?num=${post.post_num}'">글삭제</button>
-			</c:if>
-			<button type="button" class="btn btn-outline-success" onclick="location.href='post.do'">목록</button>
-		</div>
-</div>
+	</div>
 </body>
 </html>
-
-
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-	crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-	crossorigin="anonymous"></script>
-<script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-	crossorigin="anonymous"></script>

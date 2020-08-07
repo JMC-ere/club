@@ -20,24 +20,8 @@ public class PostVO {
 	private String post_imgname;
 	private Date post_date;
 	private int post_hit;
-	@NotEmpty
 	private String post_category;
-	private String mem_id;
-	private String mem_auth;
 	
-	
-	public String getMem_auth() {
-		return mem_auth;
-	}
-	public void setMem_auth(String mem_auth) {
-		this.mem_auth = mem_auth;
-	}
-	public String getMem_id() {
-		return mem_id;
-	}
-	public void setMem_id(String mem_id) {
-		this.mem_id = mem_id;
-	}
 	public int getPost_num() {
 		return post_num;
 	}
@@ -109,7 +93,7 @@ public class PostVO {
 		return "PostVO [post_num=" + post_num + ", mem_num=" + mem_num + ", post_title=" + post_title + ", post_board="
 				+ post_board + ", upload=" + upload + ", post_img=" + Arrays.toString(post_img) + ", post_imgname="
 				+ post_imgname + ", post_date=" + post_date + ", post_hit=" + post_hit + ", post_category="
-				+ post_category + ", mem_id=" + mem_id + ", mem_auth=" + mem_auth + "]";
+				+ post_category + "]";
 	}
 	
 	

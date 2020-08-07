@@ -189,18 +189,14 @@ input[type="submit"], input[type="button"]{
 	<div class="page-content">
 		<h6>현재 진행중인 클럽</h6>
 		<div class="row">
-		<c:if test="${empty myValidClub  }">
+		<c:if test="${empty myValidClub }">
 			<div>현재 참여 중인 클럽이 없습니다.</div>
 		</c:if>
 		<c:if test="${!empty myValidClub }">
 			<c:forEach var="validClub" items="${myValidClub}">
-			<c:if test="${validClub.club_state==1 || valid.club_state==2 }">
-			<div>현재 참여 중인 클럽이 없습니다.</div>
-			</c:if>
-			<c:if test="${validClub.club_state==2 }">
 			<!-- 카드 하나 코드  -->
 			<div class="col-sm-12 col-lg-4">
-				<div class="card medium">
+				<div class="card">
 				<c:if test="${!empty validClub.filename }">
 					<c:if test="${
 						 fn:endsWith(validClub.filename, '.jpg') ||			 
@@ -211,14 +207,14 @@ input[type="submit"], input[type="button"]{
 						 fn:endsWith(validClub.filename, '.PNG')
 		 				}">
 		 			<div class="card-image">
-					<img src="imageView.do?club_num=${validClub.club_num }" >
+					<img src="imageView.do?club_num=${validClub.club_num }" class="responsive-img">
 					<span class="card-title">${validClub.club_title}</span>
 					</div>
 					</c:if>
 				</c:if>
 				<c:if test="${empty validClub.filename }">
 					<div class="card-image">
-					<img src="${pageContext.request.contextPath}/resources/images/talk.png" >
+					<img src="${pageContext.request.contextPath}/resources/images/talk.png" class="responsive-img">
 					<span class="card-title">${validClub.club_title}</span>
 					</div>
 				</c:if>
@@ -229,37 +225,10 @@ input[type="submit"], input[type="button"]{
 						</p>
 					</div>
 					<div class="card-action" align="right">
-						<a href="${pageContext.request.contextPath }/main/viewclubdetail.do?club_num=${validClub.club_num}" class="waves-effect waves-light btn-small">자세히</a>
-						<a href="#modal_resign" class="waves-effect waves-light btn-small modal-trigger" >클럽 탈퇴</a>
+						<a href="#" class="waves-effect waves-light btn-small">자세히</a>
 					</div>
 				</div>
 			</div>
-			<div id="modal_resign" class="modal modal-fixed-footer">
-				<div class="modal-content">
-					<div class="row">
-						<form class="col s12" action="resignClub.do" method="post" id="login_check1">
-							<div class="nav-wrapper light-green">
-								<a href="#" class="brand-logo center">클럽 탈퇴</a>
-							</div>
-							<input type="hidden" value="${user_id }" id="mem_id1">
-							<input type="hidden" value="${user_num }" id="mem_num1">
-							<div class="row">
-								<div class="input-field col s12">
-									<input placeholder="비밀번호를 입력하세요!" type="password"
-										id="detail_passwd1" name="detail_passwd1" class="validate" />
-									<span id="msg_passwd"></span>
-								</div>
-							</div>
-							<input type="button" value="취소"
-								class="modal-close waves-effect waves-green btn"
-								onclick="location.href='${pageContext.request.contextPath}/clubmanage/myClub.do'">
-							<input type="submit" value="클럽 탈퇴"
-								class="modal-close waves-effect waves-green btn"> 
-						</form>
-					</div>
-				</div>
-			</div>
-					</c:if>
 			</c:forEach>
 		</c:if>
 		</div>
@@ -269,11 +238,11 @@ input[type="submit"], input[type="button"]{
 			<div>참여하신 활동 종료 클럽이 없습니다.</div>
 		</c:if>
 		<c:if test="${!empty myPastClub }">
+			
 			<!-- 카드 하나 코드  -->
 			<c:forEach var="pastClub" items="${myPastClub}">
-			<c:if test="${pastClub.club_state==2 }">
 			<div class="col-sm-12 col-lg-6">
-				<div class="card medium">
+				<div class="card">
 					<c:if test="${!empty pastClub.filename }">
 						<c:if test="${
 							 fn:endsWith(pastClub.filename, '.jpg') ||			 
@@ -291,7 +260,7 @@ input[type="submit"], input[type="button"]{
 					</c:if>
 					<c:if test="${empty pastClub.filename }">
 						<div class="card-image">
-						<img src="${pageContext.request.contextPath}/resources/images/talk.png" height="250" class="responsive-img">
+						<img src="${pageContext.request.contextPath}/resources/images/talk.png" class="responsive-img">
 						<span class="card-title">${pastClub.club_title}</span>
 						</div>
 					</c:if>
@@ -302,73 +271,14 @@ input[type="submit"], input[type="button"]{
 						</p>
 					</div>
 					<div class="card-action" align="right">
-						<a href="${pageContext.request.contextPath }/main/viewclubdetail.do?club_num=${pastClub.club_num}" class="waves-effect waves-light btn-small">자세히</a>
+						<a href="#" class="waves-effect waves-light btn-small">자세히</a>
 					</div>
+					
 				</div>
 			</div>
-			</c:if>
 			</c:forEach>
 		</c:if>
 		</div>
 	</div>	
 	<br class="end">
 </div>
-<script type="text/javascript">
-
-	$('.dropdown-trigger').dropdown();
-	document.addEventListener('DOMContentLoaded', function() {
-		var elems = document.querySelectorAll('.modal');
-		var instances = M.Modal.init(elems);
-	});
-	
-	var checkLogin = 0;
-	
-	$('#login_check1').submit(function(){
-		if($('#detail_passwd1').val() == ''){
-			$('#msg_passwd').css('color','red').text('비밀번호를 입력하세요.')
-		}
-		
-		$('#msg_id').text('');
-		$('#msg_passwd').text('');
-		
-		$.ajax({
-			url:'${pageContext.request.contextPath}/main/mainLogin.do',
-			type:'post',
-			data:{mem_id1 : $('#mem_id1').val(), 
-				detail_passwd1 : $('#detail_passwd1').val()},
-			dataType:'json',
-			cache:false,
-			timeout:30000,
-			success:function(data){
-				if(data.result == 'Check'){
-					checkLogin = 1;
-					location.href='${pageContext.request.contextPath}/main/main.do';
-					alert('클럽 탈퇴 완료');
-				}else if(data.result == 'NotCheck'){
-					alert('아이디 또는 비밀번호가 일치하지 않습니다.');
-					checkLogin = 0;
-				}else if(data.result == 'emptyCheck'){
-					alert('아이디 또는 비밀번호를 입력하세요.');
-					checkLogin = 0;
-					history.go(0);
-					return;
-				}else{
-					alert('로그인 체크 오류!');
-					checkLogin = 0;
-					location.href='${pageContext.request.contextPath}/main/main.do';
-				}
-			},
-			error:function(){
-				checkLogin = 0;
-				alert('네트워크 오류발생!!');
-				location.href='${pageContext.request.contextPath}/main/main.do';
-			}
-		});
-		if(checkLogin == 0){
-			history.go(0);
-		}else if(checkLogin == 1){
-			location.href='${pageContext.request.contextPath}/main/main.do';
-			alert('로그인 성공!');
-		}
-	});
-</script>
