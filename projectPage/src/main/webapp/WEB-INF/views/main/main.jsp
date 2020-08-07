@@ -38,21 +38,18 @@ p {
 			</div></li>
 		<li><img src="https://cdn.pixabay.com/photo/2017/08/30/18/19/bali-2698078_960_720.jpg"> <!-- random image -->
 			<div class="caption left-align">
-				<h3>Left Aligned Caption</h3>
-				<h5 class="light grey-text text-lighten-3">Here's our small
-					slogan.</h5>
+				<h3>현재 진행중인 다양한 모임에 참석하세요!</h3>
+				<h5 class="light grey-text text-lighten-3"><a href="${pageContext.request.contextPath}/main/viewclub.do">참여하러가기</a></h5>
 			</div></li>
-		<li><img src="https://cdn.pixabay.com/photo/2017/04/11/22/55/inspire-2223128_960_720.jpg"> <!-- random image -->
+		<li><img src="https://cdn.pixabay.com/photo/2016/11/19/16/51/adventure-1840292_960_720.jpg"> <!-- random image -->
 			<div class="caption right-align">
-				<h3>Right Aligned Caption</h3>
-				<h5 class="light grey-text text-lighten-3">Here's our small
-					slogan.</h5>
+				<h3>포인트를 쌓아 우수회원이 되어 나만의 모임을 만들수 있습니다!</h3>
+				<h5 class="light grey-text text-lighten-3"><a href="${pageContext.request.contextPath}/main/introduce/membership.do">회원 멤버십보러가기</a></h5>
 			</div></li>
-		<li><img src="https://cdn.pixabay.com/photo/2016/11/14/04/43/boy-1822631_960_720.jpg"> <!-- random image -->
+		<li><img src="https://cdn.pixabay.com/photo/2016/03/30/02/57/camping-1289930_960_720.jpg"> <!-- random image -->
 			<div class="caption center-align">
-				<h3>This is our big Tagline!</h3>
-				<h5 class="light grey-text text-lighten-3">Here's our small
-					slogan.</h5>
+				<h3>++CLUB에서 다양한 사람들과 모임을 가져보세요!</h3>
+				<h5 class="light grey-text text-lighten-3"></h5>
 			</div></li>
 	</ul>
 </div>
