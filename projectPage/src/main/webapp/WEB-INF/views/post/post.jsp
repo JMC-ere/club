@@ -49,7 +49,7 @@
 
 <div class="page-menu">
 	<ul class="nav nav-pills nav-fill">
-		<li class="nav-item"><a class="nav-link" href="post.do">전체 게시판</a></li>
+		<li class="nav-item"><a class="nav-link" href="postlist.do">전체 게시판</a></li>
 		<li class="nav-item"><a class="nav-link" href="post.do?keyfield=post_category&keyword=join">참여 후기 게시판</a></li>
 		<li class="nav-item"><a class="nav-link" href="postlist.do?keyfield=post_category&keyword=movie">영화 후기 게시판</a></li>
 		<li class="nav-item"><a class="nav-link" href="postphoto.do?keyfield=post_category&keyword=photo">갤러리</a>
