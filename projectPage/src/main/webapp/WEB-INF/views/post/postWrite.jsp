@@ -36,21 +36,17 @@
 	<table id="postWrite" class="table table-bordered">
 		<tbody>
 		
-		
-			<form select>
-				<label for="title">게시물 유형</label> <select name='post_category'
-					onchange="this.form.option1no_input.value=this.value">
-					<option value=1>참여</option>
-					<option value=2>영화</option>
-					<option value=3>갤러리</option>
-				</select> <input type=hidden value='' name='option1no_input'>
-			</form>
-		
 			<tr>
 				<th scope="row">
 					<label for="category">게시물 유형</label>
 				</th>
-				<td scope="row"> <form:input path="post_category" /><form:errors path="post_category" cssClass="error-color" />
+				<td scope="row">
+
+					<p>
+						<label> <input name="group1" type="radio"/> <span>Red</span></label>
+						<label> <input name="group1" type="radio"/> <span>Red</span></label>
+					</p>
+
 				</td> 
 			</tr>
 			<tr>
