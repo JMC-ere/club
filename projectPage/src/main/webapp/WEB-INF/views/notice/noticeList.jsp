@@ -192,8 +192,8 @@ input[type="submit"], input[type="button"]{
 		<p>공지사항</p>
 		<ul>
 		   <li class="tab"><a href="list.do">전체 공지사항</a></li>
-		   <li class="tab"><a href="http://localhost:8080/club/notice/list.do?keyfield=nt_title&keyword=%ED%81%B4%EB%9F%BD%5D">클럽별 공지사항</a></li>
-		   <li class="tab"><a href="http://localhost:8080/club/notice/list.do?keyfield=nt_title&keyword=%5B%ED%8C%8C%EC%9D%B4%ED%84%B0%ED%81%B4%EB%9F%BD%5D">파이터클럽 공지사항</a></li>
+		   <li class="tab"><a href="http://localhost:8080/club/notice/list.do?keyfield=nt_category&keyword=%ED%81%B4%EB%9F%BD">클럽별 공지사항</a></li>
+		   <li class="tab"><a href="http://localhost:8080/club/notice/list.do?keyfield=nt_category&keyword=%ED%8C%8C%EC%9D%B4%ED%84%B0%ED%81%B4%EB%9F%BD">파이터클럽 공지사항</a></li>
 	  	</ul>
 	</div>
 	<div class="page-content">
@@ -225,6 +225,7 @@ input[type="submit"], input[type="button"]{
 			<table class="notice_list">
 				<tr style="border-bottom:1px solid #000">
 					<th>번호</th>
+					<th>분류</th>
 					<th width="250">제목</th>
 					<th>작성자</th>
 					<th>등록일</th>
@@ -239,6 +240,7 @@ input[type="submit"], input[type="button"]{
 		<table class="notice_list">
 			<tr style="border-bottom:1px solid #000">
 				<th>번호</th>
+				<th>분류</th>
 				<th width="250">제목</th>
 				<th>작성자</th>
 				<th>등록일</th>
@@ -247,6 +249,7 @@ input[type="submit"], input[type="button"]{
 			<c:forEach var="notice" items="${list}">
 				<tr>
 					<td>${notice.nt_num}</td>
+					<td>${notice.nt_category}</td>
 					<td><div class="limit"><a href="detail.do?nt_num=${notice.nt_num}">${notice.nt_title}</a></div></td>
 					<td>${notice.mem_id}</td>
 					<td>${notice.nt_datetime}</td>

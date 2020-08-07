@@ -168,23 +168,25 @@ input[type="submit"], input[type="button"]{
 			<tr style="border-top:1px solid #000;">
 				<th>번호</th>
 				<td>${notice.nt_num}</td>
-				<th>작성자</th>
-				<td>${notice.mem_id}</td>
+				<th>분류</th>
+				<td>${notice.nt_category}</td>
 			</tr>
 			<tr>
+				<th>작성자</th>
+				<td>${notice.mem_id}</td>			
 				<th>작성일자</th>
 				<td>${notice.nt_datetime}</td>
-				<th>조회수</th>
-				<td>${notice.nt_hit}</td>
 			</tr>
 			<tr>
 				<th>첨부파일</th>
 				<c:if test="${!empty notice.nt_filename}">
-					<td colspan="3"><a href="file.do?nt_num=${notice.nt_num}">${notice.nt_filename}</a></td>
+					<td><a href="file.do?nt_num=${notice.nt_num}">${notice.nt_filename}</a></td>
 				</c:if>
 				<c:if test="${empty notice.nt_filename}">
-					<td colspan="3">첨부된 파일이 없습니다.</td>
-				</c:if>				
+					<td>첨부된 파일이 없습니다.</td>
+				</c:if>
+				<th>조회수</th>
+				<td>${notice.nt_hit}</td>				
 			</tr>
 		</table>
 		<c:if test="${fn:endsWith(notice.nt_imgname,'.jpg') ||

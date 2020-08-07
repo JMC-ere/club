@@ -37,6 +37,15 @@ br.end{
 	clear:both;
 }
 
+input[type="checkbox"]{
+	background-color:#33691e; 
+	padding:5px 20px 5px 20px; 
+	margin-bottom:20px;
+	color:#fff; 
+	border:none; 
+	border-radius:5px;
+}
+
 /*버튼*/
 input[type="submit"], input[type="button"]{
 	background-color:#33691e; 
@@ -158,8 +167,15 @@ input[type="submit"], input[type="button"]{
 		<form:form action="write.do" enctype="multipart/form-data" commandName="noticeVO" class="write_form" id="abc">
 			<ul class="write">		
 				<li>
+					<label>게시판 분류</label>
+					<label><input type="radio" id="nt_category1" name="nt_category" value="전체"><span>전체</span></label>
+					<label><input type="radio" id="nt_category2" name="nt_category" value="클럽"><span>클럽</span></label>
+					<label><input type="radio" id="nt_category3" name="nt_category" value="파이터클럽"><span>파이터클럽</span></label>
+					<form:errors path="nt_category" cssClass="error-color"/>
+				</li>
+				<li>
 					<label for="nt_title">제목</label>
-					<form:input path="nt_title" placeholder="말머리에 [전체공지/XX클럽/파이터클럽] 작성 필수" maxlength="26" class="title" id="title"/>
+					<form:input path="nt_title" placeholder="제목을 입력해주세요." maxlength="26" class="title" id="title"/>
 					<form:errors path="nt_title" cssClass="error-color"/>
 				</li>
 				<li>
