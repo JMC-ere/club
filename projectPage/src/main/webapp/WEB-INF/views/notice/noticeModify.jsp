@@ -168,6 +168,13 @@ input[type="submit"], input[type="button"]{
 			<form:hidden path="nt_num"/>
 			<ul>
 				<li>
+					<label>게시판 분류</label>
+					<label><input type="radio" id="nt_category1" name="nt_category" value="전체"><span>전체</span></label>
+					<label><input type="radio" id="nt_category2" name="nt_category" value="클럽"><span>클럽</span></label>
+					<label><input type="radio" id="nt_category3" name="nt_category" value="파이터클럽"><span>파이터클럽</span></label>
+					<form:errors path="nt_category" cssClass="error-color"/>
+				</li>			
+				<li>
 					<label for="nt_title">제목</label>
 					<form:input path="nt_title" maxlength="26"/>
 					<form:errors path="nt_title" cssClass="error-color"/>
