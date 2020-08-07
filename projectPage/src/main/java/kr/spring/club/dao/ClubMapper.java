@@ -29,4 +29,8 @@ public interface ClubMapper {
 	
 	@Insert("INSERT INTO joinclub (join_num,club_num,mem_num) VALUES (joinclub_seq.nextval,#{club_num},#{mem_num})")
 	public void joinClubInsert(@Param("club_num") Integer club_num, @Param("mem_num") Integer mem_num);
+	
+	public List<ClubVO> genreList(Map<String,Object> map);
+	
+	public List<ClubVO> intervalList(Map<String,Object> map);
 }

@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import kr.spring.club.dao.ClubMapper;
@@ -70,5 +69,17 @@ public class ClubServiceImpl implements ClubService{
 	@Override
 	public void joinClubInsert(Integer club_num, Integer mem_num) {
 		clubMapper.joinClubInsert(club_num, mem_num);
+	}
+
+	@Override
+	public List<ClubVO> genreList(Map<String, Object> map) {
+		
+		return clubMapper.genreList(map);
+	}
+
+	@Override
+	public List<ClubVO> intervalList(Map<String, Object> map) {
+		
+		return clubMapper.intervalList(map);
 	}
 }
