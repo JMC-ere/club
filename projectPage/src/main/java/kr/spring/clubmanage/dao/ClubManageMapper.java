@@ -3,6 +3,7 @@ package kr.spring.clubmanage.dao;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -29,4 +30,6 @@ public interface ClubManageMapper {//dB에서 date를 해당 날짜의 00시00�
 	public List<Integer> selectMembers(int club_num);
 	@Select("select * from member_detail where mem_num=#{mem_num}")
 	public ClubManageVO selectMember(int mem_num);
+	@Delete("delete from join club where mem_num=#{mem_num}")
+	public void deleteMemberFromClub(int mem_num);
 }

@@ -16,4 +16,5 @@ public interface ClubManageService {
 	public List<Integer> selectMembers(int club_num);
 	String selectJoinDate(Map<String, Object> map);
 	public ClubManageVO selectMember(int mem_num);
+	public void deleteMemberFromClub(int mem_num);
 }
