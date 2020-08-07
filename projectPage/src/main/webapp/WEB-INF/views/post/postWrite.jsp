@@ -3,76 +3,72 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <style>
-.page-menu{
+.page-menu {
 	width: 85%;
 	margin: 0 auto;
 }
 
-.write_button{
-
+.write_button {
 	margin: 0 auto;
-	float:right;
+	float: right;
 }
 
-.align-center{
-	margin-top:2rem;
-	text-align:center;
+.align-center {
+	margin-top: 2rem;
+	text-align: center;
 }
-
-
-
 </style>
 
 <div class="page-menu">
 	<h2>후기 작성하기</h2>
 	<form:form action="postwrite.do" enctype="multipart/form-data"
 		commandName="postVO">
-	
+
 		<div class="write_button">
 			<button type="submit" class="btn btn-outline-success">작성 완료</button>
-			<button type="button" class="btn btn-outline-success" onclick="location.href='post.do'">목록</button>
+			<button type="button" class="btn btn-outline-success"
+				onclick="location.href='post.do'">목록</button>
 		</div>
-	
-	<table id="postWrite" class="table table-bordered">
-		<tbody>
-		
-			<tr>
-				<th scope="row">
-					<label for="category">게시물 유형</label>
-				</th>
-				<td scope="row">
 
-					<p>
-						<label> <input name="group1" type="radio"/> <span>Red</span></label>
-						<label> <input name="group1" type="radio"/> <span>Red</span></label>
-					</p>
+		<table id="postWrite" class="table table-bordered">
+			<tbody>
 
-				</td> 
-			</tr>
-			<tr>
-				<th scope="row">
-					<label for="title">제목</label>
-				</th>
-				<td scope="row"> <form:input path="post_title" class="post_title"/><form:errors path="post_title" cssClass="error-color" />
-				</td> 
-			</tr>
-			<tr>
-				<th scope="row">
-					<label for="title">내용</label>
-				</th>
-				<td scope="row"><form:textarea path="post_board" class="form-control"  rows="10" placeholder=" 내용을 입력해주세요"/><form:errors path="post_board" cssClass="error-color" />
-				</td> 
-			</tr>			
-			<tr>
-				<th scope="row"><label for="upload">파일 업로드</label></th>
-				<td class="post_img"><input type="file" name="upload"></td>
-			</tr>
-	</tbody>
-</table>
+				<tr>
+					<th scope="row"><label for="category">게시물 유형</label></th>
+					<td scope="row">
 
-		
-			
-	
+						<p>
+							<label> <input name="post_category" type="radio"
+								value="join" /> <span>참여 후기</span></label> <label> <input
+								name="post_category" type="radio" value="movie" /> <span>영화
+									후기</span></label> <label> <input name="post_category" type="radio"
+								value="photo" /> <span>사진 올리기</span></label>
+						</p>
+
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="title">제목</label></th>
+					<td scope="row"><form:input path="post_title"
+							class="post_title" />
+						<form:errors path="post_title" cssClass="error-color" /></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="title">내용</label></th>
+					<td scope="row"><form:textarea path="post_board"
+							class="form-control" rows="10" placeholder=" 내용을 입력해주세요" />
+						<form:errors path="post_board" cssClass="error-color" /></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="upload">파일 업로드</label></th>
+					<td class="post_img"><input type="file" name="upload"></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+
 	</form:form>
 </div>
 
