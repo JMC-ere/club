@@ -41,7 +41,7 @@ p {
 				<h3>현재 진행중인 다양한 모임에 참석하세요!</h3>
 				<h5 class="light grey-text text-lighten-3"><a href="${pageContext.request.contextPath}/main/viewclub.do">참여하러가기</a></h5>
 			</div></li>
-		<li><img src="https://cdn.pixabay.com/photo/2017/01/17/10/39/bournemouth-1986419_960_720.jpg"> <!-- random image -->
+		<li><img src="https://cdn.pixabay.com/photo/2018/10/22/20/34/hamburg-3766306_960_720.jpg"> <!-- random image -->
 			<div class="caption right-align">
 				<h3>포인트를 쌓아 우수회원이 되어 나만의 모임을 만들수 있습니다!</h3>
 				<h5 class="light grey-text text-lighten-3"><a href="${pageContext.request.contextPath}/main/introduce/membership.do">회원 멤버십보러가기</a></h5>
