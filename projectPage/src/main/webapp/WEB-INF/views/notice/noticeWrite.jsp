@@ -37,15 +37,6 @@ br.end{
 	clear:both;
 }
 
-input[type="checkbox"]{
-	background-color:#33691e; 
-	padding:5px 20px 5px 20px; 
-	margin-bottom:20px;
-	color:#fff; 
-	border:none; 
-	border-radius:5px;
-}
-
 /*버튼*/
 input[type="submit"], input[type="button"]{
 	background-color:#33691e; 
@@ -65,8 +56,8 @@ input[type="submit"], input[type="button"]{
 	/*폰트 크기*/
     :root{
         font-size:14px;
-    }  
-    
+    }   
+	
 	/*사이드 메뉴*/
 	.menu{
 		height:15rem;
@@ -158,21 +149,14 @@ input[type="submit"], input[type="button"]{
 		<p>공지사항</p>
 		<ul>
 		   <li class="tab"><a href="list.do">전체 공지사항</a></li>
-		   <li class="tab"><a href="http://localhost:8080/club/notice/list.do?keyfield=nt_title&keyword=%ED%81%B4%EB%9F%BD%5D">클럽별 공지사항</a></li>
-		   <li class="tab"><a href="http://localhost:8080/club/notice/list.do?keyfield=nt_title&keyword=%5B%ED%8C%8C%EC%9D%B4%ED%84%B0%ED%81%B4%EB%9F%BD%5D">파이터클럽 공지사항</a></li>
+		   <li class="tab"><a href="list.do?keyfield=nt_title&keyword=%ED%81%B4%EB%9F%BD">클럽별 공지사항</a></li>
+		   <li class="tab"><a href="list.do?keyfield=nt_title&keyword=%ED%8C%8C%EC%9D%B4%ED%84%B0%ED%81%B4%EB%9F%BD">파이터클럽 공지사항</a></li>
 	  	</ul>
 	</div>
 	<div class="page-content">
 		<h3>글쓰기</h3>
 		<form:form action="write.do" enctype="multipart/form-data" commandName="noticeVO" class="write_form" id="abc">
 			<ul class="write">		
-				<li>
-					<label>게시판 분류</label>
-					<label><input type="radio" id="nt_category1" name="nt_category" value="전체"><span>전체</span></label>
-					<label><input type="radio" id="nt_category2" name="nt_category" value="클럽"><span>클럽</span></label>
-					<label><input type="radio" id="nt_category3" name="nt_category" value="파이터클럽"><span>파이터클럽</span></label>
-					<form:errors path="nt_category" cssClass="error-color"/>
-				</li>
 				<li>
 					<label for="nt_title">제목</label>
 					<form:input path="nt_title" placeholder="제목을 입력해주세요." maxlength="26" class="title" id="title"/>
@@ -183,7 +167,7 @@ input[type="submit"], input[type="button"]{
 				</li>
 				<li>
 					<label for="nt_content">내용</label>
-					<form:textarea path="nt_content" style="height:250px;" placeholder="내용을 입력해주세요."/>
+					<form:textarea path="nt_content" style="height:250px;" placeholder="* 작성 시 주의사항"/>
 					<form:errors path="nt_content" cssClass="error-color"/>
 				</li>
 				<li>

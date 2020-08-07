@@ -33,26 +33,23 @@ p {
 	<ul class="slides">
 		<li><img src="https://cdn.pixabay.com/photo/2017/08/29/12/07/adult-2693054_960_720.jpg"> <!-- random image -->
 			<div class="caption center-align">
-				<h3><span class="white-text text-darken-2">Hellow We Are ++CLUB!</span></h3>
+				<h3><span class="white-text text-darken-2">Hellow, We Are ++CLUB!</span></h3>
 				<h5 class="white-text text-darken-2">++CLUB 에 오신것을 환영합니다!!</h5>
 			</div></li>
-		<li><img src="https://cdn.pixabay.com/photo/2017/08/30/18/19/bali-2698078_960_720.jpg"> <!-- random image -->
-			<div class="caption left-align">
-				<h3>Left Aligned Caption</h3>
-				<h5 class="light grey-text text-lighten-3">Here's our small
-					slogan.</h5>
-			</div></li>
-		<li><img src="https://cdn.pixabay.com/photo/2017/04/11/22/55/inspire-2223128_960_720.jpg"> <!-- random image -->
+		<li><img src="https://cdn.pixabay.com/photo/2017/08/14/22/06/passport-2642172_960_720.jpg"> <!-- random image -->
 			<div class="caption right-align">
-				<h3>Right Aligned Caption</h3>
-				<h5 class="light grey-text text-lighten-3">Here's our small
-					slogan.</h5>
+				<h3>현재 진행중인 다양한 모임에 참석하세요!</h3>
+				<h5 class="light grey-text text-lighten-3"><a href="${pageContext.request.contextPath}/main/viewclub.do">참여하러가기</a></h5>
 			</div></li>
-		<li><img src="https://cdn.pixabay.com/photo/2016/11/14/04/43/boy-1822631_960_720.jpg"> <!-- random image -->
+		<li><img src="https://cdn.pixabay.com/photo/2017/01/17/10/39/bournemouth-1986419_960_720.jpg"> <!-- random image -->
+			<div class="caption right-align">
+				<h3>포인트를 쌓아 우수회원이 되어 나만의 모임을 만들수 있습니다!</h3>
+				<h5 class="light grey-text text-lighten-3"><a href="${pageContext.request.contextPath}/main/introduce/membership.do">회원 멤버십보러가기</a></h5>
+			</div></li>
+		<li><img src="https://cdn.pixabay.com/photo/2016/03/30/02/57/camping-1289930_960_720.jpg"> <!-- random image -->
 			<div class="caption center-align">
-				<h3>This is our big Tagline!</h3>
-				<h5 class="light grey-text text-lighten-3">Here's our small
-					slogan.</h5>
+				<h4><span class="white-text text-darken-2">지금 바로!</span></h4>
+				<h4 class="light grey-text text-lighten-3">++CLUB에서 다양한 사람들과 모임을 가져보세요 :-)</h4>
 			</div></li>
 	</ul>
 </div>
@@ -73,11 +70,10 @@ p {
 			<div class="card">
 			
 				<div class="card-header" id="hope">${club.club_genre}</div>
-				<img
-					src="imageView.do?club_num=${club.club_num }" id="cardImg" class="responsive-img center"/>
-				<div class="card-body">
-					<h5 class="card-title">${club.club_name}</h5>
-					<p class="card-text">${club.club_interval}</p>
+				<img src="imageView.do?club_num=${club.club_num }" id="cardImg" class="responsive-img center"/>
+				<div class="card-body center">
+					<h5 class="card-title" style="text-align:center">${club.club_name}</h5>
+					<p class="card-text" style="text-align:center">모임주기 : ${club.club_interval}</p>
 					<a href="viewclubdetail.do?club_num=${club.club_num}" class="btn #8bc34a light-green">More</a>
 				</div>
 			</div>

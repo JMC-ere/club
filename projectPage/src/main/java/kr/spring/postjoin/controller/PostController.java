@@ -199,7 +199,12 @@ public class PostController {
 
 		//조회수 증가
 		postService.updatePostHit(num);
+		
 		PostVO post = postService.selectPost(num);
+		
+		//내용 띄어쓰기 허용
+		post.setPost_board(post.getPost_board().replace("\n", "<br>"));
+		
 
 		return new ModelAndView("postView","post",post);
 	}
@@ -212,8 +217,8 @@ public class PostController {
 			
 			ModelAndView mav = new ModelAndView();
 			mav.setViewName("imageView");
-			mav.addObject("post_img",post.getPost_img());
-			mav.addObject("post_imgname",post.getPost_imgname());
+			mav.addObject("imageFile",post.getPost_img());
+			mav.addObject("filename",post.getPost_imgname());
 			
 			return mav;
 		}
@@ -226,7 +231,7 @@ public class PostController {
 
 			model.addAttribute("postVO",postVO);
 
-			return "postModify";
+			return "postupdate";
 		}
 		//글 수정 처리
 		@RequestMapping(value="post/postupdate.do", method=RequestMethod.POST)
@@ -245,12 +250,12 @@ public class PostController {
 			}
 			postService.updatePost(postVO);
 
-			return "redirect:/post.do";
+			return "redirect:/post/post.do";
 
 		}
 
 		//글 삭제 처리
-		@RequestMapping(value="/post/postdelite.do")
+		@RequestMapping(value="/post/postdelete.do")
 		public String submit(@RequestParam("num")int num) {
 
 			if(log.isDebugEnabled()) {

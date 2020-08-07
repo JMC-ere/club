@@ -13,7 +13,7 @@ import kr.spring.notice.domain.NoticeVO;
 public interface NoticeMapper {
 	public List<NoticeVO> selectList(Map<String,Object> map); //BoardMapper.xml에서 작업
 	public int selectRowCount(Map<String,Object> map); //BoardMapper.xml에서 작업
-	@Insert("INSERT INTO notice (nt_num,mem_num,nt_title,nt_content,nt_img,nt_imgname,nt_datetime,nt_hit,nt_filename,nt_file,nt_category) VALUES (notice_seq.nextval,#{mem_num},#{nt_title},#{nt_content},#{nt_img},#{nt_imgname},SYSDATE,#{nt_hit},#{nt_filename},#{nt_file},#{nt_category})")
+	@Insert("INSERT INTO notice (nt_num,mem_num,nt_title,nt_content,nt_img,nt_imgname,nt_datetime,nt_hit,nt_filename,nt_file) VALUES (notice_seq.nextval,#{mem_num},#{nt_title},#{nt_content},#{nt_img},#{nt_imgname},SYSDATE,#{nt_hit},#{nt_filename},#{nt_file})")
 	public void insert(NoticeVO notice);
 	@Select("SELECT * FROM notice b JOIN member m ON b.mem_num=m.mem_num WHERE b.nt_num=#{nt_num}")
 	public NoticeVO selectNotice(Integer nt_num);

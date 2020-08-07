@@ -130,7 +130,6 @@ create table notice(
 	nt_num number not null primary key,
 	mem_num number not null,
 	nt_title varchar2(40) not null,
-	nt_category varchar2(15) not null,
 	nt_content clob not null,
 	nt_img blob,
 	nt_file clob,

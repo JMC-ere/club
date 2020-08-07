@@ -190,7 +190,7 @@ public class QA1_1Controller {
 			}
 
 			//글 삭제
-			clubqaService.delete(num);
+			clubqaService.delete1_1(num);
 
 			return "redirect:/ClubQA/QA1_1/QA1_1_list.do";
 		}

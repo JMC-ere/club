@@ -25,9 +25,9 @@
 				<div class="card-header">${club.club_genre}</div>
 				<img
 					src="imageView.do?club_num=${club.club_num }" id="cardImg" class="responsive-img center"/>
-				<div class="card-body">
-					<h5 class="card-title">${club.club_name}</h5>
-					<p class="card-text">${club.club_interval}</p>
+				<div class="card-body center">
+					<h5 class="card-title" style="text-align:center">${club.club_name}</h5>
+					<p class="card-text" style="text-align:center">모임주기 : ${club.club_interval}</p>
 					<a href="viewclubdetail.do?club_num=${club.club_num}" class="btn #8bc34a light-green">More</a>
 				</div>
 			</div>

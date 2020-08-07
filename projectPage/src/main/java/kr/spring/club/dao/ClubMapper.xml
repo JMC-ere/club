@@ -34,6 +34,24 @@
 		ORDER BY c.club_num DESC) a)
 		<![CDATA[ WHERE rnum >= #{start} AND rnum <= #{end} ]]>
 	</select>
+	
+	<select id="genreList" parameterType="map" resultType="ClubVO">
+		
+		SELECT * FROM (SELECT a.*, rownum rnum FROM 
+			(SELECT * FROM club c JOIN member m ON c.mem_num=m.mem_num
+		<where>
+			<if test="keyword != '' and keyfield == 'club_genre'">
+					c.club_genre LIKE '%' || #{keyword} || '%'
+				</if>
+				<if test="keyword != '' and keyfield == 'club_interval'">
+					c.club_interval LIKE '%' || #{keyword} || '%'
+				</if>
+		</where>
+		ORDER BY c.club_num DESC) a)
+		<![CDATA[ WHERE club_state = 2 AND club_end+1>=SYSDATE AND rnum >= #{start} AND rnum <= #{end} ]]>
+		
+	</select>
+	
 	<insert id="insert" parameterType="clubVO">
 		INSERT INTO club
 			(club_num,club_title,club_name,club_genre,club_loc,club_time,club_start,club_end,club_interval,club_img,filename,club_detail,mem_num)

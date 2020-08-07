@@ -158,8 +158,8 @@ input[type="submit"], input[type="button"]{
 		<p>공지사항</p>
 		<ul>
 		   <li class="tab"><a href="list.do">전체 공지사항</a></li>
-		   <li class="tab"><a href="http://localhost:8080/club/notice/list.do?keyfield=nt_title&keyword=%ED%81%B4%EB%9F%BD%5D">클럽별 공지사항</a></li>
-		   <li class="tab"><a href="http://localhost:8080/club/notice/list.do?keyfield=nt_title&keyword=%5B%ED%8C%8C%EC%9D%B4%ED%84%B0%ED%81%B4%EB%9F%BD%5D">파이터클럽 공지사항</a></li>
+		   <li class="tab"><a href="list.do?keyfield=nt_title&keyword=%ED%81%B4%EB%9F%BD">클럽별 공지사항</a></li>
+		   <li class="tab"><a href="list.do?keyfield=nt_title&keyword=%ED%8C%8C%EC%9D%B4%ED%84%B0%ED%81%B4%EB%9F%BD">파이터클럽 공지사항</a></li>
 	  	</ul>
 	</div>
 	<div class="page-content">
@@ -167,13 +167,6 @@ input[type="submit"], input[type="button"]{
 		<form:form action="update.do" enctype="multipart/form-data" commandName="noticeVO" class="write_form">
 			<form:hidden path="nt_num"/>
 			<ul>
-				<li>
-					<label>게시판 분류</label>
-					<label><input type="radio" id="nt_category1" name="nt_category" value="전체"><span>전체</span></label>
-					<label><input type="radio" id="nt_category2" name="nt_category" value="클럽"><span>클럽</span></label>
-					<label><input type="radio" id="nt_category3" name="nt_category" value="파이터클럽"><span>파이터클럽</span></label>
-					<form:errors path="nt_category" cssClass="error-color"/>
-				</li>			
 				<li>
 					<label for="nt_title">제목</label>
 					<form:input path="nt_title" maxlength="26"/>
