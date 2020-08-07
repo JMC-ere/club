@@ -31,6 +31,4 @@ public interface ClubMapper {
 	public void joinClubInsert(@Param("club_num") Integer club_num, @Param("mem_num") Integer mem_num);
 	
 	public List<ClubVO> genreList(Map<String,Object> map);
-	
-	public List<ClubVO> intervalList(Map<String,Object> map);
 }

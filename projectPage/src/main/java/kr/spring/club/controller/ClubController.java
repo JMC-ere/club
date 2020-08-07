@@ -73,6 +73,7 @@ public class ClubController {
 		return mav;
 	}
 	
+	//장르별 페이지
 	@RequestMapping("/main/clubgenre.do")
 	public ModelAndView process2(@RequestParam(value="pageNum",defaultValue="1") int currentPage,
 								@RequestParam(value="keyfield",defaultValue="") String keyfield,
@@ -83,7 +84,7 @@ public class ClubController {
 		map.put("keyword", keyword);
 		
 		//게시판의 총 레코드 수 또는 검색 레코드 수 반환
-		int count = clubService.selectRowCount(map);
+		int count = clubService.listRowCount();
 		
 		if(log.isDebugEnabled()) {
 			log.debug("<<count>> : " + count);
@@ -101,6 +102,42 @@ public class ClubController {
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("clubgenre");
+		mav.addObject("count", count);
+		mav.addObject("list",list);
+		mav.addObject("pagingHtml",page.getPagingHtml());
+		
+		return mav;
+	}
+	
+	//요일별 페이지
+	@RequestMapping("/main/clubinterval.do")
+	public ModelAndView process3(@RequestParam(value="pageNum",defaultValue="1") int currentPage,
+								@RequestParam(value="keyfield",defaultValue="") String keyfield,
+								@RequestParam(value="keyword",defaultValue="") String keyword) {
+		
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("keyfield", keyfield);
+		map.put("keyword", keyword);
+		
+		//게시판의 총 레코드 수 또는 검색 레코드 수 반환
+		int count = clubService.listRowCount();
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<count>> : " + count);
+		}
+		
+		//페이징처리
+		PagingUtil page = new PagingUtil(keyfield,keyword,currentPage,count,rowCount,pageCount,"clubinterval.do");
+		map.put("start", page.getStartCount());
+		map.put("end", page.getEndCount());
+		
+		List<ClubVO> list = null;
+		if(count > 0) {
+			list = clubService.genreList(map);
+		}
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("clubinterval");
 		mav.addObject("count", count);
 		mav.addObject("list",list);
 		mav.addObject("pagingHtml",page.getPagingHtml());

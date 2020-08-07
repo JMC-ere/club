@@ -10,35 +10,19 @@
 	}
 </style>
 
-<div id="clubinterval" class="center">
+<div id="clubgenre" class="center">
 	<h4>요일별 클럽</h4>
-	
-	<!-- 요일별 검색 기능 -->
-	<div class="col s12">
-		<form action="clubinterval.do" method="get">
-			<div class="col s5">
-				<select name="keyfield">
-					<option value="" disabled selected>장르별 검색</option>
-					<option value="club_interval">월요일</option>
-					<option value="club_interval">화요일</option>
-					<option value="club_interval">수요일</option>
-					<option value="club_interval">목요일</option>
-					<option value="club_interval">금요일</option>
-					<option value="club_interval">토요일</option>
-					<option value="club_interval">일요일</option>
-				</select>
-			</div>
-			<div class="col s5">
-				<input type="search" size="16" name="keyword" id="keyword">
-			</div>
-			<div class="col s2">
-				<input type="submit"
-					class="btn purple lighten-5 purple-text text-darken-4" value="검색">
-			</div>
-		</form>
-	</div>
 
-	<!-- 장르별 클럽 출력 -->
+	<div>
+	<a href="clubinterval.do?keyfield=club_interval&keyword=%EC%9B%94%EC%9A%94%EC%9D%BC">월요일</a>
+	<a href="clubinterval.do?keyfield=club_interval&keyword=%ED%99%94%EC%9A%94%EC%9D%BC">화요일</a>
+	<a href="clubinterval.do?keyfield=club_interval&keyword=%EC%88%98%EC%9A%94%EC%9D%BC">수요일</a>
+	<a href="clubinterval.do?keyfield=club_interval&keyword=%EB%AA%A9%EC%9A%94%EC%9D%BC">목요일</a>
+	<a href="clubinterval.do?keyfield=club_interval&keyword=%EA%B8%88%EC%9A%94%EC%9D%BC">금요일</a>
+	<a href="clubinterval.do?keyfield=club_interval&keyword=%ED%86%A0%EC%9A%94%EC%9D%BC">토요일</a>
+	<a href="clubinterval.do?keyfield=club_interval&keyword=%EC%9D%BC%EC%9A%94%EC%9D%BC">일요일</a>
+	</div>
+	<!-- 요일별 클럽 출력 -->
 	<div class="container">
 		<div class="row">
 			<c:forEach var="club" items="${list}">
@@ -66,4 +50,4 @@
 			</c:forEach>
 		</div>
 	</div>
-</div>	
+</div>

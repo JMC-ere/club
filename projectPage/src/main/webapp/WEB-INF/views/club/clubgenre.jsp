@@ -12,32 +12,13 @@
 
 <div id="clubgenre" class="center">
 	<h4>장르별 클럽</h4>
-	
-	<!-- 장르별 검색 기능 -->
-	<!-- <div class="col s12">
-		<form action="clubgenre.do" method="get">
-			<div class="col s5">
-				<select name="keyfield">
-					<option value="" disabled selected>장르별 검색</option>
-					<option value="club_genre">공포/스릴러</option>
-					<option value="club_genre">로맨틱코미디/드라마</option>
-					<option value="club_genre">애니메이션</option>
-					<option value="club_genre">액션</option>
-					<option value="club_genre">SF</option>
-				</select>
-			</div>
-			<div class="col s5">
-				<input type="search" size="16" name="keyword" id="keyword">
-			</div>
-			<div class="col s2">
-				<input type="submit"
-					class="btn purple lighten-5 purple-text text-darken-4" value="검색">
-			</div>
-		</form>
-	</div> -->
+
 	<div>
-	<a href="clubgenre.do?keyfield=club_genre&keyword=%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98">!</a>
+	<a href="clubgenre.do?keyfield=club_genre&keyword=%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98">애니메이션</a>
 	<a href="clubgenre.do?keyfield=club_genre&keyword=%EC%95%A1%EC%85%98">액션</a>
+	<a href="clubgenre.do?keyfield=club_genre&keyword=%EB%A1%9C%EB%A7%A8%ED%8B%B1%EC%BD%94%EB%AF%B8%EB%94%94/%EB%93%9C%EB%9D%BC%EB%A7%88">로맨틱코미디/드라마</a>
+	<a href="clubgenre.do?keyfield=club_genre&keyword=SF">SF</a>
+	<a href="clubgenre.do?keyfield=club_genre&keyword=%EA%B3%B5%ED%8F%AC/%EC%8A%A4%EB%A6%B4%EB%9F%AC">공포/스릴러</a>
 	</div>
 	<!-- 장르별 클럽 출력 -->
 	<div class="container">

@@ -76,10 +76,4 @@ public class ClubServiceImpl implements ClubService{
 		
 		return clubMapper.genreList(map);
 	}
-
-	@Override
-	public List<ClubVO> intervalList(Map<String, Object> map) {
-		
-		return clubMapper.intervalList(map);
-	}
 }
