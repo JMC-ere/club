@@ -199,7 +199,9 @@ public class PostController {
 
 		//조회수 증가
 		postService.updatePostHit(num);
+		
 		PostVO post = postService.selectPost(num);
+		
 		//내용 띄어쓰기 허용
 		post.setPost_board(post.getPost_board().replace("\n", "<br>"));
 		

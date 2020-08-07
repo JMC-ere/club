@@ -101,9 +101,9 @@ form#search_form ul.search li input[type="search"]{
 			<table class="table table-bordered">
 				<thead>
 					<tr>
-						<th>번호</th>
 						<th>제목</th>
 						<th>작성자</th>
+						<th>회원등급</th>
 						<th>등록일</th>
 						<th>조회수</th>
 					</tr>
@@ -111,9 +111,13 @@ form#search_form ul.search li input[type="search"]{
 				<tbody>
 					<c:forEach var="post" items="${list}">
 						<tr>
-							<td>${post.post_num}</td>
 							<td><a href="postdetail.do?num=${post.post_num}">${post.post_title}</a></td>
 							<td>${post.mem_id}</td>
+							<td>
+								<c:if test="${user_auth == 2}">일반회원</c:if>
+								<c:if test="${user_auth == 3}">우수회원</c:if>
+								<c:if test="${user_auth == 4}">클럽장</c:if>
+							</td>
 							<td>${post.post_date}</td>
 							<td>${post.post_hit}</td>
 						</tr>

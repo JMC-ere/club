@@ -17,6 +17,7 @@
 	margin-top: 2rem;
 	text-align: center;
 }
+
 </style>
 
 <div class="page-menu">
@@ -44,20 +45,20 @@
 									후기</span></label> <label> <input name="post_category" type="radio"
 								value="photo" /> <span>사진 올리기</span></label>
 						</p>
-
+						<form:errors path="post_category" class="text-danger" />
 					</td>
 				</tr>
 				<tr>
 					<th scope="row"><label for="title">제목</label></th>
 					<td scope="row"><form:input path="post_title"
 							class="post_title" />
-						<form:errors path="post_title" cssClass="error-color" /></td>
+						<form:errors path="post_title" class="text-danger" /></td>
 				</tr>
 				<tr>
 					<th scope="row"><label for="title">내용</label></th>
 					<td scope="row"><form:textarea path="post_board"
 							class="form-control" rows="10" placeholder=" 내용을 입력해주세요" />
-						<form:errors path="post_board" cssClass="error-color" /></td>
+						<form:errors path="post_board" class="text-danger" /></td>
 				</tr>
 				<tr>
 					<th scope="row"><label for="upload">파일 업로드</label></th>
