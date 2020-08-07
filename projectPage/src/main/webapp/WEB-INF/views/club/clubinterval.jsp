@@ -11,17 +11,26 @@
 </style>
 
 <div id="clubgenre" class="center">
-	<h4>요일별 클럽</h4>
-
+	<br>
+	<h3>[요일별 클럽]</h3>
+	<br>
 	<div>
-	<a href="clubinterval.do?keyfield=club_interval&keyword=%EC%9B%94%EC%9A%94%EC%9D%BC">월요일</a>
-	<a href="clubinterval.do?keyfield=club_interval&keyword=%ED%99%94%EC%9A%94%EC%9D%BC">화요일</a>
-	<a href="clubinterval.do?keyfield=club_interval&keyword=%EC%88%98%EC%9A%94%EC%9D%BC">수요일</a>
-	<a href="clubinterval.do?keyfield=club_interval&keyword=%EB%AA%A9%EC%9A%94%EC%9D%BC">목요일</a>
-	<a href="clubinterval.do?keyfield=club_interval&keyword=%EA%B8%88%EC%9A%94%EC%9D%BC">금요일</a>
-	<a href="clubinterval.do?keyfield=club_interval&keyword=%ED%86%A0%EC%9A%94%EC%9D%BC">토요일</a>
-	<a href="clubinterval.do?keyfield=club_interval&keyword=%EC%9D%BC%EC%9A%94%EC%9D%BC">일요일</a>
+	<a href="clubinterval.do?keyfield=club_interval&keyword=%EC%9B%94%EC%9A%94%EC%9D%BC"
+			class="waves-effect waves-circle waves-light btn-floating #1b5e20 green darken-4">월</a>&emsp;
+			<a href="clubinterval.do?keyfield=club_interval&keyword=%ED%99%94%EC%9A%94%EC%9D%BC"
+			class="waves-effect waves-circle waves-light btn-floating #1b5e20 green darken-4">화</a>&emsp;
+			<a href="clubinterval.do?keyfield=club_interval&keyword=%EC%88%98%EC%9A%94%EC%9D%BC"
+			class="waves-effect waves-circle waves-light btn-floating #1b5e20 green darken-4">수</a>&emsp;
+			<a href="clubinterval.do?keyfield=club_interval&keyword=%EB%AA%A9%EC%9A%94%EC%9D%BC"
+			class="waves-effect waves-circle waves-light btn-floating #1b5e20 green darken-4">목</a>&emsp;
+			<a href="clubinterval.do?keyfield=club_interval&keyword=%EA%B8%88%EC%9A%94%EC%9D%BC"
+			class="waves-effect waves-circle waves-light btn-floating #1b5e20 green darken-4">금</a>&emsp;
+			<a href="clubinterval.do?keyfield=club_interval&keyword=%ED%86%A0%EC%9A%94%EC%9D%BC"
+			class="waves-effect waves-circle waves-light btn-floating #1b5e20 green darken-4">토</a>&emsp;
+		<a href="clubinterval.do?keyfield=club_interval&keyword=%EC%9D%BC%EC%9A%94%EC%9D%BC"
+			class="waves-effect waves-circle waves-light btn-floating #1b5e20 green darken-4">일</a>	
 	</div>
+	<br>
 	<!-- 요일별 클럽 출력 -->
 	<div class="container">
 		<div class="row">

@@ -11,15 +11,22 @@
 </style>
 
 <div id="clubgenre" class="center">
-	<h4>장르별 클럽</h4>
-
+	<br>
+	<h3>[장르별 클럽]</h3>
+	<br>
 	<div>
-	<a href="clubgenre.do?keyfield=club_genre&keyword=%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98">애니메이션</a>
-	<a href="clubgenre.do?keyfield=club_genre&keyword=%EC%95%A1%EC%85%98">액션</a>
-	<a href="clubgenre.do?keyfield=club_genre&keyword=%EB%A1%9C%EB%A7%A8%ED%8B%B1%EC%BD%94%EB%AF%B8%EB%94%94/%EB%93%9C%EB%9D%BC%EB%A7%88">로맨틱코미디/드라마</a>
-	<a href="clubgenre.do?keyfield=club_genre&keyword=SF">SF</a>
-	<a href="clubgenre.do?keyfield=club_genre&keyword=%EA%B3%B5%ED%8F%AC/%EC%8A%A4%EB%A6%B4%EB%9F%AC">공포/스릴러</a>
+	<a href="clubgenre.do?keyfield=club_genre&keyword=%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98" 
+		class="waves-effect waves-light btn #1b5e20 green darken-4">애니메이션</a>&emsp;
+	<a href="clubgenre.do?keyfield=club_genre&keyword=%EC%95%A1%EC%85%98"
+		class="waves-effect waves-light btn #1b5e20 green darken-4">액션</a>&emsp;
+	<a href="clubgenre.do?keyfield=club_genre&keyword=%EB%A1%9C%EB%A7%A8%ED%8B%B1%EC%BD%94%EB%AF%B8%EB%94%94/%EB%93%9C%EB%9D%BC%EB%A7%88"
+		class="waves-effect waves-light btn #1b5e20 green darken-4">로맨틱코미디/드라마</a>&emsp;
+	<a href="clubgenre.do?keyfield=club_genre&keyword=SF" 
+		class="waves-effect waves-light btn #1b5e20 green darken-4">SF</a>&emsp;
+	<a href="clubgenre.do?keyfield=club_genre&keyword=%EA%B3%B5%ED%8F%AC/%EC%8A%A4%EB%A6%B4%EB%9F%AC"
+		class="waves-effect waves-light btn #1b5e20 green darken-4">공포/스릴러</a>
 	</div>
+	<br>
 	<!-- 장르별 클럽 출력 -->
 	<div class="container">
 		<div class="row">
