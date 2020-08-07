@@ -18,6 +18,9 @@
 			<if test="keyword != '' and keyfield == 'nt_content'">
 				b.nt_content LIKE '%' || #{keyword} || '%'
 			</if>
+			<if test="keyword != '' and keyfield == 'nt_category'">
+				b.nt_category = #{keyword}
+			</if>
 		</where>
 	</select>
 	<select id="selectList" parameterType="map" resultType="noticeVO">
@@ -39,6 +42,9 @@
 							</if>
 							<if test="keyword != '' and keyfield == 'nt_content'">
 								b.nt_content LIKE '%' || #{keyword} || '%'
+							</if>
+							<if test="keyword != '' and keyfield == 'nt_category'">
+								b.nt_category = #{keyword}
 							</if>
 						</where>
 						ORDER BY b.nt_num DESC)a)
