@@ -18,6 +18,21 @@
 	text-align: center;
 }
 
+.table-bordered th {
+	 border-color: green !important;
+	 text-align:center;
+}
+
+.table-bordered td {
+    border-color: green !important;
+    color: black !important;
+}
+
+.table-bordered td a, .table-bordered th a{
+    color: black !important;
+}
+
+
 </style>
 
 <div class="page-menu">
@@ -34,17 +49,25 @@
 
 		<table id="postWrite" class="table table-bordered">
 			<tbody>
-				<tr>
+							<tr>
 					<th scope="row"><label for="category">게시물 유형</label></th>
 					<td scope="row">
 
 						<p>
-							<label> <input name="post_category" type="radio"
-								value="join" /> <span>참여 후기</span></label> <label> <input
-								name="post_category" type="radio" value="movie" /> <span>영화
-									후기</span></label> <label> <input name="post_category" type="radio"
-								value="photo" /> <span>사진 올리기</span></label>
-						</p>
+							<label> 
+							<input name="post_category" type="radio" value="join" />
+						 	<span>참여 후기</span>
+						 	</label> 
+						 	<label> 
+						 	<input name="post_category" type="radio" value="movie" />
+						 	<span>영화 후기</span>
+						 	</label>
+							 <c:if test="${user_auth == 4}">
+						 	<label>
+						 	<input name="post_category" type="radio" value="photo" />
+						 	<span>사진 올리기</span>
+						 	</label>	
+						 	</c:if>
 						<form:errors path="post_category" class="text-danger" />
 					</td>
 				</tr>
@@ -67,7 +90,7 @@
 						<br>
 						<span class="align-center"><h6>
 								<p class="text-danger">(${postVO.post_imgname})파일이 등록되어
-									있습니다. 다시 업로드 하면 기존 파일은 삭제됩니다.</p>
+									있습니다.<br> 다시 업로드 하면 기존 파일은 삭제됩니다.</p>
 							</h6></span>
 					</c:if>
 				</tr>

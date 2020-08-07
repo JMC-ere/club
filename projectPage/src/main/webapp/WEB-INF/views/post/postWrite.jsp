@@ -5,7 +5,7 @@
 
 <style>
 .page-menu {
-	width: 85%;
+	width: 60%;
 	margin: 0 auto;
 }
 
@@ -18,6 +18,21 @@
 	margin-top: 2rem;
 	text-align: center;
 }
+.table-bordered th {
+	 border-color: green !important;
+	 text-align:center;
+}
+
+.table-bordered td {
+    border-color: green !important;
+    color: black !important;
+}
+
+.table-bordered td a, .table-bordered th a{
+    color: black !important;
+}
+
+
 </style>
 
 <div class="page-menu">

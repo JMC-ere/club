@@ -9,7 +9,7 @@
 }
 
 .page-main-style {
-	width: 70%;
+	width: 85%;
 	margin: 0 auto;
 }
 
@@ -25,8 +25,26 @@
 }
 
 .card #cardImg{
-		max-width:400px;
-		max-height:220px;
+		max-width:220px;
+		max-height:150px;
+}
+
+.nav-pills > li > a.active{
+  background-color:#689f38 !important;
+  color:white !important;
+}
+
+  .nav-pills > li.active > a:hover {
+  background-color:#689f38 !important;
+  color:white !important;
+        }
+
+.nav-link-color {
+  color: #689f38;
+}
+.jumbotron{
+	color: black;
+	background-color:#e8e6d7 !important;
 }
 
 
@@ -40,19 +58,16 @@
 	</div>
 </div>
 
-
 <div class="page-menu">
 	<ul class="nav nav-pills nav-fill">
-		<li class="nav-item"><a class="nav-link" href="post.do">전체
-				게시판</a></li>
-		<li class="nav-item"><a class="nav-link"
-			href="post.do?keyfield=post_category&keyword=join">참여 후기 게시판</a></li>
-		<li class="nav-item"><a class="nav-link"
-			href="postlist.do?keyfield=post_category&keyword=movie">영화 후기 게시판</a></li>
-		<li class="nav-item"><a class="nav-link"
-			href="postphoto.do?keyfield=post_category&keyword=photo">갤러리</a></li>
+		<li class="nav-item"><a class="nav-link active" href="postlist.do">전체 게시판</a></li>
+		<li class="nav-item"><a class="nav-link active" href="post.do?keyfield=post_category&keyword=join">참여 후기 게시판</a></li>
+		<li class="nav-item"><a class="nav-link active" href="postlist.do?keyfield=post_category&keyword=movie">영화 후기 게시판</a></li>
+		<li class="nav-item"><a class="nav-link active" href="postphoto.do?keyfield=post_category&keyword=photo">갤러리</a>
+		</li>
 	</ul>
 </div>
+
 <div class=page-main-style>
 	<form action="postlist.do" method="get">
 

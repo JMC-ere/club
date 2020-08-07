@@ -190,7 +190,7 @@ public class PostController {
 
 	//글 상세
 	@RequestMapping("/post/postdetail.do")
-	public ModelAndView process(@RequestParam("num") int num) {
+	public ModelAndView process(@RequestParam("num") int num,HttpSession session) {
 
 		//로그 표시
 		if(log.isDebugEnabled()) {
@@ -201,6 +201,8 @@ public class PostController {
 		postService.updatePostHit(num);
 		
 		PostVO post = postService.selectPost(num);
+		
+		session.getAttribute("user_auth");
 		
 		//내용 띄어쓰기 허용
 		post.setPost_board(post.getPost_board().replace("\n", "<br>"));
