@@ -61,10 +61,6 @@ input[type="submit"], input[type="button"]{
 	background-color:#dcedc8;
 }
 
-textarea{
-	border:none;
-	margin: 40px;
-}
 /* 작은 사이즈 */
 @media (max-width:649px){
 	/*폰트 크기*/
@@ -162,8 +158,8 @@ textarea{
 		<p>공지사항</p>
 		<ul>
 		   <li class="tab"><a href="list.do">전체 공지사항</a></li>
-		   <li class="tab"><a href="list.do?keyfield=nt_title&keyword=%ED%81%B4%EB%9F%BD">클럽별 공지사항</a></li>
-		   <li class="tab"><a href="list.do?keyfield=nt_title&keyword=%ED%8C%8C%EC%9D%B4%ED%84%B0%ED%81%B4%EB%9F%BD">파이터클럽 공지사항</a></li>
+		   <li class="tab"><a href="http://localhost:8080/club/notice/list.do?keyfield=nt_title&keyword=%ED%81%B4%EB%9F%BD%5D">클럽별 공지사항</a></li>
+		   <li class="tab"><a href="http://localhost:8080/club/notice/list.do?keyfield=nt_title&keyword=%5B%ED%8C%8C%EC%9D%B4%ED%84%B0%ED%81%B4%EB%9F%BD%5D">파이터클럽 공지사항</a></li>
 	  	</ul>
 	</div>
 	<div class="page-content">
@@ -172,23 +168,25 @@ textarea{
 			<tr style="border-top:1px solid #000;">
 				<th>번호</th>
 				<td>${notice.nt_num}</td>
-				<th>작성자</th>
-				<td>${notice.mem_id}</td>
+				<th>분류</th>
+				<td>${notice.nt_category}</td>
 			</tr>
 			<tr>
+				<th>작성자</th>
+				<td>${notice.mem_id}</td>			
 				<th>작성일자</th>
 				<td>${notice.nt_datetime}</td>
-				<th>조회수</th>
-				<td>${notice.nt_hit}</td>
 			</tr>
 			<tr>
 				<th>첨부파일</th>
 				<c:if test="${!empty notice.nt_filename}">
-					<td colspan="3"><a href="file.do?nt_num=${notice.nt_num}">${notice.nt_filename}</a></td>
+					<td><a href="file.do?nt_num=${notice.nt_num}">${notice.nt_filename}</a></td>
 				</c:if>
 				<c:if test="${empty notice.nt_filename}">
-					<td colspan="3"> </td>
-				</c:if>				
+					<td>첨부된 파일이 없습니다.</td>
+				</c:if>
+				<th>조회수</th>
+				<td>${notice.nt_hit}</td>				
 			</tr>
 		</table>
 		<c:if test="${fn:endsWith(notice.nt_imgname,'.jpg') ||
@@ -201,7 +199,7 @@ textarea{
 			<img src="imageView.do?nt_num=${notice.nt_num}" style="max-width:500px">
 		</div>
 		</c:if>
-		<div style="white-space: pre-line;">${notice.nt_content}</div>
+		<div style="white-space: pre-line; margin:40px;">${notice.nt_content}</div>
 		<hr size="1" width="100%">
 		<div class="align-center">
 			<%--관리자와 작성자만 수정 삭제 버튼이 활성화 됨 --%>

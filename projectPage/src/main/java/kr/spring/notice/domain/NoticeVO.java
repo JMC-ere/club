@@ -24,7 +24,19 @@ public class NoticeVO {
 	private int mem_num;
 	private String mem_id;
 	private int mem_auth;
+	@NotEmpty
+	private String nt_category;
+	
+	
 	   
+	public String getNt_category() {
+		return nt_category;
+	}
+
+	public void setNt_category(String nt_category) {
+		this.nt_category = nt_category;
+	}
+
 	public int getMem_auth() {
 		return mem_auth;
 	}
@@ -128,7 +140,7 @@ public class NoticeVO {
 		return "NoticeVO [nt_num=" + nt_num + ", nt_title=" + nt_title + ", nt_content=" + nt_content + ", upload="
 				+ upload + ", nt_imgname=" + nt_imgname + ", upload2=" + upload2 + ", nt_filename=" + nt_filename
 				+ ", nt_datetime=" + nt_datetime + ", nt_hit=" + nt_hit + ", mem_num=" + mem_num + ", mem_id=" + mem_id
-				+ ", mem_auth=" + mem_auth + "]";
+				+ ", mem_auth=" + mem_auth + ", nt_category=" + nt_category + "]";
 	}
 
 }
