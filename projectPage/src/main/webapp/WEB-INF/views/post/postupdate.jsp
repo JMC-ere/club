@@ -36,6 +36,7 @@
 </style>
 
 <div class="page-menu">
+<br><br>
 	<h3>글 수정</h3>
 	<form:form action="postupdate.do" enctype="multipart/form-data"
 		commandName="postVO" class="write_form">

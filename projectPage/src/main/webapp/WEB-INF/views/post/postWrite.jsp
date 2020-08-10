@@ -36,6 +36,7 @@
 </style>
 
 <div class="page-menu">
+	<br><br>
 	<h2>후기 작성하기</h2>
 	<form:form action="postwrite.do" enctype="multipart/form-data"
 		commandName="postVO">

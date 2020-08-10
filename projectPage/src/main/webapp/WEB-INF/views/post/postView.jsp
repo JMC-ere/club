@@ -17,10 +17,26 @@
 	text-align:center;
 }
 
+.table-bordered th {
+	 border-color: green !important;
+	 background-color:#8bc34a !important;
+	 color: white !important;
+}
+
+.table-bordered td {
+    border-color: green !important;
+    color: black !important;
+}
+
+.table-bordered td a, .table-bordered th a{
+    color: black !important;
+}
+
+
 </style>
 
 	<div class="page-main-style">
-		<h5>${post.post_title}</h5>
+		<br><br>
 		<table class="table table-bordered">
 			<tr>
 				<th>제목</th>
@@ -57,7 +73,7 @@
 	 			<button type="button" class="btn btn-outline-success" onclick="location.href='postupdate.do?num=${post.post_num}'">글수정</button>
 	 			<button type="button" class="btn btn-outline-success" onclick="location.href='postdelete.do?num=${post.post_num}'">글삭제</button>
 			</c:if>
-			<button type="button" class="btn btn-outline-success" onclick="location.href='post.do'">목록</button>
+			<button type="button" class="btn btn-outline-success" onclick="location.href='postlist.do'">목록</button>
 		</div>
 </div>
 </body>
