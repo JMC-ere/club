@@ -24,6 +24,8 @@ create table member_detail(
 
 create sequence member_detail_seq;
 
+
+
 /* QA_BOARD TABLE */
 create table qa_board(
 	qa_num number not null primary key,
@@ -53,6 +55,16 @@ create table qa_reply (
 	constraint qa_fk4 foreign key(mem_id) references member(mem_id),
 	constraint qa_fk2 foreign key(qa_num) references qa_board(qa_num)
 );
+
+/* 자주하는 질문 테이블 */
+create table qa_aqtable (
+     aq_num number not null primary key,
+     aq_title varchar(150) not null,
+     aq_content clob not null
+     );
+     
+     create sequence qa_aqtable_seq;
+/* 자주하는 질문 테이블 */
 
 /* QA1_1Board */
 create table qa1_1board(

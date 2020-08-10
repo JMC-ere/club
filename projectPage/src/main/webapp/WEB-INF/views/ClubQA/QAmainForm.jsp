@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <form:form action="QAmainForm.do" commandName="ClubQAVO">
@@ -82,7 +83,13 @@
 			더 많은 정보나 1:1 상담이 필요하시면 오른쪽 하단의 <mark>"톡상담"</mark>을 이용해 주세요</a></p>
 		</div>
 		<!-- collapse 끝 -->
+		<c:if test="${ user_auth > 3 }">
+		<div class="qamain_button">
+		<button type="submit" class="btn" onclick="href">자주하는 질문 추가하기</button>
+		</div>
+		</c:if>
 	</div>
+	
 	<h1>
 		<br>
 	</h1>

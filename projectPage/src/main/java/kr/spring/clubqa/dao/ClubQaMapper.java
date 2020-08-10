@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import kr.spring.clubqa.domain.ClubAQVO;
 import kr.spring.clubqa.domain.ClubQA1_1VO;
 import kr.spring.clubqa.domain.ClubQAReplyVO;
 import kr.spring.clubqa.domain.ClubQAVO;
@@ -64,4 +65,16 @@ public interface ClubQaMapper {
 	//부모글 삭제시 댓글이 존재하면 부모글 삭제전 댓글 삭제
 	@Delete("DELETE FROM qa_reply WHERE qa1_1num=#{qa1_1num}")
 	public void delete1_1ReplyByBoardNum(Integer qa_num);
+	
+	
+	public List<ClubAQVO> selectaqList(Map<String, Object> map);
+	public int selectaqRowCount(Map<String, Object> map);
+	@Insert("INSERT INTO qa_aqtable (aq_num, aq_title, aq_content) VALUES (qa_aqtable_seq.nextval, #{aq_title}, #{aq_content})")
+	public void insertaq(ClubAQVO clubaq);
+	@Select("SELECT * FROM qa_aqtable b JOIN member m ON b.mem_num=m.mem_num WHERE b.aq_num=#{aq_num}")
+	public ClubAQVO selectAQBoard(Integer num);
+	public void updateaq(ClubAQVO clubaq);
+	@Delete("DELETE FROM qa_aqtable WHERE aq_num=#{aq_num}")
+	public void deleteaq(Integer num);
+	
 }

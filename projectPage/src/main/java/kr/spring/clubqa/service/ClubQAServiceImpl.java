@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import kr.spring.clubqa.dao.ClubQaMapper;
+import kr.spring.clubqa.domain.ClubAQVO;
 import kr.spring.clubqa.domain.ClubQA1_1VO;
 import kr.spring.clubqa.domain.ClubQAReplyVO;
 import kr.spring.clubqa.domain.ClubQAVO;
@@ -166,6 +167,39 @@ public class ClubQAServiceImpl implements ClubQAService{
 	@Override
 	public void delete1_1ReplyByBoardNum(Integer qa_num) {
 		clubqaMapper.delete1_1ReplyByBoardNum(qa_num);
+		
+	}
+
+	@Override
+	public List<ClubAQVO> selectaqList(Map<String, Object> map) {
+		return clubqaMapper.selectaqList(map);
+	}
+
+	@Override
+	public int selectaqRowCount(Map<String, Object> map) {
+		return clubqaMapper.selectaqRowCount(map);
+	}
+
+	@Override
+	public void insertaq(ClubAQVO clubaq) {
+		clubqaMapper.insertaq(clubaq);
+		
+	}
+
+	@Override
+	public ClubAQVO selectAQBoard(Integer num) {
+		return clubqaMapper.selectAQBoard(num);
+	}
+
+	@Override
+	public void updateaq(ClubAQVO clubaq) {
+		clubqaMapper.updateaq(clubaq);
+		
+	}
+
+	@Override
+	public void deleteaq(Integer num) {
+		clubqaMapper.deleteaq(num);
 		
 	}
 }
