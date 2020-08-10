@@ -10,7 +10,7 @@
 }
 
 .page-main-style {
-	width: 70%;
+	width: 85%;
 	margin: 0 auto;
 }
 
@@ -41,14 +41,53 @@ form#search_form ul.search li{
 	margin:0 0 9px 0;
 	padding:0;
 	display:inline;
+	
 }
 form#search_form ul.search li select{
     width:5rem;
 	display:inline-block;
+	border: 1px solid #689f38;
 }
 form#search_form ul.search li input[type="search"]{
     width:20rem;
 	display:inline-block;
+	
+}
+
+.table-bordered th {
+	 border-color: green !important;
+	 background-color:#8bc34a !important;
+	 color: white !important;
+}
+
+.table-bordered td {
+    border-color: green !important;
+    color: black !important;
+}
+
+.table-bordered td a, .table-bordered th a{
+    color: black !important;
+}
+
+
+
+.nav-pills > li > a.active{
+  background-color:#689f38 !important;
+  color:white !important;
+}
+
+  .nav-pills > li.active > a:hover {
+  background-color:#689f38 !important;
+  color:white !important;
+        }
+        
+.nav-link-color {
+  color: #689f38;
+}
+
+.jumbotron{
+	color: black;
+	background-color:#e8e6d7 !important;
 }
 </style>
 
@@ -62,10 +101,10 @@ form#search_form ul.search li input[type="search"]{
 
 <div class="page-menu">
 	<ul class="nav nav-pills nav-fill">
-		<li class="nav-item"><a class="nav-link" href="post.do">전체 게시판</a></li>
-		<li class="nav-item"><a class="nav-link" href="post.do?keyfield=post_category&keyword=join">참여 후기 게시판</a></li>
-		<li class="nav-item"><a class="nav-link" href="postlist.do?keyfield=post_category&keyword=movie">영화 후기 게시판</a></li>
-		<li class="nav-item"><a class="nav-link" href="postphoto.do?keyfield=post_category&keyword=photo">갤러리</a>
+		<li class="nav-item"><a class="nav-link active" href="postlist.do">전체 게시판</a></li>
+		<li class="nav-item"><a class="nav-link active" href="post.do?keyfield=post_category&keyword=join">참여 후기 게시판</a></li>
+		<li class="nav-item"><a class="nav-link active" href="postlist.do?keyfield=post_category&keyword=movie">영화 후기 게시판</a></li>
+		<li class="nav-item"><a class="nav-link active" href="postphoto.do?keyfield=post_category&keyword=photo">갤러리</a>
 		</li>
 	</ul>
 </div>
@@ -103,7 +142,6 @@ form#search_form ul.search li input[type="search"]{
 					<tr>
 						<th>제목</th>
 						<th>작성자</th>
-						<th>회원등급</th>
 						<th>등록일</th>
 						<th>조회수</th>
 					</tr>
@@ -113,11 +151,6 @@ form#search_form ul.search li input[type="search"]{
 						<tr>
 							<td><a href="postdetail.do?num=${post.post_num}">${post.post_title}</a></td>
 							<td>${post.mem_id}</td>
-							<td>
-								<c:if test="${user_auth == 2}">일반회원</c:if>
-								<c:if test="${user_auth == 3}">우수회원</c:if>
-								<c:if test="${user_auth == 4}">클럽장</c:if>
-							</td>
 							<td>${post.post_date}</td>
 							<td>${post.post_hit}</td>
 						</tr>

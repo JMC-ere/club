@@ -14,7 +14,7 @@
 
 
 .page-main-style {
-	width: 70%;
+	width: 85%;
 	margin: 0 auto;
 }
 
@@ -36,6 +36,41 @@
 	align:center;
 }
 
+
+.table-bordered th {
+	 border-color: #e9ecef !important;
+	 background-color:#8bc34a !important;
+	 color: white !important;
+}
+
+.table-bordered td {
+    border-color: #e9ecef !important;
+    color: black !important;
+}
+
+.table-bordered td a, .table-bordered th a{
+    color: black !important;
+}
+
+.nav-pills > li > a.active{
+  background-color:#689f38 !important;
+  color:white !important;
+}
+
+  .nav-pills > li.active > a:hover {
+  background-color:#689f38 !important;
+  color:white !important;
+}
+
+.nav-link-color {
+  color: #689f38;
+}
+.jumbotron{
+	color: black;
+	background-color:#e8e6d7 !important;
+}
+
+
 </style>
 
 <div class="jumbotron jumbotron-fluid">
@@ -49,10 +84,10 @@
 
 <div class="page-menu">
 	<ul class="nav nav-pills nav-fill">
-		<li class="nav-item"><a class="nav-link" href="postlist.do">전체 게시판</a></li>
-		<li class="nav-item"><a class="nav-link" href="post.do?keyfield=post_category&keyword=join">참여 후기 게시판</a></li>
-		<li class="nav-item"><a class="nav-link" href="postlist.do?keyfield=post_category&keyword=movie">영화 후기 게시판</a></li>
-		<li class="nav-item"><a class="nav-link" href="postphoto.do?keyfield=post_category&keyword=photo">갤러리</a>
+		<li class="nav-item"><a class="nav-link active" href="postlist.do">전체 게시판</a></li>
+		<li class="nav-item"><a class="nav-link active" href="post.do?keyfield=post_category&keyword=join">참여 후기 게시판</a></li>
+		<li class="nav-item"><a class="nav-link active" href="postlist.do?keyfield=post_category&keyword=movie">영화 후기 게시판</a></li>
+		<li class="nav-item"><a class="nav-link active" href="postphoto.do?keyfield=post_category&keyword=photo">갤러리</a>
 		</li>
 	</ul>
 </div>
@@ -92,8 +127,8 @@
  				</thead>-->
 				<tbody class="border-success">
 					<c:forEach var="post" items="${list}">
-						<tr>
-							<td rowspan="4" width=10%>
+						<tr class=align-center>
+							<td rowspan="4" width=1%>
 							<img src="imageView.do?post_num=${post.post_num}" class="responsive-img" id="postImg">
 							</td>
 						</tr>

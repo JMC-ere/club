@@ -23,14 +23,11 @@
 		<h5>${post.post_title}</h5>
 		<table class="table table-bordered">
 			<tr>
+				<th>제목</th>
+				<td>${post.post_title}</td>
 				<th>작성자</th>
 				<td>${post.mem_id}</td>
-				<th>회원등급</th>
-				<td>
-			<c:if test="${user_auth == 2}">일반회원</c:if>
-				<c:if test="${user_auth == 3}">우수회원</c:if>
-				<c:if test="${user_auth == 4}">클럽장</c:if>
-				</td>
+				
 			</tr>
 			<tr>
 				<th>작성일</th>
