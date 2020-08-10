@@ -69,7 +69,44 @@
 <div>
 <br>
 <br>
-
+</div>
+<div class="row">
+		<div class="col-sm-6 col-lg-4">
+			<p></p>
+			<div class="card">
+				<div class="card-header">++CLUB 추천 장소</div>
+				<img src="https://cdn.pixabay.com/photo/2015/09/02/12/35/bar-918541_960_720.jpg" class="responsive-img center"/>
+				<div class="card-body center">
+					<h5 class="card-title" style="text-align:center">++CULB BAR</h5>
+					<p class="card-text" style="text-align:center">address : 서울시 어딘가</p>
+					<a href="http://sb.ezenac.co.kr/" target="_blank" class="btn #b2dfdb teal lighten-4">바로가기</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-lg-4">
+			<p></p>
+			<div class="card">
+				<div class="card-header">++CLUB 추천 장소</div>
+				<img src="https://cdn.pixabay.com/photo/2018/08/10/21/52/restaurant-3597677_960_720.jpg" class="responsive-img center"/>
+				<div class="card-body center">
+					<h5 class="card-title" style="text-align:center">++CULB restaurant</h5>
+					<p class="card-text" style="text-align:center">address : 서울시 어딘가</p>
+					<a href="http://sb.ezenac.co.kr/" target="_blank" class="btn #b2dfdb teal lighten-4">바로가기</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-lg-4">
+			<p></p>
+			<div class="card">
+				<div class="card-header">++CLUB 추천 장소</div>
+				<img src="https://cdn.pixabay.com/photo/2017/08/07/07/06/coffeehouse-2600877_960_720.jpg" class="responsive-img center"/>
+				<div class="card-body center">
+					<h5 class="card-title" style="text-align:center">++CLUB CAFE</h5>
+					<p class="card-text" style="text-align:center">address : 서울시 어딘가</p>
+					<a href="http://sb.ezenac.co.kr/" target="_blank" class="btn #b2dfdb teal lighten-4">바로가기</a>
+				</div>
+			</div>
+		</div>
 </div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c349bfe9afadd02b924aaa4d4de24e0f&libraries=services"></script>
 <script>

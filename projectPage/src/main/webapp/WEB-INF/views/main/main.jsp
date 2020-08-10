@@ -3,10 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.lang.String" %>
  <style>
- 	#cardImg{
-		max-width:400px;
-		max-height:220px;
-	}
+#cardImg{
+	max-width:400px;
+	max-height:220px;
+}
 p {
 	margin: 20px 0px;
 }
