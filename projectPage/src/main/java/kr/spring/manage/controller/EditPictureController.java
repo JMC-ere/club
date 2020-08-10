@@ -10,4 +10,9 @@ public class EditPictureController {
 	public String editpicture() {
 		return "EditPicture";
 	}
+	
+	@RequestMapping("/main/pic_process.do")
+	public String pic_process() {
+		return "";
+	}
 }
