@@ -12,7 +12,8 @@
  <p class="manager_title"> <br><br>메인 이미지 편집 페이지</p>
    <hr width="90%" color="green"><br><br>
    
-   첫번째 화면
+   첫번째 화면에 등록할 사진 선택
+   
    
 </body>
 </html>
