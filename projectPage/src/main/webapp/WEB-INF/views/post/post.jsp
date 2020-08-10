@@ -14,7 +14,7 @@
 
 
 .page-main-style {
-	width: 85%;
+	width: 60%;
 	margin: 0 auto;
 }
 
@@ -70,6 +70,12 @@
 	background-color:#e8e6d7 !important;
 }
 
+p.skipboard{
+	white-space: nowrap;
+	width: 800px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
 
 </style>
 
@@ -136,11 +142,11 @@
 							<td width=30%><a href="postdetail.do?num=${post.post_num}">${post.post_title}</a></td>
 							</tr>
 						<tr>
-							<td width=40%>${post.mem_id}</td>
+							<td width=40%><p class="skipboard">${post.post_board}</p></td>
 						</tr>
 						<tr>
 							<td width=30%>
-							${post.post_date}
+							${post.mem_id}
 							</td>
 						</tr>
 					</c:forEach>
