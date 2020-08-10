@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class EditMainPictureVO {
 	private MultipartFile pic_upload;
+	private String picture_order;
 	private byte[] image;
 	private String filename;
 	
@@ -36,10 +37,21 @@ public class EditMainPictureVO {
 		this.filename = filename;
 	}
 	
+	
+	
+	public String getPicture_order() {
+		return picture_order;
+	}
+	public void setPicture_order(String picture_order) {
+		this.picture_order = picture_order;
+	}
+	
 	@Override
 	public String toString() {
-		return "EditMainPictureVO [image=" + Arrays.toString(image) + ", filename=" + filename + "]";
+		return "EditMainPictureVO [picture_order=" + picture_order + ", image=" + Arrays.toString(image) + ", filename="
+				+ filename + "]";
 	}
+
 	
 	
 }

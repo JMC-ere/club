@@ -14,11 +14,15 @@ public class EditPictureController {
 	@Resource
 	private EditMainPictureService editMainPictureService;
 	
+	
+	//편집 페이지
 	@RequestMapping("/main/EditPicture.do")
 	public String editpicture() {
 		return "EditPicture";
 	}
 	
+	
+	//사진 등록 처리 
 	@RequestMapping("/main/pic_process.do")
 	public String pic_process(EditMainPictureVO editMainPictureVO) {
 		
