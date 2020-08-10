@@ -12,12 +12,18 @@
        <put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
     </definition>
     
+    <definition name="EditPicture" extends="main">
+    <put-attribute name="body" value="/WEB-INF/views/manager/EditPicture.jsp"/>
+    </definition>
+    
+    
     <definition name="notice" template="/WEB-INF/views/template/layout.jsp">
        <put-attribute name="title" value="공지사항 게시판"/> 
        <put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
        <put-attribute name="body" value="/WEB-INF/views/notice/noticeList.jsp"/>
        <put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
     </definition>
+       
     
     <definition name="QAmain" extends="main">
    		<put-attribute name="title" value="QA 메인 게시판"/>
