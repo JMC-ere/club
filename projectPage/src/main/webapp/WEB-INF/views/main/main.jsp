@@ -81,8 +81,9 @@ p {
 			</c:if>
 		</div>
 		</c:forEach>
-		<div data-tockify-calendar="jmcere" data-tockify-component="jmcere"></div>	
+		
 	</div>
+	<div data-tockify-calendar="jmcere" data-tockify-component="jmcere"></div>	
 </div>
 <script data-cfasync="false" data-tockify-script="embed" src="https://public.tockify.com/browser/embed.js"></script>
 <script type="text/javascript">

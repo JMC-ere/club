@@ -25,7 +25,7 @@
 	    <li><a href="#modal1" class="modal-trigger">Login</a></li>
 	    </c:if>
 	    <c:if test="${!empty user_id}">
-	    <li><a href="${pageContext.request.contextPath}/main/logout.do" onclick="M.toast({html: '로그 아웃 되었습니다.'})">LogOut</a></li>
+	    <li><a href="${pageContext.request.contextPath}/main/logout.do">LogOut</a></li>
 	    </c:if>
 	    <c:if test="${user_auth == 2 || user_auth == 3 || user_auth == 4}">
 	    <li><a href="${pageContext.request.contextPath}/mypage/myPage.do">MY PAGE</a></li>
@@ -42,7 +42,7 @@
         <li><a class="waves-effect waves-light btn modal-trigger light-green" href="#modal1">LOGIN</a></li>
         </c:if>
         <c:if test="${!empty user_id}">
-        <li><a onclick="M.toast({html: '로그 아웃 되었습니다.'})" href="${pageContext.request.contextPath}/main/logout.do">LOGOUT</a></li>
+        <li><a href="${pageContext.request.contextPath}/main/logout.do">LOGOUT</a></li>
         </c:if>
         <c:if test="${user_auth == 2 || user_auth == 3 || user_auth == 4}">
         <li><a href="${pageContext.request.contextPath}/mypage/myPage.do">MY PAGE</a></li>
@@ -162,6 +162,7 @@
 			alert('로그인 성공!');
 		}
 	});
+	
 </script>
 
 
