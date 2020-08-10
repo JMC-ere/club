@@ -2,7 +2,7 @@ package kr.spring.manage.domain;
 
 import java.io.IOException;
 import java.sql.Date;
-import java.util.Arrays;
+
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,6 +24,7 @@ public class ManageClubVO {
 	private int club_state;
 	private String return_message;
 	private Date club_date;
+	
 	public int getClub_num() {
 		return club_num;
 	}
@@ -89,7 +90,7 @@ public class ManageClubVO {
 		//다른 경로로 저장하고 싶으면 upload.transferTo()메서드를 이용한다.
 	
 		//byte[]변환
-		setClub_uploadfile(club_upload.getBytes());
+		setClub_img(club_upload.getBytes());
 		//파일명 구하기
 		setFilename(club_upload.getOriginalFilename());
 	
@@ -97,7 +98,7 @@ public class ManageClubVO {
 	public byte[] getClub_img() {
 		return club_img;
 	}
-	public void setClub_uploadfile(byte[] club_img) {
+	public void setClub_img(byte[] club_img) {
 		this.club_img = club_img;
 	}
 	public String getFilename() {
