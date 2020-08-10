@@ -13,7 +13,7 @@
    <hr width="90%" color="green"><br><br>
    
    첫번째 화면에 등록할 사진 선택
-   
+    
    
 </body>
 </html>
