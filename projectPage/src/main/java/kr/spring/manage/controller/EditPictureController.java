@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class EditPictureController {
 
-	@RequestMapping("EditPicture.do")
+	@RequestMapping("/main/EditPicture.do")
 	public String editpicture() {
 		return "EditPicture";
 	}
