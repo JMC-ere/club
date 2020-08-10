@@ -137,6 +137,7 @@ form#search_form ul.search li input[type="search"]{
 
 		
 		<c:if test="${count > 0 }">
+			<div class="container">
 			<table class="table table-bordered">
 				<thead>
 					<tr>
@@ -157,7 +158,7 @@ form#search_form ul.search li input[type="search"]{
 					</c:forEach>
 				</tbody>
 			</table>
-
+</div>
 
 
 
