@@ -190,17 +190,19 @@ input[type="submit"], input[type="button"]{
 	<div class="page-content">
 		<h6>현재 진행 중인 클럽</h6>
 		<div class="row">
-		<c:if test="${empty leadersValidClub && empty leadersPastClub }">
-		<!-- 클럽장 활동 조건 설명 -->
-		<div id=cond_leader>
-			 <div class="card-panel teal lighten-2">
-			 	클럽장으로 활동하신 내역이 없습니다.
-			 	<a href="/club/main/introduce/membership.do">클럽장 조건 보러 가기</a>
-			 </div>
-		</div>
-		</c:if>
 		<c:if test="${empty leadersValidClub}">
-			<div>현재 클럽장으로 활동 중인 클럽이 없습니다.</div>
+		<!-- 클럽장 활동 조건 설명 -->
+		<div class="col-sm-12 col-lg-4">
+			<div class="card light-green darken-1">
+				<div class="card-content white-text">
+					<span class="card-title">진행 중 클럽</span>
+					<p>클럽장으로 활동 중인 내역이 없습니다</p>
+				</div>
+				<div class="card-action light-green darken-1">
+					<a href="/club/main/introduce/membership.do">클럽장 조건 보러 가기</a>
+				</div>
+			</div>
+		</div>
 		</c:if>
 		<c:if test="${!empty leadersValidClub }">
 			<c:forEach var="validClub" items="${leadersValidClub}">
@@ -248,7 +250,17 @@ input[type="submit"], input[type="button"]{
 		<h6>활동 종료 클럽</h6>
 		<div class="row">
 		<c:if test="${empty leadersPastClub }">
-			<div>클럽장으로 활동하신 종료 클럽이 없습니다.</div>
+		<div class="col-sm-12 col-lg-4">
+			<div class="card light-green darken-1">
+				<div class="card-content white-text">
+					<span class="card-title">종료 클럽</span>
+					<p>클럽장으로 활동한 내역이 없습니다</p>
+				</div>
+				<div class="card-action light-green darken-1">
+					<a href="/club/main/introduce/membership.do">클럽장 조건 보러 가기</a>
+				</div>
+			</div>
+		</div>
 		</c:if>
 		<c:if test="${!empty leadersPastClub }">
 			<!-- 카드 하나 코드  -->

@@ -187,15 +187,33 @@ input[type="submit"], input[type="button"]{
 	  	</ul>
 	</div>
 	<div class="page-content">
-		<h6>현재 진행중인 클럽</h6>
+		<h6>현재 진행 중인 클럽</h6>
 		<div class="row">
 		<c:if test="${empty myValidClub  }">
-			<div>현재 참여 중인 클럽이 없습니다.</div>
+		<div class="col-sm-12 col-lg-4">
+			<div class="card light-green darken-1">
+				<div class="card-content white-text">
+					<span class="card-title">참여 클럽</span>
+					<p>참여 중인 클럽이 없습니다</p>
+				</div>
+				<div class="card-action light-green darken-1">
+					<a href="/club/main/viewclub.do">클럽 신청하러 가기</a>
+				</div>
+			</div>
+		</div>
 		</c:if>
 		<c:if test="${!empty myValidClub }">
 			<c:forEach var="validClub" items="${myValidClub}">
 			<c:if test="${validClub.club_state==1 || valid.club_state==2 }">
-			<div>현재 참여 중인 클럽이 없습니다.</div>
+			<div class="card light-green darken-1">
+				<div class="card-content white-text">
+					<span class="card-title">Card Title</span>
+					<p>참여 중인 클럽이 없습니다</p>
+				</div>
+				<div class="card-action light-green darken-1">
+					<a href="/club/main/introduce/membership.do">클럽장 조건 보러 가기</a>
+				</div>
+			</div>
 			</c:if>
 			<c:if test="${validClub.club_state==2 }">
 			<!-- 카드 하나 코드  -->
@@ -241,7 +259,17 @@ input[type="submit"], input[type="button"]{
 		<h6>활동 종료 클럽</h6>
 		<div class="row">
 		<c:if test="${empty myPastClub }">
-			<div>참여하신 활동 종료 클럽이 없습니다.</div>
+		<div class="col-sm-12 col-lg-4">
+			<div class="card light-green darken-1">
+				<div class="card-content white-text">
+					<span class="card-title">종료 클럽</span>
+					<p>참여 종료된 클럽이 없습니다</p>
+				</div>
+				<div class="card-action light-green darken-1">
+					<a href="/club/main/viewclub.do">클럽 신청하러 가기</a>
+				</div>
+			</div>
+		</div>
 		</c:if>
 		<c:if test="${!empty myPastClub }">
 			<!-- 카드 하나 코드  -->
@@ -294,7 +322,7 @@ input[type="submit"], input[type="button"]{
 			var resign_confirm = confirm( '정말 탈퇴하시겠습니까?' );
 		    document.write( resign_confirm );
 			if (resign_confirm){
-				alert('삭제 완료');
+				alert('탈퇴 하셨습니다');
 			}
 		});
 	});
