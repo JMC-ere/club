@@ -4,7 +4,7 @@
      <nav class="nav-extended">
     <div class="nav-wrapper light-green">
       <a href="${pageContext.request.contextPath }/main/main.do" class="brand-logo center" >++ CLUB</a>
-      <a href="#" data-target="dropdown1" class="sidenav-trigger dropdown-trigger btn light-green" id="mobile-demo"><i class="material-icons">menu</i></a>
+      <a href="#" data-target="dropdown1" class="sidenav-trigger dropdown-trigger btn light-green" id="mobile-demo"><i class="material-icons">!</i></a>
 	
 	  <!-- Dropdown Structure -->
 	  <ul id='dropdown1' class='dropdown-content'>
@@ -69,4 +69,11 @@ document.addEventListener('DOMContentLoaded', function() {
   $(document).ready(function(){
     $('select').formSelect();
   });
+  
+  $('.dropdown-trigger').dropdown();
+	document.addEventListener('DOMContentLoaded', function() {
+		var elems = document.querySelectorAll('.modal');
+		var instances = M.Modal.init(elems);
+	});
+  
 </script>
