@@ -16,10 +16,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.clubmanage.domain.ClubManageVO;
 import kr.spring.clubmanage.service.ClubManageService;
+import kr.spring.member.domain.MemberVO;
 @Controller
 public class ClubManageController {
 	private Logger log=Logger.getLogger(this.getClass());
@@ -200,7 +202,22 @@ public class ClubManageController {
 
 		
 		return manageMembersForm(club_num, model);
-	} 
+	}
+	//클럽 탈퇴
+	@RequestMapping("/clubmanage/resignClub.do")
+	public String resignProcess(@RequestParam int mem_num,
+											@RequestParam int club_num){
+		Map<String, Integer> resign_map = new HashMap<String, Integer>();
+		resign_map.put("mem_num", mem_num);
+		resign_map.put("club_num", club_num);
+		if(log.isDebugEnabled()) {
+			log.debug("<<MemberVO>> :"+ mem_num+"/"+club_num);
+		}
+		clubManageService.deleteMemberFromClub(resign_map);
+		
+		return "redirect:/clubmanage/myClub.do";
+	}
+	
 	@RequestMapping("/clubmanage/imageView.do")
 	public ModelAndView viewImage(@RequestParam("club_num") int club_num) {
 		ClubManageVO club=clubManageService.selectClub(club_num);
@@ -225,5 +242,6 @@ public class ClubManageController {
 		mav.addObject("filename",member.getDetail_img());
 		return mav;
 	}
+	
 
 }

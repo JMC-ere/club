@@ -77,8 +77,8 @@ public class ClubManageServiceImpl implements ClubManageService {
 	}
 
 	@Override
-	public void deleteMemberFromClub(int mem_num) {
-		clubManageMapper.deleteMemberFromClub(mem_num);
+	public void deleteMemberFromClub(Map<String, Integer> resign_map) {
+		clubManageMapper.deleteMemberFromClub(resign_map);
 		
 	}
 
