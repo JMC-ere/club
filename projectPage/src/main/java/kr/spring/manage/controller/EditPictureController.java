@@ -55,4 +55,13 @@ public class EditPictureController {
 	}
 	
 	
+	//사진 url 처리
+	@RequestMapping("/main/url_process.do")
+	public String pic_url(String filename) {
+		editMainPictureService.update_url(filename);
+		
+
+		return "redirect:/main/main.do";
+	}
+	
 }

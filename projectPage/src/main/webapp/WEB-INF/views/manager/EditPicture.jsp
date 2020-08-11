@@ -23,17 +23,20 @@
 			
 <form:form action="pic_process.do" enctype="multipart/form-data" commandName="EditMainPictureVO" >
    	
-  
-  
    	<br>
-   	
-   	   첫번째 화면에 등록할 사진 선택<br>
+   	   첫번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요<br>
    <label for="upload">사진선택</label>  : <input type="file" name="pic_upload" id="pic_upload"/>
 	
-	<input type="submit" class="waves-effect waves-light btn-small" value="완료">
+	<input type="submit" class="waves-effect waves-light btn-small" value="사진 선택 완료">
    	<br>
-
   </form:form>
+  
+  <form action="url_process.do" method="post">
+  <div class="input-field" style="width:30%;">
+   <input type="url" name="filename" placeholder="이미지 url 입력">
+	</div>
+	<input type="submit" class="waves-effect waves-light btn-small" value="링크 입력 완료 ">
+   	</form>
    	
 </body>
 </html>

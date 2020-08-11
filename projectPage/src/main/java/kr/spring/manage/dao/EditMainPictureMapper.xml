@@ -9,4 +9,12 @@
 	<where> picture_order='1'</where>
 	
 	</update>
+	
+	
+	<update id="update_url" parameterType="String">
+	update main_picture set filename=#{filename}
+	<where>picture_order='1'</where>
+	
+	</update>
+	
 	</mapper>

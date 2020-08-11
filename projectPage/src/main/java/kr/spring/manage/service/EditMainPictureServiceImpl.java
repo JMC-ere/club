@@ -25,5 +25,11 @@ public class EditMainPictureServiceImpl implements EditMainPictureService{
 		return editMainPictureMapper.select1();
 	}
 
+	@Override
+	public void update_url(String filename) {
+		editMainPictureMapper.update_url(filename);
+		
+	}
+
 	
 }
