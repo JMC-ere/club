@@ -12,8 +12,7 @@
 
 <div id="clubgenre" class="center">
 	<br>
-	<h3>[장르별 클럽]</h3>
-	<br>
+	<h3>[장르별 클럽]</h3><br>
 	<div>
 	<a href="clubgenre.do?keyfield=club_genre&keyword=%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98" 
 		class="waves-effect waves-light btn #1b5e20 green darken-4">애니메이션</a>&emsp;
@@ -26,6 +25,7 @@
 	<a href="clubgenre.do?keyfield=club_genre&keyword=%EA%B3%B5%ED%8F%AC/%EC%8A%A4%EB%A6%B4%EB%9F%AC"
 		class="waves-effect waves-light btn #1b5e20 green darken-4">공포/스릴러</a>
 	</div>
+	<hr width="90%" color="green"><br>
 	<br>
 	<!-- 장르별 클럽 출력 -->
 	<div class="container">

@@ -30,6 +30,7 @@
 		<a href="clubinterval.do?keyfield=club_interval&keyword=%EC%9D%BC%EC%9A%94%EC%9D%BC"
 			class="waves-effect waves-circle waves-light btn-floating #1b5e20 green darken-4">일</a>	
 	</div>
+	<hr width="90%" color="green"><br>
 	<br>
 	<!-- 요일별 클럽 출력 -->
 	<div class="container">

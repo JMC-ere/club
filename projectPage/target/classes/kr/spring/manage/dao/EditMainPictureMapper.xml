@@ -5,8 +5,8 @@
 <mapper namespace="kr.spring.manage.dao.EditMainPictureMapper">
 
 	<update id="update" parameterType="EditMainPictureVO">
-	UPDATE main_picture SET image=#{image}, filename=#{filename} 
-	where main_picture.picture_oder="first"
+	UPDATE main_picture SET image=#{image}
+	where main_picture.picture_order="1"
 	
 	</update>
 	</mapper>
