@@ -37,14 +37,17 @@ margin: 0px auto;
 <hr width="90%" color="green"><br>
 <div class="image_div" >
  
+<div style="text-align: center; margin-left: 4rem;">
+<img src="/club/resources/images/member1.png" style="width:30%; float: left;">
+<img src="/club/resources/images/member2.png" style="width:30%; float: left;">
+<img src="/club/resources/images/member3.png" style="width:30%; float: left;">
 
-<img src="/club/resources/images/member1.png" style="width:30%;float:left;">
-<img src="/club/resources/images/member2.png" style="width:30%;float:left;margin:0 0 0 10px;">
-<img src="/club/resources/images/member3.png" style="width:30%;margin:0 0 0 200px;">
-<!-- Modal Trigger -->
-<div style="margin:0 auto;">
-  <a class="waves-effect waves-light btn modal-trigger teal lighten-3" href="#modal3">[도움말] 포인트 획득 방법</a>
+<div style="text-align: left; margin: auto;">
+  <a style="font-size: 0.8rem;" class="waves-effect waves-light btn modal-trigger teal lighten-3" href="#modal3">[도움말] 포인트 획득 방법</a>
 </div>
+</div>
+<!-- Modal Trigger -->
+
 </div>
 
 
