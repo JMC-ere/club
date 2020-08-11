@@ -50,19 +50,69 @@ public class EditPictureController {
 	@RequestMapping("/main/pic_view1.do")
 	public ModelAndView pic_view1() {
 	
-		EditMainPictureVO editMainPictureVO = editMainPictureService.select1();
-		ModelAndView mav = new ModelAndView();
+		EditMainPictureVO editMainPictureVO1 = editMainPictureService.select1();
+		ModelAndView mav1 = new ModelAndView();
 		
-		mav.setViewName("imageView");
-		mav.addObject("imageFile",editMainPictureVO.getImage());
-		mav.addObject("filename",editMainPictureVO.getFilename());
+		mav1.setViewName("imageView");
+		mav1.addObject("imageFile",editMainPictureVO1.getImage());
+		mav1.addObject("filename",editMainPictureVO1.getFilename());
 		
 		if(log.isDebugEnabled()) {
-			log.debug("파일파일이름 " + editMainPictureVO.getFilename() + " 파일파일 " + editMainPictureVO.getImage());
+			log.debug("파일파일이름 " + editMainPictureVO1.getFilename() + " 파일파일 " + editMainPictureVO1.getImage());
 		}
-		return mav;
+		return mav1;
 	}
 	
+	//두번째 사진 표시 처리 
+	@RequestMapping("/main/pic_view2.do")
+	public ModelAndView pic_view2() {
+	
+		EditMainPictureVO editMainPictureVO2 = editMainPictureService.select2();
+		ModelAndView mav2 = new ModelAndView();
+		
+		mav2.setViewName("imageView");
+		mav2.addObject("imageFile",editMainPictureVO2.getImage());
+		mav2.addObject("filename",editMainPictureVO2.getFilename());
+		
+		if(log.isDebugEnabled()) {
+			log.debug("파일파일이름 " + editMainPictureVO2.getFilename() + " 파일파일 " + editMainPictureVO2.getImage());
+		}
+		return mav2;
+	}
+	
+	//세번째 사진 표시 처리 
+	@RequestMapping("/main/pic_view3.do")
+	public ModelAndView pic_view3() {
+	
+		EditMainPictureVO editMainPictureVO3 = editMainPictureService.select3();
+		ModelAndView mav3 = new ModelAndView();
+		
+		mav3.setViewName("imageView");
+		mav3.addObject("imageFile",editMainPictureVO3.getImage());
+		mav3.addObject("filename",editMainPictureVO3.getFilename());
+		
+		if(log.isDebugEnabled()) {
+			log.debug("파일파일이름 " + editMainPictureVO3.getFilename() + " 파일파일 " + editMainPictureVO3.getImage());
+		}
+		return mav3;
+	}
+	
+	//네번째 사진 표시 처리 
+	@RequestMapping("/main/pic_view4.do")
+	public ModelAndView pic_view4() {
+	
+		EditMainPictureVO editMainPictureVO4 = editMainPictureService.select4();
+		ModelAndView mav4 = new ModelAndView();
+		
+		mav4.setViewName("imageView");
+		mav4.addObject("imageFile",editMainPictureVO4.getImage());
+		mav4.addObject("filename",editMainPictureVO4.getFilename());
+		
+		if(log.isDebugEnabled()) {
+			log.debug("파일파일이름 " + editMainPictureVO4.getFilename() + " 파일파일 " + editMainPictureVO4.getImage());
+		}
+		return mav4;
+	}
 	
 	
 	

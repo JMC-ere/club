@@ -57,9 +57,9 @@ public class MainController {
 			
 			
 			editMainPictureVO1 = editMainPictureService.select1();
-			editMainPictureVO2 = editMainPictureService.select1();
-			editMainPictureVO3 = editMainPictureService.select1();
-			editMainPictureVO4 = editMainPictureService.select1();
+			editMainPictureVO2 = editMainPictureService.select2();
+			editMainPictureVO3 = editMainPictureService.select3();
+			editMainPictureVO4 = editMainPictureService.select4();
 			
 			if(log.isDebugEnabled()) {
 				log.debug("파일파일 " + editMainPictureVO1.getFilename());

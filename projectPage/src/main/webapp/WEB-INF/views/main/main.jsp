@@ -48,22 +48,29 @@ p {
 	<ul class="slides">
 		<li><c:if test="${editMainPictureVO1.image!=null}">
 		<img id="pic1" src="pic_view1.do"></c:if>
-		<img id="pic1" src="${editMainPictureVO1.filename}"> <!-- random image -->
+		<img id="pic1" src="${editMainPictureVO1.filename}"> 
 			<div class="caption center-align">
 				<h3><span class="white-text text-darken-2">Hello, We Are ++CLUB!</span></h3>
 				<h5 class="white-text text-darken-2">++CLUB 에 오신것을 환영합니다!!</h5>
 			</div></li>
-		<li><img src="https://cdn.pixabay.com/photo/2017/08/14/22/06/passport-2642172_960_720.jpg"> <!-- random image -->
+		<li><c:if test="${editMainPictureVO2.image!=null}">
+		<img src="pic_view2.do"></c:if>
+		<img src="${editMainPictureVO2.filename}">
+		
 			<div class="caption right-align">
 				<h3>현재 진행중인 다양한 모임에 참석하세요!</h3>
 				<h5 class="light grey-text text-lighten-3"><a href="${pageContext.request.contextPath}/main/viewclub.do">참여하러가기</a></h5>
 			</div></li>
-		<li><img src="https://cdn.pixabay.com/photo/2017/01/17/10/39/bournemouth-1986419_960_720.jpg"> <!-- random image -->
+		<li><c:if test="${editMainPictureVO3.image!=null}">
+		<img src="pic_view3.do"></c:if>
+		<img src="${editMainPictureVO3.filename}"> 
 			<div class="caption right-align">
 				<h3>포인트를 쌓아 우수회원이 되어 나만의 모임을 만들수 있습니다!</h3>
 				<h5 class="light grey-text text-lighten-3"><a href="${pageContext.request.contextPath}/main/introduce/membership.do">회원 멤버십보러가기</a></h5>
 			</div></li>
-		<li><img src="https://cdn.pixabay.com/photo/2016/03/30/02/57/camping-1289930_960_720.jpg"> <!-- random image -->
+		<li><c:if test="${editMainPictureVO4.image!=null}">
+		<img src="pic_view4.do"></c:if>
+		<img src="${editMainPictureVO4.filename}">
 			<div class="caption center-align">
 				<h4><span class="white-text text-darken-2">지금 바로,</span></h4>
 				<h4 class="light grey-text text-lighten-3">++CLUB에서 다양한 사람들과 모임을 가져보세요 :-)</h4>
