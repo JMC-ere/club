@@ -69,7 +69,7 @@ public interface ClubQaMapper {
 	
 	public List<ClubAQVO> selectaqList(Map<String, Object> map);
 	public int selectaqRowCount(Map<String, Object> map);
-	@Insert("INSERT INTO qa_aqtable (aq_num, aq_title, aq_content) VALUES (qa_aqtable_seq.nextval, #{aq_title}, #{aq_content})")
+	@Insert("INSERT INTO qa_aqtable (aq_num, aq_title, aq_content, mem_num) VALUES (qa_aqtable_seq.nextval, #{aq_title}, #{aq_content}, #{mem_num})")
 	public void insertaq(ClubAQVO clubaq);
 	@Select("SELECT * FROM qa_aqtable b JOIN member m ON b.mem_num=m.mem_num WHERE b.aq_num=#{aq_num}")
 	public ClubAQVO selectAQBoard(Integer num);

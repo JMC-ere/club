@@ -6,6 +6,11 @@
 
 
 <tiles-definitions>
+	<definition name="qamain_write" extends="main">
+		<put-attribute name="title" value="QA 질문 게시판"/>
+		<put-attribute name="body" value="/WEB-INF/views/ClubQA/QAmain_write.jsp"/>
+	</definition>
+
     <definition name="qalist_main" extends="main">
    		<put-attribute name="title" value="QA 질문 게시판"/>
    		<put-attribute name="body" value="/WEB-INF/views/ClubQA/QAlist/form/QAlist_main.jsp"/>

@@ -166,6 +166,51 @@
  		WHERE rnum >= #{start} AND rnum <= #{end}
  		]]>                                 
  	</select>
+ 	<select id="selectaqRowCount" parameterType="map"
+	                      resultType="integer">
+		SELECT
+		   COUNT(*)
+		FROM qa_aqtable b JOIN member m
+		ON b.mem_num=m.mem_num
+		<where>
+			<if test="keyword != '' and keyfield == 'aq_title'">
+				b.aq_title LIKE '%' || #{keyword} || '%'
+			</if>
+			<if test="keyword != '' and keyfield == 'mem_id'">
+				m.mem_id LIKE '%' || #{keyword} || '%'
+			</if>
+			<if test="keyword != '' and keyfield == 'aq_content'">
+				b.aq_content LIKE '%' || #{keyword} || '%'
+			</if>
+		</where>                      
+	</select>
+	<select id="selectaqList" parameterType="map"
+	                    resultType="clubAQVO">
+		SELECT
+		   *
+		FROM (SELECT
+		         a.*,
+		         rownum rnum
+		      FROM (SELECT
+		               *
+		            FROM qa_aqtable b JOIN member m
+		            ON b.mem_num = m.mem_num
+		            <where>
+						<if test="keyword != '' and keyfield == 'aq_title'">
+							b.aq_title LIKE '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword != '' and keyfield == 'mem_id'">
+							m.mem_id LIKE '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword != '' and keyfield == 'aq_content'">
+							b.aq_content LIKE '%' || #{keyword} || '%'
+						</if>
+					</where> 
+		            ORDER BY b.aq_num DESC)a) 
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>            
+	</select>
 
 </mapper>
 

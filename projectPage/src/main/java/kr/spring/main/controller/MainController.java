@@ -54,10 +54,10 @@ public class MainController {
 			return mav;
 		}
 	
-	@RequestMapping(value="/ClubQA/QAmainForm.do", method=RequestMethod.GET)
-	public String QAform() {
-		return "QAmain";
-	}
+//	@RequestMapping(value="/ClubQA/QAmainForm.do", method=RequestMethod.GET)
+//	public String QAform() {
+//		return "QAmain";
+//	}
 	
 	@RequestMapping("/main/introduce.do")
 	public String introduce() {
