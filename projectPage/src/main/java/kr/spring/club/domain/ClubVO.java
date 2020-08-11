@@ -4,18 +4,25 @@ import java.io.IOException;
 import java.sql.Date;
 import java.util.Arrays;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 public class ClubVO {
 	private int club_num;
 	private int mem_num;
+	@NotEmpty
 	private String club_title;
+	@NotEmpty
 	private String club_loc;
+	@NotEmpty
 	private String club_name;
 	private Date club_start;
+	@NotEmpty
 	private String club_time;
+	@NotEmpty
 	private String club_interval;
 	private Date club_end;
+	@NotEmpty
 	private String club_detail;
 	private MultipartFile upload;
 	private byte[] club_img;
@@ -25,6 +32,7 @@ public class ClubVO {
 	private Date club_date;
 	private String mem_id;
 	private int mem_auth;
+	@NotEmpty
 	private String club_genre;	
 	
 	public String getClub_interval() {

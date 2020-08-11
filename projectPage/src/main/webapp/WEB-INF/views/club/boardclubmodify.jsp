@@ -42,6 +42,7 @@
 				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre3" value="애니메이션" <c:if test="${fn:contains(clubVO.club_genre,'애니메이션')}">checked</c:if>/><span>애니메이션</span></label>
 				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre4" value="액션" <c:if test="${fn:contains(clubVO.club_genre,'액션')}">checked</c:if>/><span>액션</span></label>
 				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre5" value="SF" <c:if test="${fn:contains(clubVO.club_genre,'SF')}">checked</c:if>/><span>SF</span></label>
+				&emsp;<form:errors path="club_genre" cssClass="error-color"/>
 			</li>
 			<br>
 			<li>
@@ -54,11 +55,11 @@
 			</li>
 			<li>
 				<label for="club_start">시작 날짜</label>
-				<input type="date" name="club_start" id="club_start" value="${club.club_start}" required>
+				<form:input path="club_start"/>
 			</li>
 			<li>
 				<label for="club_end">종료 날짜</label>
-				<input type="date" name="club_end" id="club_end" value="${club.club_end}" required>
+				<form:input path="club_end"/>
 			</li>
 			<li>
 				<label>모임 주기</label><p>
@@ -69,6 +70,7 @@
 				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval5" value="금요일" <c:if test="${fn:contains(clubVO.club_interval,'금요일')}">checked</c:if>/><span>금요일</span></label>
 				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval6" value="토요일" <c:if test="${fn:contains(clubVO.club_interval,'토요일')}">checked</c:if>/><span>토요일</span></label>
 				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval7" value="일요일" <c:if test="${fn:contains(clubVO.club_interval,'일요일')}">checked</c:if>/><span>일요일</span></label>
+				&emsp;<form:errors path="club_interval" cssClass="error-color"/>
 			</li>
 			<br>
 			<li>
@@ -80,9 +82,8 @@
 			</li>
 			<br>
 			<li>
-				<label for="club_detail">클럽 내용</label>
+				<label for="club_detail">클럽 내용</label>&emsp;<form:errors path="club_detail" cssClass="error-color"/>
 				<textarea name="club_detail" id="club_detail">${clubVO.club_detail}</textarea>
-				<form:errors path="club_detail" cssClass="error-color"/>
 			</li>
 		</ul>
 		<div class=right>
@@ -114,6 +115,7 @@
 				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre3" value="애니메이션" <c:if test="${fn:contains(clubVO.club_genre,'애니메이션')}">checked</c:if>/><span>애니메이션</span></label>
 				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre4" value="액션" <c:if test="${fn:contains(clubVO.club_genre,'액션')}">checked</c:if>/><span>액션</span></label>
 				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre5" value="SF" <c:if test="${fn:contains(clubVO.club_genre,'SF')}">checked</c:if>/><span>SF</span></label>
+				&emsp;<form:errors path="club_genre" cssClass="error-color"/>
 			</li>
 			<br>
 			<li>
@@ -126,11 +128,11 @@
 			</li>
 			<li>
 				<label for="club_start">시작 날짜</label>
-				<input type="date" name="club_start" id="club_start">
+				<form:input path="club_start"/>
 			</li>
 			<li>
 				<label for="club_end">종료 날짜</label>
-				<input type="date" name="club_end" id="club_end">
+				<form:input path="club_end"/>
 			</li>
 			<li>
 				<label>모임 주기</label><p>
@@ -141,6 +143,7 @@
 				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval5" value="금요일" <c:if test="${fn:contains(clubVO.club_interval,'금요일')}">checked</c:if>/><span>금요일</span></label>
 				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval6" value="토요일" <c:if test="${fn:contains(clubVO.club_interval,'토요일')}">checked</c:if>/><span>토요일</span></label>
 				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval7" value="일요일" <c:if test="${fn:contains(clubVO.club_interval,'일요일')}">checked</c:if>/><span>일요일</span></label>
+				&emsp;<form:errors path="club_interval" cssClass="error-color"/>
 			</li>
 			<br>
 			<li>
@@ -152,9 +155,8 @@
 			</li>
 			<br>
 			<li>
-				<label for="club_detail">클럽 내용</label>
+				<label for="club_detail">클럽 내용</label>&emsp;<form:errors path="club_detail" cssClass="error-color"/>
 				<textarea name="club_detail" id="club_detail">${clubVO.club_detail}</textarea>
-				<form:errors path="club_detail" cssClass="error-color"/>
 			</li>
 		</ul>
 		<div class=right>

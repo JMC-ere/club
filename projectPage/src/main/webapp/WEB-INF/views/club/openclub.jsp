@@ -31,6 +31,7 @@
 				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre3" value="애니메이션"/><span>애니메이션</span></label>
 				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre4" value="액션"/><span>액션</span></label>
 				<label><input type="checkbox" class="filled-in" name="club_genre" id="club_genre5" value="SF"/><span>SF</span></label>
+				&emsp;<form:errors path="club_genre" cssClass="error-color"/>
 			</li>
 			<br>
 			<li>
@@ -58,17 +59,18 @@
 				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval5" value="금요일"/><span>금요일</span></label>
 				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval6" value="토요일"/><span>토요일</span></label>
 				<label><input type="checkbox" class="filled-in"  name="club_interval" id="club_interval7" value="일요일"/><span>일요일</span></label>
+				&emsp;<form:errors path="club_interval" cssClass="error-color"/>
 			</li>
 			<br>
 			<li>
 				<label for="upload">클럽 이미지</label>
 				<input type="file" name="upload" id="upload"/>
+				사진의 크기는 960x590 픽셀을 권장합니다.
 			</li>
 			<br>
 			<li>
-				<label for="club_detail">클럽 내용</label>
+				<label for="club_detail">클럽 내용</label>&emsp;<form:errors path="club_detail" cssClass="error-color"/>
 				<textarea name="club_detail" id="club_detail"></textarea>
-				<form:errors path="club_detail" cssClass="error-color"/>
 			</li>
 		</ul>
 		<div class=right>
