@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+ <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,13 +15,21 @@
  <p class="manager_title"> <br><br>메인 이미지 편집 페이지</p>
    <hr width="90%" color="green"><br><br>
    
-<form:form action="pic_process.do" enctype="multipart/form-data" commandName="EditMainPictureVO" id="first">
+    	첫번째 화면 현재 사진
+  
+			 	<img src="pic_view1.do" class="responsive-img">
+		
+			
+			
+<form:form action="pic_process.do" enctype="multipart/form-data" commandName="EditMainPictureVO" >
    	
-   	   첫번째 화면에 등록할 사진 선택<br><input type="hidden" id="picture_order" value="1">
-   <label for="upload">사진선택</label>  : <input type="file" name="upload" id="upload"/>
-		<c:if test="${!empty EditMainPicture.filename}">
-		<span>(${EditMainPicture.filename })파일을 선택하셨습니다. </span>
-		</c:if>
+  
+  
+   	<br>
+   	
+   	   첫번째 화면에 등록할 사진 선택<br>
+   <label for="upload">사진선택</label>  : <input type="file" name="pic_upload" id="pic_upload"/>
+	
 	<input type="submit" class="waves-effect waves-light btn-small" value="완료">
    	<br>
 

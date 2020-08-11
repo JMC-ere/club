@@ -20,5 +20,10 @@ public class EditMainPictureServiceImpl implements EditMainPictureService{
 		
 	}
 
+	@Override
+	public EditMainPictureVO select1() {
+		return editMainPictureMapper.select1();
+	}
+
 	
 }
