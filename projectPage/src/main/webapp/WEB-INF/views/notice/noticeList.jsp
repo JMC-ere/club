@@ -232,7 +232,7 @@ input[type="submit"], input[type="button"]{
 					<th>조회수</th>
 				</tr>
 				<tr>
-					<td colspan="5" class="result-display">등록된 게시물이 없습니다.</td>
+					<td colspan="6" class="result-display">등록된 게시물이 없습니다.</td>
 				</tr>
 			</table>
 		</c:if>
