@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.clubqa.domain.ClubAQVO;
-import kr.spring.clubqa.domain.ClubQAVO;
 import kr.spring.clubqa.service.ClubQAService;
 import kr.spring.util.PagingUtil;
 
@@ -79,7 +78,7 @@ public class QA_AqController {
 		return mav;
 	}
 	
-	//자주하는 질문 글 쓰기 폼
+		//자주하는 질문 글 쓰기 폼
 		@RequestMapping(value="/ClubQA/QAmain_write.do", method=RequestMethod.GET)
 		public String QAlist_write() {
 			return "qamain_write";
@@ -120,6 +119,6 @@ public class QA_AqController {
 			//글 삭제
 			clubqaService.deleteaq(num);
 
-			return "redirect:/ClubQA/QAmain_delete.do";
+			return "qa_delete";
 		}
 }

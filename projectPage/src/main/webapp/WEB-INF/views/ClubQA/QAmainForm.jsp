@@ -37,7 +37,7 @@
 			
 			<a style="font-size:0.7rem;" href="https://accounts.kakao.com/login?continue=http%3A%2F%2Fpf.kakao.com%2F_cxbxixoxb%2Fchat%3Fapi_ver%3D1.1%26kakao_agent%3Dsdk%252F1.39.4%2520os%252Fjavascript%2520sdk_type%252Fjavascript%2520lang%252Fko-KR%2520device%252FWin32%2520origin%252Fhttp%25253A%25252F%25252Flocalhost%25253A8080%26app_key%3D633cd4c97bac13201ce2cd74ba836409%26referer%3Dhttp%253A%252F%252Flocalhost%253A8080%252Fclub%252FClubQA%252FQAmainForm.do">
 			더 많은 정보나 1:1 상담이 필요하시면 오른쪽 하단의 <mark>"톡상담"</mark>을 이용해 주세요</a></p><c:if test="${ user_auth > 3 }">
-			<a style="font-size:0.5rem;" href="${pageContext.request.contextPath}/ClubQA/QAmain_delete.do?num=${clubqa.aq_num}">삭제</a>
+			<a style="font-size:0.5rem;" href="QAmain_delete.do?num=${clubqa.aq_num}">삭제</a>
 			</c:if>
 		</div>
 		</c:forEach>
