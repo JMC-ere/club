@@ -82,6 +82,9 @@
 					<input type="button" value="비밀번호 찾기" class="modal-close waves-effect waves-green btn" onclick="location.href='${pageContext.request.contextPath}/mypage/findPasswd.do'">
 				</form>
 			</div>
+			<div class="row">
+			<div class="card-panel teal lighten-2">회원가입을 하시면 ++CLUB 의 모임을 참가 하실수 있습니다.</div>
+			</div>
 		</div>
     </div> 
     <!-- 로그인  -->
