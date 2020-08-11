@@ -21,5 +21,5 @@ public interface NoticeMapper {
 	public void updateHit(Integer nt_num);
 	public void update(NoticeVO notice);
 	@Delete("DELETE FROM notice WHERE nt_num=#{nt_num}")
-	public void delete(Integer nt_num);
+	public boolean deleteNotice(Integer nt_num);
 }

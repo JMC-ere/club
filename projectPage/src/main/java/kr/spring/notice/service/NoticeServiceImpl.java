@@ -48,8 +48,8 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 
 	@Override
-	public void delete(Integer nt_num) {
-		noticeMapper.delete(nt_num);	
+	public boolean deleteNotice(Integer nt_num) {
+		return noticeMapper.deleteNotice(nt_num);	
 	}
 
 

@@ -13,5 +13,5 @@ public interface NoticeService {
 	public NoticeVO selectNotice(Integer nt_num);
 	public void updateHit(Integer nt_num);
 	public void update(NoticeVO notice);
-	public void delete(Integer nt_num);
+	public boolean deleteNotice(Integer nt_num);
 }

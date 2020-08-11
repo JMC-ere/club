@@ -198,7 +198,7 @@ public class NoticeController {
 		}
 		
 		//글 삭제
-		noticeService.delete(nt_num);
+		noticeService.deleteNotice(nt_num);
 		
 		return "redirect:/notice/list.do";
 	}

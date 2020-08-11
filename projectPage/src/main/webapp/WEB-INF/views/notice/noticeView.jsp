@@ -205,10 +205,20 @@ input[type="submit"], input[type="button"]{
 			<%--관리자와 작성자만 수정 삭제 버튼이 활성화 됨 --%>
 	 		<c:if test="${user_num == notice.mem_num || user_auth == 4}">
 				<input type="button" value="수정" onclick="location.href='update.do?nt_num=${notice.nt_num}'">
-				<input type="button" value="삭제" onclick="location.href='delete.do?nt_num=${notice.nt_num}'">
+				<input type="button" value="삭제" onclick="del(${notice.nt_num})">
 			</c:if>
 			<input type="button" value="목록" onclick="location.href='list.do'">
 		</div>
 	</div>	
 	<br class="end">
 </div>
+
+<!-- 삭제 확인 스크립트 -->
+<script>
+	function del(nt_num) {
+		var chk = confirm("정말 삭제하시겠습니까?");
+		if (chk) {
+			location.href='delete.do?nt_num=${notice.nt_num}';
+		}
+	}	
+</script>

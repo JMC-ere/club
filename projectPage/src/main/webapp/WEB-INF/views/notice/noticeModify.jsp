@@ -202,7 +202,7 @@ input[type="submit"], input[type="button"]{
 				</li>
 			</ul>
 			<div class="align-center">
-				<input type="submit" value="등록">
+				<input type="submit" value="수정">
 				<input type="button" value="목록" onclick="location.href='list.do'">
 			</div>
 		</form:form>
