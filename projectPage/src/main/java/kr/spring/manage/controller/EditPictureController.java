@@ -59,9 +59,9 @@ public class EditPictureController {
 	@RequestMapping("/main/url_process.do")
 	public String pic_url(String filename) {
 		editMainPictureService.update_url(filename);
-		
 
 		return "redirect:/main/main.do";
 	}
+	
 	
 }
