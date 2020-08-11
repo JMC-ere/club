@@ -4,17 +4,52 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
 <mapper namespace="kr.spring.manage.dao.EditMainPictureMapper">
 
-	<update id="update" parameterType="EditMainPictureVO">
+	<!-- 사진1번 -->
+	<update id="update1" parameterType="EditMainPictureVO">
 	UPDATE main_picture SET image=#{image}, filename=#{filename}
-	<where> picture_order='1'</where>
-	
+	<where> picture_order=#{picture_order}</where>
+
 	</update>
 	
-	
-	<update id="update_url" parameterType="String">
+	<update id="update_url1" parameterType="map">
 	update main_picture set filename=#{filename},image=null 
-	<where>picture_order='1'</where>
-	
+	<where>picture_order=#{picture_order}</where>	
 	</update>
+	
+	
+	<!-- 사진2번 -->
+	<update id="update2" parameterType="EditMainPictureVO">
+	UPDATE main_picture SET image=#{image}, filename=#{filename}
+	<where> picture_order='2'</where>
+	</update>
+	
+	<update id="update_url2" parameterType="String">
+	update main_picture set filename=#{filename},image=null 
+	<where>picture_order='2'</where>	
+	</update>
+	
+	<!-- 사진3번 -->
+	<update id="update3" parameterType="EditMainPictureVO">
+	UPDATE main_picture SET image=#{image}, filename=#{filename}
+	<where> picture_order='3'</where>
+	</update>
+	
+	<update id="update_url3" parameterType="String">
+	update main_picture set filename=#{filename},image=null 
+	<where>picture_order='3'</where>	
+	</update>
+	
+	<!-- 사진4번 -->
+	<update id="update4" parameterType="EditMainPictureVO">
+	UPDATE main_picture SET image=#{image}, filename=#{filename}
+	<where> picture_order='4'</where>
+	</update>
+	
+	<update id="update_url4" parameterType="String">
+	update main_picture set filename=#{filename},image=null 
+	<where>picture_order='4'</where>	
+	</update>
+	
+	
 	
 	</mapper>

@@ -1,5 +1,8 @@
 package kr.spring.manage.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
@@ -21,8 +24,14 @@ public class EditPictureController {
 	
 	//편집 페이지
 	@RequestMapping("/main/EditPicture.do")
-	public String editpicture() {
-		return "EditPicture";
+	public ModelAndView editpicture() {	
+		ModelAndView mav = new ModelAndView();
+		EditMainPictureVO editMainPictureVO = editMainPictureService.select1();
+		
+		mav.setViewName("EditPicture");
+		mav.addObject("editMainPictureVO",editMainPictureVO);
+	
+		return mav;
 	}
 	
 	
@@ -31,7 +40,7 @@ public class EditPictureController {
 	public String pic_process(EditMainPictureVO editMainPictureVO) {
 		
 		//사진등록
-		editMainPictureService.update(editMainPictureVO);
+		editMainPictureService.update1(editMainPictureVO);
 		
 		return "redirect:/main/main.do";
 		
@@ -57,11 +66,17 @@ public class EditPictureController {
 	
 	//사진 url 처리
 	@RequestMapping("/main/url_process.do")
-	public String pic_url(String filename) {
-	
+	public String pic_url(String filename,String picture_order) {
+		
+		if(log.isDebugEnabled()) {
+			log.debug("파일파일이름  : " + filename + " 몇번째 파일 :  " + picture_order);
+		}
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("filename", filename);
+		map.put("picture_order", picture_order);
 		
 		//DB에 url 등록
-		editMainPictureService.update_url(filename);
+		editMainPictureService.update_url1(map);
 			
 		return "redirect:/main/main.do";
 	}

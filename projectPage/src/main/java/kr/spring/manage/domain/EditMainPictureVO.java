@@ -7,7 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class EditMainPictureVO {
 	private MultipartFile pic_upload;
-	private int picture_order;
+	private String picture_order;
 	private byte[] image;
 	private String filename;
 	
@@ -39,10 +39,10 @@ public class EditMainPictureVO {
 	
 	
 	
-	public int getPicture_order() {
+	public String getPicture_order() {
 		return picture_order;
 	}
-	public void setPicture_order(int picture_order) {
+	public void setPicture_order(String picture_order) {
 		this.picture_order = picture_order;
 	}
 	

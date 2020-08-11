@@ -46,7 +46,9 @@ p {
 </style>
 <div class="slider">
 	<ul class="slides">
-		<li><img id="pic1" src="${editMainPictureVO.filename}"> <!-- random image -->
+		<li><c:if test="${editMainPictureVO.image!=null}">
+		<img id="pic1" src="pic_view1.do"></c:if>
+		<img id="pic1" src="${editMainPictureVO.filename}"> <!-- random image -->
 			<div class="caption center-align">
 				<h3><span class="white-text text-darken-2">Hello, We Are ++CLUB!</span></h3>
 				<h5 class="white-text text-darken-2">++CLUB 에 오신것을 환영합니다!!</h5>
