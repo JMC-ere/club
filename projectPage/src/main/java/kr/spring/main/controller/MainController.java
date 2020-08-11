@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,14 +15,17 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.club.domain.ClubVO;
 import kr.spring.club.service.ClubService;
+import kr.spring.manage.domain.EditMainPictureVO;
+import kr.spring.manage.service.EditMainPictureService;
 import kr.spring.util.PagingUtil;
 //main!
 @Controller
 public class MainController {
-	
+	private Logger log = Logger.getLogger(this.getClass());
 	@Resource
 	private ClubService clubService;
-	
+	@Resource
+	private EditMainPictureService editMainPictureService;
 	private int rowCount = 10;
 	private int pageCount = 10;
 	
@@ -45,11 +49,22 @@ public class MainController {
 				list = clubService.mainList(map);
 			}
 			
+			//메인 이미지 url 가져오기
+			
+			EditMainPictureVO editMainPictureVO = new EditMainPictureVO();
+			
+			editMainPictureVO = editMainPictureService.select1();
+			
+			if(log.isDebugEnabled()) {
+				log.debug("파일파일 " + editMainPictureVO.getFilename());
+			}
+			
 			ModelAndView mav = new ModelAndView();
 			mav.setViewName("main");
 			mav.addObject("count",count);
 			mav.addObject("list",list);
 			mav.addObject("pagingHtml",page.getPagingHtml());
+			mav.addObject("editMainPictureVO",editMainPictureVO);
 			
 			return mav;
 		}

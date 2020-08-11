@@ -12,7 +12,7 @@
 	
 	
 	<update id="update_url" parameterType="String">
-	update main_picture set filename=#{filename}
+	update main_picture set filename=#{filename},image=null 
 	<where>picture_order='1'</where>
 	
 	</update>

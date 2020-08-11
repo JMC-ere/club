@@ -5,7 +5,7 @@ import javax.annotation.Resource;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.manage.domain.EditMainPictureVO;
@@ -58,8 +58,11 @@ public class EditPictureController {
 	//사진 url 처리
 	@RequestMapping("/main/url_process.do")
 	public String pic_url(String filename) {
+	
+		
+		//DB에 url 등록
 		editMainPictureService.update_url(filename);
-
+			
 		return "redirect:/main/main.do";
 	}
 	

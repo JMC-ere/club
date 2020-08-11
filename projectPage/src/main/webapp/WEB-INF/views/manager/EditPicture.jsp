@@ -15,28 +15,33 @@
  <p class="manager_title"> <br><br>메인 이미지 편집 페이지</p>
    <hr width="90%" color="green"><br><br>
    
-    	첫번째 화면 현재 사진
+    첫번째 화면 현재 사진
   
-			 	<img src="pic_view1.do" class="responsive-img">
+	<img src="pic_view1.do" class="responsive-img">
 		
 			
 			
 <form:form action="pic_process.do" enctype="multipart/form-data" commandName="EditMainPictureVO" >
    	
    	<br>
-   	   첫번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요<br>
-   <label for="upload">사진선택</label>  : <input type="file" name="pic_upload" id="pic_upload"/>
-	
-	<input type="submit" class="waves-effect waves-light btn-small" value="사진 선택 완료">
+   	   첫번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요<br><br>
+   	   
+   	 <!-- 사진 선택 폼 -->
+   <label for="upload">사진선택</label><br> 
+   <input type="file" name="pic_upload" id="pic_upload"/>
+	<input type="submit" class="waves-effect waves-light btn-small" value="선택한 사진으로 배경 설정하기">
    	<br>
   </form:form>
+  	<!-- 사진 선택 폼 끝 -->
   
+  	<!-- 사진 url 등록 폼 -->
   <form action="url_process.do" method="post">
   <div class="input-field" style="width:30%;">
    <input type="url" name="filename" placeholder="이미지 url 입력">
 	</div>
-	<input type="submit" class="waves-effect waves-light btn-small" value="링크 입력 완료 ">
+	<input type="submit" class="waves-effect waves-light btn-small" value="입력한 링크로 배경 설정하기">
    	</form>
+   	<!-- 사진 url 등록 폼 -->
    	
 </body>
 </html>

@@ -64,6 +64,7 @@
 			nt_file=#{nt_file},
 			nt_filename=#{nt_filename},
 		</if>
+		    nt_category=#{nt_category},
 			nt_title=#{nt_title},
 			nt_content=#{nt_content},
 			nt_datetime=SYSDATE
