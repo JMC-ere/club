@@ -25,7 +25,9 @@
 		font-size:16px
 	}
 }
-
+.error-color{
+		color:red;
+}
 
 .QAmain_header {
 	background-image: url("../images/litegreenbg.png");
