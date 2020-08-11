@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
+<link rel="stylesheet" 
+   href="${pageContext.request.contextPath}/resources/css/style.css">
 <style type="text/css">
 	#openform{
 		width:50%;

@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<link rel="stylesheet" 
+   href="${pageContext.request.contextPath}/resources/css/style.css">
 <style type="text/css">
 	#openform{
 		width:50%;
