@@ -28,7 +28,7 @@
    	   첫번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요<br><br>   
    	 <!-- 사진 선택 폼 -->
    <label for="upload">사진선택</label><br> 
-   <input type="hidden" name="picture_order" id="picture_order" value="1"/>
+   <input type="hidden" name="picture_order"  value="1"/>
    <input type="file" name="pic_upload" id="pic_upload"/>
 	<input type="submit" class="waves-effect waves-light btn-small" value="선택한 사진으로 배경 설정하기">
    	<br>
@@ -37,7 +37,7 @@
   
   	<!-- 사진 url 등록 폼 -->
   <form action="url_process.do" method="post">
-  <input type="hidden" name="picture_order" id="picture_order" value="1"/>
+  <input type="hidden" name="picture_order"  value="1"/>
   <div class="input-field" style="width:30%;">
    <input type="url" name="filename" placeholder="이미지 url 입력">
 	</div>
@@ -51,6 +51,7 @@
    	   두번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요<br><br>   
    	 <!-- 사진 선택 폼 -->
    <label for="upload">사진선택</label><br> 
+   <input type="hidden" name="picture_order"  value="2"/>
    <input type="file" name="pic_upload" id="pic_upload"/>
 	<input type="submit" class="waves-effect waves-light btn-small" value="선택한 사진으로 배경 설정하기">
    	<br>
@@ -59,6 +60,7 @@
   
   	<!-- 사진 url 등록 폼 -->
   <form action="url_process.do" method="post">
+  <input type="hidden" name="picture_order"  value="2"/>
   <div class="input-field" style="width:30%;">
    <input type="url" name="filename" placeholder="이미지 url 입력">
 	</div>
@@ -71,6 +73,7 @@
    	   세번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요<br><br>   
    	 <!-- 사진 선택 폼 -->
    <label for="upload">사진선택</label><br> 
+   <input type="hidden" name="picture_order"  value="3"/>
    <input type="file" name="pic_upload" id="pic_upload"/>
 	<input type="submit" class="waves-effect waves-light btn-small" value="선택한 사진으로 배경 설정하기">
    	<br>
@@ -79,6 +82,7 @@
   
   	<!-- 사진 url 등록 폼 -->
   <form action="url_process.do" method="post">
+  <input type="hidden" name="picture_order"  value="3"/>
   <div class="input-field" style="width:30%;">
    <input type="url" name="filename" placeholder="이미지 url 입력">
 	</div>
@@ -92,6 +96,7 @@
    	   네번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요<br><br>   
    	 <!-- 사진 선택 폼 -->
    <label for="upload">사진선택</label><br> 
+   <input type="hidden" name="picture_order"  value="4"/>
    <input type="file" name="pic_upload" id="pic_upload"/>
 	<input type="submit" class="waves-effect waves-light btn-small" value="선택한 사진으로 배경 설정하기">
    	<br>
@@ -100,6 +105,7 @@
   
   	<!-- 사진 url 등록 폼 -->
   <form action="url_process.do" method="post">
+  <input type="hidden" name="picture_order"  value="4"/>
   <div class="input-field" style="width:30%;">
    <input type="url" name="filename" placeholder="이미지 url 입력">
 	</div>

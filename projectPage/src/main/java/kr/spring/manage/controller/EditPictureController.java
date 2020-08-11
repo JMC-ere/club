@@ -40,13 +40,13 @@ public class EditPictureController {
 	public String pic_process(EditMainPictureVO editMainPictureVO) {
 		
 		//사진등록
-		editMainPictureService.update1(editMainPictureVO);
+		editMainPictureService.update(editMainPictureVO);
 		
 		return "redirect:/main/main.do";
 		
 	}
 	
-	//사진 표시 처리 
+	//첫번째 사진 표시 처리 
 	@RequestMapping("/main/pic_view1.do")
 	public ModelAndView pic_view1() {
 	
@@ -64,6 +64,9 @@ public class EditPictureController {
 	}
 	
 	
+	
+	
+	
 	//사진 url 처리
 	@RequestMapping("/main/url_process.do")
 	public String pic_url(String filename,String picture_order) {
@@ -76,7 +79,7 @@ public class EditPictureController {
 		map.put("picture_order", picture_order);
 		
 		//DB에 url 등록
-		editMainPictureService.update_url1(map);
+		editMainPictureService.update_url(map);
 			
 		return "redirect:/main/main.do";
 	}

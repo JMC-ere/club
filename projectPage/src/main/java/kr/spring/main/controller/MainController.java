@@ -49,14 +49,20 @@ public class MainController {
 				list = clubService.mainList(map);
 			}
 			
-			//메인 이미지 url 가져오기
+			//메인 이미지 url 가져오기 //파일 표시는 EditMainPictureController에서 함 
+			EditMainPictureVO editMainPictureVO1 = new EditMainPictureVO();
+			EditMainPictureVO editMainPictureVO2 = new EditMainPictureVO();
+			EditMainPictureVO editMainPictureVO3 = new EditMainPictureVO();
+			EditMainPictureVO editMainPictureVO4 = new EditMainPictureVO();
 			
-			EditMainPictureVO editMainPictureVO = new EditMainPictureVO();
 			
-			editMainPictureVO = editMainPictureService.select1();
+			editMainPictureVO1 = editMainPictureService.select1();
+			editMainPictureVO2 = editMainPictureService.select1();
+			editMainPictureVO3 = editMainPictureService.select1();
+			editMainPictureVO4 = editMainPictureService.select1();
 			
 			if(log.isDebugEnabled()) {
-				log.debug("파일파일 " + editMainPictureVO.getFilename());
+				log.debug("파일파일 " + editMainPictureVO1.getFilename());
 			}
 			
 			ModelAndView mav = new ModelAndView();
@@ -64,7 +70,10 @@ public class MainController {
 			mav.addObject("count",count);
 			mav.addObject("list",list);
 			mav.addObject("pagingHtml",page.getPagingHtml());
-			mav.addObject("editMainPictureVO",editMainPictureVO);
+			mav.addObject("editMainPictureVO1",editMainPictureVO1);
+			mav.addObject("editMainPictureVO2",editMainPictureVO2);
+			mav.addObject("editMainPictureVO3",editMainPictureVO3);
+			mav.addObject("editMainPictureVO4",editMainPictureVO4);
 			
 			return mav;
 		}
