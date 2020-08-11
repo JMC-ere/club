@@ -48,7 +48,7 @@ p {
 	<ul class="slides">
 		<li><img id="pic1" src="https://cdn.pixabay.com/photo/2017/08/29/12/07/adult-2693054_960_720.jpg"> <!-- random image -->
 			<div class="caption center-align">
-				<h3><span class="white-text text-darken-2">Hellow, We Are ++CLUB!</span></h3>
+				<h3><span class="white-text text-darken-2">Hello, We Are ++CLUB!</span></h3>
 				<h5 class="white-text text-darken-2">++CLUB 에 오신것을 환영합니다!!</h5>
 			</div></li>
 		<li><img src="https://cdn.pixabay.com/photo/2017/08/14/22/06/passport-2642172_960_720.jpg"> <!-- random image -->
@@ -63,7 +63,7 @@ p {
 			</div></li>
 		<li><img src="https://cdn.pixabay.com/photo/2016/03/30/02/57/camping-1289930_960_720.jpg"> <!-- random image -->
 			<div class="caption center-align">
-				<h4><span class="white-text text-darken-2">지금 바로!</span></h4>
+				<h4><span class="white-text text-darken-2">지금 바로,</span></h4>
 				<h4 class="light grey-text text-lighten-3">++CLUB에서 다양한 사람들과 모임을 가져보세요 :-)</h4>
 			</div></li>
 	</ul>
