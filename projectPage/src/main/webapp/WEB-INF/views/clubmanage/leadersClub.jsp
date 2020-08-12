@@ -176,6 +176,9 @@ input[type="submit"], input[type="button"]{
 	float:left;
 	}	
 }
+p.club-detail{
+	font-size: 16px;
+}
 
 </style>
 
@@ -233,8 +236,9 @@ input[type="submit"], input[type="button"]{
 					</c:if>
 					<div class="card-content">
 						<p class="club-detail">
-						시작:${validClub.club_start} | 종료:${validClub.club_end}<br>
-						주기:${validClub.club_interval } | 시간:${validClub.club_time }
+						시작: ${validClub.club_start} | 종료: ${validClub.club_end}<br>
+						주기: ${validClub.club_interval }<br>
+						시간: ${validClub.club_time }
 						</p>
 					</div>
 					<div class="card-action" align="right">
@@ -291,8 +295,9 @@ input[type="submit"], input[type="button"]{
 					</c:if>
 					<div class="card-content">
 						<p class="club-detail">
-						시작:${pastClub.club_start} | 종료:${pastClub.club_end}<br>
-						주기:${pastClub.club_interval } | 시간:${pastClub.club_time }
+						시작: ${pastClub.club_start} | 종료: ${pastClub.club_end}<br>
+						주기: ${pastClub.club_interval }<br>
+						시간: ${pastClub.club_time }
 						</p>
 					</div>
 					<div class="card-action" align="right">

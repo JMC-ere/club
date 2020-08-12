@@ -62,7 +62,7 @@ public class ClubManageController {
 		model.addAttribute("leadersPastClub",leadersPastClub);
 		return "leadersClub"; 
 	}
-
+	//클럽회원들 정보 및 출석 관리 폼 
 	@RequestMapping(value="/clubmanage/manageMembers.do",method=RequestMethod.GET)
 	public String manageMembersForm(@RequestParam("club_num") int club_num, Model model) {
 
@@ -76,6 +76,7 @@ public class ClubManageController {
 
 		return "manageMembersForm";
 	}
+	//클럽회원들 정보 및 출석 관리 연산
 	@RequestMapping(value="/clubmanage/manageMembers.do",method=RequestMethod.POST)
 	public String manageMembers(@RequestParam(value="attendance",defaultValue="0")
 								int[] participants,
@@ -90,7 +91,7 @@ public class ClubManageController {
 		SimpleDateFormat sf=new SimpleDateFormat("yy-MM-dd");
 		String now=sf.format(date).toString();
 		
-		//참석율을 구하기 위한 현재까지 모임 진행 횟수
+		//참석율을 구하기 위한 현재까지 모임 진행 횟수(count_club)
 		ClubManageVO club=clubManageService.selectClub(club_num);
 		long calDate=date.getTime()-club.getClub_start().getTime();
 		long calDateDays=calDate/(24*60*60*1000);
@@ -141,66 +142,11 @@ public class ClubManageController {
 			if(log.isDebugEnabled()) {
 				log.debug("<<<members>>> : "+members);
 			}
-			for(int i=0;i<members.size();i++) {//불참자 리스트에서 오늘 날짜가 참석일에 있다면 삭제
-				Map<String, Object> map= new HashMap<String, Object> ();
-				map.put("club_num", club_num);
-				map.put("mem_num", members.get(i));
-				ClubManageVO memberVO=new ClubManageVO();
-				String remove_date=clubManageService.selectJoinDate(map);
-				if(remove_date!=null && remove_date.contains(now)) {
-					remove_date=remove_date.replace(now+" / ", "");
-					String[] attendance_date=remove_date.split(" / ");
-					float attendance_rate=(float)attendance_date.length/count_club;
-					if(log.isDebugEnabled()) {
-						log.debug("<<remove_date>>"+remove_date);
-						log.debug("<<attendance_rate>>"+attendance_rate);
-						log.debug("<<attendance.date.length>>"+attendance_date.length);
-					}
-					memberVO.setClub_num(club_num);
-					memberVO.setAttendance_rate(Math.round(attendance_rate*100));
-					memberVO.setJoin_date(remove_date);
-					memberVO.setMem_num(members.get(i));
-					
-					clubManageService.updateParticipants(memberVO);
-				}
-			}
+			//불참자들 중 참석일에 오늘 날짜 삭제
+			removeAttendace.removeJoindate(members, club_num, now, count_club, log, clubManageService);
 		}else {//참석자가 한명도 넘어오지 않는 경우
-			
-			for(int i=0;i<members.size();i++) {//참석일에 오늘 날짜가 표시되어 있다면 삭제
-				
-				ClubManageVO memberVO=new ClubManageVO();
-				Map<String, Object> map= new HashMap<String, Object> ();
-				map.put("club_num", club_num);
-				map.put("mem_num", members.get(i));
-				String remove_date=clubManageService.selectJoinDate(map);
-				if(remove_date!=null && remove_date.contains(now)) {
-					remove_date=remove_date.replace(now+" / ", "");
-					
-					String[] attendance_date=remove_date.split(" / ");
-					float attendance_rate=(float)attendance_date.length/count_club;
-					if(log.isDebugEnabled()) {
-						log.debug("<<remove_date>>"+remove_date);
-						log.debug("<<attendance_rate>>"+attendance_rate);
-						log.debug("<<attendance.date.length>>"+attendance_date.length);
-					}
-					memberVO.setClub_num(club_num);
-					memberVO.setAttendance_rate(Math.round(attendance_rate*100));
-					memberVO.setJoin_date(remove_date);
-					memberVO.setMem_num(members.get(i));
-					clubManageService.updateParticipants(memberVO);
-					
-					
-				}
-			}
+			removeAttendace.removeJoindate(members, club_num, now, count_club, log, clubManageService);
 		}
-		//출석율 계산필요
-		//DB에서 join_date값을 가져온다
-		//joindate에서 구분자 /기준으로 split해서 스트링 배열에 담는다.
-		//현재 날짜에서 startdate를 빼고 인터발로 나누어 모임진행횟수를 구한다.
-		//(위 계산한 모임횟수가 전체 모임횟수보다 크면 전체모임횟수를 모임진행횟수로 한다)
-		//스트링배열의 길이 나누기 모임진행횟수 곱하기 100으로 참석율을 구한다.
-
-		
 		return manageMembersForm(club_num, model);
 	}
 	//클럽 탈퇴
@@ -244,4 +190,47 @@ public class ClubManageController {
 	}
 	
 
+}
+class removeAttendace{
+	
+	public static void removeJoindate(List<Integer> members, int club_num, String now,int count_club,Logger log, ClubManageService clubManageService) {
+		for(int i=0;i<members.size();i++) {//참석일에 오늘 날짜가 표시되어 있다면 삭제
+			
+			ClubManageVO memberVO=new ClubManageVO();
+			Map<String, Object> map= new HashMap<String, Object> ();
+			map.put("club_num", club_num);
+			map.put("mem_num", members.get(i));
+			float attendance_rate=0;
+			String remove_date=clubManageService.selectJoinDate(map);
+			String[] attendance_date=null;
+			if(remove_date!=null && remove_date.contains(now)) {
+				remove_date=remove_date.replace(now+" / ", "");
+				if (remove_date.equals("")) {
+					attendance_rate=0;
+					if(log.isDebugEnabled()) {
+						log.debug("<<remove_date>>"+remove_date);
+						log.debug("<<attendance_rate>>"+attendance_rate);
+					}
+				}else {
+					attendance_date=remove_date.split(" / ");
+					attendance_rate=(float)attendance_date.length/count_club;
+					if(log.isDebugEnabled()) {
+						log.debug("<<remove_date>>"+remove_date);
+						log.debug("<<attendance_rate>>"+attendance_rate);
+						log.debug("<<attendance.date.length>>"+attendance_date.length);
+					}
+				}
+			} else if(remove_date!=null) {
+				attendance_date=remove_date.split(" / ");
+				attendance_rate=(float)attendance_date.length/count_club;
+			}
+			memberVO.setClub_num(club_num);
+			memberVO.setAttendance_rate(Math.round(attendance_rate*100));
+			memberVO.setJoin_date(remove_date);
+			memberVO.setMem_num(members.get(i));
+			clubManageService.updateParticipants(memberVO);
+		}
+	}
+	
+	
 }

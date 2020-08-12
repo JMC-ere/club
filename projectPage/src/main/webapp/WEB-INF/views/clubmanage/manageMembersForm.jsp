@@ -178,6 +178,7 @@ input[type="submit"], input[type="button"]{
 	}	
 }
 
+
 </style>
 <div class="page-main-style">
 	<div class="menu">
@@ -198,7 +199,7 @@ input[type="submit"], input[type="button"]{
 				<th>이메일</th>
 				<th>참석일</th>
 				<th>참석율</th>
-				<th>오늘 출석 O/X</th>
+				<th>오늘 출석</th>
 			</tr>
 			<c:if test="${empty clubMembers }">
 				모임 신청 회원이 없습니다.
@@ -243,7 +244,7 @@ input[type="submit"], input[type="button"]{
 			</c:forEach>
 			<tr>
 				<td colspan="8" style="text-align:center">
-					<button class="btn waves-effect waves-light" type="submit" name="action">출석 제출
+					<button id="submit" class="btn waves-effect waves-light" type="submit" name="action">출석 제출
 				    			<i class="material-icons">send</i>
 				  	</button>
 			  	<td>
