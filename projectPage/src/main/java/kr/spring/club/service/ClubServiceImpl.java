@@ -76,4 +76,5 @@ public class ClubServiceImpl implements ClubService{
 		
 		return clubMapper.genreList(map);
 	}
+
 }

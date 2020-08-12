@@ -12,18 +12,18 @@ import javax.validation.Valid;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.club.domain.ClubVO;
+import kr.spring.club.domain.JoinClubVO;
 import kr.spring.club.service.ClubService;
-import kr.spring.notice.domain.NoticeVO;
+import kr.spring.club.service.JoinClubService;
 import kr.spring.util.PagingUtil;
 
 //클럽현황
@@ -41,8 +41,15 @@ public class ClubController {
 		return new ClubVO();
 	}
 	
+	@ModelAttribute
+	public JoinClubVO initCommand1() {
+		return new JoinClubVO();
+	}
+	
 	@Resource
 	private ClubService clubService;
+	@Resource
+	private JoinClubService joinClubService;
 	
 	//전체클럽 페이지 (클럽메인)
 	@RequestMapping("/main/viewclub.do")
@@ -315,23 +322,41 @@ public class ClubController {
 		return "redirect:/main/boardclub.do";
 	}
 	
+	//신청회원 정보 전송
 	@RequestMapping("/main/checkClub.do")
 	public String checkClub(@RequestParam int club_num,HttpSession session) {
 		
-		if(log.isDebugEnabled()) {
+		/*if(log.isDebugEnabled()) {
 			log.debug("<<user_num>> : " + (Integer)session.getAttribute("user_num"));
 			log.debug("<<club_num>> : " + club_num);
-		}
+		}*/
+			
+			
+			
 		try {
-			
-		clubService.joinClubInsert(club_num,(Integer)session.getAttribute("user_num"));
-		
-		}catch(Exception e) {
-			
-			return "redirect:/main/main.do";
+
+			if(log.isDebugEnabled()) {
+				log.debug("<<트라이이ㅣ>> : " + (Integer)session.getAttribute("user_num"));
+				log.debug("<<트라이이이>> : " + club_num);
+			}
+
+			JoinClubVO join = joinClubService.applyCheck(club_num, (Integer)session.getAttribute("user_num"));
 			
 		}
-		return "redirect:/clubmanage/myClub.do";
+		catch(Exception e) {
+
+			if(log.isDebugEnabled()) {
+				log.debug("<<user_num>> : " + (Integer)session.getAttribute("user_num"));
+				log.debug("<<club_num>> : " + club_num);
+			}
+
+
+			clubService.joinClubInsert(club_num,(Integer)session.getAttribute("user_num"));
+
+			return "redirect:/clubmanage/myClub.do";
+		}
+
+		return "redirect:/main/viewclubdetail.do";
 	}
 	
 }

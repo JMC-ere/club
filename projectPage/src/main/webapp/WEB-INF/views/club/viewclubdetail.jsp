@@ -66,25 +66,25 @@
 			<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="개설상태변경"
 				onclick="location.href='boardclubmodify.do?club_num=${club.club_num}'">
 		</c:if>
-		<button data-target="modal1" class="btn modal-trigger purple lighten-5 purple-text text-darken-4">신청하기</button>
+		<button data-target="modal1" class="btn modal-trigger purple lighten-5 purple-text text-darken-4">참여하기</button>
 		<div id="modal1" class="modal">
 			<div class="modal-content">
 				<h4>클럽 참여 신청</h4>
 				<p><p>
 				<img src="https://cdn.pixabay.com/photo/2017/11/24/10/43/admission-2974645_960_720.jpg"
 					class="responsive-img" width="500">
-				<p><b>[${club.club_name}]</b>클럽에 참여를 하시려면 하단의 신청하기 버튼을 눌러주세요!!<br>
-				신청하기 버튼을 누르시면 클럽장이 회원님의 연락처를 열람할 수 있습니다.<br>
+				<p><b>[${club.club_name}]</b>클럽 참여를 원하시는 분은 하단의 '참여하기' 버튼을 눌러주세요!!<br>
+				참여하기 버튼을 누르시면 클럽장이 회원님의 연락처를 열람할 수 있습니다.<br>
 				이에 동의하시면 버튼을 눌러주세요.</p>
 			</div>
 			<c:if test="${user_auth == 2 || user_auth == 3 || user_auth == 4}">
-			<a href="${pageContext.request.contextPath}/main/checkClub.do?club_num=${club.club_num}" class="modal-close waves-effect waves-green btn-flat">신청하기</a>
+			<a href="${pageContext.request.contextPath}/main/checkClub.do?club_num=${club.club_num}" class="modal-close waves-effect waves-green btn-flat">참여하기</a>
 			</c:if>
 			<c:if test="${empty user_id}">
-			<a onclick="M.toast({html: '로그인후 이용해주세요.'})" class="modal-close waves-effect waves-green btn-flat">신청하기</a>
+			<a onclick="M.toast({html: '로그인후 이용해주세요.'})" class="modal-close waves-effect waves-green btn-flat">참여하기</a>
 			</c:if>
 			<c:if test="${user_auth == 5}">
-			<a onclick="M.toast({html: '++club 일반회원으로 회원가입후 이용이 가능한 서비스입니다.'})" class="modal-close waves-effect waves-green btn-flat">신청하기</a>
+			<a onclick="M.toast({html: '++club 일반회원으로 회원가입후 이용이 가능한 서비스입니다.'})" class="modal-close waves-effect waves-green btn-flat">참여하기</a>
 			</c:if>
 			
 			<a href="#" class="modal-close waves-effect waves-green btn-flat">닫기</a>
