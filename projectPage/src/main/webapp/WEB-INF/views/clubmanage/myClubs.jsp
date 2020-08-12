@@ -178,6 +178,11 @@ input[type="submit"], input[type="button"]{
 }
 p.club-detail{
 	font-size: 16px;
+	margin: 0 0 30px 0;
+}
+.card-content{
+	margin-bottom: 10px;
+	padding-bottom: 10px; 
 }
 
 </style>
@@ -207,17 +212,6 @@ p.club-detail{
 		</c:if>
 		<c:if test="${!empty myValidClub }">
 			<c:forEach var="validClub" items="${myValidClub}">
-			<c:if test="${validClub.club_state==1 || valid.club_state==2 }">
-			<div class="card light-green darken-1">
-				<div class="card-content white-text">
-					<span class="card-title">Card Title</span>
-					<p>참여 중인 클럽이 없습니다</p>
-				</div>
-				<div class="card-action light-green darken-1">
-					<a href="/club/main/introduce/membership.do">클럽장 조건 보러 가기</a>
-				</div>
-			</div>
-			</c:if>
 			<c:if test="${validClub.club_state==2 }">
 			<!-- 카드 하나 코드  -->
 			<div class="col-sm-12 col-lg-4">
@@ -244,7 +238,7 @@ p.club-detail{
 					</div>
 				</c:if>
 					<div class="card-content">
-						<p class="club-detail">
+						<p>
 						시작: ${validClub.club_start} | 종료: ${validClub.club_end}<br>
 						주기: ${validClub.club_interval }<br>
 						시간: ${validClub.club_time }
@@ -252,7 +246,7 @@ p.club-detail{
 					</div>
 					<div class="card-action" align="right">
 						<a href="${pageContext.request.contextPath }/main/viewclubdetail.do?club_num=${validClub.club_num}" class="waves-effect waves-light btn-small">자세히</a>
-						<a href="resignClub.do?mem_num=${user_num }&club_num=${validClub.club_num }" id="resign_confirm" class="waves-effect waves-light btn-small">탈퇴</a>
+						<a href="resignClub.do?mem_num=${user_num }&club_num=${validClub.club_num }" class="resign waves-effect waves-light btn-small">탈퇴</a>
 					</div>
 				</div>
 			</div>
@@ -323,11 +317,11 @@ p.club-detail{
 </div>
 <script type="text/javascript">
 	$(function(){
-		$('#resign_confirm').click(function(){
-			var resign_confirm = confirm( '정말 탈퇴하시겠습니까?' );
-		    document.write( resign_confirm );
-			if (resign_confirm){
+		$('.resign').click(function(){
+			if (confirm( '정말 탈퇴하시겠습니까?' )){
 				alert('탈퇴 하셨습니다');
+			} else{
+				return false;
 			}
 		});
 	});

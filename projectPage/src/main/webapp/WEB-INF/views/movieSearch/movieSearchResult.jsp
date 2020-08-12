@@ -157,7 +157,11 @@ p .material-icons {
 ul li.mov{
 	margin: 20px 0;
 }
-
+.star-rating { width:100px; }
+.star-rating,.star-rating span {
+	display:inline-block; height:19px; overflow:hidden; background:url('${pageContext.request.contextPath}/resources/images/star.png')no-repeat;
+}
+.star-rating span{ background-position:left bottom; line-height:0; vertical-align:top; }
 
 </style>
 <div class="page-main-style">
@@ -188,11 +192,22 @@ ul li.mov{
 				<c:if test="${!empty list }">
 					<c:forEach var="movie" items="${list}">
 						<li class="mov">
-							<a href="${movie.link }"><img src="${movie.image}" class="picture"></a>
+							
+							<a href="${movie.link }">
+							<c:if test="${!empty movie.image }">
+							<img src="${movie.image}" class="picture">
+							</c:if>
+							<c:if test="${empty movie.image }">
+							<img src="${pageContext.request.contextPath}/resources/images/blank-img-movie.jpg" class="picture">
+							</c:if>
+							</a>
 							<span class="title"><a href="${movie.link }">${movie.title}</a> | ${movie.pubDate}
 							</span>
 							<p>
 								<b>평점</b> ${movie.userRating} /10 
+								<span class="star-rating">
+									<span style="width:${movie.userRating*10}%"></span>
+								</span>
 								<b>감독</b> ${movie.director} <br> <b>배우</b> ${movie.actor}<br>
 								<%--<span class="star-rating">
 									<span></span>
