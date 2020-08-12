@@ -134,5 +134,17 @@ public class EditPictureController {
 		return "redirect:/main/main.do";
 	}
 	
+	//미리보기
+	@RequestMapping("/main/preview.do")
+	public ModelAndView preview(String filename,String picture_order) {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("manager/preview");
+		mav.addObject("filename",filename);
+		mav.addObject("picture_order",picture_order);
+		
+		return mav;
+	}
+	
+	
 	
 }

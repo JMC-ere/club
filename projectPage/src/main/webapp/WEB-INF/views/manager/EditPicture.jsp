@@ -36,15 +36,17 @@
   	<!-- 사진 선택 폼 끝 -->
   
   	<!-- 사진 url 등록 폼 -->
-  <form action="url_process.do" method="post">
+  <form method="post" name="form">
   <input type="hidden" name="picture_order"  value="1"/>
   <div class="input-field" style="width:30%;">
    <input type="url" name="filename" placeholder="이미지 url 입력">
 	</div>
-	<input type="submit" class="waves-effect waves-light btn-small" value="입력한 링크로 배경 설정하기">
+	<input type="submit" class="waves-effect waves-light btn-small" value="입력한 링크로 배경 설정하기"
+	onclick="javascript: form.action='url_process.do';"/>
+	<input type="submit" value="미리보기 " onclick="javascript: form.action='preview.do';form.target='_blank';"></a>
    	</form>
    	<!-- 사진 url 등록 폼 -->
-   	
+   
    	
    	<br><br><br><hr width=80% color=CCCCCC><br><br><br>
 <form:form action="pic_process.do" enctype="multipart/form-data" commandName="EditMainPictureVO" >
