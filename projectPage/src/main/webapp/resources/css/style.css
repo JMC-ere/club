@@ -39,7 +39,7 @@
 
 .QAmain_header .header{
 	font-family: 'Youth';
-	font-size: 3.5rem;
+	font-size: 3.4rem;
 	margin-top: 1rem;
 	margin-bottom: 0.5rem;
 }
@@ -120,8 +120,8 @@
 .QAbody_thead th {
 	font-size: 1rem;
 	text-align: center;
-	border-right:thin solid #bdbdbd;
-	height: 2rem;
+	
+	height: 50px;
 	
 }
 
@@ -129,14 +129,10 @@
 	height: 3rem;
 }
 
-.QAbody_table li_class{
-	text-align: center;
-	
+.li_class {
+	font-family: 'Noto Sans KR', sans-serif !important;
 }
 
-table tr li_class{
-	text-align: center;
-}
 
 /* QAmain_list css */
 
@@ -167,10 +163,12 @@ table tr li_class{
   	outline: none;
   	font-size: 1.4rem;
   	border-bottom: thin solid gray;
+  	margin: .7rem 0 .4rem 0;
 }
 
 .active, .collapsible:hover {
   	background-color: #f0f4c3;
+  	
 }
 
 .collapsible:after {
@@ -182,6 +180,10 @@ table tr li_class{
 
 .collapsible active{
 	background-color: white;
+}
+
+.active:after {
+  content: "\002D";
 }
 
 .collapse_content {
@@ -264,6 +266,7 @@ ul li div{
 }
 
 .QAlist_detail_table td {
+	width: 15rem;
 	border-right: hidden;
 }
 
@@ -382,6 +385,10 @@ span#reply_title {
 	width: 8rem;
 	background-color: #f9fbe7;
 	text-align: center;
+}
+
+.reply_table td {
+	width: 15rem;
 }
 
 .reply_content {

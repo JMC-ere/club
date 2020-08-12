@@ -44,7 +44,7 @@
 					<tr style="font-size: 0.9rem;">
 						<td class="li_class" id="clubqa_num" style="text-align: center;">${clubqa.qa1_1num}</td>
 						<td>
-							<a <c:if test="${ clubqa.qa1_1secret_key != null && user_auth < 4}">class="clubqa_title"</c:if> href="QA1_1_detail.do?num=${clubqa.qa1_1num}" data-p="${clubqa.qa1_1secret_key}">
+							<a <c:if test="${ clubqa.qa1_1secret_key != null && user_auth != 4}">class="clubqa_title"</c:if> href="QA1_1_detail.do?num=${clubqa.qa1_1num}" data-p="${clubqa.qa1_1secret_key}">
 						
 							${clubqa.qa1_1title}
 							<c:if test="${ clubqa.qa1_1secret_key != null }">
@@ -69,10 +69,17 @@
 					<!-- 테스트 td -->
 				</table>
 				</c:if>
-				<div class="align-center">${pagingHtml}</div>	
+				<div class="align-center">${pagingHtml}</div>
+				<c:if test="${empty user_num}">
+				<div class="btnSet" style='float: right;'>
+				로그인 후 작성 가능합니다.
+				</div>
+				</c:if>	
+				<c:if test="${!empty user_num}">
 				<div class="btnSet" style='float: right;'>
 				<input type="button" class="btn" onclick="location.href='${pageContext.request.contextPath}/ClubQA/QA1_1/QA1_1_write.do'" value="글쓰기" >
 				</div>
+				</c:if>
 				<h1><br></h1>
 			</div>
 			

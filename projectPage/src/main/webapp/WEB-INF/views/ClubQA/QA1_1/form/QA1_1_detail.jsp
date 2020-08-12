@@ -84,7 +84,7 @@
 			<input type="button" value="삭제" class="btn"
 				onclick="location.href='QA1_1_delete.do?num=${clubqa.qa1_1num}'">
 		</c:if>
-		<input type="button" class="btn" value="목록" onclick="location.href='QAlist.do'">
+		<input type="button" class="btn" value="목록" onclick="location.href='QA1_1_list.do'">
 	</div>
 </div>
 <!-- 조건 체크 -->
