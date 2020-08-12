@@ -356,7 +356,7 @@ public class ClubController {
 			return "redirect:/clubmanage/myClub.do";
 		}
 
-		return "redirect:/main/viewclubdetail.do";
+		return "redirect:/main/viewclub.do";
 	}
 	
 }
