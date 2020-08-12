@@ -13,6 +13,7 @@
 <title>회원 멤버십 소개 </title>
 <style>
 
+
 div.image_div{
 width:80%;
 display: block;
@@ -35,16 +36,15 @@ margin: 0px auto;
 <p class="introduce_title">++CLUB의 회원 멤버십 소개 </p> 
 
 <hr width="90%" color="green"><br>
-<div class="image_div" >
+<div class="image_div" style="width:70%;">
  
-<div style="text-align: center; margin-left: 4rem;">
-<img src="/club/resources/images/member1.png" style="width:30%; float: left;">
-<img src="/club/resources/images/member2.png" style="width:30%; float: left;">
-<img src="/club/resources/images/member3.png" style="width:30%; float: left;">
-
-<div style="text-align: left; margin: auto;">
-  <a style="font-size: 0.8rem;" class="waves-effect waves-light btn modal-trigger teal lighten-3" href="#modal3">[도움말] 포인트 획득 방법</a>
+<div style=" width:100%; text-align: center; margin: auto;">
+<img src="/club/resources/images/member1.png" style="width:30%; display:inline-block;">
+<img src="/club/resources/images/member2.png" style="width:30%; display:inline-block;">
+<img src="/club/resources/images/member3.png" style="width:30%; display:inline-block;">
 </div>
+<div style="width: 90%; text-align: left; margin: auto;">
+  <a style="font-size: 0.8rem;" class="waves-effect waves-light btn modal-trigger teal lighten-3" href="#modal3">[도움말] 포인트 획득 방법</a>
 </div>
 <!-- Modal Trigger -->
 
@@ -61,7 +61,7 @@ margin: 0px auto;
       <p> <i class="material-icons">add</i> 모임 참여 후 후기 남기기 <a href="${pageContext.request.contextPath}/post/post.do">[후기 남기러 가기]</a></p>
       <p> <i class="material-icons">add</i> 등등 </p>
       <p> <i class="material-icons">add</i> 등등</p>
-     <p> <i class="material-icons">add</i> 등등</p>
+      <p> <i class="material-icons">add</i> 등등</p>
 
       
     </div>

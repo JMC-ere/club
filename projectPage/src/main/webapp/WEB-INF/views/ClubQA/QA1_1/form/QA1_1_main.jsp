@@ -12,11 +12,11 @@
 			<div class="QAmain_header_select">
 				<hr class="main_hr" width="85%">
 				<ul class="QAmain_select">
-					<li><a href="${pageContext.request.contextPath}/ClubQA/QAmainForm.do">자주하는 질문</a></li>
-					<li><a
+					<li class="tab"><a href="${pageContext.request.contextPath}/ClubQA/QAmainForm.do">자주하는 질문</a></li>
+					<li class="tab"><a
 						href="${pageContext.request.contextPath}/ClubQA/QAlist/QAlist.do">건의 / 신고 
 							게시판</a></li>
-					<li><a
+					<li class="tab"><a
 						href="${pageContext.request.contextPath}/ClubQA/QA1_1/QA1_1_list.do">질문 게시판</a></li>
 				</ul>
 			</div>
@@ -109,6 +109,14 @@ $(function(){
 			
 	});		
 	
+});
+
+var instance = M.Tabs.init(el, options);
+
+// Or with jQuery
+
+$(document).ready(function(){
+  $('.QAmain_select').tabs();
 });
 </script>
 
