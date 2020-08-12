@@ -17,14 +17,17 @@
    
 
 
-<form:form action="pic_process.do" enctype="multipart/form-data" commandName="EditMainPictureVO" >
+<form:form enctype="multipart/form-data" commandName="EditMainPictureVO" >
    	<br>
    	   첫번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요<br><br>   
    	 <!-- 사진 선택 폼 -->
    <label for="upload">사진선택</label><br> 
    <input type="hidden" name="picture_order"  value="1"/>
    <input type="file" name="pic_upload" id="pic_upload"/>
-	<input type="submit" class="waves-effect waves-light btn-small" value="선택한 사진으로 배경 설정하기">
+	<input type="submit" class="waves-effect waves-light btn-small" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='pic_process.do';">
+	<input type="submit" value="미리보기 " onclick="javascript: form.action='pic_preview.do';form.target='_blank';">
+	
    	<br>
   </form:form>
   	<!-- 사진 선택 폼 끝 -->
@@ -37,7 +40,7 @@
 	</div>
 	<input type="submit" class="waves-effect waves-light btn-small" value="입력한 링크로 배경 설정하기"
 	onclick="javascript: form.action='url_process.do';"/>
-	<input type="submit" value="미리보기 " onclick="javascript: form.action='preview.do';form.target='_blank';">
+	<input type="submit" value="미리보기 " onclick="javascript: form.action='url_preview.do';form.target='_blank';">
    	</form>
    	<!-- 사진 url 등록 폼 -->
    

@@ -1,11 +1,15 @@
 package kr.spring.manage.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,6 +21,9 @@ import kr.spring.manage.service.EditMainPictureService;
 @Controller
 public class EditPictureController {
 
+	@Value("${file_path}")
+	private String path;
+	
 	@Resource
 	private EditMainPictureService editMainPictureService;
 	
@@ -35,7 +42,7 @@ public class EditPictureController {
 	}
 	
 	
-	//사진 등록 처리 
+	//파일로 올리는 경우 사진을 DB에 등록 처리 
 	@RequestMapping("/main/pic_process.do")
 	public String pic_process(EditMainPictureVO editMainPictureVO) {
 		
@@ -134,17 +141,54 @@ public class EditPictureController {
 		return "redirect:/main/main.do";
 	}
 	
-	//미리보기
-	@RequestMapping("/main/preview.do")
-	public ModelAndView preview(String filename,String picture_order) {
+	//url로 올리는 경우 미리보기
+	@RequestMapping("/main/url_preview.do")
+	public ModelAndView url_preview(String filename,String picture_order) {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("manager/preview");
+		mav.setViewName("manager/url_preview");
 		mav.addObject("filename",filename);
 		mav.addObject("picture_order",picture_order);
 		
 		return mav;
 	}
 	
+	//파일로 올리는 경우 미리보기
+	@RequestMapping("/main/pic_preview.do")
+	public ModelAndView pic_preview(EditMainPictureVO editMainPictureVO) throws IllegalStateException, IOException {
+		
+		
+		//파일업로드
+		File file=new File(path+"/"+editMainPictureVO.getPic_upload().getOriginalFilename());
+		editMainPictureVO.getPic_upload().transferTo(file);
+		
+		ModelAndView mav = new ModelAndView();
+		
+		if(log.isDebugEnabled()) {
+			log.debug("파일로 올리는 경우 미리보기 \n 파일파일이름 " + editMainPictureVO.getFilename() + " 파일파일 " + editMainPictureVO.getImage());
+		}
+		
+		mav.setViewName("manager/pic_preview");
+		mav.addObject("imageFile",editMainPictureVO.getImage());
+		mav.addObject("filename",editMainPictureVO.getFilename());
+		
+		return mav;
+	}
+	
+	//파일로 올리는 경우 미리보기의 사진 표시
+	@RequestMapping("/main/pic_preview_view.do")
+	public ModelAndView pic_preview_view(HttpSession session) {
+	
+		
+		ModelAndView mav = new ModelAndView();
+		if(log.isDebugEnabled()) {
+			log.debug("미리보기 사진표시 \n 파일파일이름 " + session.getAttribute("filename") + " 파일파일 " + session.getAttribute("filename"));
+		}
+		mav.setViewName("imageView");
+		mav.addObject("imageFile",session.getAttribute("imageFile"));
+		mav.addObject("filename",session.getAttribute("filename"));
+		
+		return mav;
+	}
 	
 	
 }

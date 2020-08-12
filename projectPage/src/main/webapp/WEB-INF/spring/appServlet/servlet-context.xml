@@ -95,4 +95,7 @@
 	<beans:bean id="naverLoginController" class="kr.spring.member.naver.NaverLoginController" />
 	<view-controller path="/mypage/naver_logout.do" view-name="member/naver_logout"/>
 	<view-controller path="/mypage/naver_logout_success.do" view-name="member/naver_logout_success"/>
+	
+	<!-- 파일업로드 경로 정보를 갖는 파일 등록 -->
+	<context:property-placeholder location="classpath:config/file.properties"/>
 </beans:beans>
