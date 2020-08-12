@@ -33,7 +33,7 @@ margin: 0px auto; width:50%;
 <div class="row valign-wrapper">
 			<div class="col s2">
 			
-			<c:if test="${
+			<c:if test="${ 
 							 fn:endsWith(manageClub.filename, '.jpg') ||			 
 							 fn:endsWith(manageClub.filename, '.JPG') ||			 
 							 fn:endsWith(manageClub.filename, '.gif') ||			 
