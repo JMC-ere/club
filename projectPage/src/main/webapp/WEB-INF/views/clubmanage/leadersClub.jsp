@@ -179,6 +179,9 @@ input[type="submit"], input[type="button"]{
 p.club-detail{
 	font-size: 16px;
 }
+.club_img{
+	filter:brightness(50%);
+}
 
 </style>
 
@@ -223,22 +226,21 @@ p.club-detail{
 						 fn:endsWith(validClub.filename, '.PNG')
 		 				}">
 		 			<div class="card-image">
-					<img src="imageView.do?club_num=${validClub.club_num }" class="responsive-img">
+					<img src="imageView.do?club_num=${validClub.club_num }" class="club_img">
 					<span class="card-title">${validClub.club_title}</span>
 					</div>
 					</c:if>
 					</c:if>
 					<c:if test="${empty validClub.filename }">
 					<div class="card-image">
-					<img src="${pageContext.request.contextPath}/resources/images/talk.png" class="responsive-img">
+					<img src="${pageContext.request.contextPath}/resources/images/talk.png" class="club_img">
 					<span class="card-title">${validClub.club_title}</span>
 					</div>
 					</c:if>
 					<div class="card-content">
 						<p class="club-detail">
 						시작: ${validClub.club_start} | 종료: ${validClub.club_end}<br>
-						주기: ${validClub.club_interval }<br>
-						시간: ${validClub.club_time }
+						주기: ${validClub.club_interval } | 시간: ${validClub.club_time }
 						</p>
 					</div>
 					<div class="card-action" align="right">
@@ -282,22 +284,21 @@ p.club-detail{
 							 fn:endsWith(pastClub.filename, '.PNG')
 			 				}">
 			 			<div class="card-image">
-						<img src="imageView.do?club_num=${pastClub.club_num }" class="responsive-img">
+						<img src="imageView.do?club_num=${pastClub.club_num }" class="club_img">
 						<span class="card-title">${pastClub.club_title}</span>
 						</div>
 						</c:if>
 					</c:if>
 					<c:if test="${empty pastClub.filename }">
 						<div class="card-image">
-						<img src="${pageContext.request.contextPath}/resources/images/talk.png" class="responsive-img">
+						<img src="${pageContext.request.contextPath}/resources/images/talk.png" class="club_img">
 						<span class="card-title">${pastClub.club_title}</span>
 						</div>
 					</c:if>
 					<div class="card-content">
 						<p class="club-detail">
-						시작: ${pastClub.club_start} | 종료: ${pastClub.club_end}<br>
-						주기: ${pastClub.club_interval }<br>
-						시간: ${pastClub.club_time }
+						시작: ${validClub.club_start} | 종료: ${validClub.club_end}<br>
+						주기: ${validClub.club_interval } | 시간: ${validClub.club_time }
 						</p>
 					</div>
 					<div class="card-action" align="right">
