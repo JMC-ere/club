@@ -17,7 +17,7 @@
    
 
 
-<form:form enctype="multipart/form-data" commandName="EditMainPictureVO" >
+<form:form id="upload1" enctype="multipart/form-data" commandName="EditMainPictureVO" >
    	<br>
    	   첫번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요<br><br>   
    	 <!-- 사진 선택 폼 -->
@@ -33,7 +33,7 @@
   	<!-- 사진 선택 폼 끝 -->
   
   	<!-- 사진 url 등록 폼 -->
-  <form method="get" name="form">
+  <form method="get" name="form" id="upload2">
   <input type="hidden" name="picture_order"  value="1"/>
   <div class="input-field" style="width:30%;">
    <input type="url" name="filename" placeholder="이미지 url 입력">
@@ -112,4 +112,23 @@
    	</form>
    	<!-- 사진 url 등록 폼 -->
 </body>
+<script>
+$(document).ready(function(){
+	$('#upload1').submit(function(){
+		if($('input[type="file"]').val()==''){
+			alert('파일을 선택하세요');
+			return false;
+		};
+	});
+	
+	$('#upload2').submit(function(){
+		if($('input[name="filename"]').val()==''){
+			alert('이미지 URL을 입력하세요');
+			return false;
+		};
+	});
+	
+	
+});
+</script>
 </html>

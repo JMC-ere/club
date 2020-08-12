@@ -154,41 +154,22 @@ public class EditPictureController {
 	
 	//파일로 올리는 경우 미리보기
 	@RequestMapping("/main/pic_preview.do")
-	public ModelAndView pic_preview(EditMainPictureVO editMainPictureVO) throws IllegalStateException, IOException {
+	public String pic_preview(EditMainPictureVO editMainPictureVO) throws IllegalStateException, IOException {
 		
 		
 		//파일업로드
 		File file=new File(path+"/"+editMainPictureVO.getPic_upload().getOriginalFilename());
 		editMainPictureVO.getPic_upload().transferTo(file);
 		
-		ModelAndView mav = new ModelAndView();
-		
-		if(log.isDebugEnabled()) {
-			log.debug("파일로 올리는 경우 미리보기 \n 파일파일이름 " + editMainPictureVO.getFilename() + " 파일파일 " + editMainPictureVO.getImage());
-		}
-		
-		mav.setViewName("manager/pic_preview");
-		mav.addObject("imageFile",editMainPictureVO.getImage());
-		mav.addObject("filename",editMainPictureVO.getFilename());
-		
-		return mav;
-	}
-	
-	//파일로 올리는 경우 미리보기의 사진 표시
-	@RequestMapping("/main/pic_preview_view.do")
-	public ModelAndView pic_preview_view(HttpSession session) {
+
 	
 		
-		ModelAndView mav = new ModelAndView();
-		if(log.isDebugEnabled()) {
-			log.debug("미리보기 사진표시 \n 파일파일이름 " + session.getAttribute("filename") + " 파일파일 " + session.getAttribute("filename"));
-		}
-		mav.setViewName("imageView");
-		mav.addObject("imageFile",session.getAttribute("imageFile"));
-		mav.addObject("filename",session.getAttribute("filename"));
+	
 		
-		return mav;
+		return 	"manager/pic_preview";
 	}
+	
+
 	
 	
 }

@@ -41,30 +41,27 @@
     </div>
     </nav>
     <!-- 헤더끝 -->
-    ${imageFile}<br>
-    ${filename}
- 
-    
+  
     <div class="slider">
 	<ul class="slides">
-		<li><img src="pic_preview_view.do">
+		<li><img src="/club/resources/images/preview_img/${editMainPictureVO.pic_upload.originalFilename}">
 			<div class="caption center-align">
 				<h3><span class="white-text text-darken-2">Hello, We Are ++CLUB!</span></h3>
 				<h5 class="white-text text-darken-2">++CLUB 에 오신것을 환영합니다!!</h5>
 			</div></li>
 			
-		<li><img src="">	
+		<li><img src="/club/resources/images/preview_img/${editMainPictureVO.pic_upload.originalFilename}">	
 			<div class="caption right-align">
 				<h3>현재 진행중인 다양한 모임에 참석하세요!</h3>
 				<h5 class="light grey-text text-lighten-3"><a href="#">참여하러가기</a></h5>
 			</div></li>
 			
-		<li> <img src="">
+		<li> <img src="/club/resources/images/preview_img/${editMainPictureVO.pic_upload.originalFilename}">
 			<div class="caption right-align">
 				<h3>포인트를 쌓아 우수회원이 되어 나만의 모임을 만들수 있습니다!</h3>
 				<h5 class="light grey-text text-lighten-3"><a href="#">회원 멤버십보러가기</a></h5>
 			</div></li>
-		<li> <img src="">
+		<li> <img src="/club/resources/images/preview_img/${editMainPictureVO.pic_upload.originalFilename}">
 			<div class="caption center-align">
 				<h4><span class="white-text text-darken-2">지금 바로,</span></h4>
 				<h4 class="light grey-text text-lighten-3">++CLUB에서 다양한 사람들과 모임을 가져보세요 :-)</h4>
