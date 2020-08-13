@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.club.domain.ClubVO;
@@ -324,39 +324,20 @@ public class ClubController {
 	
 	//신청회원 정보 전송
 	@RequestMapping("/main/checkClub.do")
-	public String checkClub(@RequestParam int club_num,HttpSession session) {
+	@ResponseBody
+	public Map<String,String> checkClub(@RequestParam int club_num,HttpSession session) {
 		
-		/*if(log.isDebugEnabled()) {
-			log.debug("<<user_num>> : " + (Integer)session.getAttribute("user_num"));
-			log.debug("<<club_num>> : " + club_num);
-		}*/
+			Map<String,String> map = new HashMap<String,String>();
 			
-			
-			
-		try {
-
-			if(log.isDebugEnabled()) {
-				log.debug("<<트라이이ㅣ>> : " + (Integer)session.getAttribute("user_num"));
-				log.debug("<<트라이이이>> : " + club_num);
-			}
-
 			JoinClubVO join = joinClubService.applyCheck(club_num, (Integer)session.getAttribute("user_num"));
 			
-		}
-		catch(Exception e) {
-
-			if(log.isDebugEnabled()) {
-				log.debug("<<user_num>> : " + (Integer)session.getAttribute("user_num"));
-				log.debug("<<club_num>> : " + club_num);
+			if(join==null) {
+				clubService.joinClubInsert(club_num,(Integer)session.getAttribute("user_num"));
+				map.put("result", "success");
+			}else {
+				map.put("result", "error");	
 			}
-
-
-			clubService.joinClubInsert(club_num,(Integer)session.getAttribute("user_num"));
-
-			return "redirect:/clubmanage/myClub.do";
-		}
-
-		return "redirect:/main/viewclub.do";
+			
+			return map;
 	}
-	
 }

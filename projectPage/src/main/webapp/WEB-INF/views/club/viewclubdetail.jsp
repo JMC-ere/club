@@ -78,7 +78,7 @@
 				이에 동의하시면 버튼을 눌러주세요.</p>
 			</div>
 			<c:if test="${user_auth == 2 || user_auth == 3 || user_auth == 4}">
-			<a href="${pageContext.request.contextPath}/main/checkClub.do?club_num=${club.club_num}" class="modal-close waves-effect waves-green btn-flat">참여하기</a>
+			<a href="${pageContext.request.contextPath}/main/checkClub.do?club_num=${club.club_num}" id="apply" class="modal-close waves-effect waves-green btn-flat">참여하기</a>
 			</c:if>
 			<c:if test="${empty user_id}">
 			<a onclick="M.toast({html: '로그인후 이용해주세요.'})" class="modal-close waves-effect waves-green btn-flat">참여하기</a>
@@ -104,5 +104,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
   $(document).ready(function(){
     $('.modal').modal();
+  });
+  
+  
+  $('#apply').click(function(){
+	 $.ajax({
+		url:'checkClub.do',
+		type:'post',
+		data: {club_num : ${club.club_num}},
+		dataType: 'json',
+		cache: false,
+		success:function(data){
+			if(data.result=='success'){
+				location.href='${pageContext.request.contextPath}/clubmanage/myClub.do';
+			}else if(data.result=='error'){
+				alert('이미 신청하신 클럽입니다!!');
+				history.go(0);
+			}
+		},
+		error:function(){
+			alert('클럽 신청 서비스 오류 발생');
+			return false;
+		}
+	 });
   });
 </script>
