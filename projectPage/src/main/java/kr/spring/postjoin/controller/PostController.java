@@ -266,6 +266,6 @@ public class PostController {
 
 			postService.deletePost(num);
 
-			return "redirect:/post/post.do";
+			return "redirect:/post/postlist.do";
 		}
 }
