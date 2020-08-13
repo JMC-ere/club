@@ -28,65 +28,114 @@ public class MainController {
 	private EditMainPictureService editMainPictureService;
 	private int rowCount = 10;
 	private int pageCount = 10;
-	
+
 	//메인페이지
-		@RequestMapping("/main/main.do")
-		public ModelAndView process2(@RequestParam(value="pageNum",defaultValue="1") int currentPage) {
-			
-			int count = clubService.listRowCount();
-			
-			//페이징처리
-			PagingUtil page = new PagingUtil(currentPage,count,rowCount,pageCount,"boardclub.do");
-			
-			List<ClubVO> list = null;
-			
-			if(count>0) {
-				
-				Map<String,Object> map = new HashMap<String,Object>();
-				map.put("start", page.getStartCount());
-				map.put("end", page.getEndCount());
-				
-				list = clubService.mainList(map);
-			}
-			
-			//메인 이미지 url 가져오기 //파일 표시는 EditMainPictureController에서 함 
-			EditMainPictureVO editMainPictureVO1 = new EditMainPictureVO();
-			EditMainPictureVO editMainPictureVO2 = new EditMainPictureVO();
-			EditMainPictureVO editMainPictureVO3 = new EditMainPictureVO();
-			EditMainPictureVO editMainPictureVO4 = new EditMainPictureVO();
-			
-			
-			editMainPictureVO1 = editMainPictureService.select1();
-			editMainPictureVO2 = editMainPictureService.select2();
-			editMainPictureVO3 = editMainPictureService.select3();
-			editMainPictureVO4 = editMainPictureService.select4();
-			
-			if(log.isDebugEnabled()) {
-				log.debug("파일파일 " + editMainPictureVO1.getFilename());
-			}
-			
-			ModelAndView mav = new ModelAndView();
-			mav.setViewName("main");
-			mav.addObject("count",count);
-			mav.addObject("list",list);
-			mav.addObject("pagingHtml",page.getPagingHtml());
-			mav.addObject("editMainPictureVO1",editMainPictureVO1);
-			mav.addObject("editMainPictureVO2",editMainPictureVO2);
-			mav.addObject("editMainPictureVO3",editMainPictureVO3);
-			mav.addObject("editMainPictureVO4",editMainPictureVO4);
-			
-			return mav;
+	@RequestMapping("/main/main.do")
+	public ModelAndView process2(@RequestParam(value="pageNum",defaultValue="1") int currentPage) {
+
+		int count = clubService.listRowCount();
+
+		//페이징처리
+		PagingUtil page = new PagingUtil(currentPage,count,rowCount,pageCount,"boardclub.do");
+
+		List<ClubVO> list = null;
+
+		if(count>0) {
+
+			Map<String,Object> map = new HashMap<String,Object>();
+			map.put("start", page.getStartCount());
+			map.put("end", page.getEndCount());
+
+			list = clubService.mainList(map);
 		}
-	
-//	@RequestMapping(value="/ClubQA/QAmainForm.do", method=RequestMethod.GET)
-//	public String QAform() {
-//		return "QAmain";
-//	}
-	
+
+		//메인 이미지 url 가져오기 //파일 표시는 EditMainPictureController에서 함 
+		EditMainPictureVO editMainPictureVO1 = new EditMainPictureVO();
+		EditMainPictureVO editMainPictureVO2 = new EditMainPictureVO();
+		EditMainPictureVO editMainPictureVO3 = new EditMainPictureVO();
+		EditMainPictureVO editMainPictureVO4 = new EditMainPictureVO();
+
+
+		editMainPictureVO1 = editMainPictureService.select1();
+		editMainPictureVO2 = editMainPictureService.select2();
+		editMainPictureVO3 = editMainPictureService.select3();
+		editMainPictureVO4 = editMainPictureService.select4();
+
+		if(log.isDebugEnabled()) {
+			log.debug("파일파일 " + editMainPictureVO1.getFilename());
+		}
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("main");
+		mav.addObject("count",count);
+		mav.addObject("list",list);
+		mav.addObject("pagingHtml",page.getPagingHtml());
+		mav.addObject("editMainPictureVO1",editMainPictureVO1);
+		mav.addObject("editMainPictureVO2",editMainPictureVO2);
+		mav.addObject("editMainPictureVO3",editMainPictureVO3);
+		mav.addObject("editMainPictureVO4",editMainPictureVO4);
+
+		return mav;
+	}
+
+	//모바일용 메인페이지
+	@RequestMapping("/main/mobileMain.do")
+	public ModelAndView process3(@RequestParam(value="pageNum",defaultValue="1") int currentPage) {
+
+		int count = clubService.listRowCount();
+
+		//페이징처리
+		PagingUtil page = new PagingUtil(currentPage,count,rowCount,pageCount,"boardclub.do");
+
+		List<ClubVO> list = null;
+
+		if(count>0) {
+
+			Map<String,Object> map = new HashMap<String,Object>();
+			map.put("start", page.getStartCount());
+			map.put("end", page.getEndCount());
+
+			list = clubService.mainList(map);
+		}
+
+		//메인 이미지 url 가져오기 //파일 표시는 EditMainPictureController에서 함 
+		EditMainPictureVO editMainPictureVO1 = new EditMainPictureVO();
+		EditMainPictureVO editMainPictureVO2 = new EditMainPictureVO();
+		EditMainPictureVO editMainPictureVO3 = new EditMainPictureVO();
+		EditMainPictureVO editMainPictureVO4 = new EditMainPictureVO();
+
+
+		editMainPictureVO1 = editMainPictureService.select1();
+		editMainPictureVO2 = editMainPictureService.select2();
+		editMainPictureVO3 = editMainPictureService.select3();
+		editMainPictureVO4 = editMainPictureService.select4();
+
+		if(log.isDebugEnabled()) {
+			log.debug("파일파일 " + editMainPictureVO1.getFilename());
+		}
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("mobileMain");
+		mav.addObject("count",count);
+		mav.addObject("list",list);
+		mav.addObject("pagingHtml",page.getPagingHtml());
+		mav.addObject("editMainPictureVO1",editMainPictureVO1);
+		mav.addObject("editMainPictureVO2",editMainPictureVO2);
+		mav.addObject("editMainPictureVO3",editMainPictureVO3);
+		mav.addObject("editMainPictureVO4",editMainPictureVO4);
+
+		return mav;
+	}
+
+	//	@RequestMapping(value="/ClubQA/QAmainForm.do", method=RequestMethod.GET)
+	//	public String QAform() {
+	//		return "QAmain";
+	//	}
+
 	@RequestMapping("/main/introduce.do")
 	public String introduce() {
 		return "introduce";
 	}
-	
-	
+
+
 }
