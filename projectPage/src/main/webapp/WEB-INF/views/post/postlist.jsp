@@ -170,81 +170,6 @@ form#search_form ul.search li input[type="search"]{
 </div>
 
 
-<div style="text-align: left; margin: auto;">
-  <a style="font-size: 0.8rem;" class="waves-effect waves-light btn modal-trigger teal lighten-3" href="#modal3">글쓰기</a>
-</div>
-
-  <!-- Modal Trigger -->
-
-  <!-- Modal Structure -->
-  <div id="modal3" class="modal modal-fixed-footer" style="width=80% !important">
-    <div class="modal-content">
-      <h4>후기 글 작성</h4>
-      
-      
-      <form:form action="postwrite.do" enctype="multipart/form-data"
-		commandName="postVO">
-		
-	<table id="postWrite" class="table table-bordered">
-			<tbody>
-
-				<tr>
-					<th scope="row"><label for="category">게시물 유형</label></th>
-					<td scope="row">
-
-						<p>
-							<label> 
-							<input name="post_category" type="radio" value="join" />
-						 	<span>참여 후기</span>
-						 	</label> 
-						 	<label> 
-						 	<input name="post_category" type="radio" value="movie" />
-						 	<span>영화 후기</span>
-						 	</label>
-							 <c:if test="${user_auth == 4}">
-						 	<label>
-						 	<input name="post_category" type="radio" value="photo" />
-						 	<span>사진 올리기</span>
-						 	</label>	
-						 	</c:if>
-						<form:errors path="post_category" class="text-danger" />
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><label for="title">제목</label></th>
-					<td scope="row"><form:input path="post_title"
-							class="post_title" />
-						<form:errors path="post_title" class="text-danger" /></td>
-				</tr>
-				<tr>
-					<th scope="row"><label for="title">내용</label></th>
-					<td scope="row"><form:textarea path="post_board"
-							class="form-control" rows="10" placeholder=" 내용을 입력해주세요" />
-						<form:errors path="post_board" class="text-danger" /></td>
-				</tr>
-				<tr>
-					<th scope="row"><label for="upload">파일 업로드</label></th>
-					<td class="post_img"><input type="file" name="upload"></td>
-				</tr>
-			</tbody>
-		</table>
-
-
-
-
-	</form:form>
-    </div>
-   		<div class="modal-footer">
-			<button type="submit" class="btn btn-outline-success">작성 완료</button>
-			<button type="button" class="btn btn-outline-success"
-				onclick="location.href='postlist.do'">목록</button>
-		</div>
-  </div>
-
-
-
-
-
 
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -262,15 +187,6 @@ form#search_form ul.search li input[type="search"]{
 	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 	crossorigin="anonymous"></script>
 <script>
-
-function modal3(){
-	
-	var url = "postWrite.do";
-	
-	$("#modal3 .modal").load(url,function() {
-		$("#modal3").modal("show");
-	});
-}
 
 </script>
 
