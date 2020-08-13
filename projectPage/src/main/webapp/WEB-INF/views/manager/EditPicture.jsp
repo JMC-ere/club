@@ -9,6 +9,23 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/manager.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+div.edit_title{
+text-align:center; width:100%;
+}
+div.formform{
+text-align:center;
+width : 90%
+}
+
+div.boxbox{
+display:block;
+margin:0 auto;
+border:1px solid #CCCCCC; 
+width:45%;
+}
+
+</style>
 </head>
 <body>
 
@@ -17,109 +34,149 @@
    
 
  <!-- 첫번째 사진 선택 폼 -->
-<form:form id="upload1" enctype="multipart/form-data" commandName="EditMainPictureVO" >
-   	<br>
-   	   첫번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요<br><br>   
-   <label for="upload">사진선택</label><br> 
-   <input type="hidden" name="picture_order"  value="1"/>
-   <input type="file" name="pic_upload" id="pic_upload"/>
-	<input type="submit" class="waves-effect waves-light btn-small" value="선택한 사진으로 배경 설정하기"
-	onclick="javascript: form.action='pic_process.do';">
-	<input type="submit" value="미리보기 " onclick="javascript: form.action='pic_preview.do';form.target='_blank';">
-   	<br>
+ <div class="edit_title">첫번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요</div> <br><br> 
+ <div class="formform row">
+  <div class="boxbox">
+<form:form id="upload1" enctype="multipart/form-data" commandName="EditMainPictureVO" > 
+  	<input type="hidden" name="picture_order"  value="1"/>
+  	<br><h5>이미지파일 선택</h5><br>
+  	<input type="file" name="pic_upload" id="pic_upload"/><br>
+   <br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-3" value="미리보기 " 
+   onclick="javascript: form.action='pic_preview.do';form.target='_blank';"
+   style="width:80%;">
+	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='pic_process.do';" style="width:80%;">	
+   	<br><br>	
   </form:form>
+  </div>
+  
 	<!-- 첫번째 사진 선택 폼 끝 -->
   
   	<!-- 첫번째 사진 url 등록 폼 -->
+  	<div class="boxbox">
   <form method="get" name="form" id="upload2">
   <input type="hidden" name="picture_order"  value="1"/>
-  <div class="input-field" style="width:30%;">
-   <input type="url" name="filename" placeholder="이미지 url 입력">
-	</div>
-	<input type="submit" class="waves-effect waves-light btn-small" value="입력한 링크로 배경 설정하기"
-	onclick="javascript: form.action='url_process.do';"/>
-	<input type="submit" value="미리보기 " onclick="javascript: form.action='url_preview.do';form.target='_blank';">
+ 	<br><h5>이미지 URL 입력</h5><br>
+   <input type="url" name="filename" placeholder="예)https://www.example.com/photo/08/13/picture.jpg" style="width:90%;">
+	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-3" value="미리보기 " 
+   onclick="javascript: form.action='url_preview.do';form.target='_blank';"
+   style="width:80%;">
+	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='url_process.do';" style="width:80%;margin-bottom:10px;">	
+   	<br><br>
    	</form>
-   	<!-- 첫번째 사진 url 등록 폼 -->
-   
+   	</div></div>
+   	<!-- 첫번째 사진 url 등록 폼 끝 -->
    	
- <!-- 두번째 사진 선택 폼 -->
-   	<br><br><br><hr width=80% color=CCCCCC><br><br><br>
-<form:form id="upload3" action="pic_process.do" enctype="multipart/form-data" commandName="EditMainPictureVO" >
-   	   두번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요<br><br>   
-   <label for="upload">사진선택</label><br> 
-   <input type="hidden" name="picture_order"  value="2"/>
-   <input type="file" name="pic_upload" id="pic_upload"/>
-	<input type="submit" class="waves-effect waves-light btn-small" value="선택한 사진으로 배경 설정하기"
-	onclick="javascript: form.action='pic_process.do';">
-	<input type="submit" value="미리보기 " onclick="javascript: form.action='pic_preview.do';form.target='_blank';">
-   	<br>
+   	<br><br><hr width="90%" color="green"><br><br>
+   	
+  <!-- 두번째 사진 선택 폼 -->
+ <div class="edit_title">두번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요</div> <br><br> 
+ <div class="formform row">
+  <div class="boxbox">
+<form:form id="upload3" enctype="multipart/form-data" commandName="EditMainPictureVO" > 
+  	<input type="hidden" name="picture_order"  value="1"/>
+  	<br><h5>이미지파일 선택</h5><br>
+  	<input type="file" name="pic_upload" id="pic_upload"/><br>
+   <br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-3" value="미리보기 " 
+   onclick="javascript: form.action='pic_preview.do';form.target='_blank';"
+   style="width:80%;">
+	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='pic_process.do';" style="width:80%;">	
+   	<br><br>	
   </form:form>
-  	<!-- 두번째 사진 선택 폼 끝 -->
+  </div>
+  
+	<!-- 두번째 사진 선택 폼 끝 -->
   
   	<!-- 두번째 사진 url 등록 폼 -->
-  <form id="upload4" action="url_process.do" method="post">
-  <input type="hidden" name="picture_order"  value="2"/>
-  <div class="input-field" style="width:30%;">
-   <input type="url" name="filename" placeholder="이미지 url 입력">
-	</div>
-	<input type="submit" class="waves-effect waves-light btn-small" value="입력한 링크로 배경 설정하기"
-	onclick="javascript: form.action='url_process.do';"/>
-	<input type="submit" value="미리보기 " onclick="javascript: form.action='url_preview.do';form.target='_blank';">
+  	<div class="boxbox">
+  <form method="get" name="form" id="upload4">
+  <input type="hidden" name="picture_order"  value="1"/>
+ 	<br><h5>이미지 URL 입력</h5><br>
+   <input type="url" name="filename" placeholder="예)https://www.example.com/photo/08/13/picture.jpg" style="width:90%;">
+	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-3" value="미리보기 " 
+   onclick="javascript: form.action='url_preview.do';form.target='_blank';"
+   style="width:80%;">
+	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='url_process.do';" style="width:80%;margin-bottom:10px;">	
+   	<br><br>
    	</form>
-   	<!-- 두번째 사진 url 등록 폼 -->
+   	</div></div>
+   	<!-- 두번째 사진 url 등록 폼 끝 -->
    	
+   	  	<br><br><hr width="90%" color="green"><br><br>
    	
-<!-- 세번째 사진 선택 폼 -->
-   	   	<br><br><br><hr width=80% color=CCCCCC><br><br><br>
-<form:form id="upload5" action="pic_process.do" enctype="multipart/form-data" commandName="EditMainPictureVO" >
-   	   세번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요<br><br>   
-   <label for="upload">사진선택</label><br> 
-   <input type="hidden" name="picture_order"  value="3"/>
-   <input type="file" name="pic_upload" id="pic_upload"/>
-	<input type="submit" class="waves-effect waves-light btn-small" value="선택한 사진으로 배경 설정하기"
-	onclick="javascript: form.action='pic_process.do';">
-	<input type="submit" value="미리보기 " onclick="javascript: form.action='pic_preview.do';form.target='_blank';">
-   	<br>
+  <!-- 세번째 사진 선택 폼 -->
+ <div class="edit_title">세번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요</div> <br><br> 
+ <div class="formform row">
+  <div class="boxbox">
+<form:form id="upload5" enctype="multipart/form-data" commandName="EditMainPictureVO" > 
+  	<input type="hidden" name="picture_order"  value="1"/>
+  	<br><h5>이미지파일 선택</h5><br>
+  	<input type="file" name="pic_upload" id="pic_upload"/><br>
+   <br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-3" value="미리보기 " 
+   onclick="javascript: form.action='pic_preview.do';form.target='_blank';"
+   style="width:80%;">
+	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='pic_process.do';" style="width:80%;">	
+   	<br><br>	
   </form:form>
-  	<!-- 세번째 사진 선택 폼 끝 -->
+  </div>
+  
+	<!-- 세번째 사진 선택 폼 끝 -->
   
   	<!-- 세번째 사진 url 등록 폼 -->
-  <form id="upload6" action="url_process.do" method="post">
-  <input type="hidden" name="picture_order"  value="3"/>
-  <div class="input-field" style="width:30%;">
-   <input type="url" name="filename" placeholder="이미지 url 입력">
-	</div>
-	<input type="submit" class="waves-effect waves-light btn-small" value="입력한 링크로 배경 설정하기"
-	onclick="javascript: form.action='url_process.do';"/>
-	<input type="submit" value="미리보기 " onclick="javascript: form.action='url_preview.do';form.target='_blank';">
+  	<div class="boxbox">
+  <form method="get" name="form" id="upload6">
+  <input type="hidden" name="picture_order"  value="1"/>
+ 	<br><h5>이미지 URL 입력</h5><br>
+   <input type="url" name="filename" placeholder="예)https://www.example.com/photo/08/13/picture.jpg" style="width:90%;">
+	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-3" value="미리보기 " 
+   onclick="javascript: form.action='url_preview.do';form.target='_blank';"
+   style="width:80%;">
+	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='url_process.do';" style="width:80%;margin-bottom:10px;">	
+   	<br><br>
    	</form>
-   	<!-- 세번째 사진 url 등록 폼 -->
+   	</div></div>
+   	<!-- 세번째 사진 url 등록 폼 끝 -->
    	
-<!-- 네번째사진 선택 폼 -->
-<br><br><br><hr width=80% color=CCCCCC><br><br><br>
-<form:form id="upload7" action="pic_process.do" enctype="multipart/form-data" commandName="EditMainPictureVO" >
-   	   네번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요<br><br>   
-   <label for="upload">사진선택</label><br> 
-   <input type="hidden" name="picture_order"  value="4"/>
-   <input type="file" name="pic_upload" id="pic_upload"/>
-	<input type="submit" class="waves-effect waves-light btn-small" value="선택한 사진으로 배경 설정하기"
-	onclick="javascript: form.action='pic_process.do';">
-	<input type="submit" value="미리보기 " onclick="javascript: form.action='pic_preview.do';form.target='_blank';">
-   	<br>
+   	  	<br><br><hr width="90%" color="green"><br><br>
+   	
+  <!-- 네번째 사진 선택 폼 -->
+ <div class="edit_title">네번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요</div> <br><br> 
+ <div class="formform row">
+  <div class="boxbox">
+<form:form id="upload7" enctype="multipart/form-data" commandName="EditMainPictureVO" > 
+  	<input type="hidden" name="picture_order"  value="1"/>
+  	<br><h5>이미지파일 선택</h5><br>
+  	<input type="file" name="pic_upload" id="pic_upload"/><br>
+   <br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-3" value="미리보기 " 
+   onclick="javascript: form.action='pic_preview.do';form.target='_blank';"
+   style="width:80%;">
+	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='pic_process.do';" style="width:80%;">	
+   	<br><br>	
   </form:form>
-  	<!-- 네번째 사진 선택 폼 끝 -->
+  </div>
+  
+	<!-- 네번째 사진 선택 폼 끝 -->
   
   	<!-- 네번째 사진 url 등록 폼 -->
-  <form id="upload8" action="url_process.do" method="post">
-  <input type="hidden" name="picture_order"  value="4"/>
-  <div class="input-field" style="width:30%;">
-   <input type="url" name="filename" placeholder="이미지 url 입력">
-	</div>
-	<input type="submit" class="waves-effect waves-light btn-small" value="입력한 링크로 배경 설정하기"
-	onclick="javascript: form.action='url_process.do';"/>
-	<input type="submit" value="미리보기 " onclick="javascript: form.action='url_preview.do';form.target='_blank';">
+  	<div class="boxbox">
+  <form method="get" name="form" id="upload8">
+  <input type="hidden" name="picture_order"  value="1"/>
+ 	<br><h5>이미지 URL 입력</h5><br>
+   <input type="url" name="filename" placeholder="예)https://www.example.com/photo/08/13/picture.jpg" style="width:90%;">
+	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-3" value="미리보기 " 
+   onclick="javascript: form.action='url_preview.do';form.target='_blank';"
+   style="width:80%;">
+	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='url_process.do';" style="width:80%;margin-bottom:10px;">	
+   	<br><br>
    	</form>
+   	</div></div>
    	<!-- 네번째 사진 url 등록 폼 -->
 </body>
 <script>
