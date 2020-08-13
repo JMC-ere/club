@@ -72,7 +72,7 @@
 
 p.skipboard{
 	white-space: nowrap;
-	width: 800px;
+	width: 100px;
     overflow:hidden;
     text-overflow: ellipsis;
 }
