@@ -77,7 +77,7 @@
 				</c:if>	
 				<c:if test="${!empty user_num}">
 				<div class="btnSet" style='float: right;'>
-				<input type="button" class="btn" onclick="location.href='${pageContext.request.contextPath}/ClubQA/QA1_1/QA1_1_write.do'" value="글쓰기" >
+				<input type="button" class="btn" onclick="location.href='${pageContext.request.contextPath}/ClubQA/QAlist/QAlist_write.do'" value="글쓰기" >
 				</div>
 				</c:if>
 				<h1><br></h1>

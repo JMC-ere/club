@@ -42,6 +42,7 @@
 		</div>
 		</c:forEach>
 		<!-- collapse 끝 -->
+		<div class="align-center">${pagingHtml}</div>	
 		<c:if test="${ user_auth > 3 }">
 		<div class="qamain_button">
 		<button type="button" class="btn" onclick="location.href='${pageContext.request.contextPath}/ClubQA/QAmain_write.do'">자주하는 질문 추가하기</button>

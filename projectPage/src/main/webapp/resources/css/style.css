@@ -178,11 +178,7 @@
   	margin-left: 5px;
 }
 
-.collapsible active{
-	background-color: white;
-}
-
-.active:after {
+.collapsible .active::after {
   content: "\002D";
 }
 
