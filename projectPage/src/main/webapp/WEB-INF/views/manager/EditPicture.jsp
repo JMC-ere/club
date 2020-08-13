@@ -41,11 +41,11 @@ width:45%;
   	<input type="hidden" name="picture_order"  value="1"/>
   	<br><h5>이미지파일 선택</h5><br>
   	<input type="file" name="pic_upload" id="pic_upload"/><br>
-   <br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-3" value="미리보기 " 
+   <br><br><input type="submit" class="btn-small lime lighten-3" value="미리보기" 
    onclick="javascript: form.action='pic_preview.do';form.target='_blank';"
-   style="width:80%;">
-	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
-	onclick="javascript: form.action='pic_process.do';" style="width:80%;">	
+   style="width:80%; color:black;">
+	<br><br><input type="submit" class="btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='pic_process.do';" style="width:80%;color:black;">	
    	<br><br>	
   </form:form>
   </div>
@@ -58,11 +58,11 @@ width:45%;
   <input type="hidden" name="picture_order"  value="1"/>
  	<br><h5>이미지 URL 입력</h5><br>
    <input type="url" name="filename" placeholder="예)https://www.example.com/photo/08/13/picture.jpg" style="width:90%;">
-	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-3" value="미리보기 " 
+	<br><br><input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='url_preview.do';form.target='_blank';"
-   style="width:80%;">
-	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
-	onclick="javascript: form.action='url_process.do';" style="width:80%;margin-bottom:10px;">	
+   style="width:80%;color:black;">
+	<br><br><input type="submit" class="btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='url_process.do';" style="width:80%;margin-bottom:10px;color:black;">	
    	<br><br>
    	</form>
    	</div></div>
@@ -78,11 +78,11 @@ width:45%;
   	<input type="hidden" name="picture_order"  value="1"/>
   	<br><h5>이미지파일 선택</h5><br>
   	<input type="file" name="pic_upload" id="pic_upload"/><br>
-   <br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-3" value="미리보기 " 
+   <br><br><input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='pic_preview.do';form.target='_blank';"
-   style="width:80%;">
-	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
-	onclick="javascript: form.action='pic_process.do';" style="width:80%;">	
+   style="width:80%;color:black;">
+	<br><br><input type="submit" class="btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='pic_process.do';" style="width:80%;color:black;">	
    	<br><br>	
   </form:form>
   </div>
@@ -95,11 +95,11 @@ width:45%;
   <input type="hidden" name="picture_order"  value="1"/>
  	<br><h5>이미지 URL 입력</h5><br>
    <input type="url" name="filename" placeholder="예)https://www.example.com/photo/08/13/picture.jpg" style="width:90%;">
-	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-3" value="미리보기 " 
+	<br><br><input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='url_preview.do';form.target='_blank';"
-   style="width:80%;">
-	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
-	onclick="javascript: form.action='url_process.do';" style="width:80%;margin-bottom:10px;">	
+   style="width:80%;color:black;">
+	<br><br><input type="submit" class="btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='url_process.do';" style="width:80%;margin-bottom:10px;color:black;">	
    	<br><br>
    	</form>
    	</div></div>
@@ -115,11 +115,11 @@ width:45%;
   	<input type="hidden" name="picture_order"  value="1"/>
   	<br><h5>이미지파일 선택</h5><br>
   	<input type="file" name="pic_upload" id="pic_upload"/><br>
-   <br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-3" value="미리보기 " 
+   <br><br><input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='pic_preview.do';form.target='_blank';"
-   style="width:80%;">
-	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
-	onclick="javascript: form.action='pic_process.do';" style="width:80%;">	
+   style="width:80%;color:black;">
+	<br><br><input type="submit" class="btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='pic_process.do';" style="width:80%;color:black;">	
    	<br><br>	
   </form:form>
   </div>
@@ -132,11 +132,11 @@ width:45%;
   <input type="hidden" name="picture_order"  value="1"/>
  	<br><h5>이미지 URL 입력</h5><br>
    <input type="url" name="filename" placeholder="예)https://www.example.com/photo/08/13/picture.jpg" style="width:90%;">
-	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-3" value="미리보기 " 
+	<br><br><input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='url_preview.do';form.target='_blank';"
-   style="width:80%;">
-	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
-	onclick="javascript: form.action='url_process.do';" style="width:80%;margin-bottom:10px;">	
+   style="width:80%;color:black;">
+	<br><br><input type="submit" class="btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='url_process.do';" style="width:80%;margin-bottom:10px;color:black;">	
    	<br><br>
    	</form>
    	</div></div>
@@ -152,11 +152,11 @@ width:45%;
   	<input type="hidden" name="picture_order"  value="1"/>
   	<br><h5>이미지파일 선택</h5><br>
   	<input type="file" name="pic_upload" id="pic_upload"/><br>
-   <br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-3" value="미리보기 " 
+   <br><br><input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='pic_preview.do';form.target='_blank';"
-   style="width:80%;">
-	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
-	onclick="javascript: form.action='pic_process.do';" style="width:80%;">	
+   style="width:80%;color:black;">
+	<br><br><input type="submit" class="btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='pic_process.do';" style="width:80%;color:black;">	
    	<br><br>	
   </form:form>
   </div>
@@ -169,11 +169,11 @@ width:45%;
   <input type="hidden" name="picture_order"  value="1"/>
  	<br><h5>이미지 URL 입력</h5><br>
    <input type="url" name="filename" placeholder="예)https://www.example.com/photo/08/13/picture.jpg" style="width:90%;">
-	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-3" value="미리보기 " 
+	<br><br><input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='url_preview.do';form.target='_blank';"
-   style="width:80%;">
-	<br><br><input type="submit" class="waves-effect waves-light btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
-	onclick="javascript: form.action='url_process.do';" style="width:80%;margin-bottom:10px;">	
+   style="width:80%;color:black;">
+	<br><br><input type="submit" class="btn-small lime lighten-2" value="선택한 사진으로 배경 설정하기"
+	onclick="javascript: form.action='url_process.do';" style="width:80%;margin-bottom:10px;color:black;">	
    	<br><br>
    	</form>
    	</div></div>
