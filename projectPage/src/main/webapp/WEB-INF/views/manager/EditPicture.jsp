@@ -38,9 +38,9 @@ width:45%;
  <div class="formform row">
   <div class="boxbox">
 <form:form id="upload1" enctype="multipart/form-data" commandName="EditMainPictureVO" > 
-  	<input type="hidden" name="picture_order"  value="1"/>
+  	<input type="hidden" name="picture_order" value="1"/>
   	<br><h5>이미지파일 선택</h5><br>
-  	<input type="file" name="pic_upload" id="pic_upload"/><br>
+  	<input type="file" name="pic_upload" id="file1"/><br>
    <br><br><input type="submit" class="btn-small lime lighten-3" value="미리보기" 
    onclick="javascript: form.action='pic_preview.do';form.target='_blank';"
    style="width:80%; color:black;">
@@ -57,7 +57,7 @@ width:45%;
   <form method="get" name="form" id="upload2">
   <input type="hidden" name="picture_order"  value="1"/>
  	<br><h5>이미지 URL 입력</h5><br>
-   <input type="url" name="filename" placeholder="예)https://www.example.com/photo/08/13/picture.jpg" style="width:90%;">
+   <input type="url" name="filename" id="url1"placeholder="예)https://www.example.com/photo/08/13/picture.jpg" style="width:90%;">
 	<br><br><input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='url_preview.do';form.target='_blank';"
    style="width:80%;color:black;">
@@ -75,9 +75,9 @@ width:45%;
  <div class="formform row">
   <div class="boxbox">
 <form:form id="upload3" enctype="multipart/form-data" commandName="EditMainPictureVO" > 
-  	<input type="hidden" name="picture_order"  value="1"/>
+  	<input type="hidden" name="picture_order"  value="2"/>
   	<br><h5>이미지파일 선택</h5><br>
-  	<input type="file" name="pic_upload" id="pic_upload"/><br>
+  	<input type="file" name="pic_upload" id="file2"/><br>
    <br><br><input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='pic_preview.do';form.target='_blank';"
    style="width:80%;color:black;">
@@ -92,9 +92,9 @@ width:45%;
   	<!-- 두번째 사진 url 등록 폼 -->
   	<div class="boxbox">
   <form method="get" name="form" id="upload4">
-  <input type="hidden" name="picture_order"  value="1"/>
+  <input type="hidden" name="picture_order"  value="2"/>
  	<br><h5>이미지 URL 입력</h5><br>
-   <input type="url" name="filename" placeholder="예)https://www.example.com/photo/08/13/picture.jpg" style="width:90%;">
+   <input type="url" name="filename" id="url2" placeholder="예)https://www.example.com/photo/08/13/picture.jpg" style="width:90%;">
 	<br><br><input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='url_preview.do';form.target='_blank';"
    style="width:80%;color:black;">
@@ -112,9 +112,9 @@ width:45%;
  <div class="formform row">
   <div class="boxbox">
 <form:form id="upload5" enctype="multipart/form-data" commandName="EditMainPictureVO" > 
-  	<input type="hidden" name="picture_order"  value="1"/>
+  	<input type="hidden" name="picture_order"  value="3"/>
   	<br><h5>이미지파일 선택</h5><br>
-  	<input type="file" name="pic_upload" id="pic_upload"/><br>
+  	<input type="file" name="pic_upload" id="file3"/><br>
    <br><br><input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='pic_preview.do';form.target='_blank';"
    style="width:80%;color:black;">
@@ -129,9 +129,9 @@ width:45%;
   	<!-- 세번째 사진 url 등록 폼 -->
   	<div class="boxbox">
   <form method="get" name="form" id="upload6">
-  <input type="hidden" name="picture_order"  value="1"/>
+  <input type="hidden" name="picture_order"  value="3"/>
  	<br><h5>이미지 URL 입력</h5><br>
-   <input type="url" name="filename" placeholder="예)https://www.example.com/photo/08/13/picture.jpg" style="width:90%;">
+   <input type="url" name="filename" id="url3" placeholder="예)https://www.example.com/photo/08/13/picture.jpg" style="width:90%;">
 	<br><br><input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='url_preview.do';form.target='_blank';"
    style="width:80%;color:black;">
@@ -149,9 +149,9 @@ width:45%;
  <div class="formform row">
   <div class="boxbox">
 <form:form id="upload7" enctype="multipart/form-data" commandName="EditMainPictureVO" > 
-  	<input type="hidden" name="picture_order"  value="1"/>
+  	<input type="hidden" name="picture_order"  value="4"/>
   	<br><h5>이미지파일 선택</h5><br>
-  	<input type="file" name="pic_upload" id="pic_upload"/><br>
+  	<input type="file" name="pic_upload" id="file4"/><br>
    <br><br><input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='pic_preview.do';form.target='_blank';"
    style="width:80%;color:black;">
@@ -166,9 +166,9 @@ width:45%;
   	<!-- 네번째 사진 url 등록 폼 -->
   	<div class="boxbox">
   <form method="get" name="form" id="upload8">
-  <input type="hidden" name="picture_order"  value="1"/>
+  <input type="hidden" name="picture_order"  value="4"/>
  	<br><h5>이미지 URL 입력</h5><br>
-   <input type="url" name="filename" placeholder="예)https://www.example.com/photo/08/13/picture.jpg" style="width:90%;">
+   <input type="url" name="filename" id="url4" placeholder="예)https://www.example.com/photo/08/13/picture.jpg" style="width:90%;">
 	<br><br><input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='url_preview.do';form.target='_blank';"
    style="width:80%;color:black;">
@@ -180,64 +180,64 @@ width:45%;
    	<!-- 네번째 사진 url 등록 폼 -->
 </body>
 <script>
-$(document).ready(function(){
+
 	$('#upload1').submit(function(){
-		if($('input[type="file"]').val()==''){
+		if($('input[id="file1"]').val()==''){
 			alert('파일을 선택하세요');
 			return false;
 		};
 	});
 	
 	$('#upload2').submit(function(){
-		if($('input[name="filename"]').val()==''){
+		if($('input[id="url1"]').val()==''){
 			alert('이미지 URL을 입력하세요');
 			return false;
 		};
 	});
 	
 	$('#upload3').submit(function(){
-		if($('input[type="file"]').val()==''){
+		if($('input[id="file2"]').val()==''){
 			alert('파일을 선택하세요');
 			return false;
 		};
 	});
 	
 	$('#upload4').submit(function(){
-		if($('input[name="filename"]').val()==''){
+		if($('input[id="url2"]').val()==''){
 			alert('이미지 URL을 입력하세요');
 			return false;
 		};
 	});
 	
 	$('#upload5').submit(function(){
-		if($('input[type="file"]').val()==''){
+		if($('input[id="file3"]').val()==''){
 			alert('파일을 선택하세요');
 			return false;
 		};
 	});
 	
 	$('#upload6').submit(function(){
-		if($('input[name="filename"]').val()==''){
+		if($('input[id="url3"]').val()==''){
 			alert('이미지 URL을 입력하세요');
 			return false;
 		};
 	});
 	
 	$('#upload7').submit(function(){
-		if($('input[type="file"]').val()==''){
+		if($('input[id="file4"]').val()==''){
 			alert('파일을 선택하세요');
 			return false;
 		};
 	});
 	
 	$('#upload8').submit(function(){
-		if($('input[name="filename"]').val()==''){
+		if($('input[id="url4"]').val()==''){
 			alert('이미지 URL을 입력하세요');
 			return false;
 		};
 	});
 	
 	
-});
+
 </script>
 </html>
