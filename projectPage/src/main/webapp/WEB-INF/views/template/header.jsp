@@ -5,6 +5,12 @@
 	#st{
 		width:50%;
 	}
+	.tabs .tab{
+		margin-top:15px;
+	}
+	.tabs .tab a{
+		font-size: 1.8em;
+	}
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -89,7 +95,7 @@
     </div> 
     <!-- 로그인  -->
     <div class="nav-content light-green darken-2 center">
-      <ul class="tabs tabs-transparent"> 
+      <ul class="tabs tabs-transparent" style="height:100px"> 
         <li class="tab"><a href="${pageContext.request.contextPath}/main/main.do">홈</a></li>
         <li class="tab"><a href="${pageContext.request.contextPath}/main/introduce.do">소개</a></li>
         <li class="tab"><a href="${pageContext.request.contextPath}/main/viewclub.do">클럽 현황</a></li>
