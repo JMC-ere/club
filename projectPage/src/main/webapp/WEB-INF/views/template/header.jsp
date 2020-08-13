@@ -75,11 +75,11 @@
 							<span id="msg_passwd"></span>
 						</div>
 					</div>
-					<input type="button" value="취소" class="modal-close waves-effect waves-green btn" onclick="location.href='${pageContext.request.contextPath}/main/main.do'">
-					<input type="submit"  value="로그인" class="modal-close waves-effect waves-green btn"> 
-					<input type="button" value="네이버로 로그인" id="naver_login" class="modal-close waves-effect waves-green btn">
-					<input type="button" value="회원가입" class="modal-close waves-effect waves-green btn" onclick="location.href='${pageContext.request.contextPath}/mypage/register.do'">
-					<input type="button" value="비밀번호 찾기" class="modal-close waves-effect waves-green btn" onclick="location.href='${pageContext.request.contextPath}/mypage/findPasswd.do'">
+					<input type="button" value="취소" class="modal-close btn" onclick="location.href='${pageContext.request.contextPath}/main/main.do'">
+					<input type="submit"  value="로그인" class="modal-close btn"> 
+					<input type="button" value="네이버로 로그인" id="naver_login" class="modal-close btn">
+					<input type="button" value="회원가입" class="modal-close btn" onclick="location.href='${pageContext.request.contextPath}/mypage/register.do'">
+					<input type="button" value="비밀번호 찾기" class="modal-close btn" onclick="location.href='${pageContext.request.contextPath}/mypage/findPasswd.do'">
 				</form>
 			</div>
 			<div class="row">
