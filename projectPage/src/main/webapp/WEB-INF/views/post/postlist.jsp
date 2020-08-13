@@ -142,6 +142,7 @@ form#search_form ul.search li input[type="search"]{
 			<table class="table table-bordered">
 				<thead>
 					<tr>
+						<th>분류</th>
 						<th>제목</th>
 						<th>작성자</th>
 						<th>등록일</th>
@@ -151,6 +152,17 @@ form#search_form ul.search li input[type="search"]{
 				<tbody>
 					<c:forEach var="post" items="${list}">
 						<tr>
+							<td>
+								<c:if test="${post.post_category == 'join'}">
+								참여후기
+								</c:if>
+								<c:if test="${post.post_category == 'movie'}">
+								영화후기
+								</c:if>
+								<c:if test="${post.post_category == 'photo'}">
+								갤러리
+								</c:if>
+							</td>
 							<td><a href="postdetail.do?num=${post.post_num}">${post.post_title}</a></td>
 							<td>${post.mem_id}</td>
 							<td>${post.post_date}</td>
