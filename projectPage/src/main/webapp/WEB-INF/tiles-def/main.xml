@@ -14,9 +14,9 @@
     
     <definition name="mobileMain" template="/WEB-INF/views/mobile_template/layout.jsp">
        <put-attribute name="title" value="++CLUB"/> 
-       <put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
+       <put-attribute name="header" value="/WEB-INF/views/mobile_template/header.jsp"/>
        <put-attribute name="body" value="/WEB-INF/views/main/mobile_main.jsp"/>
-       <put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
+       <put-attribute name="footer" value="/WEB-INF/views/mobile_template/footer.jsp"/>
     </definition>
     
     <definition name="EditPicture" extends="main">
