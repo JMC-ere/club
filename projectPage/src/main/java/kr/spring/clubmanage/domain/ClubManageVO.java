@@ -3,7 +3,7 @@ package kr.spring.clubmanage.domain;
 import java.sql.Date;
 
 
-public class ClubManageVO {
+public class ClubManageVO {  
 	
 	private int club_num;
 	private int mem_num;
