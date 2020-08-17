@@ -22,6 +22,7 @@ public class MemberAjaxController {
 	@Resource
 	private MemberService memberService;
 	
+	//아이디 중복체크
 	@RequestMapping("/mypage/confirmId.do")
 	@ResponseBody
 	public Map<String, String> process(@RequestParam String mem_id){
@@ -45,6 +46,7 @@ public class MemberAjaxController {
 		return map;
 	}
 	
+	//로그인 처리
 	@RequestMapping("/main/mainLogin.do")
 	@ResponseBody
 	public Map<String, String> loginProcess(@RequestParam("mem_id1") String userId,

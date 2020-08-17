@@ -71,6 +71,7 @@ public class MemberEmailCheckController {
 		
 	}
 	
+	//이메일 인증번호 발송
 	@RequestMapping(value="/mypage/emailcheck.do")
 	@ResponseBody
 	public Map<String,String> sendEmailAction(@RequestParam String name, @RequestParam String send_email, HttpSession session) throws Exception{
