@@ -28,8 +28,12 @@ $(document).ready(function(){
 				
 				if(count>0){
 					$('#re_label').text('답변완료');
+					$('#re_submit').hide();
 				}
 				
+				if(count==0) {
+					$('#delete_btn').hide();
+				}
 				rowCount = data.rowCount;
 				var list = data.list;
 				
@@ -49,17 +53,16 @@ $(document).ready(function(){
 						output += '  		<tr class="sub-item">';
 						output += '				<td colspan="4" class="reply_content">' + item.qa_reply_content.replace(/</gi,'&lt;').replace(/>/gi,'&gt;') + '</td>'; 
 						output += '			</tr>';			
-						if($('#user_id').val()==item.mem_num){
-							//로그인 한 id가 댓글 작성자 id와 같으면
-							output += '  <input type="button" data-num="'+item.qa_reply_num+'" data-mem="'+item.mem_num+'" value="수정" class="modify-btn">';
-							output += '  <input type="button" data-num="'+item.qa_reply_num+'" data-mem="'+item.mem_num+'" value="삭제" class="delete-btn">';
-						}
+						if(count > 0) {
+							var re_submit = '  <input type="button" data-num="'+item.qa_reply_num+'" data-mem="'+item.mem_num+'" value="댓글 삭제" id="delete-btn" class="btn" style="float:right;">';
+							}
 						output += '		</table>';
 						output += '</div>';
 						
 												
 						//문서 객체에 추가
 						$('#output').append(output);
+						$('#re_second').append(re_submit);
 					});
 					
 					//paging button 처리
@@ -247,16 +250,16 @@ $(document).ready(function(){
 	});
 	
 	//댓글 삭제
-	$(document).on('click','.delete-btn',function(){
+	$(document).on('click','#delete-btn',function(){
 		//댓글 번호
-		var re_num = $(this).attr('data-num');
+		var qa_reply_num = $(this).attr('data-num');
 		//작성자 아이디
 		var mem_num = $(this).attr('data-mem');
 		
 		$.ajax({
 			type:'post',
 			url:'deleteReply.do',
-			data:{re_num:re_num,mem_num:mem_num},
+			data:{qa_reply_num:qa_reply_num,mem_num:mem_num},
 			dataType:'json',
 			cache:false,
 			timeout:30000,
@@ -276,6 +279,7 @@ $(document).ready(function(){
 				alert('네트워크 오류 발생!');
 			}
 		});
+		window.location.reload();
 	});
 	//초기 데이터(목록) 호출
 	selectData(1,$('#qa1_1num').val());

@@ -55,7 +55,7 @@ $(document).ready(function(){
 						output += '				<td colspan="4" class="reply_content">' + item.qa_reply_content.replace(/</gi,'&lt;').replace(/>/gi,'&gt;') + '</td>'; 
 						output += '			</tr>';			
 						
-							//로그인 한 id가 댓글 작성자 id와 같으면
+							
 						if(count > 0) {
 						var re_submit = '  <input type="button" data-num="'+item.qa_reply_num+'" data-mem="'+item.mem_num+'" value="댓글 삭제" id="delete-btn" class="btn" style="float:right;">';
 						}
