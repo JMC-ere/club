@@ -5,7 +5,7 @@
 
 	
 		<div class="write_main">
-			<form:form action="QAlist_write.do" enctype="multipart/form-data" commandName="clubQAVO">
+			<form:form action="QAlist_write.do" enctype="multipart/form-data" commandName="clubQAVO" onsubmit="return space_check();">
 				<div class="writeform_header">
 					건의 / 신고 글 작성
 				</div>
@@ -42,20 +42,22 @@
 	
 <script>
 
-/*
-$(document).ready(function(){
-	$("#qa_secret").change(function(){
-		if($("#qa_secret").is(":checked")){
-			
-		} else {
-			
+
+	function space_check() {
+		if (!document.getElementById("qa_title").value.replace(
+				/(^\s*)|(\s*$)/gi, "")) {
+			alert("내용을 입력하세요.");
+			document.getElementById("qa_title").focus();
+			return false;
 		}
 		
-		$('#secret_tf').append(secret_tf);
-		
-	});
-}); 
-*/
+		if (!document.getElementById("qa_content").value.replace(
+				/(^\s*)|(\s*$)/gi, "")) {
+			alert("내용을 입력하세요.");
+			document.getElementById("qa_content").focus();
+			return false;
+		}
+	}
 </script>
 
 	

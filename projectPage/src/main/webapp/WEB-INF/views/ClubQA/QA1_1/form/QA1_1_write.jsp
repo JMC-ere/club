@@ -5,7 +5,7 @@
 
 	
 		<div class="write_main">
-			<form:form action="QA1_1_write.do" enctype="multipart/form-data" commandName="clubQA1_1VO">
+			<form:form action="QA1_1_write.do" enctype="multipart/form-data" commandName="clubQA1_1VO" onsubmit="return space_check();">
 				<div class="writeform_header">
 					질문 글 작성
 				</div>
@@ -41,20 +41,23 @@
 	
 <script>
 
-/*
-$(document).ready(function(){
-	$("#qa_secret").change(function(){
-		if($("#qa_secret").is(":checked")){
-			
-		} else {
-			
-		}
-		
-		$('#secret_tf').append(secret_tf);
-		
-	});
-}); 
-*/
+
+function space_check() {
+	if (!document.getElementById("qa1_1title").value.replace(
+			/(^\s*)|(\s*$)/gi, "")) {
+		alert("내용을 입력하세요.");
+		document.getElementById("qa1_1title").focus();
+		return false;
+	}
+	
+	if (!document.getElementById("qa1_1content").value.replace(
+			/(^\s*)|(\s*$)/gi, "")) {
+		alert("내용을 입력하세요.");
+		document.getElementById("qa1_1content").focus();
+		return false;
+	}
+}
+
 </script>
 
 	
