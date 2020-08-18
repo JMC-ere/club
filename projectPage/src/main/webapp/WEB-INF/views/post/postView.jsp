@@ -68,8 +68,8 @@
 		<div>${post.post_board}</div>
 		<hr size="1" width="100%">
 		<div class="align-center">
-			<%-- 작성자만 수정 삭제 버튼이 활성화 됨 --%>
-	 		<c:if test="${user_num == post.mem_num}">
+			<%--관리자와 작성자만 수정 삭제 버튼이 활성화 됨 --%>
+	 		<c:if test="${user_num == notice.mem_num || user_auth == 4}">
 	 			<button type="button" class="btn btn-outline-success" onclick="location.href='postupdate.do?num=${post.post_num}'">글수정</button>
 	 			<button type="button" class="btn btn-outline-success" onclick="location.href='postdelete.do?num=${post.post_num}'">글삭제</button>
 			</c:if>
