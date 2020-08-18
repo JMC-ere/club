@@ -71,7 +71,7 @@
 			<br>
 			<li>
 				<label for="club_detail">클럽 내용</label>&emsp;<form:errors path="club_detail" cssClass="error-color"/>
-				<textarea name="club_detail" id="club_detail"></textarea>
+				<textarea name="club_detail" id="club_detail" placeholder="내용을 입력해주세요."></textarea>
 			</li>
 		</ul>
 		<div class=right>
@@ -85,3 +85,28 @@
 		</div>
 	</form:form>
 </div>
+<script>
+function spacecheck(){
+	/* if(document.getElementByID("club_title").value ==""){
+		alert("공백을 허용하지 않습니다.");
+		return false;
+	}
+	if(document.getElementByID("club_content").value ==""){
+		alert("공백을 허용하지 않습니다.");
+		return false;
+	} */
+	
+	
+}
+
+$('#openclub').submit(function(){
+	if($.trim($('#club_title').val())==""){
+		alert('제목의 공백을 허용하지 않습니다.');
+		return false;
+	}
+	if($.trim($('#club_content').val())==""){
+		alert('내용의 공백을 허용하지 않습니다.');
+		return false;
+	}
+});
+</script>
