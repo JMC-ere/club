@@ -51,14 +51,14 @@ display: block; margin: 0px auto; width:80%;
         </thead>
         <tbody>
 <c:forEach var="member" items="${list}">
-<input type="hidden" name="mem_num" value="${member.mem_num}">
+<input type="hidden" name="mem_num" value="${member.mem_num}" id="mem_num">
 <tr>
 <td>${member.mem_num}</td>
 <td>${member.mem_id}</td>
 <td>${member.detail_name}</td>
 <td>
 <div id="modify_member">
-<select class="browser-default" name="mem_auth">
+<select class="browser-default" name="mem_auth" id="authselect">
 <c:if test="${member.mem_auth==0}">
 	<option value="0" selected>탈퇴회원(현재등급)</option>
 	<option value="1">블랙회원</option>
@@ -87,7 +87,7 @@ display: block; margin: 0px auto; width:80%;
 </div>
 </td>
 <td>
-<div id="modify_member"><input type="number" name="detail_point" min="0" max="10000" value="${member.detail_point}"></div>
+<div id="modify_member"><input type="number" id="point" name="detail_point" min="0" max="10000" value="${member.detail_point}"></div>
 </td>
 <td>${member.detail_date}</td>
 </tr>
@@ -99,5 +99,11 @@ display: block; margin: 0px auto; width:80%;
 			</div>
 </form>
 
+<script>
+
+
+
+
+</script>
 </body>
 </html>

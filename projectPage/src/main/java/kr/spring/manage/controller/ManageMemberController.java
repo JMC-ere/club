@@ -29,6 +29,7 @@ public class ManageMemberController {
 	@Resource
 	private ManageMemberService manageMemberService;
 
+	//회원 목록 표시 
 	@RequestMapping("/main/manage_member.do")
 	public ModelAndView member(@RequestParam(value="pageNum", defaultValue="1") int currentPage,
 						@RequestParam(value="keyfield", defaultValue="") String keyfield,
@@ -47,13 +48,43 @@ public class ManageMemberController {
 		map.put("start", page.getStartCount());
 		map.put("end", page.getEndCount());
 		
-		List<ManageMemberVO> list = null;
-		list = manageMemberService.selectList(map);
+		List<ManageMemberVO> list1 = null; 
+		list1 = manageMemberService.selectList(map); //불러오기 
+		
+		//회원 정보 불러와서 auth와 point 체크하여 point에 맞춰 등급 자동 조정
+		Map<String,Object> updatemap = new HashMap<String,Object>();		
+		int mem_auth;
+		int detail_point;
+		int mem_num;
+		
+		for(int i=0;i<list1.size();i++) {
+			mem_auth=list1.get(i).getMem_auth();
+			detail_point=list1.get(i).getDetail_point();
+			mem_num=list1.get(i).getMem_num();
+			
+			updatemap.put("mem_num",mem_num);
+			
+			if(mem_auth==2 && detail_point>=5000) {
+				updatemap.put("mem_auth",3);
+			}
+			else if(mem_auth==3 && detail_point<5000) {
+				updatemap.put("mem_auth", 2);
+			}
+			else {
+				updatemap.put("mem_auth",mem_auth);
+			}
+			manageMemberService.updateMembership(updatemap);//멤버등급 업데이트 
+		}//for문 끝
+		
+		List<ManageMemberVO> list2 = null; 
+		list2 = manageMemberService.selectList(map); // 업데이트 된 내역 다시 불러오기 
+		
+				
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("manageMember");
 		mav.addObject("count",count);
-		mav.addObject("list",list);
+		mav.addObject("list",list2);
 		mav.addObject("pagingHtml",page.getPagingHtml());
 
 		return mav;
@@ -71,7 +102,7 @@ public class ManageMemberController {
 
 		for(int i=0;i<mem_num.length;i++) {
 		list.add(manageMemberService.modifyList(mem_num[i]));
-
+	
 		}
 		
 		ModelAndView mav = new ModelAndView();
@@ -92,7 +123,7 @@ public class ManageMemberController {
 		for(int i=0;i<mem_num.length;i++) {
 		map1.put("mem_num",mem_num[i]);
 		
-		if(!(mem_auth[i].equals("0"))&&!(mem_auth[i].equals("1"))) {
+		if(!(mem_auth[i].equals("0"))&&!(mem_auth[i].equals("1"))) { //일반회원, 우수회원의 포인트 변경 시 등급 자동변경 
 			if(detail_point[i]>=0&&detail_point[i]<5000) {
 				map1.put("mem_auth",2);
 			}else if(detail_point[i]>=5000) {
@@ -103,7 +134,7 @@ public class ManageMemberController {
 					
 			
 		}
-		manageMemberService.updateMembership(map1);
+		manageMemberService.updateMembership(map1); //멤버 등급 업데이트
 		
 		if(log.isDebugEnabled()) {
 			log.debug("세팅된 등급 : " + mem_auth[i]);
@@ -117,7 +148,7 @@ public class ManageMemberController {
 		for(int i=0;i<mem_num.length;i++) {
 		map2.put("mem_num",mem_num[i]);
 		map2.put("detail_point",detail_point[i]);
-		manageMemberService.updatePoint(map2);
+		manageMemberService.updatePoint(map2); //멤버 포인트 업데이트 
 		}
 		
 		
