@@ -13,7 +13,6 @@ public class ClubQAReplyVO {
 	private int qa1_1num;
 	
 	
-	
 	public int getQa1_1num() {
 		return qa1_1num;
 	}
