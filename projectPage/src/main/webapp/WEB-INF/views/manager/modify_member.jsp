@@ -93,10 +93,17 @@ display: block; margin: 0px auto; width:80%;
 </tr>
 </c:forEach>
 </tbody></table><br>
-<div style="text-align:right;">
+<div class="row">
+<div style="width:70%"><font style="color:red;"><b>※ 일반, 우수 등급으로 변경시 회원 포인트를 맞게 입력해야 등급 변경이 가능<br>
+(포인트만 변경하는 경우 등급은 자동 변경)</b><br>
+일반회원 : 0~4999 point <br>
+우수회원 : 5000~10000 point </font></div>
+<div style="width:30%;text-align:right;">
 	<button class="btn waves-effect waves-light" type="submit"
-			name="action2">완료</button></div><br>
+			name="action2">변경완료</button></div><br>
 			</div>
+			
+			</div> 
 </form>
 
 <script>
