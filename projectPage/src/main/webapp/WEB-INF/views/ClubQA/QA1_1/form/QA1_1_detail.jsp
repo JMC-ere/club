@@ -54,7 +54,7 @@
 			id="qa_reply_content" class="rep-content"
 			<c:if test="${empty user_num}">disabled="disabled"</c:if>><c:if
 				test="${!empty user_num && user_auth < 4}">관리자만 작성할 수 있습니다.</c:if></textarea>
-		<c:if test="${!empty user_num}">
+		<c:if test="${!empty user_num && user_auth > 3}">
 			<div id="re_second" class="re_submit">
 				<input type="submit" id="re_submit" class="btn" value="전송" style="display:inline;">
 				
