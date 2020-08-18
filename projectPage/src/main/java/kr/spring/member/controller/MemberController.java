@@ -1,5 +1,8 @@
 package kr.spring.member.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.spring.manage.service.ManageMemberService;
 import kr.spring.member.domain.MemberVO;
 import kr.spring.member.service.MemberService;
 
@@ -23,6 +27,8 @@ public class MemberController {
 	
 	@Resource
 	MemberService memberService;
+	@Resource
+	ManageMemberService manageMemberService;
 	
 	//자바빈 초기화
 	@ModelAttribute
@@ -85,6 +91,29 @@ public class MemberController {
 		
 		int mem_num = (Integer)session.getAttribute("user_num");
 		MemberVO member = memberService.selectMember(mem_num);
+		
+		//회원 정보 불러오면 auth와 point 체크하여 point에 맞춰 등급 자동 조정 DB업데이트
+		Map<String,Object> updatemap = new HashMap<String,Object>();
+		int mem_auth;
+		int detail_point;
+		updatemap.put("mem_num", mem_num);
+		
+		mem_auth=member.getMem_auth();
+		detail_point=member.getDetail_point();
+		
+		if(mem_auth==3 && detail_point<5000) {
+			updatemap.put("mem_auth", 2);
+		}
+		else if(mem_auth==2 && detail_point>=5000) {
+			updatemap.put("mem_auth", 3);
+		}else {
+			updatemap.put("mem_auth", mem_auth);
+		}
+		
+		manageMemberService.updateMembership(updatemap);
+		
+		//업데이트 된 내용 다시불러오기
+		member = memberService.selectMember(mem_num);
 		
 		model.addAttribute("member", member);
 		
