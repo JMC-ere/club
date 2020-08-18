@@ -99,7 +99,7 @@ display: block; margin: 0px auto; width:80%;
 일반회원 : 0~4999 point <br>
 우수회원 : 5000~10000 point </font></div>
 <div style="width:30%;text-align:right;">
-	<button class="btn waves-effect waves-light" type="submit"
+	<button class="btn" type="submit"
 			name="action2">변경완료</button></div><br>
 			</div>
 			

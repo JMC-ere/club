@@ -100,9 +100,10 @@ display: block; margin: 0px auto; width:80%;
 		<c:forEach var="member" items="${list}">
 		<tr>
 		<td>
-		<label> 
+		<label>
+			<c:if test="${member.mem_auth!=4}">
 			<input type="checkbox" class="filled-in memcheck" 
-		     name="mem_num" value="${member.mem_num}">
+		     name="mem_num" value="${member.mem_num}"></c:if>
 			<span style="color: black">　</td>
 				<td>${member.mem_num}</td>
 				<td>${member.mem_id}</td>
