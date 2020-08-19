@@ -9,9 +9,9 @@
 		max-height:220px;
 	}
 </style>
-<div class="container">
+<div class="container center">
 	<br>
-	<h4>현재 진행중인 클럽</h4>
+	<h3>[현재 진행중인 클럽]</h3>
 	<div class="row">
 		<c:forEach var="club" items="${list}">
 		<div class="col-sm-6 col-lg-4">
