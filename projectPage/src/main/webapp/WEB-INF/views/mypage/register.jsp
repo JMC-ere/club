@@ -66,10 +66,10 @@
 <script type="text/javascript">
 	var checkId = 0;
 	var checkEmail = 0;
-
+	
 	//아이디 중복 체크
 	$('#confirmId').click(function(){
-			 if($('#mem_id').val()==''){
+			 if($.trim($('#mem_id').val())==''){
 				$('#message_id').css('color','red').text('아이디를 입력하세요.');
 				return;
 			}else{
