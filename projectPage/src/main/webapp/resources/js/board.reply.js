@@ -63,7 +63,7 @@ $(document).ready(function(){
 						output += '</div>';
 						
 												
-						//문서 객체에 추가
+						//문서 객체에 추가	
 						$('#output').append(output);
 						$('#re_second').append(re_submit);
 					});

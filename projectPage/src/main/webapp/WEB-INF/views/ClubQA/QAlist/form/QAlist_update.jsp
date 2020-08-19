@@ -20,22 +20,12 @@
 						</tr>
 						<tr>
 							<th scope="row"><label for="qa_content">내용</label></th>
-							<td class="qa_content"><form:textarea class="qa_content" path="qa_content" rows="10" cols="100%" placeholder=" 내용을 입력해주세요" style="resize: vertical; overflow: auto;"/></td>
+							<td class="qa_content"><form:textarea class="qa_content" path="qa_content" value="${clubqa.qa_content}" rows="10" cols="100%" placeholder=" 내용을 입력해주세요" style="resize: vertical; overflow: auto;"/></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="qa_secret"><input type="checkbox" name="qa_secret" id="qa_secret"><span>비밀글</span></label></th>
 							<td class="secret_tf"><form:input path="qa_secret_key" maxlength="4" value="${clubqa.qa_secret_key}" placeholder="비밀번호 4자리를 입력해주세요"/></td>
 						</tr> 
-						<tr>
-							<th scope="row"><label for="file">파일 업로드</label></th>
-							<td class="file"><input type="file" name="file">
-							<c:if test="${!empty clubqa.qa_filename}">
-							<br>
-							<span>(${clubqa.qa_filename})파일이 등록되어 있습니다.
-							다시 업로드하면 기존 파일은 삭제됩니다.</span>
-							</c:if>
-							</td>
-						</tr>
 					</tbody>
 				</table>
 				<div class="btnSet">

@@ -20,7 +20,7 @@
 						</tr>
 						<tr>
 							<th scope="row"><label for="qa_content">내용</label></th>
-							<td class="qa_content"><form:textarea class="qa_content" path="qa1_1content" rows="10" cols="100%" placeholder=" 내용을 입력해주세요" style="resize: vertical; overflow: auto;"/></td>
+							<td class="qa_content"><form:textarea class="qa_content" path="qa1_1content" rows="10" cols="100%" value="${clubqa.qa1_1content}" style="resize: vertical; overflow: auto;"/></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="qa_secret">비밀글</label></th>
