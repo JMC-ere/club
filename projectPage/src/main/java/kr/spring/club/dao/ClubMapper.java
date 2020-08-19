@@ -24,11 +24,11 @@ public interface ClubMapper {
 	
 	@Select("SELECT COUNT (*) FROM club c JOIN member m ON c.mem_num=m.mem_num AND club_state = 2")
 	public int listRowCount();
-	@Select("SELECT * FROM (SELECT a.*, rownum rnum FROM (SELECT * FROM club c JOIN member m ON c.mem_num=m.mem_num ORDER BY c.club_num DESC) a) WHERE club_state = 2 AND club_end+1>=sysdate AND rnum >=#{start} AND rnum <=#{end}")
-	public List<ClubVO> mainList(Map<String,Object> map);
+	@Select("SELECT * FROM (SELECT a.* FROM (SELECT * FROM club c JOIN member m ON c.mem_num=m.mem_num ORDER BY c.club_num DESC) a) WHERE club_state = 2 AND club_end+1>=sysdate")
+	public List<ClubVO> mainList();
 	
 	@Insert("INSERT INTO joinclub (join_num,club_num,mem_num) VALUES (joinclub_seq.nextval,#{club_num},#{mem_num})")
 	public void joinClubInsert(@Param("club_num") Integer club_num, @Param("mem_num") Integer mem_num);
 	
-	public List<ClubVO> genreList(Map<String,Object> map);
+	public List<ClubVO> genreList();
 }

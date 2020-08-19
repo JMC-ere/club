@@ -15,9 +15,9 @@ public interface ClubService {
 	public void delete(Integer club);
 	
 	public int listRowCount();
-	public List<ClubVO> mainList(Map<String,Object> map);
+	public List<ClubVO> mainList();
 	
 	public void joinClubInsert(Integer club_num,Integer mem_num);
 	
-	public List<ClubVO> genreList(Map<String,Object> map);
+	public List<ClubVO> genreList();
 }

@@ -31,24 +31,14 @@ public class MainController {
 
 	//메인페이지
 	@RequestMapping("/main/main.do")
-	public ModelAndView process2(@RequestParam(value="pageNum",defaultValue="1") int currentPage) {
+	public ModelAndView process2() {
 
 		int count = clubService.listRowCount();
-
-		//페이징처리
-		PagingUtil page = new PagingUtil(currentPage,count,rowCount,pageCount,"boardclub.do");
 
 		List<ClubVO> list = null;
 
 		if(count>0) {
-
-			Map<String,Object> map = new HashMap<String,Object>();
-			map.put("start", 1);
-			map.put("end", 100);
-
-			list = clubService.mainList(map);
-			
-			
+			list = clubService.mainList();
 		}
 
 		//메인 이미지 url 가져오기 //파일 표시는 EditMainPictureController에서 함 
@@ -71,7 +61,6 @@ public class MainController {
 		mav.setViewName("main");
 		mav.addObject("count",count);
 		mav.addObject("list",list);
-		mav.addObject("pagingHtml",page.getPagingHtml());
 		mav.addObject("editMainPictureVO1",editMainPictureVO1);
 		mav.addObject("editMainPictureVO2",editMainPictureVO2);
 		mav.addObject("editMainPictureVO3",editMainPictureVO3);
@@ -86,22 +75,14 @@ public class MainController {
 
 	//모바일용 메인페이지
 	@RequestMapping("/main/mobileMain.do")
-	public ModelAndView process3(@RequestParam(value="pageNum",defaultValue="1") int currentPage) {
+	public ModelAndView process3() {
 
 		int count = clubService.listRowCount();
-
-		//페이징처리
-		PagingUtil page = new PagingUtil(currentPage,count,rowCount,pageCount,"boardclub.do");
 
 		List<ClubVO> list = null;
 
 		if(count>0) {
-
-			Map<String,Object> map = new HashMap<String,Object>();
-			map.put("start", 1);
-			map.put("end", 100);
-
-			list = clubService.mainList(map);
+			list = clubService.mainList();
 		}
 
 		//메인 이미지 url 가져오기 //파일 표시는 EditMainPictureController에서 함 
@@ -124,7 +105,6 @@ public class MainController {
 		mav.setViewName("mobileMain");
 		mav.addObject("count",count);
 		mav.addObject("list",list);
-		mav.addObject("pagingHtml",page.getPagingHtml());
 		mav.addObject("editMainPictureVO1",editMainPictureVO1);
 		mav.addObject("editMainPictureVO2",editMainPictureVO2);
 		mav.addObject("editMainPictureVO3",editMainPictureVO3);

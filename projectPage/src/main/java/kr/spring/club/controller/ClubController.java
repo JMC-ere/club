@@ -53,29 +53,20 @@ public class ClubController {
 	
 	//전체클럽 페이지 (클럽메인)
 	@RequestMapping("/main/viewclub.do")
-	public ModelAndView process(@RequestParam(value="pageNum",defaultValue="1") int currentPage) {
+	public ModelAndView process() {
 		
 		int count = clubService.listRowCount();
-		
-		//페이징처리
-		PagingUtil page = new PagingUtil(currentPage,count,rowCount,pageCount,"boardclub.do");
 		
 		List<ClubVO> list = null;
 		
 		if(count>0) {
-			
-			Map<String,Object> map = new HashMap<String,Object>();
-			map.put("start", page.getStartCount());
-			map.put("end", page.getEndCount());
-			
-			list = clubService.mainList(map);
+			list = clubService.mainList();
 		}
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("viewclub");
 		mav.addObject("count",count);
 		mav.addObject("list",list);
-		mav.addObject("pagingHtml",page.getPagingHtml());
 		
 		return mav;
 	}
@@ -97,22 +88,16 @@ public class ClubController {
 			log.debug("<<count>> : " + count);
 		}
 		
-		//페이징처리
-		PagingUtil page = new PagingUtil(keyfield,keyword,currentPage,count,rowCount,pageCount,"clubgenre.do");
-		map.put("start", page.getStartCount());
-		map.put("end", page.getEndCount());
-		
 		List<ClubVO> list = null;
 		if(count > 0) {
-			list = clubService.genreList(map);
+			list = clubService.genreList();
 		}
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("clubgenre");
 		mav.addObject("count", count);
 		mav.addObject("list",list);
-		mav.addObject("pagingHtml",page.getPagingHtml());
-		
+
 		return mav;
 	}
 	
@@ -133,22 +118,16 @@ public class ClubController {
 			log.debug("<<count>> : " + count);
 		}
 		
-		//페이징처리
-		PagingUtil page = new PagingUtil(keyfield,keyword,currentPage,count,rowCount,pageCount,"clubinterval.do");
-		map.put("start", page.getStartCount());
-		map.put("end", page.getEndCount());
-		
 		List<ClubVO> list = null;
 		if(count > 0) {
-			list = clubService.genreList(map);
+			list = clubService.genreList();
 		}
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("clubinterval");
 		mav.addObject("count", count);
 		mav.addObject("list",list);
-		mav.addObject("pagingHtml",page.getPagingHtml());
-		
+	
 		return mav;
 	}
 	
