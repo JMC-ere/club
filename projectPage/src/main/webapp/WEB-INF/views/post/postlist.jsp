@@ -125,7 +125,7 @@ form#search_form ul.search li input[type="search"]{
 			</li>
 			
 		<div class="write_button">
-			<c:if test="${!empty user_id}">
+			<c:if test="${!empty user_num}">
 			 <button type="button" class="btn btn-outline-success" onclick="location.href='postwrite.do'">글쓰기</button>
 			</c:if>
 		</div>
