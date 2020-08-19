@@ -51,8 +51,8 @@ p {
 		</c:if>
 		<img id="pic1" src="${editMainPictureVO1.filename}"> 
 			<div class="caption center-align">
-				<h3><span class="white-text text-darken-2">${text1-1}</span></h3>
-				<h5 class="white-text text-darken-2">${text1-2}</h5>
+				<h3><span class="white-text text-darken-2">${editMainPictureVO1.text1}</span></h3>
+				<h5 class="white-text text-darken-2">${editMainPictureVO1.text2}</h5>
 			</div></li>
 		<li><c:if test="${editMainPictureVO2.image!=null}">
 		<img src="pic_view2.do"></c:if>

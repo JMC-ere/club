@@ -53,7 +53,7 @@ public class EditPictureController {
 		
 	}
 	
-	//첫번째 사진 표시 처리 
+	//첫번째 사진및 텍스트 표시 처리 
 	@RequestMapping("/main/pic_view1.do")
 	public ModelAndView pic_view1() {
 	
@@ -65,7 +65,7 @@ public class EditPictureController {
 		mav1.addObject("filename",editMainPictureVO1.getFilename());
 		
 		if(log.isDebugEnabled()) {
-			log.debug("파일파일이름 " + editMainPictureVO1.getFilename() + " 파일파일 " + editMainPictureVO1.getImage());
+			log.debug("텍스트 표시 로그 : " +editMainPictureVO1.getText1()+ editMainPictureVO1.getText2());
 		}
 		return mav1;
 	}
@@ -175,7 +175,8 @@ public class EditPictureController {
 		
 		return mav;
 	}
-	//텍스트 DB등록처리
+	
+	//텍스트 DB업데이트 처리
 	@RequestMapping("/main/text_process.do")
 	public String text_process(String text1,String text2,int picture_order) {
 		
@@ -186,6 +187,7 @@ public class EditPictureController {
 		
 		editMainPictureService.updateText1(map);
 		editMainPictureService.updateText2(map);
+		
 		
 		return "redirect:/main/main.do";
 	}

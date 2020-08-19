@@ -24,5 +24,4 @@ public interface EditMainPictureMapper {
 	@Update("update main_picture set text2=#{text2} where picture_order=#{picture_order}")
 	public void updateText2(Map<String,Object> map);
 	
-	
 }
