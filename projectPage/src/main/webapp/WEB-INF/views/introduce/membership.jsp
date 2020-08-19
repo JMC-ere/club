@@ -44,7 +44,7 @@ margin: 0px auto;
 <img src="/club/resources/images/member3.png" style="width:30%; display:inline-block;">
 </div>
 <div style="width: 90%; text-align: left; margin: auto;">
-  <a style="font-size: 0.8rem;" class="waves-effect waves-light btn modal-trigger teal lighten-3" href="#modal3">[도움말] 포인트 획득 방법</a>
+  <a style="font-size: 0.8rem;" class="btn modal-trigger teal lighten-3" href="#modal3">[도움말] 포인트 획득 방법</a>
 </div>
 <!-- Modal Trigger -->
 
