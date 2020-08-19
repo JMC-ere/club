@@ -52,19 +52,19 @@
 			
 		<li><img src="/club/resources/images/fight2.jpg">	
 			<div class="caption right-align">
-				<h3>현재 진행중인 다양한 모임에 참석하세요!</h3>
-				<h5 class="light grey-text text-lighten-3"><a href="#">참여하러가기</a></h5>
+				<h3>${text1}</h3>
+				<h5 class="light grey-text text-lighten-3"><a href="#">${text2}</a></h5>
 			</div></li>
 			
 		<li> <img src="/club/resources/images/fight1.png">
 			<div class="caption right-align">
-				<h3>포인트를 쌓아 우수회원이 되어 나만의 모임을 만들수 있습니다!</h3>
-				<h5 class="light grey-text text-lighten-3"><a href="#">회원 멤버십보러가기</a></h5>
+				<h3>${text1}</h3>
+				<h5 class="light grey-text text-lighten-3"><a href="#">${text2}</a></h5>
 			</div></li>
 		<li> <img src="/club/resources/images/fight2.jpg">
 			<div class="caption center-align">
-				<h4><span class="white-text text-darken-2">지금 바로,</span></h4>
-				<h4 class="light grey-text text-lighten-3">++CLUB에서 다양한 사람들과 모임을 가져보세요 :-)</h4>
+				<h4><span class="white-text text-darken-2">${text1}</span></h4>
+				<h4 class="light grey-text text-lighten-3">${text2}</h4>
 			</div></li>
 	</ul></div>
      
