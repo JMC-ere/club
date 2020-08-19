@@ -16,6 +16,8 @@
        <ul class="manager_menu_list">
           <li><a href="${pageContext.request.contextPath}/main/manage_club.do">클럽개설신청 관리</a></li>
           <li><a href="${pageContext.request.contextPath}/main/manage_member.do">회원 관리</a></li>
+          <li><a href="${pageContext.request.contextPath}/clubmanage/leaderClub.do">클럽 출결 관리</a></li>
+          <li><a href="${pageContext.request.contextPath}/main/EditPicture.do">메인 이미지 변경</a></li>
        </ul>
    </div>
    <br>
