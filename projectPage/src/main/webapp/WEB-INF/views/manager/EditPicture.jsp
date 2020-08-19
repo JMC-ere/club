@@ -41,7 +41,7 @@ width:45%;
    
 
  <!-- 첫번째 사진 선택 폼 -->
- <div class="edit_title">첫번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요</div> <br><br> 
+ <div class="edit_title"><h6><b>첫번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요</b></h6></div> <br><br> 
  <div class="formform row">
   <div class="boxbox">
 <form:form id="upload1" enctype="multipart/form-data" commandName="EditMainPictureVO" > 
@@ -80,8 +80,8 @@ width:45%;
    	<br><h5>메인 텍스트 입력</h5>
    	<form:form id="text_upload1" enctype="multipart/form-data" commandName="EditMainPictureVO">  
    	<input type="hidden" name="picture_order" value="1">
-   	상단 텍스트 :　<input type="text" name="text1" placeholder="첫번째 텍스트 입력" style="width:80%">
-   	<br>하단 텍스트 :　<input type="text" name="text2" placeholder="두번째 텍스트 입력" style="width:80%">
+   	상단 텍스트 :　<input type="text" name="text1" id="text1_1" placeholder="첫번째 텍스트 입력" style="width:80%">
+   	<br>하단 텍스트 :　<input type="text" name="text2" id="text1_2" placeholder="두번째 텍스트 입력" style="width:80%">
    	<br><br>
    	<input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='text_preview.do';form.target='_blank';"
@@ -98,7 +98,7 @@ width:45%;
    	<br><br><hr width="90%" color="green"><br><br>
    	
   <!-- 두번째 사진 선택 폼 -->
- <div class="edit_title">두번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요</div> <br><br> 
+ <div class="edit_title"><h6><b>두번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요</b></h6></div> <br><br> 
  <div class="formform row">
   <div class="boxbox">
 <form:form id="upload3" enctype="multipart/form-data" commandName="EditMainPictureVO" > 
@@ -138,8 +138,8 @@ width:45%;
    	<br><h5>메인 텍스트 입력</h5>
    	<form:form id="text_upload2" enctype="multipart/form-data" commandName="EditMainPictureVO">  
    	<input type="hidden" name="picture_order" value="2">
-   	상단 텍스트 :　<input type="text" name="text1" placeholder="첫번째 텍스트 입력" style="width:80%">
-   	<br>하단 텍스트 :　<input type="text" name="text2" placeholder="두번째 텍스트 입력" style="width:80%">
+   	상단 텍스트 :　<input type="text" name="text1" id="text2_1" placeholder="첫번째 텍스트 입력" style="width:80%">
+   	<br>하단 텍스트 :　<input type="text" name="text2" id="text2_2" placeholder="두번째 텍스트 입력" style="width:80%">
    	<br><br>
    	<input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='text_preview.do';form.target='_blank';"
@@ -155,7 +155,7 @@ width:45%;
    	  	<br><br><hr width="90%" color="green"><br><br>
    	
   <!-- 세번째 사진 선택 폼 -->
- <div class="edit_title">세번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요</div> <br><br> 
+ <div class="edit_title"><h6><b>세번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요</b></h6></div> <br><br> 
  <div class="formform row">
   <div class="boxbox">
 <form:form id="upload5" enctype="multipart/form-data" commandName="EditMainPictureVO" > 
@@ -195,8 +195,8 @@ width:45%;
    	<br><h5>메인 텍스트 입력</h5>
    	<form:form id="text_upload3" enctype="multipart/form-data" commandName="EditMainPictureVO">  
    	<input type="hidden" name="picture_order" value="3">
-   	상단 텍스트 :　<input type="text" name="text1" placeholder="첫번째 텍스트 입력" style="width:80%">
-   	<br>하단 텍스트 :　<input type="text" name="text2" placeholder="두번째 텍스트 입력" style="width:80%">
+   	상단 텍스트 :　<input type="text" name="text1" id="text3_1" placeholder="첫번째 텍스트 입력" style="width:80%">
+   	<br>하단 텍스트 :　<input type="text" name="text2" id="text3_2" placeholder="두번째 텍스트 입력" style="width:80%">
    	<br><br>
    	<input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='text_preview.do';form.target='_blank';"
@@ -212,7 +212,7 @@ width:45%;
    	  	<br><br><hr width="90%" color="green"><br><br>
    	
   <!-- 네번째 사진 선택 폼 -->
- <div class="edit_title">네번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요</div> <br><br> 
+ <div class="edit_title"><h6><b>네번째 화면에 등록할 사진을 선택하거나 이미지 URL을 입력하세요</b></h6></div> <br><br> 
  <div class="formform row">
   <div class="boxbox">
 <form:form id="upload7" enctype="multipart/form-data" commandName="EditMainPictureVO" > 
@@ -252,8 +252,8 @@ width:45%;
    	<br><h5>메인 텍스트 입력</h5>
    	<form:form id="text_upload4" enctype="multipart/form-data" commandName="EditMainPictureVO">  
    	<input type="hidden" name="picture_order" value="4">
-   	상단 텍스트 :　<input type="text" name="text1" placeholder="첫번째 텍스트 입력" style="width:80%">
-   	<br>하단 텍스트 :　<input type="text" name="text2" placeholder="두번째 텍스트 입력" style="width:80%">
+   	상단 텍스트 :　<input type="text" name="text1" id="text4_1" placeholder="첫번째 텍스트 입력" style="width:80%">
+   	<br>하단 텍스트 :　<input type="text" name="text2" id="text4_2" placeholder="두번째 텍스트 입력" style="width:80%">
    	<br><br>
    	<input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='text_preview.do';form.target='_blank';"
@@ -323,6 +323,50 @@ width:45%;
 			return false;
 		};
 	});
+	
+	$('#text_upload1').submit(function(){
+		if($('input[id="text1_1"]').val()==''){
+			alert('첫번째 텍스트를 입력하세요');
+			return false;
+		}
+		if($('input[id="text1_2"]').val()==''){
+			alert('두번째 텍스트를 입력하세요');
+			return false;
+		}
+	})
+	
+	$('#text_upload2').submit(function(){
+		if($('input[id="text2_1"]').val()==''){
+			alert('첫번째 텍스트를 입력하세요');
+			return false;
+		}
+		if($('input[id="text2_2"]').val()==''){
+			alert('두번째 텍스트를 입력하세요');
+			return false;
+		}
+	})
+	
+	$('#text_upload3').submit(function(){
+		if($('input[id="text3_1"]').val()==''){
+			alert('첫번째 텍스트를 입력하세요');
+			return false;
+		}
+		if($('input[id="text3_2"]').val()==''){
+			alert('두번째 텍스트를 입력하세요');
+			return false;
+		}
+	})
+	
+	$('#text_upload4').submit(function(){
+		if($('input[id="text4_1"]').val()==''){
+			alert('첫번째 텍스트를 입력하세요');
+			return false;
+		}
+		if($('input[id="text4_2"]').val()==''){
+			alert('두번째 텍스트를 입력하세요');
+			return false;
+		}
+	})
 	
 	
 
