@@ -60,10 +60,6 @@ public class MainController {
 		mav.addObject("editMainPictureVO2",editMainPictureVO2);
 		mav.addObject("editMainPictureVO3",editMainPictureVO3);
 		mav.addObject("editMainPictureVO4",editMainPictureVO4);
-
-		if(log.isDebugEnabled()) {
-			log.debug("리스트리스트" + list);
-		}
 		
 		return mav;
 	}
