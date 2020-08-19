@@ -19,5 +19,5 @@ public interface ClubService {
 	
 	public void joinClubInsert(Integer club_num,Integer mem_num);
 	
-	public List<ClubVO> genreList();
+	public List<ClubVO> genreList(Map<String,Object> map);
 }

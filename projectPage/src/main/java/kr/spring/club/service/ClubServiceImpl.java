@@ -72,9 +72,9 @@ public class ClubServiceImpl implements ClubService{
 	}
 
 	@Override
-	public List<ClubVO> genreList() {
+	public List<ClubVO> genreList(Map<String,Object> map) {
 		
-		return clubMapper.genreList();
+		return clubMapper.genreList(map);
 	}
 
 }

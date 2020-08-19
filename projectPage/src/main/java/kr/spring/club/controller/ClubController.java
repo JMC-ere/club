@@ -90,7 +90,7 @@ public class ClubController {
 		
 		List<ClubVO> list = null;
 		if(count > 0) {
-			list = clubService.genreList();
+			list = clubService.genreList(map);
 		}
 		
 		ModelAndView mav = new ModelAndView();
@@ -120,7 +120,7 @@ public class ClubController {
 		
 		List<ClubVO> list = null;
 		if(count > 0) {
-			list = clubService.genreList();
+			list = clubService.genreList(map);
 		}
 		
 		ModelAndView mav = new ModelAndView();
