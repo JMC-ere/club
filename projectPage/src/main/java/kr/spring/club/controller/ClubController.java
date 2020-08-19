@@ -265,7 +265,6 @@ public class ClubController {
 			return "boardclubmodify";
 		}
 		
-		clubVO.setMem_num((Integer)session.getAttribute("user_num"));
 
 		clubService.adminUpdate(clubVO);
 
