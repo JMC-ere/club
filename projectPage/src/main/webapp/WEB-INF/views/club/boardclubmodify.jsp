@@ -15,7 +15,7 @@
 	}
 </style>
 <div class="row" id="openform">
-	<!-- !!!!!!!!!!관리자!!!!!!!!!!!!!! -->
+	<!-- !!!!!!!!!!관리자!!!!!!!!!!!!!! -->  
 	<c:if test="${user_auth ==4}">
 	<form:form class="col s12" action="boardclubmodify.do" enctype="multipart/form-data" commandName="clubVO">
 		<form:hidden path="club_num"/>
