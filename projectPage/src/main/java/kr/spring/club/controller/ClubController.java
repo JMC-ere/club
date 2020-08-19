@@ -73,7 +73,7 @@ public class ClubController {
 	
 	//장르별 페이지
 	@RequestMapping("/main/clubgenre.do")
-	public ModelAndView process2(@RequestParam(value="pageNum",defaultValue="1") int currentPage,
+	public ModelAndView process2(
 								@RequestParam(value="keyfield",defaultValue="") String keyfield,
 								@RequestParam(value="keyword",defaultValue="") String keyword) {
 		
@@ -103,7 +103,7 @@ public class ClubController {
 	
 	//요일별 페이지
 	@RequestMapping("/main/clubinterval.do")
-	public ModelAndView process3(@RequestParam(value="pageNum",defaultValue="1") int currentPage,
+	public ModelAndView process3(
 								@RequestParam(value="keyfield",defaultValue="") String keyfield,
 								@RequestParam(value="keyword",defaultValue="") String keyword) {
 		
