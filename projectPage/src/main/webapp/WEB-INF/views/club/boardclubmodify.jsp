@@ -89,7 +89,7 @@
 			</li>
 		</ul>
 		<div class=right>
-			<input type="submit" class="btn purple lighten-5 purple-text text-darken-4" value="개설하기">
+			<input type="submit" class="btn purple lighten-5 purple-text text-darken-4" value="개설/수정하기">
 			<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="돌아가기" onclick="location.href='boardclub.do'">
 		</div>
 	</form:form>
