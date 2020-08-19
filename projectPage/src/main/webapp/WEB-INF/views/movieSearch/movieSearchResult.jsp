@@ -193,7 +193,7 @@ ul li.mov{
 					<c:forEach var="movie" items="${list}">
 						<li class="mov">
 							
-							<a href="${movie.link }">
+							<a href="${movie.link }" target="_blank">
 							<c:if test="${!empty movie.image }">
 							<img src="${movie.image}" class="picture">
 							</c:if>
@@ -201,7 +201,7 @@ ul li.mov{
 							<img src="${pageContext.request.contextPath}/resources/images/blank-img-movie.jpg" class="picture">
 							</c:if>
 							</a>
-							<span class="title"><a href="${movie.link }">${movie.title}</a> | ${movie.pubDate}
+							<span class="title"><a href="${movie.link }" target="_blank">${movie.title}</a> | ${movie.pubDate}
 							</span>
 							<p>
 								<b>평점</b> ${movie.userRating} /10 
