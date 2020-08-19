@@ -33,10 +33,10 @@ width:45%;
           <li><a href="${pageContext.request.contextPath}/main/manage_club.do">클럽개설신청 관리</a></li>
           <li><a href="${pageContext.request.contextPath}/main/manage_member.do">회원 관리</a></li>
           <li><a href="${pageContext.request.contextPath}/clubmanage/leaderClub.do">클럽 출결 관리</a></li>
-          <li><a href="${pageContext.request.contextPath}/main/EditPicture.do">메인 이미지 변경</a></li>
+          <li><a href="${pageContext.request.contextPath}/main/EditPicture.do">메인 이미지/텍스트 변경</a></li>
        </ul>
    </div><br>
- <p class="manager_title"> 메인 이미지 편집 페이지</p>
+ <p class="manager_title"> 메인 이미지/텍스트 편집</p>
    <hr width="90%" color="green"><br><br>
    
 
@@ -76,21 +76,23 @@ width:45%;
    	<!-- 첫번째 사진 url 등록 폼 끝 -->
    	
    	<!-- 첫번째 텍스트 등록 폼  -->
-   	<div>
-   	<form:form id="text_upload1" enctype="multipart/form-data" commandName="EditMainPictureVO">
-   	<input type="hidden" name="picture_order" value="1"/>
-   	<input type="text" name="text1" placeholder="첫번째 텍스트 입력">
-   	<input type="text" name="text2" placeholder="두번째 텍스트 입력">
+   	<div style="display:block;margin:0 auto;border:1px solid #CCCCCC; width:85%;text-align:center;" >
+   	<br><h5>메인 텍스트 입력</h5>
+   	<form:form id="text_upload1" enctype="multipart/form-data" commandName="EditMainPictureVO">  
+   	<input type="hidden" name="picture_order" value="1">
+   	상단 텍스트 :　<input type="text" name="text1" placeholder="첫번째 텍스트 입력" style="width:80%">
+   	<br>하단 텍스트 :　<input type="text" name="text2" placeholder="두번째 텍스트 입력" style="width:80%">
+   	<br><br>
    	<input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
    onclick="javascript: form.action='text_preview.do';form.target='_blank';"
-   style="width:80%;color:black;">
-	<br><br><input type="submit" class="btn-small lime lighten-2" value="텍스트 설정 완료"
-	onclick="javascript: form.action='text_process.do';" style="width:80%;margin-bottom:10px;color:black;">
+   style="width:40%;color:black;">
+	<br><br><input type="submit" class="btn-small lime lighten-2" value="텍스트 설정하기"
+	onclick="javascript: form.action='text_process.do';" style="width:40%;margin-bottom:10px;color:black;">
+	<br><br>
    	</form:form>
    	</div>
-   	
-   	
-   	<!-- 첫번째 텍스트 등록 폼 -->
+
+   	<!-- 첫번째 텍스트 등록 폼 끝-->
    	
    	
    	<br><br><hr width="90%" color="green"><br><br>
@@ -130,6 +132,26 @@ width:45%;
    	</div></div>
    	<!-- 두번째 사진 url 등록 폼 끝 -->
    	
+   	   	
+   	<!-- 두번째 텍스트 등록 폼  -->
+   	<div style="display:block;margin:0 auto;border:1px solid #CCCCCC; width:85%;text-align:center;" >
+   	<br><h5>메인 텍스트 입력</h5>
+   	<form:form id="text_upload2" enctype="multipart/form-data" commandName="EditMainPictureVO">  
+   	<input type="hidden" name="picture_order" value="2">
+   	상단 텍스트 :　<input type="text" name="text1" placeholder="첫번째 텍스트 입력" style="width:80%">
+   	<br>하단 텍스트 :　<input type="text" name="text2" placeholder="두번째 텍스트 입력" style="width:80%">
+   	<br><br>
+   	<input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
+   onclick="javascript: form.action='text_preview.do';form.target='_blank';"
+   style="width:40%;color:black;">
+	<br><br><input type="submit" class="btn-small lime lighten-2" value="텍스트 설정하기"
+	onclick="javascript: form.action='text_process.do';" style="width:40%;margin-bottom:10px;color:black;">
+	<br><br>
+   	</form:form>
+   	</div>
+
+   	<!-- 두번째 텍스트 등록 폼 끝-->
+   	
    	  	<br><br><hr width="90%" color="green"><br><br>
    	
   <!-- 세번째 사진 선택 폼 -->
@@ -167,6 +189,26 @@ width:45%;
    	</div></div>
    	<!-- 세번째 사진 url 등록 폼 끝 -->
    	
+   	   	
+   	<!-- 세번째 텍스트 등록 폼  -->
+   	<div style="display:block;margin:0 auto;border:1px solid #CCCCCC; width:85%;text-align:center;" >
+   	<br><h5>메인 텍스트 입력</h5>
+   	<form:form id="text_upload3" enctype="multipart/form-data" commandName="EditMainPictureVO">  
+   	<input type="hidden" name="picture_order" value="3">
+   	상단 텍스트 :　<input type="text" name="text1" placeholder="첫번째 텍스트 입력" style="width:80%">
+   	<br>하단 텍스트 :　<input type="text" name="text2" placeholder="두번째 텍스트 입력" style="width:80%">
+   	<br><br>
+   	<input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
+   onclick="javascript: form.action='text_preview.do';form.target='_blank';"
+   style="width:40%;color:black;">
+	<br><br><input type="submit" class="btn-small lime lighten-2" value="텍스트 설정하기"
+	onclick="javascript: form.action='text_process.do';" style="width:40%;margin-bottom:10px;color:black;">
+	<br><br>
+   	</form:form>
+   	</div>
+
+   	<!-- 세번째 텍스트 등록 폼 끝-->
+   	
    	  	<br><br><hr width="90%" color="green"><br><br>
    	
   <!-- 네번째 사진 선택 폼 -->
@@ -203,6 +245,26 @@ width:45%;
    	</form>
    	</div></div>
    	<!-- 네번째 사진 url 등록 폼 -->
+   	
+   	   	
+   	<!-- 네번째 텍스트 등록 폼  -->
+   	<div style="display:block;margin:0 auto;border:1px solid #CCCCCC; width:85%;text-align:center;" >
+   	<br><h5>메인 텍스트 입력</h5>
+   	<form:form id="text_upload4" enctype="multipart/form-data" commandName="EditMainPictureVO">  
+   	<input type="hidden" name="picture_order" value="4">
+   	상단 텍스트 :　<input type="text" name="text1" placeholder="첫번째 텍스트 입력" style="width:80%">
+   	<br>하단 텍스트 :　<input type="text" name="text2" placeholder="두번째 텍스트 입력" style="width:80%">
+   	<br><br>
+   	<input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
+   onclick="javascript: form.action='text_preview.do';form.target='_blank';"
+   style="width:40%;color:black;">
+	<br><br><input type="submit" class="btn-small lime lighten-2" value="텍스트 설정하기"
+	onclick="javascript: form.action='text_process.do';" style="width:40%;margin-bottom:10px;color:black;">
+	<br><br>
+   	</form:form>
+   	</div><br><br><br>
+
+   	<!-- 네번째 텍스트 등록 폼 끝-->
 </body>
 <script>
 
