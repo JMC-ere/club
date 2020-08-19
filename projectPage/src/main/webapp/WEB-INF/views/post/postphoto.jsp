@@ -98,7 +98,7 @@
 				
 						<div class="card" style="text-align:center">
 							<div class="card-header" id="hope">${post.post_title}</div>
-							<img src="imageView.do?post_num=${post.post_num }" id="cardImg" class="responsive-img center"/>
+							<img src="imageView.do?post_num=${post.post_num }" id="cardImg" class="responsive-img center" onerror="this.src='https://lh3.googleusercontent.com/proxy/5BUDVFhVYypOGPwOdVv6h2wb6_rrd2oplQUu0eizJy1LbeNQ-eW_N5hTSeo1SAhcRLfcUkS6f3dvJ2JwaEOhLJeWHhGOXzsFEDEJXeI3TR0AtEBWCpUw0HGsh72Eh1bOZl0iGDI7CVBYCHypYHY';"/>
 							 <div class="card-body" >
 								<h5 class="card-title">${post.post_board}</h5>
 							</div>

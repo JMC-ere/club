@@ -4,7 +4,7 @@
 
 <style>
 #postImg{
-		max-width:200px;
+		max-width:100px;
 		max-height:100px;
 	}
 .page-menu{
@@ -134,7 +134,7 @@ p.skipboard{
 					<c:forEach var="post" items="${list}">
 						<tr class=align-center>
 							<td rowspan="4" width=1%>
-							<img src="imageView.do?post_num=${post.post_num}" class="responsive-img" id="postImg">
+							<img src="imageView.do?post_num=${post.post_num}" class="responsive-img" id="postImg" onerror="this.src='https://static.thenounproject.com/png/340719-200.png';">
 							</td>
 						</tr>
 						<tr>
