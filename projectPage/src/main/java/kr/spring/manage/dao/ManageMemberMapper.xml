@@ -47,7 +47,7 @@
 	select * from (select rownum rnum, c.* from
 	(select b.*,a.mem_id,a.mem_auth 
 	from member a ,member_detail b 
-	where a.mem_num=b.mem_num order by detail_date)c
+	where a.mem_num=b.mem_num order by detail_date desc)c
 					
 		<where>
 			<if test="keyfield =='auth0'">
