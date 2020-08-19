@@ -73,7 +73,6 @@
 				$('#message_id').css('color','red').text('아이디를 입력하세요.');
 				return;
 			}else{
-			
 			$('#message_id').text('');//메시지 초기화
 			$('#loading').show();//로딩 이미지 노출
 			
