@@ -1,23 +1,19 @@
 package kr.spring.main.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.club.domain.ClubVO;
 import kr.spring.club.service.ClubService;
 import kr.spring.manage.domain.EditMainPictureVO;
 import kr.spring.manage.service.EditMainPictureService;
-import kr.spring.util.PagingUtil;
+
 //main!
 @Controller
 public class MainController {
@@ -26,8 +22,7 @@ public class MainController {
 	private ClubService clubService;
 	@Resource
 	private EditMainPictureService editMainPictureService;
-	private int rowCount = 10;
-	private int pageCount = 10;
+
 
 	//메인페이지
 	@RequestMapping("/main/main.do")
