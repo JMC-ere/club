@@ -96,12 +96,17 @@
 			</div>
 				<c:if test="${count > 0 }">	
 				
-						<div class="card">
-							<div class="card-header" id="hope" style="text-align:center">${post.post_title}</div>
+						<div class="card" style="text-align:center">
+							<div class="card-header" id="hope">${post.post_title}</div>
 							<img src="imageView.do?post_num=${post.post_num }" id="cardImg" class="responsive-img center"/>
-							 <div class="card-body">
+							 <div class="card-body" >
 								<h5 class="card-title">${post.post_board}</h5>
-								</div>
+							</div>
+							<div class="card-footer">
+								<c:if test="${user_auth == 4}">
+									<button type="button" class="btn btn-outline-success" onclick="location.href='postdetail.do?num=${post.post_num}'">수정하기</button>
+								</c:if>
+							</div>
 							</div>
 						
 						</c:if>
