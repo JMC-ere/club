@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 <style>
 .page-menu {
@@ -46,7 +47,9 @@
 	color: black;
 	background-color:#e8e6d7 !important;
 }
-
+.write_button{
+	float:right;
+}
 
 </style>
 
@@ -68,13 +71,15 @@
 	</ul>
 </div>
 
+
 <div class=page-main-style>
 	<form action="postlist.do" method="get">
 
-		<div>
-			<c:if test="${!empty user_id}|${!empty club_name}">
-				<input type="button" value="글쓰기"
-					onclick="location.href='postwrite.do'">
+
+		
+		<div class="write_button">
+			<c:if test="${user_auth == 4}">
+			<button type="button" class="btn btn-outline-success" onclick="location.href='postwrite.do'">글쓰기</button>
 			</c:if>
 		</div>
 			<div  class="container">
