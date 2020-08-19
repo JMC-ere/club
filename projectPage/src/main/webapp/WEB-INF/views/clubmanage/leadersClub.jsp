@@ -272,7 +272,7 @@ p.club-detail{
 			<!-- 카드 하나 코드  -->
 			<c:forEach var="pastClub" items="${leadersPastClub}">
 			<c:if test="${pastClub.club_state==2 }">
-			<div class="col-sm-12 col-lg-6">
+			<div class="col-sm-12 col-lg-4">
 				<div class="card medium">
 					<c:if test="${!empty pastClub.filename }">
 						<c:if test="${
@@ -297,8 +297,8 @@ p.club-detail{
 					</c:if>
 					<div class="card-content">
 						<p class="club-detail">
-						시작: ${validClub.club_start} | 종료: ${validClub.club_end}<br>
-						주기: ${validClub.club_interval } | 시간: ${validClub.club_time }
+						시작: ${pastClub.club_start} | 종료: ${pastClub.club_end}<br>
+						주기: ${pastClub.club_interval } | 시간: ${pastClub.club_time }
 						</p>
 					</div>
 					<div class="card-action" align="right">
