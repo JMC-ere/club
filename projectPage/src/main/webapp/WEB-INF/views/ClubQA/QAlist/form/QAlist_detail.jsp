@@ -106,7 +106,7 @@
 			<input type="button" value="수정" class="btn"
 				onclick="location.href='QAlist_update.do?num=${clubqa.qa_num}'">
 		</c:if>
-		<c:if test="${!empty user_id && user_id == clubqa.mem_id || user_auth > 3}">
+		<c:if test="${user_id == clubqa.mem_id || user_auth > 3}">
 			<input type="button" value="삭제" class="btn"
 				onclick="location.href='QAlist_delete.do?num=${clubqa.qa_num}'">
 		</c:if>

@@ -24,7 +24,7 @@
 						</tr>
 						<tr>
 							<th scope="row"><label for="qa_secret">비밀글</label></th>
-							<td class="secret_tf"><form:input path="qa1_1secret_key" maxlength="4" placeholder="비밀번호 4자리를 입력해주세요"/></td>
+							<td class="secret_tf"><form:password path="qa1_1secret_key" maxlength="4" placeholder="비밀번호 4자리를 입력해주세요"/></td>
 						</tr> 
 					</tbody>
 				</table>

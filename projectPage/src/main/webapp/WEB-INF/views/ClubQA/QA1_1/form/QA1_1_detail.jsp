@@ -79,9 +79,11 @@
 	<div align="right">
 		<%-- 글 수정 및 삭제를 하려면 로그인한 후 
 	                로그인 아이디와 작성자 아이디가 일치해야 함. --%>
-		<c:if test="${!empty user_id && user_id == clubqa.mem_id}">
+	    <c:if test="${!empty user_id && user_id == clubqa.mem_id}">
 			<input type="button" value="수정" class="btn"
 				onclick="location.href='QA1_1_update.do?num=${clubqa.qa1_1num}'">
+		</c:if>
+		<c:if test="${user_id == clubqa.mem_id || user_auth > 3}">
 			<input type="button" value="삭제" class="btn"
 				onclick="location.href='QA1_1_delete.do?num=${clubqa.qa1_1num}'">
 		</c:if>
