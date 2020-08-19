@@ -9,10 +9,10 @@
 	  <!-- Dropdown Structure -->
 	  <ul id='dropdown1' class='dropdown-content'>
 	  	<c:if test="${empty user_id}">
-	    <li><a href="${pageContext.request.contextPath}/main/main.do">Login</a></li>
+	    <li><a href="${pageContext.request.contextPath}/main/main.do">LOGIN</a></li>
 	    </c:if>
 	    <c:if test="${!empty user_id}">
-	    <li><a href="${pageContext.request.contextPath}/main/logout.do">LogOut</a></li>
+	    <li><a href="${pageContext.request.contextPath}/main/logout.do">LOGOUT</a></li>
 	   	</c:if>
 	    <c:if test="${user_auth == 2 || user_auth == 3 || user_auth == 4}">
 	    <li><a href="${pageContext.request.contextPath}/mypage/myPage.do">MY PAGE</a></li>
@@ -27,10 +27,10 @@
 
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <c:if test="${empty user_id}">
-	    <li><a href="${pageContext.request.contextPath}/main/main.do">Login</a></li>
+	    <li><a href="${pageContext.request.contextPath}/main/main.do">LOGIN</a></li>
 	    </c:if>
 	    <c:if test="${!empty user_id}">
-	    <li><a href="${pageContext.request.contextPath}/main/logout.do">LogOut</a></li>
+	    <li><a href="${pageContext.request.contextPath}/main/logout.do">LOGOUT</a></li>
 	   	</c:if>
 	    <c:if test="${user_auth == 2 || user_auth == 3 || user_auth == 4}">
 	    <li><a href="${pageContext.request.contextPath}/mypage/myPage.do">MY PAGE</a></li>
