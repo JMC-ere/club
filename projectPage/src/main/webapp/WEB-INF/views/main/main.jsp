@@ -58,22 +58,22 @@ p {
 		<img src="pic_view2.do"></c:if>
 		<img src="${editMainPictureVO2.filename}">		
 			<div class="caption right-align">
-				<h3>현재 진행중인 다양한 모임에 참석하세요!</h3>
-				<h5 class="light grey-text text-lighten-3"><a href="${pageContext.request.contextPath}/main/viewclub.do">참여하러가기</a></h5>
+				<h3>${editMainPictureVO2.text1}</h3>
+				<h5 class="light grey-text text-lighten-3"><a href="${pageContext.request.contextPath}/main/viewclub.do">${editMainPictureVO2.text2}</a></h5>
 			</div></li>
 		<li><c:if test="${editMainPictureVO3.image!=null}">
 		<img src="pic_view3.do"></c:if>
 		<img src="${editMainPictureVO3.filename}"> 
 			<div class="caption right-align">
-				<h3>포인트를 쌓아 우수회원이 되어 나만의 모임을 만들수 있습니다!</h3>
-				<h5 class="light grey-text text-lighten-3"><a href="${pageContext.request.contextPath}/main/introduce/membership.do">회원 멤버십보러가기</a></h5>
+				<h3>${editMainPictureVO3.text1}</h3>
+				<h5 class="light grey-text text-lighten-3"><a href="${pageContext.request.contextPath}/main/introduce/membership.do">${editMainPictureVO3.text2}</a></h5>
 			</div></li>
 		<li><c:if test="${editMainPictureVO4.image!=null}">
 		<img src="pic_view4.do"></c:if>
 		<img src="${editMainPictureVO4.filename}">
 			<div class="caption center-align">
-				<h4><span class="white-text text-darken-2">지금 바로,</span></h4>
-				<h4 class="light grey-text text-lighten-3">++CLUB에서 다양한 사람들과 모임을 가져보세요 :-)</h4>
+				<h4><span class="white-text text-darken-2">${editMainPictureVO4.text1}</span></h4>
+				<h4 class="light grey-text text-lighten-3">${editMainPictureVO4.text2}</h4>
 			</div></li>
 	</ul>
 	 <c:if test="${user_auth==4}">
