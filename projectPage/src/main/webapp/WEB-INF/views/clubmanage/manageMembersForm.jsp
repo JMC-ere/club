@@ -189,7 +189,7 @@ input[type="submit"], input[type="button"]{
 	  	</ul>
 	</div>
 	<div class="page-content">
-		<h6>${club.club_title} 회원 관리</h6>
+		<h6>${club.club_name} 회원 관리</h6>
 		<table>
 			<tr>
 				<th>프로필</th>

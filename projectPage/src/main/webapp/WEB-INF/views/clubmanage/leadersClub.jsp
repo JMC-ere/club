@@ -227,14 +227,14 @@ p.club-detail{
 		 				}">
 		 			<div class="card-image">
 					<img src="imageView.do?club_num=${validClub.club_num }" class="club_img">
-					<span class="card-title">${validClub.club_title}</span>
+					<span class="card-title">${validClub.club_name}</span>
 					</div>
 					</c:if>
 					</c:if>
 					<c:if test="${empty validClub.filename }">
 					<div class="card-image">
 					<img src="${pageContext.request.contextPath}/resources/images/talk.png" class="club_img">
-					<span class="card-title">${validClub.club_title}</span>
+					<span class="card-title">${validClub.club_name}</span>
 					</div>
 					</c:if>
 					<div class="card-content">
@@ -285,14 +285,14 @@ p.club-detail{
 			 				}">
 			 			<div class="card-image">
 						<img src="imageView.do?club_num=${pastClub.club_num }" class="club_img">
-						<span class="card-title">${pastClub.club_title}</span>
+						<span class="card-title">${pastClub.club_name}</span>
 						</div>
 						</c:if>
 					</c:if>
 					<c:if test="${empty pastClub.filename }">
 						<div class="card-image">
 						<img src="${pageContext.request.contextPath}/resources/images/talk.png" class="club_img">
-						<span class="card-title">${pastClub.club_title}</span>
+						<span class="card-title">${pastClub.club_name}</span>
 						</div>
 					</c:if>
 					<div class="card-content">

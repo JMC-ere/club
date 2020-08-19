@@ -72,7 +72,7 @@
 			<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="수정" onclick="location.href='boardclubmodify.do?club_num=${club.club_num}'">
 			<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="삭제" onclick="location.href='boardclubdelete.do?club_num=${club.club_num}'">
 			</c:if>
-			<c:if test="${user_id == club.mem_id && club.club_state ==1}">
+			<c:if test="${user_auth ==3 && user_id == club.mem_id && club.club_state ==1}">
 			<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="수정" onclick="location.href='boardclubmodify.do?club_num=${club.club_num}'">
 			<input type="button" class="btn purple lighten-5 purple-text text-darken-4" value="삭제" onclick="location.href='boardclubdelete.do?club_num=${club.club_num}'">
 			</c:if>
