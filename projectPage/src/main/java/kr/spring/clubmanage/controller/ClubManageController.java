@@ -223,6 +223,9 @@ class removeAttendace{
 			} else if(remove_date!=null) {
 				attendance_date=remove_date.split(" / ");
 				attendance_rate=(float)attendance_date.length/count_club;
+			} else if(remove_date==null){
+				attendance_rate=0;
+				remove_date="";
 			}
 			memberVO.setClub_num(club_num);
 			memberVO.setAttendance_rate(Math.round(attendance_rate*100));
