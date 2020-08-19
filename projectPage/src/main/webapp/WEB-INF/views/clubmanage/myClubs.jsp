@@ -284,7 +284,7 @@ p.club-detail{
 			 				}">
 			 			<div class="card-image">
 						<img src="imageView.do?club_num=${pastClub.club_num }" class="club_img">
-						<span class="card-title">${pastClub.club_title}</span>
+						<span class="card-title">${pastClub.club_name}</span>
 						</div>
 						</c:if>
 					</c:if>
