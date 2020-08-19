@@ -38,9 +38,7 @@ public class ManageClubController {
 	//목록
 	@RequestMapping("/main/manage_club.do")
 	public ModelAndView process(
-			@RequestParam(value="pageNum", defaultValue="1") int currentPage,
-			@RequestParam(value="keyfield", defaultValue="") String keyfield,
-			@RequestParam(value="keyword", defaultValue="") String keyword) {
+			@RequestParam(value="pageNum", defaultValue="1") int currentPage) {
 
 		//목록의 총 레코드 수 또는 검색 레코드 수 반환
 		int count1 = manageClubService.selectRowCount(1);
@@ -50,21 +48,21 @@ public class ManageClubController {
 		Map<String,Object> map = new HashMap<String,Object>();
 	
 		List<ManageClubVO> list1 = null;
-		PagingUtil page1 = new PagingUtil(keyfield,keyword,currentPage,count1,rowCount,pageCount,"manageClub.do");
+		PagingUtil page1 = new PagingUtil(currentPage,count1,rowCount,pageCount,"manage_club.do");
 		map.put("start", page1.getStartCount());
 		map.put("end", page1.getEndCount());
 		list1 = manageClubService.selectList1(map);
 
 		
 		List<ManageClubVO> list2 = null;
-		PagingUtil page2 = new PagingUtil(keyfield,keyword,currentPage,count2,rowCount,pageCount,"manageClub.do");
+		PagingUtil page2 = new PagingUtil(currentPage,count2,rowCount,pageCount,"manage_club.do");
 		map.put("start", page2.getStartCount());
 		map.put("end", page2.getEndCount());
 		list2 = manageClubService.selectList2(map);
 		
 		
 		List<ManageClubVO> list3 = null;
-		PagingUtil page3 = new PagingUtil(currentPage,count3,rowCount,pageCount,"manageClub.do");
+		PagingUtil page3 = new PagingUtil(currentPage,count3,rowCount,pageCount,"manage_club.do");
 		map.put("start", page3.getStartCount());
 		map.put("end", page3.getEndCount());
 		list3 = manageClubService.selectList3(map);
@@ -78,9 +76,9 @@ public class ManageClubController {
 		mav.addObject("list1", list1);
 		mav.addObject("list2", list2);
 		mav.addObject("list3", list3);
-		mav.addObject("pagingHtml", page1.getPagingHtml());
-		mav.addObject("pagingHtml", page2.getPagingHtml());
-		mav.addObject("pagingHtml", page3.getPagingHtml());
+		mav.addObject("pagingHtml1", page1.getPagingHtml());
+		mav.addObject("pagingHtml2", page2.getPagingHtml());
+		mav.addObject("pagingHtml3", page3.getPagingHtml());
 
 		return mav;
 	}

@@ -5,27 +5,33 @@
 <mapper namespace="kr.spring.manage.dao.ManageClubMapper">
 
 <select id="selectList1" parameterType="map" resultType="ManageClubVO">
-		select * from (select * from
-		(select rownum rnum , club.* ,member.mem_id from club,
-		member where club.mem_num=member.mem_num order by club_date) where club_state=1)
+		select * from 
+		(select a.*,rownum rnum from
+			(select club.*,member.mem_id from club, member 
+				where club.mem_num=member.mem_num order by club_date desc)a 
+		where club_state=1) 
 		<![CDATA[
 		WHERE rnum >= #{start} AND rnum <= #{end}
 		]]>
 	</select>
 	
 	<select id="selectList2" parameterType="map" resultType="ManageClubVO">
-		select * from (select * from
-		(select rownum rnum , club.* ,member.mem_id from club,
-		member where club.mem_num=member.mem_num order by club_date) where club_state=2)
+		select * from 
+		(select a.*,rownum rnum from
+			(select club.*,member.mem_id from club, member 
+				where club.mem_num=member.mem_num order by club_date desc)a 
+		where club_state=2) 
 		<![CDATA[
 		WHERE rnum >= #{start} AND rnum <= #{end}
 		]]>
 	</select>
 	
 	<select id="selectList3" parameterType="map" resultType="ManageClubVO">
-		select * from (select * from
-		(select rownum rnum , club.* ,member.mem_id from club,
-		member where club.mem_num=member.mem_num order by club_date) where club_state=3)
+		select * from 
+		(select a.*,rownum rnum from
+			(select club.*,member.mem_id from club, member 
+				where club.mem_num=member.mem_num order by club_date desc)a 
+		where club_state=3) 
 		<![CDATA[
 		WHERE rnum >= #{start} AND rnum <= #{end}
 		]]>

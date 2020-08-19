@@ -58,7 +58,7 @@
 		</table>
 	</c:if>	
 	</div><br>
-	<div style="text-align:center;">${pagingHtml}</div>
+	<div style="text-align:center;">${pagingHtml1}</div>
 	<br><br><br><hr width=80% color=CCCCCC><br><br><br>
 	
 	<div class="manage_club_list">
@@ -91,7 +91,7 @@
 		</table>
 	</c:if>
 	</div><br>
-	<div style="text-align:center;">${pagingHtml}</div>
+	<div style="text-align:center;">${pagingHtml2}</div>
 	<br><br><br><hr width=80% color=CCCCCC><br><br><br>
 	
 	<div class="manage_club_list">	
@@ -125,7 +125,7 @@
 		</table>
 	</c:if>
 	</div><br>
-	<div style="text-align:center;">${pagingHtml}</div>
+	<div style="text-align:center;">${pagingHtml3}</div>
 <br><br><br><br>
 </body>
 </html>
