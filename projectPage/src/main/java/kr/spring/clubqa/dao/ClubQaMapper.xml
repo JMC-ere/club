@@ -63,15 +63,19 @@
 	
 	<update id="update" parameterType="clubQAVO">
 		UPDATE qa_board SET
-		<if test="qa_filename != ''">
-			qa_uploadfile=#{qa_uploadfile},
-			qa_filename=#{qa_filename},
-		</if>
 			qa_title=#{qa_title},
 			qa_content=#{qa_content},
 			qa_datetime=SYSDATE
 		WHERE qa_num=#{qa_num}
 	</update>
+	<update id="update1_1" parameterType="clubQA1_1VO">
+		UPDATE qa1_1board SET
+			qa1_1title=#{qa1_1title},
+			qa1_1content=#{qa1_1content},
+			qa1_1datetime=SYSDATE
+		WHERE qa1_1num=#{qa1_1num}
+	</update>
+
 	
 	<!-- 댓글 -->
 	<select id="selectListReply" parameterType="map"

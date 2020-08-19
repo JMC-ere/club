@@ -9,8 +9,8 @@
 	src="${pageContext.request.contextPath}/resources/js/board.reply1_1.js"></script>
 	
 <!-- 질문 상세페이지  -->
-<form:form action="QA1_1_detial.do" enctype="multipart/form-data"
-	commandName="clubQAVO">
+<form:form action="QA1_1_detail.do" enctype="multipart/form-data"
+	commandName="clubQA1_1VO"> 
 	<div class="QAlist_detail">
 		<div class="QAlist_detail_header">
 			<h4>${clubqa.qa1_1title}</h4>

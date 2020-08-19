@@ -167,7 +167,7 @@ public class QAController {
 		ClubQAVO clubqa =
 				clubqaService.selectQABoard(num);
 
-		model.addAttribute("clubqa", clubqa);
+		model.addAttribute("clubQAVO", clubqa);
 
 		return "qalist_update";
 	}

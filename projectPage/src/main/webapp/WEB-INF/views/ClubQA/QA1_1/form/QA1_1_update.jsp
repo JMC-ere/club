@@ -7,7 +7,7 @@
 
 	
 		<div class="write_main">
-			<form:form action="QA1_1_update.do" enctype="multipart/form-data" commandName="clubQA1_1VO">
+			<form:form action="QA1_1_update.do" enctype="multipart/form-data" commandName="clubQA1_1VO" onsubmit="return space_check();">
 				<form:hidden path="qa1_1num"/>
 				<div class="writeform_header">
 					글 수정
@@ -16,15 +16,15 @@
 					<tbody>
 						<tr>
 							<th scope="row"><label for="qa_title">제목</label></th>
-							<td class="qa_title"><form:input path="qa1_1title" class="qa_title" value="${clubqa.qa1_1title}"/></td>
+							<td class="qa_title"><form:input path="qa1_1title" class="qa_title"/></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="qa_content">내용</label></th>
-							<td class="qa_content"><form:textarea class="qa_content" path="qa1_1content" rows="10" cols="100%" value="${clubqa.qa1_1content}" style="resize: vertical; overflow: auto;"/></td>
+							<td class="qa_content"><form:textarea class="qa_content" path="qa1_1content" rows="10" cols="100%" style="resize: vertical; overflow: auto;"/></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="qa_secret">비밀글</label></th>
-							<td class="secret_tf"><form:input path="qa1_1secret_key" maxlength="4" value="${clubqa.qa1_1secret_key}" placeholder="비밀번호 4자리를 입력해주세요"/></td>
+							<td class="secret_tf"><form:input path="qa1_1secret_key" maxlength="4" placeholder="비밀번호 4자리를 입력해주세요"/></td>
 						</tr> 
 					</tbody>
 				</table>

@@ -153,7 +153,7 @@ public class QA1_1Controller {
 			ClubQA1_1VO clubqa =
 					clubqaService.select1_1QABoard(num);
 
-			model.addAttribute("clubqa", clubqa);
+			model.addAttribute("clubQA1_1VO", clubqa);
 
 			return "qa1_1_update";
 		}
@@ -161,13 +161,13 @@ public class QA1_1Controller {
 		//질문 글 수정 처리
 		@RequestMapping(value="/ClubQA/QA1_1/QA1_1_update.do",
 				method=RequestMethod.POST)
-		public String submitUpdate(@Valid ClubQAVO clubqaVO,
+		public String submitUpdate1(@Valid ClubQA1_1VO clubqa1_1VO,
 				BindingResult result,
 				HttpServletRequest request) {
 
 			//로그 표시
 			if(log.isDebugEnabled()) {
-				log.debug("<<clubqaVO>> : " + clubqaVO);
+				log.debug("<<clubqaVO>> : " + clubqa1_1VO);
 			}
 
 			//유효성 체크 결과 에러가 있으면 폼 호출
@@ -175,7 +175,7 @@ public class QA1_1Controller {
 				return "qa1_1_update";
 			}
 
-			clubqaService.update(clubqaVO);
+			clubqaService.update1_1(clubqa1_1VO);
 
 			return "redirect:/ClubQA/QA1_1/QA1_1_list.do";
 		}
