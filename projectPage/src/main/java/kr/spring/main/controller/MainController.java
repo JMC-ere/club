@@ -43,10 +43,12 @@ public class MainController {
 		if(count>0) {
 
 			Map<String,Object> map = new HashMap<String,Object>();
-			map.put("start", page.getStartCount());
-			map.put("end", page.getEndCount());
+			map.put("start", 1);
+			map.put("end", 100);
 
 			list = clubService.mainList(map);
+			
+			
 		}
 
 		//메인 이미지 url 가져오기 //파일 표시는 EditMainPictureController에서 함 
@@ -75,6 +77,10 @@ public class MainController {
 		mav.addObject("editMainPictureVO3",editMainPictureVO3);
 		mav.addObject("editMainPictureVO4",editMainPictureVO4);
 
+		if(log.isDebugEnabled()) {
+			log.debug("리스트리스트" + list);
+		}
+		
 		return mav;
 	}
 
@@ -92,8 +98,8 @@ public class MainController {
 		if(count>0) {
 
 			Map<String,Object> map = new HashMap<String,Object>();
-			map.put("start", page.getStartCount());
-			map.put("end", page.getEndCount());
+			map.put("start", 1);
+			map.put("end", 100);
 
 			list = clubService.mainList(map);
 		}

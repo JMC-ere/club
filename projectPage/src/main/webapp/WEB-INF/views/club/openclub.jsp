@@ -104,9 +104,9 @@ $('#openclub').submit(function(){
 		alert('제목의 공백을 허용하지 않습니다.');
 		return false;
 	}
-	if($.trim($('#club_content').val())==""){
+/* 	if($.trim($('#club_content').val())==""){
 		alert('내용의 공백을 허용하지 않습니다.');
 		return false;
-	}
+	} */
 });
 </script>
