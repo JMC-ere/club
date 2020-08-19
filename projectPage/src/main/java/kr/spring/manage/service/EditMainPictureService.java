@@ -11,5 +11,7 @@ public interface EditMainPictureService {
 	public EditMainPictureVO select2();
 	public EditMainPictureVO select3();
 	public EditMainPictureVO select4();
+	public void updateText1(Map<String,Object> map);
+	public void updateText2(Map<String,Object> map);
 	
 }

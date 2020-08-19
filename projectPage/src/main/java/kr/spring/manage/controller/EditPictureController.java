@@ -123,7 +123,6 @@ public class EditPictureController {
 	
 	
 	
-	
 	//사진 url 처리
 	@RequestMapping("/main/url_process.do")
 	public String pic_url(String filename,String picture_order) {
@@ -162,14 +161,34 @@ public class EditPictureController {
 		editMainPictureVO.getPic_upload().transferTo(file);
 		
 
-	
-		
-	
-		
 		return 	"manager/pic_preview";
 	}
 	
-
+	//텍스트 편집 미리보기
+	@RequestMapping("/main/text_preview.do")
+	public ModelAndView text_preview(String text1,String text2) {
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("manager/text_preview");
+		mav.addObject("text1",text1);
+		mav.addObject("text2",text2);
+		
+		return mav;
+	}
+	//텍스트 DB등록처리
+	@RequestMapping("/main/text_process.do")
+	public String text_process(String text1,String text2,int picture_order) {
+		
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("picture_order", picture_order);
+		map.put("text1",text1);
+		map.put("text2",text2);
+		
+		editMainPictureService.updateText1(map);
+		editMainPictureService.updateText2(map);
+		
+		return "redirect:/main/main.do";
+	}
 	
 	
 }

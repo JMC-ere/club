@@ -47,6 +47,18 @@ public class EditMainPictureServiceImpl implements EditMainPictureService{
 		return editMainPictureMapper.select4();
 	}
 
+	@Override
+	public void updateText1(Map<String,Object> map) {
+		editMainPictureMapper.updateText1(map);
+	
+	}
+
+	@Override
+	public void updateText2(Map<String,Object> map) {
+		editMainPictureMapper.updateText2(map);
+	
+	}
+
 	
 	
 	

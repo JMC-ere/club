@@ -47,16 +47,16 @@ p {
 <div class="slider">
 	<ul class="slides">
 		<li><c:if test="${editMainPictureVO1.image!=null}">
-		<img id="pic1" src="pic_view1.do"></c:if>
+		<img id="pic1" src="pic_view1.do">
+		</c:if>
 		<img id="pic1" src="${editMainPictureVO1.filename}"> 
 			<div class="caption center-align">
-				<h3><span class="white-text text-darken-2">Hello, We Are ++CLUB!</span></h3>
-				<h5 class="white-text text-darken-2">++CLUB 에 오신것을 환영합니다!!</h5>
+				<h3><span class="white-text text-darken-2">${text1-1}</span></h3>
+				<h5 class="white-text text-darken-2">${text1-2}</h5>
 			</div></li>
 		<li><c:if test="${editMainPictureVO2.image!=null}">
 		<img src="pic_view2.do"></c:if>
-		<img src="${editMainPictureVO2.filename}">
-		
+		<img src="${editMainPictureVO2.filename}">		
 			<div class="caption right-align">
 				<h3>현재 진행중인 다양한 모임에 참석하세요!</h3>
 				<h5 class="light grey-text text-lighten-3"><a href="${pageContext.request.contextPath}/main/viewclub.do">참여하러가기</a></h5>
@@ -105,10 +105,11 @@ p {
 					<a href="viewclubdetail.do?club_num=${club.club_num}" class="btn #8bc34a light-green">More</a>
 				</div>
 			</div>
-			
+
 			</c:if>
 		</div>
 		</c:forEach>
+		
 		
 	</div>
 	<div data-tockify-calendar="jmcere" data-tockify-component="jmcere"></div>	

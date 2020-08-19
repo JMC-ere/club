@@ -75,6 +75,24 @@ width:45%;
    	</div></div>
    	<!-- 첫번째 사진 url 등록 폼 끝 -->
    	
+   	<!-- 첫번째 텍스트 등록 폼  -->
+   	<div>
+   	<form:form id="text_upload1" enctype="multipart/form-data" commandName="EditMainPictureVO">
+   	<input type="hidden" name="picture_order" value="1"/>
+   	<input type="text" name="text1" placeholder="첫번째 텍스트 입력">
+   	<input type="text" name="text2" placeholder="두번째 텍스트 입력">
+   	<input type="submit" class="btn-small lime lighten-3" value="미리보기 " 
+   onclick="javascript: form.action='text_preview.do';form.target='_blank';"
+   style="width:80%;color:black;">
+	<br><br><input type="submit" class="btn-small lime lighten-2" value="텍스트 설정 완료"
+	onclick="javascript: form.action='text_process.do';" style="width:80%;margin-bottom:10px;color:black;">
+   	</form:form>
+   	</div>
+   	
+   	
+   	<!-- 첫번째 텍스트 등록 폼 -->
+   	
+   	
    	<br><br><hr width="90%" color="green"><br><br>
    	
   <!-- 두번째 사진 선택 폼 -->

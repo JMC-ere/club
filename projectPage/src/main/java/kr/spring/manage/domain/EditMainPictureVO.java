@@ -10,6 +10,8 @@ public class EditMainPictureVO {
 	private String picture_order;
 	private byte[] image;
 	private String filename;
+	private String text1;
+	private String text2;
 	
 	
 	public MultipartFile getPic_upload() {
@@ -38,7 +40,6 @@ public class EditMainPictureVO {
 	}
 	
 	
-	
 	public String getPicture_order() {
 		return picture_order;
 	}
@@ -46,11 +47,27 @@ public class EditMainPictureVO {
 		this.picture_order = picture_order;
 	}
 	
+
+	
+	public String getText1() {
+		return text1;
+	}
+	public void setText1(String text1) {
+		this.text1 = text1;
+	}
+	public String getText2() {
+		return text2;
+	}
+	public void setText2(String text2) {
+		this.text2 = text2;
+	}
 	@Override
 	public String toString() {
 		return "EditMainPictureVO [picture_order=" + picture_order + ", image=" + Arrays.toString(image) + ", filename="
-				+ filename + "]";
+				+ filename + ", text1=" + text1 + ", text2=" + text2 + "]";
 	}
+	
+
 
 	
 	
