@@ -101,9 +101,9 @@
 		<property name="defaultEncoding" value="utf-8"/>
 		<!-- 발신자 Gmail : username / password -->
 	        <!-- Gmail 아이디 -->
-		<property name="username" value="wjdals9058@gmail.com"/>
+		<property name="username" value="아이디"/>
 		<!-- Gmail 패스워드 -->
-		<property name="password" value="zrggtn1356!"/>
+		<property name="password" value="비밀번호"/>
 	        <property name="javaMailProperties">
 			<props>
 				<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
